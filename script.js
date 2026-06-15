@@ -93,32 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // --- ROI Calculator Logic ---
-    const capitalInput = document.getElementById("capital-input");
-    const capitalValue = document.getElementById("capital-value");
-    const returnInput = document.getElementById("return-input");
-    const returnValue = document.getElementById("return-value");
-    const projectedValue = document.getElementById("projected-value");
-
-    function calculateROI() {
-        if (!capitalInput || !returnInput || !projectedValue) return;
-        const capital = parseFloat(capitalInput.value);
-        const monthlyReturn = parseFloat(returnInput.value) / 100;
-        
-        // Compound interest for 12 months
-        let futureValue = capital * Math.pow(1 + monthlyReturn, 12);
-        
-        capitalValue.textContent = "$" + capital.toLocaleString();
-        returnValue.textContent = returnInput.value + "%";
-        projectedValue.textContent = "$" + Math.round(futureValue).toLocaleString();
-    }
-
-    if (capitalInput && returnInput) {
-        capitalInput.addEventListener("input", calculateROI);
-        returnInput.addEventListener("input", calculateROI);
-        calculateROI(); // Initial calc
-    }
-
     // --- Hero Canvas Animation (Candlestick Chart) ---
     const canvas = document.getElementById("heroChart");
     if (canvas) {
