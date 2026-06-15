@@ -1107,9 +1107,79 @@ footer {
     display: block;
 }
 
+.infographic-container {
+    cursor: zoom-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.infographic-container:hover {
+    transform: scale(1.01);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.infographic-hint {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 12px;
+    opacity: 0.7;
+}
+
+/* --- Image Lightbox Modal --- */
+.image-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    opacity: 1;
+}
+
+.image-modal[hidden] {
+    display: none;
+}
+
+.image-modal img {
+    max-width: 100%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 48px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.modal-close:hover {
+    opacity: 1;
+}
+
 @media (max-width: 768px) {
     .infographic-container {
         margin-top: 24px;
+    }
+    .image-modal {
+        padding: 20px;
+    }
+    .modal-close {
+        top: 10px;
+        right: 15px;
+        font-size: 36px;
     }
 }
 
