@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Snipers | Documentation & User Guide</title>
+    <meta name="description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite. Setup tutorials, signal configuration, and EA inputs.">
+    <link rel="canonical" href="https://goldsnipersbot.com/doc.html">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gold Snipers | Documentation & User Guide">
+    <meta property="og:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
+    <meta property="og:image" content="https://goldsnipersbot.com/dashboard.png">
+    <meta property="og:url" content="https://goldsnipersbot.com/doc.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gold Snipers | Documentation & User Guide">
+    <meta name="twitter:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
+    <meta name="twitter:image" content="https://goldsnipersbot.com/dashboard.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css?v=2.0.3">
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+    <div class="bg-glow-gold"></div>
+
+    <!-- Header / Navigation -->
+    <header class="scrolled">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    ⚡ Gold<span>Snipers</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="doc.html" class="active">Documentation</a></li>
+                </ul>
+                <a href="index.html#pricing" class="btn btn-primary btn-sm">Get Started</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="doc-layout">
+            <!-- Table of Contents Sidebar -->
+            <aside class="doc-sidebar glass-panel">
+                <h3>Bridge Documentation</h3>
+                <ul>
+                    <li><a href="#welcome">Welcome</a></li>
+                    <li><a href="#setup">First-Time Setup</a></li>
+                    <li><a href="#channels">Picking Channels</a></li>
+                    <li><a href="#signal-flow">What Happens on Signals</a></li>
+                    <li><a href="#copier-rules">What the Bridge Copies</a></li>
+                    <li><a href="#dashboard">The Dashboard Screen</a></li>
+                    <li><a href="#tester">Signal Test Engine</a></li>
+                    <li><a href="#stats">Performance Stats</a></li>
+                    <li><a href="#multi-terminal">Multi-Terminal Setup</a></li>
+                </ul>
+                <h3 style="margin-top: 30px;">EA Documentation</h3>
+                <ul>
+                    <li><a href="#ea-intro">Inside the MT5 EA</a></li>
+                    <li><a href="#ea-install">Installing the EA</a></li>
+                    <li><a href="#ea-panel">The Chart Panel</a></li>
+                    <li><a href="#tp-splits">Take Profit splits</a></li>
+                    <li><a href="#channel-strat">Channel Strategy</a></li>
+                    <li><a href="#trail-stop">Trailing Stop</a></li>
+                    <li><a href="#sig-guard">Signal Guard (SIG)</a></li>
+                    <li><a href="#manual-btn">Manual Buttons</a></li>
+                    <li><a href="#tg-control">Telegram Controls</a></li>
+                    <li><a href="#trouble">Troubleshooting</a></li>
+                    <li><a href="#ea-inputs">MT5 Input Settings</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Documentation Content -->
+            <main class="doc-content glass-panel">
+                <section id="welcome" class="doc-section">
+                    <h2>Welcome to Gold Snipers</h2>
+                    <p>Gold Snipers is an automated trade copier suite. It reads buy and sell alerts from your Telegram channels and places them on your MetaTrader 5 account automatically, just as if you had clicked the buttons yourself — but in under a second, 24/7, with stop loss, take profit, and risk management already attached.</p>
+                    <p>This guide walks you through everything in plain English. If you have never used a trade copier before, just follow the first three sections and you will be up and running. The advanced sections at the bottom are there for when you are ready to fine-tune.</p>
+                    <div class="doc-tip">
+                        <strong>💡 Tip:</strong> You do NOT need to read this whole page to get started. Skip to 'First-Time Setup' below.
+                    </div>
+                </section>
+
+                <section id="setup" class="doc-section">
+                    <h2>First-Time Setup (5 Minutes)</h2>
+                    <p>If this is your first time, follow these five steps in order and you will be live:</p>
+                    <ul>
+                        <li>1. Open the bridge. You land on the Dashboard.</li>
+                        <li>2. Click 'API Settings' in the left sidebar.</li>
+                        <li>3. Get your Telegram API ID and Hash for free at <a href="https://my.telegram.org" target="_blank" class="cyan-text">my.telegram.org</a> → 'API Development Tools' → create a new app. Paste them in. (Optional: paste a Bot Token from @BotFather if you want to control everything from your phone.)</li>
+                        <li>4. Click 'Save Settings', then click 'Start Bridge' at the bottom of the sidebar. When the dashboard says 'ONLINE' in green, you are connected.</li>
+                        <li>5. Open MetaTrader 5, drag the 'Gold Snipers' EA onto a Gold (XAUUSD) chart. The EA panel will appear on the chart. That's it — you are live.</li>
+                    </ul>
+                    <div class="doc-tip">
+                        <strong>💡 Privacy Note:</strong> Your API details are saved on your own computer. They are never sent anywhere else.
+                    </div>
+                </section>
+
+                <section id="channels" class="doc-section">
+                    <h2>Picking the Telegram Channels to Copy</h2>
+                    <p>After the bridge is online, tell it which Telegram channels to follow:</p>
+                    <ul>
+                        <li>In 'API Settings', click 'Browse Subscribed Channels'.</li>
+                        <li>A window opens showing every Telegram channel you belong to. Click the ones you want to copy trades from — they turn green when selected. Click 'Save Selection'.</li>
+                        <li>Scroll down to 'MetaTrader Instances Manager'. Paste the channel ID (the long negative number like -1001234567890) into the channel box and click 'Add ID'.</li>
+                        <li>Leave the 'Signal File Name' as the default (gsae_signal.txt) for your first account. Only change it if you run more than one MT5 account (see Multi-Terminal below).</li>
+                    </ul>
+                    <div class="doc-tip">
+                        <strong>💡 Pro-tip:</strong> You can add or remove channels at any time. No restart required — changes apply within a few seconds.
+                    </div>
+                </section>
+
+                <section id="signal-flow" class="doc-section">
+                    <h2>What Happens When a Signal Arrives</h2>
+                    <p>From the moment your provider posts a trade in Telegram to the moment it is open on your MT5 chart, the whole flow takes less than a second:</p>
+                    <ul>
+                        <li><strong>Step 1:</strong> Your provider posts something like <code>BUY XAUUSD @ 2320 SL 2290 TP1 2340</code>.</li>
+                        <li><strong>Step 2:</strong> The bridge reads the message, checks it is a real trade (not chat, not a meme, not a duplicate), and writes a tiny instruction file.</li>
+                        <li><strong>Step 3:</strong> The EA inside MT5 reads that file and places the trade on your account with the lot size, stop loss, take profits, and risk rules you have configured.</li>
+                        <li><strong>Step 4:</strong> The trade is now live in your MT5 just like a trade you clicked yourself — it shows in your Terminal, the stop loss protects you, and the take profits will close it automatically.</li>
+                    </ul>
+                    <p>In short: the bridge is the messenger, and the EA is the trader. You do not need to be at your computer for any of it.</p>
+                </section>
+
+                <section id="copier-rules" class="doc-section">
+                    <h2>What the Bridge Copies (and What It Ignores)</h2>
+                    <p>The bridge only acts on messages that look like real trade instructions. It ignores everything else so you do not get phantom trades from chat:</p>
+                    <ul>
+                        <li><strong>Copies:</strong> BUY/SELL with an entry price, stop loss, and take profit levels.</li>
+                        <li><strong>Copies:</strong> Management commands like CLOSE ALL and RISK FREE.</li>
+                        <li><strong>Ignores:</strong> Casual chat, questions, opinions, and 'good morning' messages.</li>
+                        <li><strong>Ignores:</strong> Messages with words you have flagged in 'Exclusion Keywords' (default: 'pip result', 'update').</li>
+                        <li><strong>Ignores:</strong> Pictures, videos, and forwarded messages (you can change this if your provider uses them).</li>
+                    </ul>
+                    <div class="doc-tip">
+                        <strong>💡 Troubleshooting Tip:</strong> If a real trade is being ignored, open 'Signal Test' on the sidebar, paste the message, and you will see exactly why it was filtered out.
+                    </div>
+                </section>
+
+                <section id="dashboard" class="doc-section">
+                    <h2>The Dashboard Screen</h2>
+                    <p>The Dashboard is the home screen. The boxes across the top tell you the basics at a glance:</p>
+                    <ul>
+                        <li><strong>Connection Status:</strong> Green 'ONLINE' means the bridge is connected. Red 'OFFLINE' means click 'Start Bridge'.</li>
+                        <li><strong>Channels Active:</strong> How many Telegram channels the bridge is currently watching.</li>
+                        <li><strong>Messages Copied:</strong> Total number of trades placed since the bridge started.</li>
+                        <li><strong>System Log:</strong> The scrolling text below shows everything the bridge does. You can filter it by channel or date using the dropdowns at the top right.</li>
+                        <li><strong>Export Logs / Clear Logs:</strong> Save the log to a text file, or wipe the display (does not touch your trades or settings).</li>
+                    </ul>
+                </section>
+
+                <section id="tester" class="doc-section">
+                    <h2>Signal Test — Try Before You Go Live</h2>
+                    <p>Want to know if a message will be copied before it happens? Use 'Signal Test' on the sidebar:</p>
+                    <ul>
+                        <li>Paste any trade message into the box on the left.</li>
+                        <li>Click 'Test Signal'.</li>
+                        <li>The right panel shows step by step what the bridge will do: which keywords it picked up, which filters it passed, and the final trade it would place.</li>
+                        <li>Use the Quick Templates at the top to drop in example BUY, SELL, CLOSE ALL, etc.</li>
+                    </ul>
+                    <div class="doc-tip">
+                        <strong>💡 Pro-tip:</strong> Use this to vet a new signal provider — drop in 5 of their past messages and see if they all parse cleanly.
+                    </div>
+                </section>
+
+                <section id="stats" class="doc-section">
+                    <h2>Performance Stats — See How You Are Doing</h2>
+                    <p>Open the 'Analytics' page to see how the copied trades are performing:</p>
+                    <ul>
+                        <li>The top row of cards shows your totals: balance, total profit, this month, this week, today.</li>
+                        <li>Use the 'Instance' dropdown to look at one MT5 account, or 'All Instances' to combine them.</li>
+                        <li>Use the 'Channel' dropdown to see trades from a specific provider.</li>
+                        <li>The buttons (Today, This Week, This Month, All Time) change the date window.</li>
+                        <li>Closed Orders = every trade that finished. Open Orders = trades still running right now (irrelevant columns auto-hide to save space).</li>
+                        <li>Hit 'Performance Stats' in the top-right to open the detailed popup with gain percentage, win rate, best and worst trades, and per-period breakdowns.</li>
+                        <li>Hit 'Export Stats' to download your full history as a spreadsheet.</li>
+                    </ul>
+                    <div class="doc-tip">
+                        <strong>💡 Analytics Tip:</strong> If a provider is consistently losing money, the stats page will show it within a week.
+                    </div>
+                </section>
+
+                <section id="multi-terminal" class="doc-section">
+                    <h2>Multi-Terminal — Running More Than One MT5 Account</h2>
+                    <p>Got two or more MT5 accounts? The bridge can run them all at once. Each account is its own 'instance' with its own trade history, its own signal file, and its own analytics.</p>
+                    <p>To add a second account:</p>
+                    <ul>
+                        <li>1. In 'API Settings', scroll to 'MetaTrader Instances Manager' and click '+ Add MT5 Instance'.</li>
+                        <li>2. Give it a name (for example, 'Gold Snipers Live 2').</li>
+                        <li>3. Pick a Signal File Name (<code>gsae_signal2.txt</code> for the second account, <code>gsae_signal3.txt</code> for the third, and so on). Each instance MUST use a different file name.</li>
+                        <li>4. Enter the MT5 Account ID (License) for the new account.</li>
+                        <li>5. Paste the Telegram channels you want this account to follow. You can give two accounts the same channels, or split them up.</li>
+                        <li>6. Click 'Save Settings' and restart the bridge.</li>
+                    </ul>
+                    <p>On each MT5 account, install the EA and set the matching Signal File Name in the EA inputs. That way the right account reacts to the right signals.</p>
+                    <div class="doc-tip">
+                        <strong>💡 Set and Forget:</strong> You only need to set this up once. After that, switching channels or changing lot sizes is the same as before.
+                    </div>
+                </section>
+
+                <section id="ea-intro" class="doc-section">
+                    <h2>Part 2: Inside the MT5 Expert Advisor</h2>
+                    <p>The Expert Advisor (EA) is the program that runs inside MetaTrader 5. It reads the signal files the bridge writes, places the trade, manages the stop loss, takes the profit, and closes everything for you. You never need to click anything in MT5 — the EA does it all.</p>
+                </section>
+
+                <section id="ea-install" class="doc-section">
+                    <h2>Installing the EA into MT5</h2>
+                    <p>The installer takes care of almost everything. You just need to attach the EA to a chart:</p>
+                    <ul>
+                        <li>Run <code>GoldSnipersInstaller.exe</code> and follow the wizard. It will ask for your MT5 Account ID.</li>
+                        <li>Open MT5, press Ctrl+N to open the Navigator panel, and find 'Gold Snipers' under 'Expert Advisors'.</li>
+                        <li>Drag it onto a Gold (XAUUSD) or major Forex chart.</li>
+                        <li>When the settings window pops up, tick 'Allow Algo Trading' and click OK.</li>
+                        <li>The EA panel appears on your chart. If the 'TELEGRAM' line turns green, you are live.</li>
+                    </ul>
+                    <div class="doc-tip">
+                        <strong>💡 Tuning Tip:</strong> While designed primarily for XAUUSD, the EA scales pip calculations automatically for any symbol it is attached to.
+                    </div>
+                </section>
+
+                <section id="ea-panel" class="doc-section">
+                    <h2>The Panel on Your Chart</h2>
+                    <p>The panel on the chart has all the live numbers. Here is what each line means in plain English:</p>
+                    <ul>
+                        <li><strong>TELEGRAM: ACTIVE</strong> — Green means the EA is connected and ready. Red means it cannot find the signal file (check the Signal File Name in the EA settings matches the bridge).</li>
+                        <li><strong>TG CMD: ON / OFF</strong> — Whether the EA listens to remote commands from Telegram (like STATUS, CLOSE ALL).</li>
+                        <li><strong>CHANNEL</strong> — Which of your two channel slots is active. Click CH1 or CH2 to switch between them.</li>
+                        <li><strong>ANCHOR COUNT</strong> — How many market orders to place the moment a signal arrives (default 1). Think of it as the 'starter' trade.</li>
+                        <li><strong>PENDING COUNT</strong> — How many smaller limit orders to stack behind the anchor (default 5). If price dips back, these fill at better prices.</li>
+                        <li><strong>LADDER STEP</strong> — The spacing in pips between each pending order (default 10 pips).</li>
+                        <li><strong>ANCHOR LOT / PENDING LOT</strong> — Lot size for the market and pending orders (default 0.01).</li>
+                        <li><strong>STOP LOSS</strong> — How far the stop loss sits from your entry in pips (default 50).</li>
+                        <li><strong>RISK</strong> — Shows your risk status (SAFE / MODERATE / AGGRESSIVE), the percentage at risk, the dollar amount, and the Risk-to-Reward ratio. Example: <code>RISK: SAFE (0.27%) $240.00 | R:R 1:1.8 $900.00</code> means you risk $240 to potentially make $900.</li>
+                        <li><strong>EQUITY PROTECT</strong> — Closes every open trade if your total floating P&L reaches this dollar amount (positive = take profit on everything, negative = stop loss on everything). Set to 0 to disable.</li>
+                    </ul>
+                    <div class="doc-tip">
+                        <strong>💡 Risk Tip:</strong> The R:R ratio shows Risk-to-Reward. R:R 1:1.8 means for every $1 you risk, you could make $1.80. Higher is better. If it says 'TP OFF', take profits are disabled so the reward cannot be calculated.
+                    </div>
+                </section>
+
+                <section id="tp-splits" class="doc-section">
+                    <h2>Take Profit — Closing In Pieces</h2>
+                    <p>Instead of waiting for one big take profit, the EA can close your trade in pieces. This is how:</p>
+                    <ul>
+                        <li>TP1 to TP5 are five profit targets for the anchor (the first market order). Each has a pip distance and a percentage.</li>
+                        <li>The percentage says how much of the position closes at that level. You do not need them to add up to 100% — set the last active TP to 100% to close the remainder there. For example: TP1=30%, TP2=30%, TP3=100% means 30% closes at TP1, 30% at TP2, and the remaining 40% at TP3.</li>
+                        <li>Example: TP1 = 30 pips / 30%, TP2 = 60 pips / 30%, TP3 = 100 pips / 40%. When price hits 30 pips in your favour, 30% closes. At 60 pips, another 30%. At 100 pips, the final 40%.</li>
+                        <li>TP6 to TP10 are additional take profit levels (same as TP1–TP5 but on the second page). All 10 levels apply to every position in the ladder. Use TP1–TP5 for your primary exits and TP6–TP10 for extended targets.</li>
+                        <li>Lot size needs to be big enough to split: 0.01 lot is the smallest, so a 30/30/40 split needs at least 0.03 lot to close 0.01 per level.</li>
+                    </ul>
+                    <div class="doc-tip">
+                        <strong>💡 Beginners:</strong> If you are new, just leave the defaults. They are tuned for scalping. Adjust once you have a few weeks of trades to look at.
+                    </div>
+                </section>
+
+                <section id="channel-strat" class="doc-section">
+                    <h2>Channel Strategy — How Each Provider Is Traded</h2>
+                    <p>You can switch how the EA behaves for each provider channel. Click the value on the chart to change it. Here is what each one does:</p>
+                    <ul>
+                        <li><strong>HARVEST (ON/OFF):</strong> When ON, the EA picks the best entry in the family (lowest for buys, highest for sells) and lets it run to full profit. All the other entries get moved to break even plus a small buffer, so they are risk-free. The best one carries the trade.</li>
+                        <li><strong>GRID (ON/OFF):</strong> When ON, the EA places the pending limit orders to add layers if price retraces. Pro: better average entry. Con: more total risk because the stop loss covers all of them.</li>
+                        <li><strong>TP ON/OFF:</strong> Master switch for take profit management. Turn OFF if you want to close trades manually only.</li>
+                        <li><strong>TP STEALTH (ON/OFF):</strong> When ON, the broker only sees your stop loss, not your take profits. The EA closes them in the background. Some traders prefer this so the broker does not see their full plan.</li>
+                        <li><strong>ANCHOR DISTRIBUTED / UNIFIED:</strong> DISTRIBUTED: each anchor entry has its own TP (entry 1 closes at TP1, entry 2 at TP2, etc). UNIFIED: all anchor entries share the same highest TP.</li>
+                        <li><strong>BE MODE: ENTRY vs ANCHOR:</strong> ENTRY: break even is calculated per trade. ANCHOR: break even is calculated from the worst entry in the family, so the whole group moves together.</li>
+                        <li><strong>DEL LIMITS:</strong> Which TP level cancels the pending (grid) orders. 'OFF' keeps them active all the way. 'TP2' cancels them once TP2 is hit.</li>
+                        <li><strong>BREAKEVEN:</strong> Which TP level moves the stop loss to entry price. 'TP2' means once TP2 is reached, the SL jumps to break even (no more risk on the trade).</li>
+                        <li><strong>SIG GUARD:</strong> Skips a signal if the price has already moved too far from the quoted entry. Default OFF (0 pips).</li>
+                    </ul>
+                </section>
+
+                <section id="trail-stop" class="doc-section">
+                    <h2>Trailing Stop — Locking In Profit</h2>
+                    <p>A trailing stop moves your stop loss forward as price moves in your favour. It only kicks in after the trade is already at break even:</p>
+                    <ul>
+                        <li><strong>OFF:</strong> No trailing. The stop loss stays put until hit or you change it.</li>
+                        <li><strong>CANDLE:</strong> The stop loss follows the previous M15 candle's low (for buys) or high (for sells), minus a small padding. Ratchets forward as each new M15 candle closes.</li>
+                        <li><strong>FRACTAL:</strong> Like CANDLE, but follows a swing structure (5-bar low/high) instead of one candle. More conservative, fewer moves.</li>
+                        <li><strong>STEP:</strong> Trails by a fixed distance behind the price. Ratchets forward in steps based on your configuration.</li>
+                    </ul>
+                    <p>🔧 <strong>Trail Modifier Settings</strong> (Adjustable in the MT5 Inputs window, not on the chart panel):</p>
+                    <ul>
+                        <li><strong>Trail Distance:</strong> The distance (default 20 pips) the stop loss trails behind the current price in STEP mode.</li>
+                        <li><strong>Trail Step:</strong> The minimum price movement (default 5 pips) required before the stop loss ratchets forward in STEP mode.</li>
+                        <li><strong>PADDING:</strong> A small buffer (default 0.0 pips) added behind CANDLE or FRACTAL levels. Stops the SL from sitting exactly on a candle level where a normal wick could hit it.</li>
+                    </ul>
+                </section>
+
+                <section id="sig-guard" class="doc-section">
+                    <h2>Signal Guard (SIG GUARD) — Don't Chase Bad Trades</h2>
+                    <p>Signal Guard is the EA's safety net for bad timing. Sometimes your provider posts a trade and by the time the EA sees it, the price has already moved 20 pips. Without SIG GUARD, the EA would still enter the trade and you would be starting in the red. With SIG GUARD on, the EA will say 'too late' and skip it.</p>
+                    <p>In one sentence: SIG GUARD = the maximum number of pips the price can move between when the provider posts the trade and when the EA gets it. If price has moved more than that, the trade is skipped.</p>
+                    <p>How it works (the simple version):</p>
+                    <ul>
+                        <li><strong>Signal includes an entry price:</strong> the EA measures how far price has moved from that entry. If it is MORE than your SIG GUARD value, the trade is skipped. If it is within your value, the trade goes in.</li>
+                        <li><strong>Signal says 'BUY NOW' with no entry price:</strong> the trade goes in immediately at the current market price. No holding, no waiting.</li>
+                        <li><strong>Updating an open trade (e.g. 'MOVE SL TO 2395'):</strong> SIG GUARD is never applied. Updates to trades you already have always go through.</li>
+                    </ul>
+                    <div class="doc-tip">
+                        <strong>💡 Safety Note:</strong> If you see 'LATE GUARD REJECT' lines in the EA's log, the price moved too far. Either raise SIG GUARD, or just accept that the trade was skipped — that is the safety net working.
+                    </div>
+                </section>
+
+                <section id="manual-btn" class="doc-section">
+                    <h2>Manual Buttons on the EA Panel</h2>
+                    <p>At the bottom of the EA panel there are buttons for when you want to act by hand:</p>
+                    <ul>
+                        <li><strong>BUY / SELL:</strong> Place a trade right now at the market price, using your usual lot size and settings.</li>
+                        <li><strong>BUY LIMIT / SELL LIMIT:</strong> Place a pending order at the exact target price entered in the input box. You must enter at least 4 digits total (e.g. the 2 prefilled prefix digits plus the remaining digits of your target price like '2345'). Typing 2 or 3 digits is no longer supported to prevent accidental invalid trades.</li>
+                        <li><strong>CLOSE ALL:</strong> Close every open trade immediately.</li>
+                        <li><strong>CANCEL LIMITS:</strong> Cancel all your pending limit orders (open trades are not touched).</li>
+                    </ul>
+                    <div class="doc-tip">
+                        <strong>💡 Manual Note:</strong> The manual buttons use the exact same lot size, stop loss, and take profit rules as signals. So pressing BUY is identical to the EA receiving a 'BUY NOW' signal.
+                    </div>
+                </section>
+
+                <section id="tg-control" class="doc-section">
+                    <h2>Controlling Everything From Telegram</h2>
+                    <p>If you set up a Bot Token during setup, you can control the bridge and EA from your phone:</p>
+                    <ul>
+                        <li>Open Telegram, find your bot, send /start.</li>
+                        <li>The bot shows a menu. Tap numbers to navigate (1 = Channel 1 settings, 2 = Channel 2 settings, etc).</li>
+                        <li>Send <code>STATUS</code> any time to see all current settings in one message.</li>
+                        <li>Send <code>CLOSE ALL</code> to close every open trade from your phone.</li>
+                        <li>Send <code>RISK FREE</code> to move every stop loss to break even.</li>
+                        <li>Send <code>SET LOT_ANC 0.05</code> to change a setting (in this case, anchor lot size to 0.05).</li>
+                    </ul>
+                    <div class="doc-tip">
+                        <strong>💡 Remote Control:</strong> Admin commands work even when you are away from your computer — useful for closing trades on the go.
+                    </div>
+                </section>
+
+                <section id="trouble" class="doc-section">
+                    <h2>Things That Go Wrong (and How to Fix Them)</h2>
+                    <p>If something is not working, walk down this list:</p>
+                    <ul>
+                        <li><strong>Bridge shows OFFLINE:</strong> Click 'Start Bridge' in the sidebar. If it still fails, double-check your API ID and Hash under API Settings.</li>
+                        <li><strong>No signals are being copied:</strong> Make sure the EA is on a valid chart. Check the System Log on the Dashboard for clues.</li>
+                        <li><strong>EA shows 'TELEGRAM: RED':</strong> The EA cannot find the signal file. In the EA settings, confirm the 'Signal File Name' exactly matches the one in the bridge (default gsae_signal.txt).</li>
+                        <li><strong>Trades never close at TP:</strong> Confirm the TP levels are not all set to 0. Confirm TP mode is ON. Check that at least one TP is active with a percentage above 0%.</li>
+                        <li><strong>Duplicate trades on the same signal:</strong> Go to 'Parsing Settings' and add words like 'update', 'pip result', 'closed' to your exclusion list so the bridge ignores them.</li>
+                    </ul>
+                    <div class="doc-tip">
+                        <strong>💡 Log Check:</strong> The System Log on the Dashboard is your best friend. It shows every action the bridge takes in plain text — if something is going wrong, the answer is almost always in there.
+                    </div>
+                </section>
+
+                <section id="ea-inputs" class="doc-section">
+                    <h2>MT5 Input Settings — Good to Know</h2>
+                    <p>When you drag the EA onto the chart or double-click it, MT5 shows an Inputs window. Here are the most important settings you should know:</p>
+                    <ul>
+                        <li><strong>Signal Profile (InpSignalFile):</strong> Tells the EA which bridge file to read (default is SIGNAL_FILE_1 / gsae_signal.txt). If you run multiple accounts, each must use a different file matching its bridge instance.</li>
+                        <li><strong>Minimal Customer UI (InpMinimalCustomerUI):</strong> Keep this ON (true) for a clean dashboard. Turn it OFF if you want to see advanced debugging info and hidden stats on the chart.</li>
+                        <li><strong>EA Magic Number (InpMagic):</strong> A unique identifier for this EA instance's trades. Always keep this unique per chart/account so different EAs do not interfere with each other.</li>
+                        <li><strong>Max Allowed Spread (InpMaxSpreadPips):</strong> Prevents trades from opening if the broker's spread is wider than this (default 4.0 pips).</li>
+                        <li><strong>Slippage Guard (InpDefaultGuardPips / InpSafetyCapPips):</strong> The maximum deviation in pips allowed from the signal's quoted entry price (default is 10.0 pips) to protect you from bad broker fills.</li>
+                        <li><strong>Equity Protect (InpDefaultEquityProtect):</strong> Sets the default profit target (positive dollar value) or drawdown limit (negative dollar value) where the EA will close all trades to protect your account.</li>
+                        <li><strong>Broker Time Alignment:</strong> Session lines and Killzones draw based on a default GMT+3 server time. If your broker uses a different server offset, you must adjust these hour inputs in MT5 to align.</li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>⚡ Gold<span>Snipers</span></h2>
+                    <p>Professional algorithmic trading solutions for MetaTrader 5 and Telegram integrations. Built by traders, for traders.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="doc.html">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="mailto:support@goldsnipers.com">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <strong>Risk Warning:</strong> Trading financial instruments, including foreign exchange (Forex) and contracts for difference (CFDs) on margin, carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade, you should carefully consider your investment objectives, level of experience, and risk appetite. Past performance of any automated strategy or EA is not indicative of future results.
+                <br><br>
+                &copy; 2026 Gold Snipers. All rights reserved. Built for MT5.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=2.0.3"></script>
+</body>
+</html>

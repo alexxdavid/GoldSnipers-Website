@@ -1,46 +1,76 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- Sticky Header ---
-    const header = document.querySelector("header");
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    });
+    initStickyHeader();
+    initMobileMenu();
+    initPricingToggle();
+    initFaqAccordion();
+    initHeroChart();
+    initShowcaseTabs();
+    initScrollspy();
+});
 
-    // --- Mobile Menu Toggle ---
+// --- Sticky Header ---
+function initStickyHeader() {
+    const header = document.querySelector("header");
+    if (!header) return;
+
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                header.classList.toggle("scrolled", window.scrollY > 50);
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+}
+
+// --- Mobile Menu Toggle ---
+function initMobileMenu() {
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
+    if (!menuToggle || !navLinks) return;
 
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-            // Animate toggle lines
-            const spans = menuToggle.querySelectorAll("span");
-            spans[0].style.transform = navLinks.classList.contains("active") ? "rotate(45deg) translate(6px, 6px)" : "none";
-            spans[1].style.opacity = navLinks.classList.contains("active") ? "0" : "1";
-            spans[2].style.transform = navLinks.classList.contains("active") ? "rotate(-45deg) translate(6px, -6px)" : "none";
-        });
+    menuToggle.setAttribute("aria-label", "Toggle navigation");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-controls", "main-nav");
+    navLinks.id = "main-nav";
 
-        // Close menu on link click
-        navLinks.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                navLinks.classList.remove("active");
-                const spans = menuToggle.querySelectorAll("span");
-                spans[0].style.transform = "none";
-                spans[1].style.opacity = "1";
-                spans[2].style.transform = "none";
-            });
-        });
+    function updateMenuIcon(isOpen) {
+        const spans = menuToggle.querySelectorAll("span");
+        spans[0].style.transform = isOpen ? "rotate(45deg) translate(6px, 6px)" : "none";
+        spans[1].style.opacity = isOpen ? "0" : "1";
+        spans[2].style.transform = isOpen ? "rotate(-45deg) translate(6px, -6px)" : "none";
     }
 
-    // --- Pricing Toggle (Monthly vs Annual) ---
+    menuToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("active");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        updateMenuIcon(isOpen);
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+            updateMenuIcon(false);
+        });
+    });
+}
+
+// --- Pricing Toggle ---
+function initPricingToggle() {
     const toggleSwitch = document.querySelector(".toggle-switch");
     const monthlyLabel = document.getElementById("billing-monthly");
     const annualLabel = document.getElementById("billing-annual");
     const prices = document.querySelectorAll(".price-value");
     const billingPeriods = document.querySelectorAll(".billing-period");
+    if (!toggleSwitch || !monthlyLabel || !annualLabel || prices.length === 0) return;
+
+    toggleSwitch.setAttribute("role", "switch");
+    toggleSwitch.setAttribute("aria-checked", "false");
+    toggleSwitch.setAttribute("tabindex", "0");
+    toggleSwitch.setAttribute("aria-label", "Toggle annual billing");
 
     const pricingData = {
         monthly: [
@@ -51,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         annual: [
             { price: "$35", period: "/ month (billed annually)" },
             { price: "$59", period: "/ month (billed annually)" },
-            { price: "$499", period: "one-time" } // Lifetime doesn't change
+            { price: "$499", period: "one-time" }
         ]
     };
 
@@ -64,55 +94,342 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    if (toggleSwitch) {
-        toggleSwitch.addEventListener("click", () => {
-            toggleSwitch.classList.toggle("active");
-            const isAnnual = toggleSwitch.classList.contains("active");
-            
-            if (isAnnual) {
-                annualLabel.classList.add("active");
-                monthlyLabel.classList.remove("active");
-                updatePricing("annual");
-            } else {
-                monthlyLabel.classList.add("active");
-                annualLabel.classList.remove("active");
-                updatePricing("monthly");
-            }
-        });
+    function setBilling(isAnnual) {
+        toggleSwitch.classList.toggle("active", isAnnual);
+        toggleSwitch.setAttribute("aria-checked", isAnnual ? "true" : "false");
+        if (isAnnual) {
+            annualLabel.classList.add("active");
+            monthlyLabel.classList.remove("active");
+            updatePricing("annual");
+        } else {
+            monthlyLabel.classList.add("active");
+            annualLabel.classList.remove("active");
+            updatePricing("monthly");
+        }
+        try {
+            localStorage.setItem("gs_billing_mode", isAnnual ? "annual" : "monthly");
+        } catch (e) {
+            // ignore storage errors
+        }
     }
 
-    // --- FAQ Accordion ---
+    // Restore saved preference
+    let savedMode = null;
+    try {
+        savedMode = localStorage.getItem("gs_billing_mode");
+    } catch (e) {
+        // ignore
+    }
+    if (savedMode === "annual") {
+        setBilling(true);
+    }
+
+    toggleSwitch.addEventListener("click", () => {
+        setBilling(!toggleSwitch.classList.contains("active"));
+    });
+
+    toggleSwitch.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setBilling(!toggleSwitch.classList.contains("active"));
+        }
+    });
+}
+
+// --- FAQ Accordion ---
+function initFaqAccordion() {
     const faqItems = document.querySelectorAll(".faq-item");
     faqItems.forEach(item => {
         const question = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+        if (!question || !answer) return;
+
+        question.setAttribute("aria-expanded", "false");
+        question.setAttribute("aria-controls", answer.id || (answer.id = "faq-answer-" + Math.random().toString(36).substr(2, 9)));
+        answer.setAttribute("role", "region");
+        answer.setAttribute("aria-labelledby", question.id || (question.id = "faq-question-" + Math.random().toString(36).substr(2, 9)));
+
         question.addEventListener("click", () => {
-            // Close other items
+            const isActive = item.classList.toggle("active");
+            question.setAttribute("aria-expanded", isActive ? "true" : "false");
             faqItems.forEach(otherItem => {
                 if (otherItem !== item && otherItem.classList.contains("active")) {
                     otherItem.classList.remove("active");
+                    const otherQuestion = otherItem.querySelector(".faq-question");
+                    if (otherQuestion) otherQuestion.setAttribute("aria-expanded", "false");
                 }
             });
-            item.classList.toggle("active");
         });
     });
+}
 
-    // --- Mock Chart Bar Animation ---
-    const bars = document.querySelectorAll(".chart-mock .bar");
-    function animateChart() {
-        bars.forEach(bar => {
-            const currentHeight = bar.style.height || "50%";
-            // Randomly vary height slightly to look like active trading ticks
-            const base = parseFloat(currentHeight);
-            const variation = (Math.random() - 0.5) * 15;
-            let newHeight = Math.max(10, Math.min(95, base + variation));
-            bar.style.height = `${newHeight}%`;
-        });
+// --- Hero Canvas Animation (Candlestick Chart) ---
+function initHeroChart() {
+    const canvas = document.getElementById("heroChart");
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    let width = canvas.parentElement.offsetWidth;
+    let height = canvas.parentElement.offsetHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    const consoleText = document.getElementById("console-text");
+    let lastConsoleState = -1;
+
+    let resizeTimeout;
+    window.addEventListener("resize", () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            width = canvas.parentElement.offsetWidth;
+            height = canvas.parentElement.offsetHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }, 150);
+    });
+
+    let time = 0;
+    const candles = [];
+    const maxCandles = 20;
+
+    let lastClose = height / 2 + 50;
+    for (let i = 0; i < maxCandles; i++) {
+        let open = lastClose;
+        let close = open + (Math.random() - 0.5) * 40;
+        let high = Math.min(open, close) - Math.random() * 20;
+        let low = Math.max(open, close) + Math.random() * 20;
+        candles.push({ open, close, high, low });
+        lastClose = close;
     }
-    
-    // Set initial heights
-    bars.forEach(bar => {
-        bar.style.height = `${Math.floor(Math.random() * 60) + 20}%`;
-    });
 
-    setInterval(animateChart, 1500);
-});
+    let executionTimer = 0;
+    let isAnimating = true;
+    let rafId = null;
+
+    function updateConsole() {
+        if (!consoleText) return;
+        let state = 0;
+        let html = "";
+        if (executionTimer < 50) {
+            state = 0;
+            html = "[BOT POLL] Listening to Telegram...<br><span class='highlight'>Waiting for setup...</span>";
+        } else if (executionTimer < 100) {
+            state = 1;
+            html = "[BOT POLL] Listening to Telegram...<br><span class='highlight'>Waiting for setup...</span>" +
+                   "<br>[0.5s] Signal detected: BUY XAUUSD @ 2354";
+        } else {
+            state = 2;
+            html = "[BOT POLL] Listening to Telegram...<br><span class='highlight'>Waiting for setup...</span>" +
+                   "<br>[0.5s] Signal detected: BUY XAUUSD @ 2354" +
+                   "<br><span class='exec'>[EA EXEC] Anchor + Grid Placed!</span>";
+        }
+        if (state !== lastConsoleState) {
+            consoleText.innerHTML = html;
+            lastConsoleState = state;
+        }
+    }
+
+    function drawChart() {
+        if (!isAnimating) return;
+
+        ctx.clearRect(0, 0, width, height);
+
+        const candleWidth = (width / maxCandles) * 0.6;
+        const spacing = width / maxCandles;
+
+        // Draw Grid Lines
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
+        ctx.lineWidth = 1;
+        for (let i = 0; i < 5; i++) {
+            let y = (height / 5) * i;
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(width, y);
+            ctx.stroke();
+        }
+
+        // Animate latest candle
+        time += 0.05;
+        let currentCandle = candles[candles.length - 1];
+        currentCandle.close += Math.sin(time) * 0.5;
+        if (currentCandle.close < currentCandle.high) currentCandle.high = currentCandle.close;
+        if (currentCandle.close > currentCandle.low) currentCandle.low = currentCandle.close;
+
+        // Shift candles over time
+        if (time > 10) {
+            time = 0;
+            candles.shift();
+            let open = candles[candles.length - 1].close;
+            let close = open + (Math.random() - 0.4) * 40;
+            let high = Math.min(open, close) - Math.random() * 20;
+            let low = Math.max(open, close) + Math.random() * 20;
+            candles.push({ open, close, high, low });
+        }
+
+        // Draw Candles
+        candles.forEach((c, i) => {
+            let x = i * spacing + spacing / 2;
+            let isBullish = c.close < c.open;
+            ctx.strokeStyle = isBullish ? "#00D2D3" : "#E5A93B";
+            ctx.fillStyle = isBullish ? "rgba(0, 210, 211, 0.8)" : "rgba(229, 169, 59, 0.8)";
+
+            // Draw Wick
+            ctx.beginPath();
+            ctx.moveTo(x, c.high);
+            ctx.lineTo(x, c.low);
+            ctx.stroke();
+
+            // Draw Body
+            let bodyY = Math.min(c.open, c.close);
+            let bodyH = Math.max(Math.abs(c.close - c.open), 2);
+            ctx.fillRect(x - candleWidth / 2, bodyY, candleWidth, bodyH);
+        });
+
+        // Bridge Execution Animation overlay
+        executionTimer++;
+        if (executionTimer > 200) executionTimer = 0;
+
+        if (executionTimer > 50) {
+            let targetX = (maxCandles - 3) * spacing + spacing / 2;
+            let targetY = candles[maxCandles - 3].close;
+
+            ctx.fillStyle = "#00D2D3";
+            ctx.beginPath();
+            ctx.arc(targetX, targetY, 4, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.font = "10px 'JetBrains Mono'";
+            ctx.fillStyle = "#FFFFFF";
+            ctx.fillText("BUY 0.10", targetX + 10, targetY + 3);
+
+            ctx.strokeStyle = "rgba(0, 210, 211, 0.5)";
+            ctx.setLineDash([5, 5]);
+            ctx.beginPath();
+            ctx.moveTo(0, targetY);
+            ctx.lineTo(width, targetY);
+            ctx.stroke();
+            ctx.setLineDash([]);
+        }
+
+        if (executionTimer > 100) {
+            let targetY = candles[maxCandles - 3].close;
+            for (let j = 1; j <= 3; j++) {
+                let gridY = targetY + (j * 20);
+                ctx.fillStyle = "rgba(229, 169, 59, 0.8)";
+                ctx.beginPath();
+                ctx.arc((maxCandles - 3) * spacing + spacing / 2, gridY, 3, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.strokeStyle = "rgba(229, 169, 59, 0.3)";
+                ctx.setLineDash([2, 4]);
+                ctx.beginPath();
+                ctx.moveTo(0, gridY);
+                ctx.lineTo(width, gridY);
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
+        }
+
+        updateConsole();
+        rafId = requestAnimationFrame(drawChart);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !isAnimating) {
+                isAnimating = true;
+                rafId = requestAnimationFrame(drawChart);
+            } else if (!entry.isIntersecting) {
+                isAnimating = false;
+                if (rafId) cancelAnimationFrame(rafId);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(canvas.parentElement);
+    rafId = requestAnimationFrame(drawChart);
+}
+
+// --- Showcase Tab Logic ---
+function initShowcaseTabs() {
+    const tabs = document.querySelectorAll(".showcase-tab");
+    const displayImage = document.getElementById("showcase-display");
+    const imageMap = {
+        "dashboard-img": "dashboard",
+        "parsing-img": "parsing",
+        "test-img": "signal_test",
+        "analytics-img": "analytics"
+    };
+
+    if (!displayImage) return;
+
+    const picture = displayImage.closest("picture");
+    const source = picture ? picture.querySelector("source") : null;
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            tabs.forEach(t => {
+                t.classList.remove("active");
+                t.setAttribute("aria-selected", "false");
+                t.setAttribute("tabindex", "-1");
+            });
+            tab.classList.add("active");
+            tab.setAttribute("aria-selected", "true");
+            tab.setAttribute("tabindex", "0");
+            tab.focus();
+
+            const target = tab.getAttribute("data-target");
+            const baseName = imageMap[target];
+            if (baseName) {
+                displayImage.style.opacity = "0.3";
+                setTimeout(() => {
+                    const webpSrc = `${baseName}.webp`;
+                    const pngSrc = `${baseName}.png`;
+                    const img = new Image();
+                    img.onload = () => {
+                        if (source) source.srcset = webpSrc;
+                        displayImage.src = webpSrc;
+                        displayImage.style.opacity = "1";
+                    };
+                    img.onerror = () => {
+                        if (source) source.srcset = "";
+                        displayImage.src = pngSrc;
+                        displayImage.style.opacity = "1";
+                    };
+                    img.src = webpSrc;
+                }, 150);
+            }
+        });
+    });
+}
+
+// --- Documentation Sidebar Scrollspy ---
+function initScrollspy() {
+    const sidebar = document.querySelector(".doc-sidebar");
+    if (!sidebar) return;
+
+    const links = sidebar.querySelectorAll("a");
+    const sections = document.querySelectorAll(".doc-section");
+    if (links.length === 0 || sections.length === 0) return;
+
+    function changeActiveLink() {
+        let index = sections.length;
+        while (--index && window.scrollY + 180 < sections[index].offsetTop) {}
+
+        links.forEach(link => link.classList.remove("active"));
+        if (links[index]) links[index].classList.add("active");
+    }
+
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                changeActiveLink();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    changeActiveLink();
+}
