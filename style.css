@@ -908,6 +908,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+    header .btn-primary {
+        display: none;
+    }
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
