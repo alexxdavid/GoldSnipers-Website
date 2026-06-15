@@ -45,12 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const pricingData = {
         monthly: [
             { price: "$49", period: "/ month" },
-            { price: "$99", period: "/ month" },
+            { price: "$89", period: "/ month" },
             { price: "$499", period: "one-time" }
         ],
         annual: [
             { price: "$35", period: "/ month (billed annually)" },
-            { price: "$69", period: "/ month (billed annually)" },
+            { price: "$59", period: "/ month (billed annually)" },
             { price: "$499", period: "one-time" } // Lifetime doesn't change
         ]
     };
