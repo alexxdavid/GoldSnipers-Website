@@ -29,7 +29,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=2.0.6">
+    <link rel="stylesheet" href="style.css?v=2.0.8">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -210,14 +210,68 @@
         </div>
     </section>
 
+    <!-- Why Gold Snipers -->
+    <section class="why-section section-padding" style="padding-bottom: 0;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Why <span class="cyan-text">Gold Snipers?</span></h2>
+                <p>Stop manually copying signals and reacting too late. Gold Snipers bridges Telegram and MetaTrader 5 so every setup is executed with precision.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card glass-panel">
+                    <div class="why-icon">⏱️</div>
+                    <h3>Save Time & Effort</h3>
+                    <p>No more switching between Telegram and MetaTrader. The bridge parses signal text, applies your channel rules, and passes the trade to the EA automatically.</p>
+                </div>
+                <div class="why-card glass-panel">
+                    <div class="why-icon">⚡</div>
+                    <h3>Never Miss a Signal</h3>
+                    <p>Signals are processed in under 0.5 seconds — even while you sleep. Anti-duplicate safety ensures the same alert never triggers twice.</p>
+                </div>
+                <div class="why-card glass-panel">
+                    <div class="why-icon">🛡️</div>
+                    <h3>Manage Risk Like a Pro</h3>
+                    <p>Stealth TP/SL hides your levels from the broker, drawdown guardians protect prop-firm accounts, and dynamic grid controls keep sizing disciplined.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>How It <span class="cyan-text">Works</span></h2>
+                <p>From Telegram alert to live trade in three simple steps.</p>
+            </div>
+            <div class="how-grid">
+                <div class="how-card glass-panel">
+                    <div class="how-step">01</div>
+                    <h3>Install Bridge & EA</h3>
+                    <p>Run the Python Telegram Bridge on your PC or VPS, and attach the Gold Snipers Expert Advisor to your MT5 chart.</p>
+                </div>
+                <div class="how-card glass-panel">
+                    <div class="how-step">02</div>
+                    <h3>Connect Channels</h3>
+                    <p>Link up to 12 Telegram signal channels, define lot sizing, risk limits, and filters per provider.</p>
+                </div>
+                <div class="how-card glass-panel">
+                    <div class="how-step">03</div>
+                    <h3>Trade Automatically</h3>
+                    <p>The EA opens, manages, and closes trades based on the signal — with ladders, partials, break-even, and stealth protection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- How It Works Infographic -->
     <section class="infographic-section section-padding" style="padding-bottom: 0;">
         <div class="container">
             <div class="section-header text-center">
-                <h2>How It <span class="cyan-text">Works</span></h2>
+                <h2>The Automation <span class="cyan-text">Flow</span></h2>
                 <p>From Telegram signal to executed trade on MetaTrader 5 — fully automated in under 0.5 seconds.</p>
             </div>
-            <div class="infographic-container" data-full="gold-snipers-overview.png" tabindex="0" role="button" aria-label="Enlarge How It Works infographic">
+            <div class="infographic-container" data-full="gold-snipers-overview.png" tabindex="0" role="button" aria-label="Enlarge automation flow infographic">
                 <picture>
                     <source srcset="gold-snipers-overview.webp" type="image/webp">
                     <img src="gold-snipers-overview.png" alt="Gold Snipers automation flow: Telegram signals are detected, processed, and executed on MetaTrader 5" class="infographic" loading="lazy" width="1024" height="1024">
@@ -289,7 +343,60 @@
                     <img src="gold-snipers-addons.png" alt="Gold Snipers safety and power add-ons: performance tracker, pivot levels, FVG and order block scanner, interactive trades terminal, GMT killzones, anchor shave allocations, trailing engines, and trailing stop modes" class="infographic" loading="lazy" width="1024" height="1024">
                 </picture>
             </div>
-            <p class="infographic-hint">Click image to enlarge</p>
+            <p class="infographic-hint">Click image to enlarge — or <a href="infographics.html">view readable version</a></p>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section section-padding" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Gold Snipers <span class="cyan-text">vs Manual Trading</span></h2>
+                <p>See why traders automate their signal copying with Gold Snipers.</p>
+            </div>
+            <div class="comparison-table-wrapper glass-panel">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Manual Copying</th>
+                            <th class="highlight-col">Gold Snipers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Execution Speed</td>
+                            <td>10–60 seconds</td>
+                            <td class="highlight-col">&lt; 0.5 seconds</td>
+                        </tr>
+                        <tr>
+                            <td>Missed Signals</td>
+                            <td>Common overnight or busy periods</td>
+                            <td class="highlight-col">24/7 automated monitoring</td>
+                        </tr>
+                        <tr>
+                            <td>Duplicate Trades</td>
+                            <td>Risk of double entries</td>
+                            <td class="highlight-col">Smart anti-duplicate filter</td>
+                        </tr>
+                        <tr>
+                            <td>Risk Management</td>
+                            <td>Manual SL/TP entry</td>
+                            <td class="highlight-col">Stealth TP/SL, grid, BE, drawdown guard</td>
+                        </tr>
+                        <tr>
+                            <td>Prop Firm Safety</td>
+                            <td>Hard to enforce rules</td>
+                            <td class="highlight-col">Built-in drawdown & session guards</td>
+                        </tr>
+                        <tr>
+                            <td>Analytics</td>
+                            <td>Spreadsheet tracking</td>
+                            <td class="highlight-col">SQLite performance database</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
@@ -480,6 +587,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=2.0.6"></script>
+    <script src="script.js?v=2.0.8"></script>
 </body>
 </html>

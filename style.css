@@ -898,6 +898,20 @@ footer {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+    .why-grid,
+    .how-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 40px auto 0;
+    }
+    .comparison-table-wrapper {
+        padding: 20px;
+    }
+    .comparison-table th,
+    .comparison-table td {
+        padding: 14px 12px;
+        font-size: 14px;
+    }
 }
 
 /* --- Documentation Page --- */
@@ -1133,6 +1147,136 @@ footer {
 
 .infographic-hint a:hover {
     color: var(--accent-gold);
+}
+
+/* --- Why Section --- */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.why-card {
+    padding: 40px 30px;
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+}
+
+.why-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.why-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.why-card p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* --- How It Works Section --- */
+.how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+    position: relative;
+}
+
+.how-card {
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.how-card:hover {
+    transform: translateY(-8px);
+}
+
+.how-step {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--gold-gradient);
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    box-shadow: 0 0 25px rgba(229, 169, 59, 0.4);
+}
+
+.how-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.how-card p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* --- Comparison Table --- */
+.comparison-table-wrapper {
+    max-width: 900px;
+    margin: 60px auto 0;
+    padding: 40px;
+    overflow-x: auto;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 18px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table th {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.comparison-table td {
+    color: var(--text-main);
+}
+
+.comparison-table .highlight-col {
+    color: var(--accent-gold);
+    font-weight: 700;
+    background: rgba(229, 169, 59, 0.06);
+}
+
+.comparison-table th.highlight-col {
+    background: rgba(229, 169, 59, 0.12);
+    color: var(--accent-gold);
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
 }
 
 /* --- Image Lightbox Modal --- */
