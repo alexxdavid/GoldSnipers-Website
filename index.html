@@ -5,7 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gold Snipers | Premium MT5 Expert Advisor & Telegram Copier Suite</title>
     <meta name="description" content="Automate your XAUUSD and Forex trading with Gold Snipers. Real-time Telegram-to-MT5 copier bridge, advanced FVG & Order Block filters, and Stealth TP protection.">
-    <link rel="stylesheet" href="style.css?v=2.0.2">
+    <link rel="canonical" href="https://goldsnipersbot.com/">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gold Snipers | Premium MT5 Expert Advisor & Telegram Copier Suite">
+    <meta property="og:description" content="Automate your XAUUSD and Forex trading with Gold Snipers. Real-time Telegram-to-MT5 copier bridge, advanced FVG & Order Block filters, and Stealth TP protection.">
+    <meta property="og:image" content="https://goldsnipersbot.com/dashboard.png">
+    <meta property="og:url" content="https://goldsnipersbot.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gold Snipers | Premium MT5 Expert Advisor & Telegram Copier Suite">
+    <meta name="twitter:description" content="Automate your XAUUSD and Forex trading with Gold Snipers. Real-time Telegram-to-MT5 copier bridge, advanced FVG & Order Block filters, and Stealth TP protection.">
+    <meta name="twitter:image" content="https://goldsnipersbot.com/dashboard.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css?v=2.0.3">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "name": "Gold Snipers",
+                "url": "https://goldsnipersbot.com/",
+                "description": "Premium MT5 Expert Advisor and Telegram-to-MT5 trade copier suite for automated XAUUSD and Forex trading."
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Gold Snipers EA",
+                "applicationCategory": "FinanceApplication",
+                "operatingSystem": "Windows",
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "name": "Starter Licence",
+                        "price": "49",
+                        "priceCurrency": "USD",
+                        "priceValidUntil": "2027-06-15",
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://goldsnipersbot.com/#pricing"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Pro Trader Suite",
+                        "price": "89",
+                        "priceCurrency": "USD",
+                        "priceValidUntil": "2027-06-15",
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://goldsnipersbot.com/#pricing"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Lifetime Pass",
+                        "price": "499",
+                        "priceCurrency": "USD",
+                        "priceValidUntil": "2027-06-15",
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://goldsnipersbot.com/#pricing"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Is Gold Snipers compatible with Prop Firms?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, Gold Snipers is fully optimized for Prop Firms (FTMO, FundedNext, etc.). It supports strict lot limits, maximum spread safeguards, daily loss protection overlays, and matches standard retail execution guidelines."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How does the Telegram Copier Bridge work?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The Python bridge runs on your local PC or VPS, listening to the Telegram channels you configure. The moment a signal is posted, it parses it and writes a formatted file to the MT5 Sandbox directory. The EA reads it and places the trade in under 0.5 seconds."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I need a VPS to run Gold Snipers?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "While not strictly required, we highly recommend running the EA and Bridge on a Windows VPS for 24/7 uptime, lowest execution latency, and stable connection to Telegram."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Which trading instruments are compatible with Gold Snipers?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "While our branding highlights Gold (XAUUSD), the EA is fully compatible with Forex currency pairs, Yen pairs, Metals, Oil, and major Indices. The system dynamically detects the symbol's digits and scales pip calculations automatically for any asset."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Animated Background Elements -->
@@ -26,7 +134,7 @@
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="doc.html">Documentation</a></li>
                 </ul>
-                <a href="#pricing" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">Get Started</a>
+                <a href="#pricing" class="btn btn-primary btn-sm">Get Started</a>
                 <div class="menu-toggle">
                     <span></span>
                     <span></span>
@@ -149,14 +257,17 @@
             </div>
             
             <div class="showcase-container glass-panel">
-                <div class="showcase-tabs">
-                    <button class="showcase-tab active" data-target="dashboard-img">Live Dashboard</button>
-                    <button class="showcase-tab" data-target="parsing-img">Custom Filters</button>
-                    <button class="showcase-tab" data-target="test-img">Signal Tester</button>
-                    <button class="showcase-tab" data-target="analytics-img">Local Analytics</button>
+                <div class="showcase-tabs" role="tablist" aria-label="Bridge screenshots">
+                    <button class="showcase-tab active" role="tab" aria-selected="true" aria-controls="showcase-panel" data-target="dashboard-img" tabindex="0">Live Dashboard</button>
+                    <button class="showcase-tab" role="tab" aria-selected="false" aria-controls="showcase-panel" data-target="parsing-img" tabindex="-1">Custom Filters</button>
+                    <button class="showcase-tab" role="tab" aria-selected="false" aria-controls="showcase-panel" data-target="test-img" tabindex="-1">Signal Tester</button>
+                    <button class="showcase-tab" role="tab" aria-selected="false" aria-controls="showcase-panel" data-target="analytics-img" tabindex="-1">Local Analytics</button>
                 </div>
-                <div class="showcase-viewer">
-                    <img id="showcase-display" src="dashboard.png" alt="Desktop Bridge Dashboard" class="showcase-image">
+                <div class="showcase-viewer" id="showcase-panel" role="tabpanel" aria-label="Selected bridge screenshot">
+                    <picture>
+                        <source srcset="dashboard.webp" type="image/webp">
+                        <img id="showcase-display" src="dashboard.png" alt="Desktop Bridge Dashboard" class="showcase-image" loading="lazy" width="1024" height="656">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -246,37 +357,37 @@
             </div>
             <div class="faq-container">
                 <div class="faq-item glass-panel">
-                    <div class="faq-question">
+                    <button class="faq-question" type="button">
                         <span>Is Gold Snipers compatible with Prop Firms?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
                     <div class="faq-answer">
                         Yes, Gold Snipers is fully optimized for Prop Firms (FTMO, FundedNext, etc.). It supports strict lot limits, maximum spread safeguards, daily loss protection overlays, and matches standard retail execution guidelines.
                     </div>
                 </div>
                 <div class="faq-item glass-panel">
-                    <div class="faq-question">
+                    <button class="faq-question" type="button">
                         <span>How does the Telegram Copier Bridge work?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
                     <div class="faq-answer">
                         The Python bridge runs on your local PC or VPS, listening to the Telegram channels you configure. The moment a signal is posted, it parses it and writes a formatted file to the MT5 Sandbox directory. The EA reads it and places the trade in under 0.5 seconds.
                     </div>
                 </div>
                 <div class="faq-item glass-panel">
-                    <div class="faq-question">
+                    <button class="faq-question" type="button">
                         <span>Do I need a VPS to run Gold Snipers?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
                     <div class="faq-answer">
                         While not strictly required, we highly recommend running the EA and Bridge on a Windows VPS (Virtual Private Server) for 24/7 uptime, lowest execution latency, and stable connection to Telegram.
                     </div>
                 </div>
                 <div class="faq-item glass-panel">
-                    <div class="faq-question">
+                    <button class="faq-question" type="button">
                         <span>Which trading instruments are compatible with Gold Snipers?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
                     <div class="faq-answer">
                         While our branding highlights Gold (XAUUSD), the EA is fully compatible with Forex currency pairs (e.g. EURUSD, GBPUSD), Yen pairs (e.g. USDJPY), Metals (Silver/XAGUSD), Oil, and major Indices (e.g. US30, NAS100). The system dynamically detects the symbol's digits and scales pip calculations automatically for any asset.
                     </div>
@@ -317,6 +428,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=2.0.2"></script>
+    <script src="script.js?v=2.0.3"></script>
 </body>
 </html>
