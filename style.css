@@ -1125,6 +1125,16 @@ footer {
     opacity: 0.7;
 }
 
+.infographic-hint a {
+    color: var(--accent-cyan);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.infographic-hint a:hover {
+    color: var(--accent-gold);
+}
+
 /* --- Image Lightbox Modal --- */
 .image-modal {
     position: fixed;
