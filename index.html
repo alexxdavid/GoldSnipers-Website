@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gold Snipers | Premium MT5 Expert Advisor & Telegram Copier Suite</title>
-    <meta name="description" content="Automate your XAUUSD trading with Gold Snipers. Real-time Telegram-to-MT5 copier bridge, advanced FVG & Order Block filters, and Stealth TP protection.">
+    <meta name="description" content="Automate your XAUUSD and Forex trading with Gold Snipers. Real-time Telegram-to-MT5 copier bridge, advanced FVG & Order Block filters, and Stealth TP protection.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Animated Background Elements -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+    <div class="bg-glow-gold"></div>
 
     <!-- Header / Navigation -->
     <header>
@@ -18,6 +22,7 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
+                    <li><a href="#roi-calculator">ROI Calculator</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="https://github.com/alexxdavid/GoldSnipers" target="_blank">Documentation</a></li>
@@ -37,8 +42,8 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <h1>Trade Gold Like <br><span class="gold-text">Institutions.</span></h1>
-                    <p>Automate your trading with the ultimate MT5 Expert Advisor and Telegram Bridge. Copy signals in under 0.5s with smart FVG, Order Block, and Stealth TP protection.</p>
+                    <h1>Trade <span class="gold-text">Gold & Forex</span> Like Institutions.</h1>
+                    <p>Automate your trading with the ultimate MT5 Expert Advisor and Telegram Bridge. Copy signals in under 0.5s with smart FVG, Order Block, and Stealth TP protection across all major asset classes.</p>
                     <div class="hero-actions">
                         <a href="#pricing" class="btn btn-primary">Start Trading Now</a>
                         <a href="#features" class="btn btn-secondary">Explore Features</a>
@@ -50,37 +55,46 @@
                         </div>
                         <div class="stat-item">
                             <h3>100%</h3>
-                            <p>Stealth Broker Guard</p>
+                            <p>Stealth Guard</p>
                         </div>
                         <div class="stat-item">
-                            <h3>24/7</h3>
+                            <h3 class="cyan-text">24/7</h3>
                             <p>Uptime & Sync</p>
                         </div>
                     </div>
                 </div>
                 <div class="hero-preview">
                     <!-- Live UI Dashboard Mockup -->
-                    <div class="preview-card">
+                    <div class="preview-card glass-panel">
                         <div class="preview-header">
-                            <span class="preview-status"><span class="pulse-dot"></span> Gold Snipers Bridge Online</span>
-                            <span style="font-size: 12px; color: var(--text-muted);">v363.34</span>
+                            <span class="preview-status"><span class="pulse-dot"></span> Bridge Online (v363.34)</span>
                         </div>
-                        <div class="chart-mock">
-                            <div class="bar bullish" style="height: 40%"></div>
-                            <div class="bar bullish" style="height: 60%"></div>
-                            <div class="bar bearish" style="height: 45%"></div>
-                            <div class="bar bullish" style="height: 80%"></div>
-                            <div class="bar bearish" style="height: 55%"></div>
-                            <div class="bar bullish" style="height: 90%"></div>
+                        <div class="chart-container">
+                            <canvas id="heroChart"></canvas>
                         </div>
-                        <div style="font-family: 'Consolas', monospace; font-size: 13px; color: var(--accent-cyan);">
-                            <span style="color: var(--text-muted); font-size: 11px;">[Bridge Console Logs]</span><br>
-                            &gt;&gt;&gt; [BOT POLL] Listening to Telegram channels...<br>
-                            &gt;&gt;&gt; [0.5s] Signal detected: BUY XAUUSD @ 2354<br>
-                            &gt;&gt;&gt; [EA EXECUTE] Placed Anchor + 5 Limit Ladder Tiers!
+                        <div class="console-mock" id="console-text">
+                            [BOT POLL] Listening to Telegram...<br>
+                            <span class="highlight">Waiting for setup...</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Live Execution Ticker -->
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> BUY <span class="profit">+45 Pips</span> | TIER 3 SECURED</div>
+                <div class="ticker-item">⚡ <span class="symbol">EURUSD</span> SELL <span class="profit">+20 Pips</span> | ANCHOR HIT</div>
+                <div class="ticker-item">⚡ <span class="symbol">GBPUSD</span> BUY <span class="profit">+35 Pips</span> | BREAK-EVEN SET</div>
+                <div class="ticker-item">⚡ <span class="symbol">US30</span> BUY <span class="profit">+150 Pips</span> | FULL HARVEST</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAGUSD</span> SELL <span class="profit">+60 Pips</span> | TIER 2 SECURED</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> BUY <span class="profit">+45 Pips</span> | TIER 3 SECURED</div>
+                <div class="ticker-item">⚡ <span class="symbol">EURUSD</span> SELL <span class="profit">+20 Pips</span> | ANCHOR HIT</div>
+                <div class="ticker-item">⚡ <span class="symbol">GBPUSD</span> BUY <span class="profit">+35 Pips</span> | BREAK-EVEN SET</div>
+                <div class="ticker-item">⚡ <span class="symbol">US30</span> BUY <span class="profit">+150 Pips</span> | FULL HARVEST</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAGUSD</span> SELL <span class="profit">+60 Pips</span> | TIER 2 SECURED</div>
             </div>
         </div>
     </section>
@@ -89,29 +103,56 @@
     <section id="features" class="features section-padding">
         <div class="container">
             <div class="section-header text-center">
-                <h2>Engineered to <span class="gold-text">Protect & Scale</span></h2>
-                <p>Stop copy-pasting signals manually and getting stopped out by broker manipulation. Automate with elite retail tech.</p>
+                <h2>Engineered to <span class="cyan-text">Protect & Scale</span></h2>
+                <p>Stop copy-pasting signals manually and getting stopped out by broker manipulation. Automate with elite retail tech across Gold, Forex, and Indices.</p>
             </div>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card glass-panel">
                     <div class="feature-icon">🛡️</div>
                     <h3>Stealth TP / SL Guard</h3>
                     <p>Hide your Take Profit and Stop Loss levels locally on your terminal/VPS. Your broker sees blank lines—completely stopping spread sweeps and target hunting.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card glass-panel">
                     <div class="feature-icon">🔍</div>
                     <h3>SMC FVG & OB Filters</h3>
                     <p>Only trade high-probability zones. The EA validates setups against Fair Value Gaps (FVG) and structure-breaking Order Blocks (BOS) before opening trades.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card glass-panel">
                     <div class="feature-icon">🪜</div>
                     <h3>Grid / Ladder Scaling</h3>
                     <p>Don't risk everything on one entry. Gold Snipers splits trades into anchor and pending layers, averaging your entry price on pullbacks and locking in Break-Even.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card glass-panel">
                     <div class="feature-icon">⚡</div>
                     <h3>0.5s Telegram Bridge</h3>
                     <p>A native Python background copier that parses complex signal text, applies custom channel lot modifiers, and triggers trades on MT5 with near-zero latency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator Section -->
+    <section id="roi-calculator" class="calculator-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Interactive <span class="gold-text">ROI Simulator</span></h2>
+                <p>Estimate your potential account growth over 12 months based on your starting capital and targeted monthly return.</p>
+            </div>
+            <div class="calc-container glass-panel">
+                <div class="calc-controls">
+                    <div class="calc-group">
+                        <label>Starting Capital <span class="calc-value" id="capital-value">$5,000</span></label>
+                        <input type="range" id="capital-input" min="1000" max="100000" step="500" value="5000">
+                    </div>
+                    <div class="calc-group">
+                        <label>Target Monthly Return <span class="calc-value" id="return-value">10%</span></label>
+                        <input type="range" id="return-input" min="1" max="30" step="1" value="10">
+                    </div>
+                </div>
+                <div class="calc-result">
+                    <h4>Projected 12-Month Balance</h4>
+                    <div class="projected-value" id="projected-value">$15,692</div>
+                    <div class="calc-note">*Based on compounding monthly returns. Past performance is not indicative of future results. Trading carries high risk.</div>
                 </div>
             </div>
         </div>
@@ -121,7 +162,7 @@
     <section id="pricing" class="pricing section-padding">
         <div class="container">
             <div class="section-header text-center">
-                <h2>Choose Your <span class="gold-text">License Plan</span></h2>
+                <h2>Choose Your <span class="cyan-text">License Plan</span></h2>
                 <p>Secure global payments via Stripe & Lemon Squeezy. Standard VAT/Sales tax calculated automatically at checkout.</p>
             </div>
             
@@ -135,7 +176,7 @@
 
             <div class="pricing-grid">
                 <!-- Plan 1 -->
-                <div class="pricing-card">
+                <div class="pricing-card glass-panel">
                     <h3>Starter Licence</h3>
                     <div class="price-container">
                         <span class="price price-value">$49</span>
@@ -149,11 +190,10 @@
                         <li>Stealth & Harvest Modes</li>
                         <li>Lifetime Updates & Support</li>
                     </ul>
-                    <!-- Swap the href below with your Lemon Squeezy or Stripe checkout link -->
                     <a href="#" class="btn btn-secondary">Get Starter License</a>
                 </div>
                 <!-- Plan 2 (Popular) -->
-                <div class="pricing-card popular">
+                <div class="pricing-card glass-panel popular">
                     <div class="badge">Most Popular</div>
                     <h3>Pro Trader Suite</h3>
                     <div class="price-container">
@@ -168,15 +208,14 @@
                         <li>Stealth & Harvest Modes</li>
                         <li>Lifetime Updates & Support</li>
                     </ul>
-                    <!-- Swap the href below with your Lemon Squeezy or Stripe checkout link -->
                     <a href="#" class="btn btn-primary">Get Pro License</a>
                 </div>
                 <!-- Plan 3 -->
-                <div class="pricing-card">
+                <div class="pricing-card glass-panel">
                     <h3>Lifetime Pass</h3>
                     <div class="price-container">
-                        <span class="price">$499</span>
-                        <span style="font-size: 16px; color: var(--text-muted);">one-time</span>
+                        <span class="price price-value">$499</span>
+                        <span class="billing-period" style="font-size: 16px;">one-time</span>
                     </div>
                     <ul>
                         <li>6 Live MT5 Accounts</li>
@@ -186,7 +225,6 @@
                         <li>Stealth & Harvest Modes</li>
                         <li>Lifetime Updates & Support</li>
                     </ul>
-                    <!-- Swap the href below with your Lemon Squeezy or Stripe checkout link -->
                     <a href="#" class="btn btn-secondary">Buy Lifetime Pass</a>
                 </div>
             </div>
@@ -201,7 +239,7 @@
                 <p>Have questions about Gold Snipers? We have answers.</p>
             </div>
             <div class="faq-container">
-                <div class="faq-item">
+                <div class="faq-item glass-panel">
                     <div class="faq-question">
                         <span>Is Gold Snipers compatible with Prop Firms?</span>
                         <span class="faq-icon">+</span>
@@ -210,7 +248,7 @@
                         Yes, Gold Snipers is fully optimized for Prop Firms (FTMO, FundedNext, etc.). It supports strict lot limits, maximum spread safeguards, daily loss protection overlays, and matches standard retail execution guidelines.
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item glass-panel">
                     <div class="faq-question">
                         <span>How does the Telegram Copier Bridge work?</span>
                         <span class="faq-icon">+</span>
@@ -219,7 +257,7 @@
                         The Python bridge runs on your local PC or VPS, listening to the Telegram channels you configure. The moment a signal is posted, it parses it and writes a formatted file to the MT5 Sandbox directory. The EA reads it and places the trade in under 0.5 seconds.
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item glass-panel">
                     <div class="faq-question">
                         <span>Do I need a VPS to run Gold Snipers?</span>
                         <span class="faq-icon">+</span>
@@ -228,13 +266,13 @@
                         While not strictly required, we highly recommend running the EA and Bridge on a Windows VPS (Virtual Private Server) for 24/7 uptime, lowest execution latency, and stable connection to Telegram.
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item glass-panel">
                     <div class="faq-question">
                         <span>Which trading instruments are compatible with Gold Snipers?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        While the default settings are optimized for Gold (XAUUSD), the EA is fully compatible with Forex currency pairs (e.g. EURUSD, GBPUSD), Yen pairs (e.g. USDJPY), Metals (Silver/XAGUSD), Oil, and major Indices (e.g. US30, NAS100). The system dynamically detects the symbol's digits and scales pip calculations automatically.
+                        While our branding highlights Gold (XAUUSD), the EA is fully compatible with Forex currency pairs (e.g. EURUSD, GBPUSD), Yen pairs (e.g. USDJPY), Metals (Silver/XAGUSD), Oil, and major Indices (e.g. US30, NAS100). The system dynamically detects the symbol's digits and scales pip calculations automatically for any asset.
                     </div>
                 </div>
             </div>
@@ -253,6 +291,7 @@
                     <h4>Product</h4>
                     <ul>
                         <li><a href="#features">Features</a></li>
+                        <li><a href="#roi-calculator">ROI Calculator</a></li>
                         <li><a href="#pricing">Pricing</a></li>
                         <li><a href="https://github.com/alexxdavid/GoldSnipers" target="_blank">Documentation</a></li>
                     </ul>
