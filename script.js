@@ -244,4 +244,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         drawChart();
     }
+
+    // --- Showcase Tab Logic ---
+    const tabs = document.querySelectorAll(".showcase-tab");
+    const displayImage = document.getElementById("showcase-display");
+    const imageMap = {
+        "dashboard-img": "dashboard.png",
+        "parsing-img": "parsing.png",
+        "test-img": "signal_test.png",
+        "analytics-img": "analytics.png"
+    };
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            tabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+            
+            const target = tab.getAttribute("data-target");
+            if (displayImage && imageMap[target]) {
+                displayImage.style.opacity = "0.3";
+                setTimeout(() => {
+                    displayImage.src = imageMap[target];
+                    displayImage.style.opacity = "1";
+                }, 150);
+            }
+        });
+    });
 });
