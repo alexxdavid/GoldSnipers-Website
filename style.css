@@ -273,6 +273,12 @@ nav {
     text-shadow: 0 0 10px rgba(229, 169, 59, 0.5);
 }
 
+.logo img {
+    height: 32px;
+    width: auto;
+    display: block;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -773,6 +779,15 @@ footer {
     font-weight: 800;
     margin-bottom: 20px;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-brand h2 img {
+    height: 32px;
+    width: auto;
+    display: block;
 }
 
 .footer-brand h2 span {
@@ -1069,6 +1084,33 @@ footer {
     height: 100%;
     object-fit: contain;
     transition: opacity 0.3s ease;
+}
+
+/* --- Infographic Sections --- */
+.infographic-section {
+    position: relative;
+}
+
+.infographic-container {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-premium);
+    border: 1px solid var(--border-color);
+    background: #000;
+}
+
+.infographic {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .infographic-container {
+        margin-top: 24px;
+    }
 }
 
 
