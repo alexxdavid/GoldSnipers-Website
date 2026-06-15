@@ -356,16 +356,17 @@ function initShowcaseTabs() {
     const tabs = document.querySelectorAll(".showcase-tab");
     const displayImage = document.getElementById("showcase-display");
     const imageMap = {
-        "dashboard-img": "dashboard",
-        "parsing-img": "parsing",
-        "test-img": "signal_test",
-        "analytics-img": "analytics"
+        "dashboard-img": { name: "dashboard", w: 1024, h: 656, alt: "Desktop Bridge Dashboard" },
+        "parsing-img": { name: "parsing", w: 1024, h: 651, alt: "Custom Command & Parsing Settings" },
+        "test-img": { name: "signal_test", w: 1024, h: 654, alt: "Signal Tester Console" },
+        "analytics-img": { name: "analytics", w: 1024, h: 607, alt: "Local Analytics & Closed Deals" }
     };
 
     if (!displayImage) return;
 
     const picture = displayImage.closest("picture");
     const source = picture ? picture.querySelector("source") : null;
+    const viewer = document.getElementById("showcase-panel");
 
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
@@ -380,21 +381,29 @@ function initShowcaseTabs() {
             tab.focus();
 
             const target = tab.getAttribute("data-target");
-            const baseName = imageMap[target];
-            if (baseName) {
+            const meta = imageMap[target];
+            if (meta) {
                 displayImage.style.opacity = "0.3";
                 setTimeout(() => {
-                    const webpSrc = `${baseName}.webp`;
-                    const pngSrc = `${baseName}.png`;
+                    const webpSrc = `${meta.name}.webp?v=4`;
+                    const pngSrc = `${meta.name}.png?v=4`;
                     const img = new Image();
                     img.onload = () => {
                         if (source) source.srcset = webpSrc;
                         displayImage.src = webpSrc;
+                        displayImage.width = meta.w;
+                        displayImage.height = meta.h;
+                        displayImage.alt = meta.alt;
+                        if (viewer) viewer.style.aspectRatio = `${meta.w} / ${meta.h}`;
                         displayImage.style.opacity = "1";
                     };
                     img.onerror = () => {
                         if (source) source.srcset = "";
                         displayImage.src = pngSrc;
+                        displayImage.width = meta.w;
+                        displayImage.height = meta.h;
+                        displayImage.alt = meta.alt;
+                        if (viewer) viewer.style.aspectRatio = `${meta.w} / ${meta.h}`;
                         displayImage.style.opacity = "1";
                     };
                     img.src = webpSrc;
