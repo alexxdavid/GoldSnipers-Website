@@ -71,18 +71,18 @@ function initPricingToggle() {
     toggleSwitch.setAttribute("role", "switch");
     toggleSwitch.setAttribute("aria-checked", "false");
     toggleSwitch.setAttribute("tabindex", "0");
-    toggleSwitch.setAttribute("aria-label", "Toggle annual billing");
+    toggleSwitch.setAttribute("aria-label", "Toggle lifetime license");
 
     const pricingData = {
         monthly: [
             { price: "$49", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/a46be02b-8460-41c1-a384-0102bff2aa9b" },
             { price: "$89", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/PRO_MONTHLY_ID" },
-            { price: "$499", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/LIFETIME_ID" }
+            { price: "$149", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/DEV_MONTHLY_ID" }
         ],
         annual: [
-            { price: "$35", period: "/ month (billed annually)", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/STARTER_ANNUAL_ID" },
-            { price: "$59", period: "/ month (billed annually)", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/PRO_ANNUAL_ID" },
-            { price: "$499", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/LIFETIME_ID" }
+            { price: "$199", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/STARTER_LIFETIME_ID" },
+            { price: "$399", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/PRO_LIFETIME_ID" },
+            { price: "$599", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/DEV_LIFETIME_ID" }
         ]
     };
 
