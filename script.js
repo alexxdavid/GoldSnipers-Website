@@ -71,20 +71,24 @@ function initPricingToggle() {
     toggleSwitch.setAttribute("role", "switch");
     toggleSwitch.setAttribute("aria-checked", "false");
     toggleSwitch.setAttribute("tabindex", "0");
-    toggleSwitch.setAttribute("aria-label", "Toggle annual billing");
+    toggleSwitch.setAttribute("aria-label", "Toggle lifetime license");
 
     const pricingData = {
         monthly: [
-            { price: "$49", period: "/ month" },
-            { price: "$89", period: "/ month" },
-            { price: "$499", period: "one-time" }
+            { price: "$49", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/a46be02b-8460-41c1-a384-0102bff2aa9b" },
+            { price: "$89", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/PRO_MONTHLY_ID" },
+            { price: "$149", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/DEV_MONTHLY_ID" }
         ],
         annual: [
-            { price: "$35", period: "/ month (billed annually)" },
-            { price: "$59", period: "/ month (billed annually)" },
-            { price: "$499", period: "one-time" }
+            { price: "$199", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/STARTER_LIFETIME_ID" },
+            { price: "$399", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/PRO_LIFETIME_ID" },
+            { price: "$599", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/DEV_LIFETIME_ID" }
         ]
     };
+
+    const starterBtn = document.getElementById("btn-starter");
+    const proBtn = document.getElementById("btn-pro");
+    const lifetimeBtn = document.getElementById("btn-lifetime");
 
     function updatePricing(billingMode) {
         prices.forEach((el, index) => {
@@ -93,6 +97,16 @@ function initPricingToggle() {
         billingPeriods.forEach((el, index) => {
             el.textContent = pricingData[billingMode][index].period;
         });
+
+        // Dynamically assign checkout links
+        if (starterBtn) starterBtn.href = pricingData[billingMode][0].checkout;
+        if (proBtn) proBtn.href = pricingData[billingMode][1].checkout;
+        if (lifetimeBtn) lifetimeBtn.href = pricingData[billingMode][2].checkout;
+
+        // Re-initialize Lemon Squeezy to bind click listeners to new links
+        if (window.createLemonSqueezy) {
+            window.createLemonSqueezy();
+        }
     }
 
     function setBilling(isAnnual) {
@@ -356,16 +370,17 @@ function initShowcaseTabs() {
     const tabs = document.querySelectorAll(".showcase-tab");
     const displayImage = document.getElementById("showcase-display");
     const imageMap = {
-        "dashboard-img": "dashboard",
-        "parsing-img": "parsing",
-        "test-img": "signal_test",
-        "analytics-img": "analytics"
+        "dashboard-img": { name: "dashboard", w: 1024, h: 656, alt: "Desktop Bridge Dashboard" },
+        "parsing-img": { name: "parsing", w: 1024, h: 651, alt: "Custom Command & Parsing Settings" },
+        "test-img": { name: "signal_test", w: 1024, h: 654, alt: "Signal Tester Console" },
+        "analytics-img": { name: "analytics", w: 1024, h: 607, alt: "Local Analytics & Closed Deals" }
     };
 
     if (!displayImage) return;
 
     const picture = displayImage.closest("picture");
     const source = picture ? picture.querySelector("source") : null;
+    const viewer = document.getElementById("showcase-panel");
 
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
@@ -380,21 +395,29 @@ function initShowcaseTabs() {
             tab.focus();
 
             const target = tab.getAttribute("data-target");
-            const baseName = imageMap[target];
-            if (baseName) {
+            const meta = imageMap[target];
+            if (meta) {
                 displayImage.style.opacity = "0.3";
                 setTimeout(() => {
-                    const webpSrc = `${baseName}.webp`;
-                    const pngSrc = `${baseName}.png`;
+                    const webpSrc = `${meta.name}.webp?v=4`;
+                    const pngSrc = `${meta.name}.png?v=4`;
                     const img = new Image();
                     img.onload = () => {
                         if (source) source.srcset = webpSrc;
                         displayImage.src = webpSrc;
+                        displayImage.width = meta.w;
+                        displayImage.height = meta.h;
+                        displayImage.alt = meta.alt;
+                        if (viewer) viewer.style.aspectRatio = `${meta.w} / ${meta.h}`;
                         displayImage.style.opacity = "1";
                     };
                     img.onerror = () => {
                         if (source) source.srcset = "";
                         displayImage.src = pngSrc;
+                        displayImage.width = meta.w;
+                        displayImage.height = meta.h;
+                        displayImage.alt = meta.alt;
+                        if (viewer) viewer.style.aspectRatio = `${meta.w} / ${meta.h}`;
                         displayImage.style.opacity = "1";
                     };
                     img.src = webpSrc;
