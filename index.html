@@ -289,14 +289,14 @@
             <p class="infographic-hint" style="margin-bottom: 80px;">Click image to enlarge</p>
             <div class="features-grid">
                 <div class="feature-card glass-panel">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-Time Signal Processing</h3>
+                    <p>Ultra-fast signal response parses Telegram alerts in under 0.5 seconds and executes trades at the optimal moment. Low-latency infrastructure ensures no opportunity is missed, even in fast-moving Gold and Forex markets.</p>
+                </div>
+                <div class="feature-card glass-panel">
                     <div class="feature-icon">🛡️</div>
                     <h3>Stealth TP / SL Guard</h3>
                     <p>Hide your Take Profit and Stop Loss levels locally on your terminal/VPS. Your broker sees blank lines—completely stopping spread sweeps and target hunting.</p>
-                </div>
-                <div class="feature-card glass-panel">
-                    <div class="feature-icon">🔍</div>
-                    <h3>SMC FVG & OB Filters</h3>
-                    <p>Only trade high-probability zones. The EA validates setups against Fair Value Gaps (FVG) and structure-breaking Order Blocks (BOS) before opening trades.</p>
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">🪜</div>
@@ -304,9 +304,9 @@
                     <p>Don't risk everything on one entry. Gold Snipers splits trades into anchor and pending layers, averaging your entry price on pullbacks and locking in Break-Even.</p>
                 </div>
                 <div class="feature-card glass-panel">
-                    <div class="feature-icon">⚡</div>
-                    <h3>0.5s Telegram Bridge</h3>
-                    <p>A native Python background copier that parses complex signal text, applies custom channel lot modifiers, and triggers trades on MT5 with near-zero latency.</p>
+                    <div class="feature-icon">🧮</div>
+                    <h3>Dynamic Risk Management</h3>
+                    <p>Set position sizes, stop losses, and take profits to match your account balance and risk tolerance. Equity protection, drawdown guards, and prop-firm safety controls keep your investments safe.</p>
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">📈</div>
@@ -314,9 +314,56 @@
                     <p>Enforce strict equity drawdown limits, maximum spread filters, and trading session hours to protect funding and comply with strict challenge rules.</p>
                 </div>
                 <div class="feature-card glass-panel">
-                    <div class="feature-icon">📊</div>
-                    <h3>SQLite Analytics Engine</h3>
-                    <p>Log all executed signals, win/loss rates, and profit statistics automatically. Review and optimize performance directly from your MT5 terminal.</p>
+                    <div class="feature-icon">📱</div>
+                    <h3>Telegram Admin Controls</h3>
+                    <p>Change settings, close trades, move stops to break-even, and request status updates directly from Telegram. Control your copier from anywhere without touching the chart or VPS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Lifecycle Section -->
+    <section id="lifecycle" class="lifecycle-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Order <span class="cyan-text">Lifecycle</span></h2>
+                <p>Track every step of your trade's journey from signal to close — complete visibility and control.</p>
+            </div>
+            <div class="lifecycle-timeline">
+                <div class="lifecycle-step">
+                    <div class="lifecycle-icon">1</div>
+                    <div class="lifecycle-content">
+                        <h3>Signal Received</h3>
+                        <p>A Telegram signal is posted and parsed by the bridge in under 0.5 seconds.</p>
+                    </div>
+                </div>
+                <div class="lifecycle-step">
+                    <div class="lifecycle-icon">2</div>
+                    <div class="lifecycle-content">
+                        <h3>Validation</h3>
+                        <p>The EA checks filters, spread, session hours, and signal-guard rules before acting.</p>
+                    </div>
+                </div>
+                <div class="lifecycle-step">
+                    <div class="lifecycle-icon">3</div>
+                    <div class="lifecycle-content">
+                        <h3>Trade Initiation</h3>
+                        <p>Anchor and pending orders are placed with precise SL, TP, and lot sizing.</p>
+                    </div>
+                </div>
+                <div class="lifecycle-step">
+                    <div class="lifecycle-icon">4</div>
+                    <div class="lifecycle-content">
+                        <h3>Live Monitoring</h3>
+                        <p>The EA watches every position, updating highs, lows, and partial close events in real time.</p>
+                    </div>
+                </div>
+                <div class="lifecycle-step">
+                    <div class="lifecycle-icon">5</div>
+                    <div class="lifecycle-content">
+                        <h3>Exit & Analytics</h3>
+                        <p>Trades close at TP/SL or by command, and every result is logged to the SQLite analytics engine.</p>
+                    </div>
                 </div>
             </div>
         </div>
