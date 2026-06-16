@@ -82,7 +82,7 @@ function initPricingToggle() {
         annual: [
             { price: "$299", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/STARTER_LIFETIME_ID" },
             { price: "$399", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/PRO_LIFETIME_ID" },
-            { price: "$599", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/DEV_LIFETIME_ID" }
+            { price: "$499", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/DEV_LIFETIME_ID" }
         ]
     };
 
