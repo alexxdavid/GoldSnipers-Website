@@ -75,12 +75,12 @@ function initPricingToggle() {
 
     const pricingData = {
         monthly: [
-            { price: "$49", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/a46be02b-8460-41c1-a384-0102bff2aa9b" },
-            { price: "$89", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/PRO_MONTHLY_ID" },
-            { price: "$149", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/DEV_MONTHLY_ID" }
+            { price: "$29", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/STARTER_MONTHLY_ID" },
+            { price: "$39", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/PRO_MONTHLY_ID" },
+            { price: "$49", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/DEV_MONTHLY_ID" }
         ],
         annual: [
-            { price: "$199", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/STARTER_LIFETIME_ID" },
+            { price: "$299", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/STARTER_LIFETIME_ID" },
             { price: "$399", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/PRO_LIFETIME_ID" },
             { price: "$599", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/DEV_LIFETIME_ID" }
         ]
@@ -98,12 +98,10 @@ function initPricingToggle() {
             el.textContent = pricingData[billingMode][index].period;
         });
 
-        // Dynamically assign checkout links
         if (starterBtn) starterBtn.href = pricingData[billingMode][0].checkout;
         if (proBtn) proBtn.href = pricingData[billingMode][1].checkout;
         if (lifetimeBtn) lifetimeBtn.href = pricingData[billingMode][2].checkout;
 
-        // Re-initialize Lemon Squeezy to bind click listeners to new links
         if (window.createLemonSqueezy) {
             window.createLemonSqueezy();
         }
@@ -128,7 +126,6 @@ function initPricingToggle() {
         }
     }
 
-    // Restore saved preference
     let savedMode = null;
     try {
         savedMode = localStorage.getItem("gs_billing_mode");
