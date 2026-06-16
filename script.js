@@ -75,16 +75,20 @@ function initPricingToggle() {
 
     const pricingData = {
         monthly: [
-            { price: "$49", period: "/ month" },
-            { price: "$89", period: "/ month" },
-            { price: "$499", period: "one-time" }
+            { price: "$49", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/a46be02b-8460-41c1-a384-0102bff2aa9b" },
+            { price: "$89", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/PRO_MONTHLY_ID" },
+            { price: "$499", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/LIFETIME_ID" }
         ],
         annual: [
-            { price: "$35", period: "/ month (billed annually)" },
-            { price: "$59", period: "/ month (billed annually)" },
-            { price: "$499", period: "one-time" }
+            { price: "$35", period: "/ month (billed annually)", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/STARTER_ANNUAL_ID" },
+            { price: "$59", period: "/ month (billed annually)", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/PRO_ANNUAL_ID" },
+            { price: "$499", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/LIFETIME_ID" }
         ]
     };
+
+    const starterBtn = document.getElementById("btn-starter");
+    const proBtn = document.getElementById("btn-pro");
+    const lifetimeBtn = document.getElementById("btn-lifetime");
 
     function updatePricing(billingMode) {
         prices.forEach((el, index) => {
@@ -93,6 +97,16 @@ function initPricingToggle() {
         billingPeriods.forEach((el, index) => {
             el.textContent = pricingData[billingMode][index].period;
         });
+
+        // Dynamically assign checkout links
+        if (starterBtn) starterBtn.href = pricingData[billingMode][0].checkout;
+        if (proBtn) proBtn.href = pricingData[billingMode][1].checkout;
+        if (lifetimeBtn) lifetimeBtn.href = pricingData[billingMode][2].checkout;
+
+        // Re-initialize Lemon Squeezy to bind click listeners to new links
+        if (window.createLemonSqueezy) {
+            window.createLemonSqueezy();
+        }
     }
 
     function setBilling(isAnnual) {
