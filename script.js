@@ -75,14 +75,14 @@ function initPricingToggle() {
 
     const pricingData = {
         monthly: [
-            { price: "$29", period: "/ month", checkout: "https://goldsnipersbot.dodopayments.com/pdt_0NhEe8nvtKAEOX8Wl930b" },
-            { price: "$39", period: "/ month", checkout: "https://goldsnipersbot.dodopayments.com/pdt_0NhEeiDRNiW4NcLSfWNc5" },
-            { price: "$49", period: "/ month", checkout: "https://goldsnipersbot.dodopayments.com/pdt_0NhEfyTu1Ba4hXRBL8qjp" }
+            { price: "$29", period: "/ month", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEe8nvtKAEOX8Wl930b?quantity=1" },
+            { price: "$39", period: "/ month", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEeiDRNiW4NcLSfWNc5?quantity=1" },
+            { price: "$49", period: "/ month", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEfyTu1Ba4hXRBL8qjp?quantity=1" }
         ],
         annual: [
-            { price: "$299", period: "one-time", checkout: "https://goldsnipersbot.dodopayments.com/pdt_0NhEeO1Kit2U7GLoM1od3" },
-            { price: "$399", period: "one-time", checkout: "https://goldsnipersbot.dodopayments.com/pdt_0NhEeZ9kRe4B4TjomtrPK" },
-            { price: "$499", period: "one-time", checkout: "https://goldsnipersbot.dodopayments.com/pdt_0NhEh6EOtVcpx77bxnaBf" }
+            { price: "$299", period: "one-time", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEeO1Kit2U7GLoM1od3?quantity=1" },
+            { price: "$399", period: "one-time", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEeZ9kRe4B4TjomtrPK?quantity=1" },
+            { price: "$499", period: "one-time", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEh6EOtVcpx77bxnaBf?quantity=1" }
         ]
     };
 
