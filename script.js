@@ -59,6 +59,21 @@ function initMobileMenu() {
     });
 }
 
+// --- Dodo Payments Overlay Checkout ---
+document.addEventListener("DOMContentLoaded", function() {
+    if (typeof DodoPaymentsCheckout !== "undefined" && DodoPaymentsCheckout.DodoPayments) {
+        DodoPaymentsCheckout.DodoPayments.Initialize({
+            mode: "live",
+            displayType: "overlay",
+            onEvent: function(event) {
+                if (event.event_type === "checkout.error") {
+                    console.error("Checkout error:", event.data && event.data.message);
+                }
+            }
+        });
+    }
+});
+
 // --- Pricing Toggle ---
 function initPricingToggle() {
     const toggleSwitch = document.querySelector(".toggle-switch");
@@ -94,6 +109,18 @@ function initPricingToggle() {
     if (starterBtn) starterBtn.href = monthlyURLs[0];
     if (proBtn) proBtn.href = monthlyURLs[1];
     if (lifetimeBtn) lifetimeBtn.href = monthlyURLs[2];
+
+    // Open Dodo Payments overlay on button click
+    function openDodoCheckout(url) {
+        if (typeof DodoPaymentsCheckout !== "undefined" && DodoPaymentsCheckout.DodoPayments) {
+            DodoPaymentsCheckout.DodoPayments.Checkout.open({ checkoutUrl: url });
+        } else {
+            window.location.href = url;
+        }
+    }
+    if (starterBtn) starterBtn.addEventListener("click", function(e) { e.preventDefault(); openDodoCheckout(starterBtn.href); });
+    if (proBtn) proBtn.addEventListener("click", function(e) { e.preventDefault(); openDodoCheckout(proBtn.href); });
+    if (lifetimeBtn) lifetimeBtn.addEventListener("click", function(e) { e.preventDefault(); openDodoCheckout(lifetimeBtn.href); });
 
     function updatePricing(billingMode) {
         prices.forEach((el, index) => {
