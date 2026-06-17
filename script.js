@@ -75,14 +75,14 @@ function initPricingToggle() {
 
     const pricingData = {
         monthly: [
-            { price: "$29", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/148d0da4-2bb1-4cd7-acf1-a445bc29fc2a" },
-            { price: "$39", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/a46be02b-8460-41c1-a384-0102bff2aa9b" },
-            { price: "$49", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/03aa0d57-e7ed-468c-87ac-45648b426cd4" }
+            { price: "$29", period: "/ month", checkout: "https://goldsnipersbot.dodopayments.com/pdt_0NhEe8nvtKAEOX8Wl930b" },
+            { price: "$39", period: "/ month", checkout: "https://goldsnipersbot.dodopayments.com/pdt_0NhEeiDRNiW4NcLSfWNc5" },
+            { price: "$49", period: "/ month", checkout: "https://goldsnipersbot.dodopayments.com/pdt_0NhEfyTu1Ba4hXRBL8qjp" }
         ],
         annual: [
-            { price: "$299", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/397375f4-8d1a-490b-b609-e6305b4f15cb" },
-            { price: "$399", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/071f9a54-3eab-40a6-893b-fe892ff68f74" },
-            { price: "$499", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/09bb5768-d655-484c-b69b-a98f1e9fa629" }
+            { price: "$299", period: "one-time", checkout: "https://goldsnipersbot.dodopayments.com/pdt_0NhEeO1Kit2U7GLoM1od3" },
+            { price: "$399", period: "one-time", checkout: "https://goldsnipersbot.dodopayments.com/pdt_0NhEeZ9kRe4B4TjomtrPK" },
+            { price: "$499", period: "one-time", checkout: "https://goldsnipersbot.dodopayments.com/pdt_0NhEh6EOtVcpx77bxnaBf" }
         ]
     };
 
