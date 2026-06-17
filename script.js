@@ -90,6 +90,11 @@ function initPricingToggle() {
     const proBtn = document.getElementById("btn-pro");
     const lifetimeBtn = document.getElementById("btn-lifetime");
 
+    const monthlyURLs = [pricingData.monthly[0].checkout, pricingData.monthly[1].checkout, pricingData.monthly[2].checkout];
+    if (starterBtn) starterBtn.href = monthlyURLs[0];
+    if (proBtn) proBtn.href = monthlyURLs[1];
+    if (lifetimeBtn) lifetimeBtn.href = monthlyURLs[2];
+
     function updatePricing(billingMode) {
         prices.forEach((el, index) => {
             el.textContent = pricingData[billingMode][index].price;
