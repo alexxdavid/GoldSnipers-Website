@@ -75,20 +75,25 @@ function initPricingToggle() {
 
     const pricingData = {
         monthly: [
-            { price: "$49", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/a46be02b-8460-41c1-a384-0102bff2aa9b" },
-            { price: "$89", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/PRO_MONTHLY_ID" },
-            { price: "$149", period: "/ month", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/DEV_MONTHLY_ID" }
+            { price: "$29", period: "/ month", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEe8nvtKAEOX8Wl930b?quantity=1" },
+            { price: "$39", period: "/ month", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEeiDRNiW4NcLSfWNc5?quantity=1" },
+            { price: "$49", period: "/ month", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEfyTu1Ba4hXRBL8qjp?quantity=1" }
         ],
         annual: [
-            { price: "$199", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/STARTER_LIFETIME_ID" },
-            { price: "$399", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/PRO_LIFETIME_ID" },
-            { price: "$599", period: "one-time", checkout: "https://goldsnipers.lemonsqueezy.com/checkout/buy/DEV_LIFETIME_ID" }
+            { price: "$299", period: "one-time", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEeO1Kit2U7GLoM1od3?quantity=1" },
+            { price: "$399", period: "one-time", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEeZ9kRe4B4TjomtrPK?quantity=1" },
+            { price: "$499", period: "one-time", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEh6EOtVcpx77bxnaBf?quantity=1" }
         ]
     };
 
     const starterBtn = document.getElementById("btn-starter");
     const proBtn = document.getElementById("btn-pro");
     const lifetimeBtn = document.getElementById("btn-lifetime");
+
+    const monthlyURLs = [pricingData.monthly[0].checkout, pricingData.monthly[1].checkout, pricingData.monthly[2].checkout];
+    if (starterBtn) starterBtn.href = monthlyURLs[0];
+    if (proBtn) proBtn.href = monthlyURLs[1];
+    if (lifetimeBtn) lifetimeBtn.href = monthlyURLs[2];
 
     function updatePricing(billingMode) {
         prices.forEach((el, index) => {
@@ -98,12 +103,10 @@ function initPricingToggle() {
             el.textContent = pricingData[billingMode][index].period;
         });
 
-        // Dynamically assign checkout links
         if (starterBtn) starterBtn.href = pricingData[billingMode][0].checkout;
         if (proBtn) proBtn.href = pricingData[billingMode][1].checkout;
         if (lifetimeBtn) lifetimeBtn.href = pricingData[billingMode][2].checkout;
 
-        // Re-initialize Lemon Squeezy to bind click listeners to new links
         if (window.createLemonSqueezy) {
             window.createLemonSqueezy();
         }
@@ -128,7 +131,6 @@ function initPricingToggle() {
         }
     }
 
-    // Restore saved preference
     let savedMode = null;
     try {
         savedMode = localStorage.getItem("gs_billing_mode");

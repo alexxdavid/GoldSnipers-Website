@@ -539,6 +539,109 @@ canvas#heroChart {
     line-height: 1.7;
 }
 
+/* --- Order Lifecycle Section --- */
+.lifecycle-section {
+    position: relative;
+    z-index: 1;
+}
+
+.lifecycle-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.lifecycle-timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-gold));
+}
+
+.lifecycle-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.lifecycle-step:last-child {
+    margin-bottom: 0;
+}
+
+.lifecycle-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--bg-panel);
+    border: 2px solid var(--accent-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 210, 211, 0.2);
+}
+
+.lifecycle-content {
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    border-radius: 16px;
+    padding: 24px 30px;
+    flex: 1;
+    backdrop-filter: blur(10px);
+}
+
+.lifecycle-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.lifecycle-content p {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .lifecycle-timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .lifecycle-step {
+        justify-content: center;
+    }
+
+    .lifecycle-step:nth-child(odd) {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .lifecycle-step:nth-child(odd) .lifecycle-content {
+        margin-right: 80px;
+    }
+
+    .lifecycle-step:nth-child(even) {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+
+    .lifecycle-step:nth-child(even) .lifecycle-content {
+        margin-left: 80px;
+    }
+}
+
 /* --- Pricing Section --- */
 .pricing {
     position: relative;

@@ -50,8 +50,8 @@
                 "offers": [
                     {
                         "@type": "Offer",
-                        "name": "Starter Licence",
-                        "price": "49",
+                        "name": "Starter Monthly",
+                        "price": "29",
                         "priceCurrency": "USD",
                         "priceValidUntil": "2027-06-15",
                         "availability": "https://schema.org/InStock",
@@ -59,8 +59,8 @@
                     },
                     {
                         "@type": "Offer",
-                        "name": "Pro Trader Suite",
-                        "price": "89",
+                        "name": "Pro Monthly",
+                        "price": "39",
                         "priceCurrency": "USD",
                         "priceValidUntil": "2027-06-15",
                         "availability": "https://schema.org/InStock",
@@ -68,7 +68,7 @@
                     },
                     {
                         "@type": "Offer",
-                        "name": "Lifetime Pass",
+                        "name": "Developer Lifetime",
                         "price": "499",
                         "priceCurrency": "USD",
                         "priceValidUntil": "2027-06-15",
@@ -128,7 +128,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="logo-header.png" alt="" width="32" height="32">
+                    <img src="logo-header.png" alt="Gold Snipers Logo" width="32" height="32">
                     Gold<span>Snipers</span>
                 </div>
                 <ul class="nav-links">
@@ -263,10 +263,10 @@
                 <h2>The Automation <span class="cyan-text">Flow</span></h2>
                 <p>From Telegram signal to executed trade on MetaTrader 5 — fully automated in under 0.5 seconds.</p>
             </div>
-            <div class="infographic-container" data-full="gold-snipers-overview.png?v=10" tabindex="0" role="button" aria-label="Enlarge automation flow infographic">
+            <div class="infographic-container" data-full="gold-snipers-overview.webp" tabindex="0" role="button" aria-label="Enlarge automation flow infographic">
                 <picture>
                     <source srcset="gold-snipers-overview.webp?v=10" type="image/webp">
-                    <img src="gold-snipers-overview.png?v=10" alt="Gold Snipers automation flow: Telegram signals are detected, processed, and executed on MetaTrader 5" class="infographic" loading="lazy" width="1024" height="1024">
+                    <img src="gold-snipers-overview.webp" alt="Gold Snipers automation flow: Telegram signals are detected, processed, and executed on MetaTrader 5" class="infographic" loading="lazy" width="1024" height="1024">
                 </picture>
             </div>
             <p class="infographic-hint">Click image to enlarge — or <a href="infographics.html">view readable version</a></p>
@@ -280,23 +280,23 @@
                 <h2>Engineered to <span class="cyan-text">Protect & Scale</span></h2>
                 <p>Stop copy-pasting signals manually and getting stopped out by broker manipulation. Automate with elite retail tech across Gold, Forex, and Indices.</p>
             </div>
-            <div class="infographic-container" data-full="gold-snipers-features.png?v=10" tabindex="0" role="button" aria-label="Enlarge Core Features infographic" style="margin-bottom: 0;">
+            <div class="infographic-container" data-full="gold-snipers-features.webp" tabindex="0" role="button" aria-label="Enlarge Core Features infographic" style="margin-bottom: 0;">
                 <picture>
                     <source srcset="gold-snipers-features.webp?v=10" type="image/webp">
-                    <img src="gold-snipers-features.png?v=10" alt="Gold Snipers core features: Bridge auto-reads Telegram signals and the EA handles automated MT5 trading, multi-level take profits, partial exits, grid defense, break-even, and drawdown protection" class="infographic" loading="lazy" width="1024" height="1024">
+                    <img src="gold-snipers-features.webp" alt="Gold Snipers core features: Bridge auto-reads Telegram signals and the EA handles automated MT5 trading, multi-level take profits, partial exits, grid defense, break-even, and drawdown protection" class="infographic" loading="lazy" width="1024" height="1024">
                 </picture>
             </div>
             <p class="infographic-hint" style="margin-bottom: 80px;">Click image to enlarge</p>
             <div class="features-grid">
                 <div class="feature-card glass-panel">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-Time Signal Processing</h3>
+                    <p>Ultra-fast signal response parses Telegram alerts in under 0.5 seconds and executes trades at the optimal moment. Low-latency infrastructure ensures no opportunity is missed, even in fast-moving Gold and Forex markets.</p>
+                </div>
+                <div class="feature-card glass-panel">
                     <div class="feature-icon">🛡️</div>
                     <h3>Stealth TP / SL Guard</h3>
                     <p>Hide your Take Profit and Stop Loss levels locally on your terminal/VPS. Your broker sees blank lines—completely stopping spread sweeps and target hunting.</p>
-                </div>
-                <div class="feature-card glass-panel">
-                    <div class="feature-icon">🔍</div>
-                    <h3>SMC FVG & OB Filters</h3>
-                    <p>Only trade high-probability zones. The EA validates setups against Fair Value Gaps (FVG) and structure-breaking Order Blocks (BOS) before opening trades.</p>
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">🪜</div>
@@ -304,9 +304,9 @@
                     <p>Don't risk everything on one entry. Gold Snipers splits trades into anchor and pending layers, averaging your entry price on pullbacks and locking in Break-Even.</p>
                 </div>
                 <div class="feature-card glass-panel">
-                    <div class="feature-icon">⚡</div>
-                    <h3>0.5s Telegram Bridge</h3>
-                    <p>A native Python background copier that parses complex signal text, applies custom channel lot modifiers, and triggers trades on MT5 with near-zero latency.</p>
+                    <div class="feature-icon">🧮</div>
+                    <h3>Dynamic Risk Management</h3>
+                    <p>Set position sizes, stop losses, and take profits to match your account balance and risk tolerance. Equity protection, drawdown guards, and prop-firm safety controls keep your investments safe.</p>
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">📈</div>
@@ -314,9 +314,56 @@
                     <p>Enforce strict equity drawdown limits, maximum spread filters, and trading session hours to protect funding and comply with strict challenge rules.</p>
                 </div>
                 <div class="feature-card glass-panel">
-                    <div class="feature-icon">📊</div>
-                    <h3>SQLite Analytics Engine</h3>
-                    <p>Log all executed signals, win/loss rates, and profit statistics automatically. Review and optimize performance directly from your MT5 terminal.</p>
+                    <div class="feature-icon">📱</div>
+                    <h3>Telegram Admin Controls</h3>
+                    <p>Change settings, close trades, move stops to break-even, and request status updates directly from Telegram. Control your copier from anywhere without touching the chart or VPS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Lifecycle Section -->
+    <section id="lifecycle" class="lifecycle-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Order <span class="cyan-text">Lifecycle</span></h2>
+                <p>Track every step of your trade's journey from signal to close — complete visibility and control.</p>
+            </div>
+            <div class="lifecycle-timeline">
+                <div class="lifecycle-step">
+                    <div class="lifecycle-icon">1</div>
+                    <div class="lifecycle-content">
+                        <h3>Signal Received</h3>
+                        <p>A Telegram signal is posted and parsed by the bridge in under 0.5 seconds.</p>
+                    </div>
+                </div>
+                <div class="lifecycle-step">
+                    <div class="lifecycle-icon">2</div>
+                    <div class="lifecycle-content">
+                        <h3>Validation</h3>
+                        <p>The EA checks filters, spread, session hours, and signal-guard rules before acting.</p>
+                    </div>
+                </div>
+                <div class="lifecycle-step">
+                    <div class="lifecycle-icon">3</div>
+                    <div class="lifecycle-content">
+                        <h3>Trade Initiation</h3>
+                        <p>Anchor and pending orders are placed with precise SL, TP, and lot sizing.</p>
+                    </div>
+                </div>
+                <div class="lifecycle-step">
+                    <div class="lifecycle-icon">4</div>
+                    <div class="lifecycle-content">
+                        <h3>Live Monitoring</h3>
+                        <p>The EA watches every position, updating highs, lows, and partial close events in real time.</p>
+                    </div>
+                </div>
+                <div class="lifecycle-step">
+                    <div class="lifecycle-icon">5</div>
+                    <div class="lifecycle-content">
+                        <h3>Exit & Analytics</h3>
+                        <p>Trades close at TP/SL or by command, and every result is logged to the SQLite analytics engine.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -329,10 +376,10 @@
                 <h2>Safety & <span class="cyan-text">Power Add-ons</span></h2>
                 <p>Advanced protection and execution tools built for serious traders and prop-firm challenges.</p>
             </div>
-            <div class="infographic-container" data-full="gold-snipers-addons.png?v=10" tabindex="0" role="button" aria-label="Enlarge Safety and Power Add-ons infographic">
+            <div class="infographic-container" data-full="gold-snipers-addons.webp" tabindex="0" role="button" aria-label="Enlarge Safety and Power Add-ons infographic">
                 <picture>
                     <source srcset="gold-snipers-addons.webp?v=10" type="image/webp">
-                    <img src="gold-snipers-addons.png?v=10" alt="Gold Snipers safety and power add-ons: performance tracker, pivot levels, FVG and order block scanner, interactive trades terminal, GMT session killzones, anchor shave allocations, trailing engines, and trailing stop modes" class="infographic" loading="lazy" width="1024" height="1024">
+                    <img src="gold-snipers-addons.webp" alt="Gold Snipers safety and power add-ons: performance tracker, pivot levels, FVG and order block scanner, interactive trades terminal, GMT session killzones, anchor shave allocations, trailing engines, and trailing stop modes" class="infographic" loading="lazy" width="1024" height="1024">
                 </picture>
             </div>
             <p class="infographic-hint">Click image to enlarge — or <a href="infographics.html">view readable version</a></p>
@@ -410,7 +457,7 @@
                 <div class="showcase-viewer" id="showcase-panel" role="tabpanel" aria-label="Selected bridge screenshot">
                     <picture>
                         <source srcset="dashboard.webp?v=4" type="image/webp">
-                        <img id="showcase-display" src="dashboard.png?v=4" alt="Desktop Bridge Dashboard" class="showcase-image" loading="lazy" width="1024" height="656">
+                        <img id="showcase-display" src="dashboard.webp?v=4" alt="Desktop Bridge Dashboard" class="showcase-image" loading="lazy" width="1024" height="656">
                     </picture>
                 </div>
             </div>
@@ -425,68 +472,69 @@
                 <h2>Choose Your <span class="cyan-text">License Plan</span></h2>
                 <p>Secure global payments via Stripe & Lemon Squeezy. Standard VAT/Sales tax calculated automatically at checkout.</p>
             </div>
-            
+
             <div class="pricing-toggle-container">
-                <span class="toggle-label active" id="billing-monthly">Monthly License</span>
+                <span class="toggle-label active" id="billing-monthly">Monthly</span>
                 <div class="toggle-switch">
                     <div class="toggle-knob"></div>
                 </div>
-                <span class="toggle-label" id="billing-annual">Lifetime Access</span>
+                <span class="toggle-label" id="billing-annual">Lifetime</span>
             </div>
 
             <div class="pricing-grid">
                 <!-- Plan 1 -->
                 <div class="pricing-card glass-panel">
-                    <h3>Starter Licence</h3>
+                    <h3>Starter</h3>
+                    <div class="price-container">
+                        <span class="price price-value">$29</span>
+                        <span class="billing-period">/ month</span>
+                    </div>
+                    <ul>
+                        <li>1 MT5 Instance</li>
+                        <li>2 Telegram Channels</li>
+                        <li>SMC FVG & OB Filters</li>
+                        <li>Grid Ladder Engine</li>
+                        <li>Stealth & Harvest Modes</li>
+                        <li>Updates & Support</li>
+                    </ul>
+                    <a href="https://checkout.dodopayments.com/buy/pdt_0NhEe8nvtKAEOX8Wl930b?quantity=1" id="btn-starter" class="btn btn-secondary" target="_blank">Get Starter License</a>
+                </div>
+                <!-- Plan 2 (Popular) -->
+                <div class="pricing-card glass-panel popular">
+                    <div class="badge">Most Popular</div>
+                    <h3>Pro</h3>
+                    <div class="price-container">
+                        <span class="price price-value">$39</span>
+                        <span class="billing-period">/ month</span>
+                    </div>
+                    <ul>
+                        <li>3 MT5 Instances</li>
+                        <li>6 Telegram Channels</li>
+                        <li>SMC FVG & OB Filters</li>
+                        <li>Grid Ladder Engine</li>
+                        <li>Stealth & Harvest Modes</li>
+                        <li>Priority Bug Fixes</li>
+                        <li>Updates & Support</li>
+                    </ul>
+                    <a href="https://checkout.dodopayments.com/buy/pdt_0NhEeiDRNiW4NcLSfWNc5?quantity=1" id="btn-pro" class="btn btn-primary" target="_blank">Get Pro License</a>
+                </div>
+                <!-- Plan 3 -->
+                <div class="pricing-card glass-panel">
+                    <h3>Developer</h3>
                     <div class="price-container">
                         <span class="price price-value">$49</span>
                         <span class="billing-period">/ month</span>
                     </div>
                     <ul>
-                        <li>1 Live MT5 Account</li>
-                        <li>Telegram Bridge (2 Channels)</li>
-                        <li>SMC FVG & OB Filter Systems</li>
-                        <li>Multi-Level Grid Ladder Engine</li>
+                        <li>6 MT5 Instances</li>
+                        <li>12 Telegram Channels</li>
+                        <li>SMC FVG & OB Filters</li>
+                        <li>Grid Ladder Engine</li>
                         <li>Stealth & Harvest Modes</li>
+                        <li>Priority Bug Fixes & Feature Requests</li>
                         <li>Lifetime Updates & Support</li>
                     </ul>
-                    <a href="https://goldsnipers.lemonsqueezy.com/checkout/buy/a46be02b-8460-41c1-a384-0102bff2aa9b" id="btn-starter" class="btn btn-secondary lemonsqueezy-button">Get Starter License</a>
-                </div>
-                <!-- Plan 2 (Popular) -->
-                <div class="pricing-card glass-panel popular">
-                    <div class="badge">Most Popular</div>
-                    <h3>Pro Trader Suite</h3>
-                    <div class="price-container">
-                        <span class="price price-value">$89</span>
-                        <span class="billing-period">/ month</span>
-                    </div>
-                    <ul>
-                        <li>3 Live MT5 Accounts</li>
-                        <li>Telegram Bridge (6 Channels)</li>
-                        <li>SMC FVG & OB Filter Systems</li>
-                        <li>Multi-Level Grid Ladder Engine</li>
-                        <li>Stealth & Harvest Modes</li>
-                        <li>Lifetime Updates & Support</li>
-                    </ul>
-                    <a href="#" id="btn-pro" class="btn btn-primary lemonsqueezy-button">Get Pro License</a>
-                </div>
-                <!-- Plan 3 -->
-                <div class="pricing-card glass-panel">
-                    <h3>Developer Pass</h3>
-                    <div class="price-container">
-                        <span class="price price-value">$149</span>
-                        <span class="billing-period">/ month</span>
-                    </div>
-                    <ul>
-                        <li>6 Live MT5 Accounts</li>
-                        <li>Telegram Bridge (12 Channels)</li>
-                        <li>SMC FVG & OB Filter Systems</li>
-                        <li>Multi-Level Grid Ladder Engine</li>
-                        <li>Stealth & Harvest Modes</li>
-                        <li>Direct Developer Access (Feature requests & priority bugs)</li>
-                        <li>Lifetime Updates & Support</li>
-                    </ul>
-                    <a href="#" id="btn-lifetime" class="btn btn-secondary lemonsqueezy-button">Get Developer License</a>
+                    <a href="https://checkout.dodopayments.com/buy/pdt_0NhEfyTu1Ba4hXRBL8qjp?quantity=1" id="btn-lifetime" class="btn btn-secondary" target="_blank">Get Developer License</a>
                 </div>
             </div>
         </div>
@@ -536,6 +584,15 @@
                         While our branding highlights Gold (XAUUSD), the EA is fully compatible with Forex currency pairs (e.g. EURUSD, GBPUSD), Yen pairs (e.g. USDJPY), Metals (Silver/XAGUSD), Oil, and major Indices (e.g. US30, NAS100). The system dynamically detects the symbol's digits and scales pip calculations automatically for any asset.
                     </div>
                 </div>
+                <div class="faq-item glass-panel">
+                    <button class="faq-question" type="button">
+                        <span>What does "Lifetime Access" actually mean?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Lifetime Access means you pay once and retain full use of the version you purchased — forever. Your license will never expire and you will never be asked to pay again. As long as Gold Snipers is actively developed, you will receive all future updates at no additional cost. In the event that development ceases, your last received version will remain fully functional and yours to keep. You are never locked out of a version you have already paid for.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -543,7 +600,7 @@
     <!-- Infographic Lightbox Modal -->
     <div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Enlarged infographic" hidden>
         <button class="modal-close" type="button" aria-label="Close image">&times;</button>
-        <img id="modalImage" src="" alt="">
+        <img id="modalImage" src="" alt="Enlarged infographic view">
     </div>
 
     <!-- Footer -->
@@ -551,7 +608,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h2><img src="logo-header.png" alt="" width="32" height="32"> Gold<span>Snipers</span></h2>
+                    <h2><img src="logo-header.png" alt="Gold Snipers Logo" width="32" height="32"> Gold<span>Snipers</span></h2>
                     <p>Professional algorithmic trading solutions for MetaTrader 5 and Telegram integrations. Built by traders, for traders.</p>
                 </div>
                 <div class="footer-links">
@@ -567,7 +624,16 @@
                     <h4>Support</h4>
                     <ul>
                         <li><a href="#faq">FAQ</a></li>
-                        <li><a href="mailto:support@goldsnipers.com">Contact Support</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="https://t.me/goldsniperssupport" target="_blank">Telegram Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -579,7 +645,19 @@
         </div>
     </footer>
 
-    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-    <script src="script.js?v=2.3.0"></script>
+    <script src="script.js?v=2.5.0"></script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6a30c0ab16a8811d4c595c28/1jr77180j';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>

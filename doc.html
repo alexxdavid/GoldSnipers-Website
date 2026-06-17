@@ -86,7 +86,7 @@
                     <li><a href="#trail-stop">Trailing Stop</a></li>
                     <li><a href="#sig-guard">Signal Guard (SIG)</a></li>
                     <li><a href="#manual-btn">Manual Buttons</a></li>
-                    <li><a href="#tg-control">Telegram Controls</a></li>
+                    <li><a href="#tg-control">Telegram Admin Commands</a></li>
                     <li><a href="#trouble">Troubleshooting</a></li>
                     <li><a href="#ea-inputs">MT5 Input Settings</a></li>
                 </ul>
@@ -339,17 +339,60 @@
 
                 <section id="tg-control" class="doc-section">
                     <h2>Controlling Everything From Telegram</h2>
-                    <p>If you set up a Bot Token during setup, you can control the bridge and EA from your phone:</p>
+                    <p>If you set up a Bot Token during setup, you can control the bridge and EA from your phone. Open Telegram, find your bot, and send <code>/start</code> to open the menu.</p>
+
+                    <h3>Quick Commands</h3>
+                    <p>These commands work anywhere in the bot conversation:</p>
                     <ul>
-                        <li>Open Telegram, find your bot, send /start.</li>
-                        <li>The bot shows a menu. Tap numbers to navigate (1 = Channel 1 settings, 2 = Channel 2 settings, etc).</li>
-                        <li>Send <code>STATUS</code> any time to see all current settings in one message.</li>
-                        <li>Send <code>CLOSE ALL</code> to close every open trade from your phone.</li>
-                        <li>Send <code>RISK FREE</code> to move every stop loss to break even.</li>
-                        <li>Send <code>SET LOT_ANC 0.05</code> to change a setting (in this case, anchor lot size to 0.05).</li>
+                        <li><code>STATUS</code> — See all current settings for the active channel at a glance.</li>
+                        <li><code>CLOSE ALL</code> — Close every open trade immediately.</li>
+                        <li><code>RISK FREE</code> — Move every stop loss to break-even instantly.</li>
+                        <li><code>CANCEL LIMITS</code> — Cancel all pending limit orders.</li>
+                    </ul>
+
+                    <h3>SET Commands — Change Settings</h3>
+                    <p>Use <code>SET &lt;parameter&gt; &lt;value&gt;</code> to change any EA setting remotely. Examples:</p>
+                    <ul>
+                        <li><code>SET LOT_ANC 0.05</code> — Set anchor lot size to 0.05.</li>
+                        <li><code>SET LOT_PEN 0.02</code> — Set pending/grid lot size to 0.02.</li>
+                        <li><code>SET PENDING_COUNT 3</code> — Set the number of pending grid layers to 3.</li>
+                        <li><code>SET ANCHOR_COUNT 1</code> — Set the number of anchor market orders to 1.</li>
+                        <li><code>SET SL 50</code> — Set stop-loss distance to 50 pips.</li>
+                        <li><code>SET TP_MODE 1</code> — Enable take-profit management (0 = off, 1 = on).</li>
+                        <li><code>SET TP_STEALTH 1</code> — Hide take profits from the broker (0 = off, 1 = on).</li>
+                        <li><code>SET GRID 1</code> — Enable grid/ladder scaling (0 = off, 1 = on).</li>
+                        <li><code>SET HARVEST 0</code> — Disable harvest mode.</li>
+                        <li><code>SET SIG_GUARD 10</code> — Skip signals that moved more than 10 pips from the entry.</li>
+                    </ul>
+
+                    <h3>GET Commands — Read Settings</h3>
+                    <p>Use <code>GET &lt;parameter&gt;</code> to read the current value of any setting:</p>
+                    <ul>
+                        <li><code>GET LOT_ANC</code> — Current anchor lot size.</li>
+                        <li><code>GET PENDING_COUNT</code> — Number of pending grid layers.</li>
+                        <li><code>GET SL</code> — Current stop-loss distance.</li>
+                    </ul>
+
+                    <h3>CMD Commands — Trade Actions</h3>
+                    <p>Use <code>CMD &lt;action&gt;</code> to execute trade commands:</p>
+                    <ul>
+                        <li><code>CMD CLOSE_ALL</code> — Close every open trade.</li>
+                        <li><code>CMD CANCEL_LIMITS</code> — Cancel all pending orders.</li>
+                        <li><code>CMD RISK_FREE</code> — Move all stop losses to break-even.</li>
+                        <li><code>CMD BUY</code> — Open a manual buy trade.</li>
+                        <li><code>CMD SELL</code> — Open a manual sell trade.</li>
+                    </ul>
+
+                    <h3>Navigating Menus</h3>
+                    <p>The bot shows inline buttons and numbered menus. Tap or send the number to navigate:</p>
+                    <ul>
+                        <li><strong>1</strong> — Channel 1 settings</li>
+                        <li><strong>2</strong> — Channel 2 settings</li>
+                        <li><strong>3</strong> — Manual trading settings</li>
+                        <li><strong>STATUS</strong> — Current settings snapshot</li>
                     </ul>
                     <div class="doc-tip">
-                        <strong>💡 Remote Control:</strong> Admin commands work even when you are away from your computer — useful for closing trades on the go.
+                        <strong>💡 Remote Control:</strong> Admin commands work even when you are away from your computer — useful for closing trades, changing risk, or checking status on the go.
                     </div>
                 </section>
 
