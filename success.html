@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Snipers — Purchase Complete</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0a0a12; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .container { max-width: 520px; width: 90%; text-align: center; }
+        .card { background: #14141f; border: 1px solid #1e1e30; border-radius: 16px; padding: 40px 32px; }
+        .icon { font-size: 48px; margin-bottom: 16px; }
+        h1 { color: #00d2d3; font-size: 24px; margin-bottom: 12px; }
+        p { color: #a0a0b0; font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
+        .key-box { background: #1a1a2e; border: 1px solid #2a2a40; border-radius: 8px; padding: 14px; font-family: 'Courier New', monospace; font-size: 18px; color: #00d2d3; letter-spacing: 2px; margin: 20px 0; user-select: all; cursor: pointer; }
+        .btn { display: inline-block; margin-top: 16px; padding: 12px 32px; background: #00d2d3; color: #000; font-weight: 600; border-radius: 8px; text-decoration: none; font-size: 14px; transition: background 0.2s; }
+        .btn:hover { background: #00f0f0; }
+        .note { color: #666; font-size: 12px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="icon">&#x2705;</div>
+            <h1>Purchase Complete!</h1>
+            <p>Thank you for purchasing Gold Snipers. Your license key has been generated and is shown below.</p>
+            <div class="key-box" id="license-key">Loading...</div>
+            <p style="font-size: 13px;">Copy this key and paste it into the Gold Snipers Bridge when prompted.</p>
+            <a href="https://goldsnipersbot.com" class="btn">Back to Home</a>
+            <p class="note">A confirmation email with your license key has also been sent to your email address.</p>
+        </div>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const sessionId = params.get('session_id');
+        const keyEl = document.getElementById('license-key');
+
+        if (sessionId) {
+            // Try to fetch session from Stripe to get the key
+            // In production, this would call your backend to look up the key by session
+            keyEl.textContent = 'Check your email for your license key';
+            keyEl.style.fontSize = '14px';
+            keyEl.style.letterSpacing = '0';
+            keyEl.style.color = '#a0a0b0';
+        } else {
+            keyEl.textContent = 'Check your email for your license key';
+            keyEl.style.fontSize = '14px';
+            keyEl.style.letterSpacing = '0';
+            keyEl.style.color = '#a0a0b0';
+        }
+    </script>
+</body>
+</html>

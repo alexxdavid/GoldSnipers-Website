@@ -75,25 +75,20 @@ function initPricingToggle() {
 
     const pricingData = {
         monthly: [
-            { price: "$29", period: "/ month", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEe8nvtKAEOX8Wl930b?quantity=1" },
-            { price: "$39", period: "/ month", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEeiDRNiW4NcLSfWNc5?quantity=1" },
-            { price: "$49", period: "/ month", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEfyTu1Ba4hXRBL8qjp?quantity=1" }
+            { price: "$29", period: "/ month", checkout: "https://buy.stripe.com/5kQbJ146d8BOaTO9yZa3u00" },
+            { price: "$39", period: "/ month", checkout: "https://buy.stripe.com/00wfZhfOVg4gaTOh1ra3u02" },
+            { price: "$49", period: "/ month", checkout: "https://buy.stripe.com/bJedR9auB3hu1je7qRa3u04" }
         ],
         annual: [
-            { price: "$299", period: "one-time", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEeO1Kit2U7GLoM1od3?quantity=1" },
-            { price: "$399", period: "one-time", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEeZ9kRe4B4TjomtrPK?quantity=1" },
-            { price: "$499", period: "one-time", checkout: "https://checkout.dodopayments.com/buy/pdt_0NhEh6EOtVcpx77bxnaBf?quantity=1" }
+            { price: "$299", period: "one-time", checkout: "https://buy.stripe.com/aFa3cvfOVf0c7HC8uVa3u01" },
+            { price: "$399", period: "one-time", checkout: "https://buy.stripe.com/fZu00j9qx19mge8bH7a3u03" },
+            { price: "$499", period: "one-time", checkout: "https://buy.stripe.com/eVq4gzdGNf0cbXS6mNa3u05" }
         ]
     };
 
     const starterBtn = document.getElementById("btn-starter");
     const proBtn = document.getElementById("btn-pro");
     const lifetimeBtn = document.getElementById("btn-lifetime");
-
-    const monthlyURLs = [pricingData.monthly[0].checkout, pricingData.monthly[1].checkout, pricingData.monthly[2].checkout];
-    if (starterBtn) starterBtn.href = monthlyURLs[0];
-    if (proBtn) proBtn.href = monthlyURLs[1];
-    if (lifetimeBtn) lifetimeBtn.href = monthlyURLs[2];
 
     function updatePricing(billingMode) {
         prices.forEach((el, index) => {
@@ -106,10 +101,6 @@ function initPricingToggle() {
         if (starterBtn) starterBtn.href = pricingData[billingMode][0].checkout;
         if (proBtn) proBtn.href = pricingData[billingMode][1].checkout;
         if (lifetimeBtn) lifetimeBtn.href = pricingData[billingMode][2].checkout;
-
-        if (window.createLemonSqueezy) {
-            window.createLemonSqueezy();
-        }
     }
 
     function setBilling(isAnnual) {
