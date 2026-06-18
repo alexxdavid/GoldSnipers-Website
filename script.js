@@ -75,14 +75,14 @@ function initPricingToggle() {
 
     const pricingData = {
         monthly: [
-            { price: "$19", period: "/ month", checkout: "https://buy.stripe.com/eVqaEX8mt3hu7HCbH7a3u06" },
-            { price: "$29", period: "/ month", checkout: "https://buy.stripe.com/8x228r329dW83rmaD3a3u08" },
-            { price: "$39", period: "/ month", checkout: "https://buy.stripe.com/9B628r6el2dq2ni7qRa3u0a" }
+            { price: "$19", period: "/ month", checkout: "https://buy.stripe.com/28E3cv6el5pCge8dPfa3u0c" },
+            { price: "$29", period: "/ month", checkout: "https://buy.stripe.com/7sY3cv1Y5dW82nifXna3u0d" },
+            { price: "$39", period: "/ month", checkout: "https://buy.stripe.com/dRm6oH8mtdW8aTOfXna3u0e" }
         ],
         annual: [
-            { price: "$199", period: "one-time", checkout: "https://buy.stripe.com/cNi6oH46df0cfa4aD3a3u07" },
-            { price: "$299", period: "one-time", checkout: "https://buy.stripe.com/cNidR946d4ly9PKfXna3u09" },
-            { price: "$399", period: "one-time", checkout: "https://buy.stripe.com/8x26oHeKRg4g4vq6mNa3u0b" }
+            { price: "$199", period: "one-time", checkout: "https://buy.stripe.com/aFacN51Y58BOfa44eFa3u0f" },
+            { price: "$299", period: "one-time", checkout: "https://buy.stripe.com/cNi28r9qxcS49PK4eFa3u0g" },
+            { price: "$399", period: "one-time", checkout: "https://buy.stripe.com/14A4gzbyFg4gge84eFa3u0h" }
         ]
     };
 
