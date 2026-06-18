@@ -10,8 +10,8 @@ const PRICE_MAP = {
     "price_1TjOSZHEiE6tGvunidfDUbeF": { product: "starter", max_machines: 1 },
     "price_1TjOSZHEiE6tGvunT0D2TNqT": { product: "pro", max_machines: 3 },
     "price_1TjOSaHEiE6tGvunulK8c0ak": { product: "pro", max_machines: 3 },
-    "price_1TjOSbHEiE6tGvun9CUSI4tj": { product: "developer", max_machines: 6 },
-    "price_1TjOSbHEiE6tGvundUX7aPkg": { product: "developer", max_machines: 6 },
+    "price_1TjOSbHEiE6tGvun9CUSI4tj": { product: "expert", max_machines: 6 },
+    "price_1TjOSbHEiE6tGvundUX7aPkg": { product: "expert", max_machines: 6 },
 };
 
 function generateKey() {
