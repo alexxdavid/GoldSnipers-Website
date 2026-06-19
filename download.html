@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloading Gold Snipers...</title>
+    <style>
+        body {
+            background: #0a0a12;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        .container {
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            background: #14141f;
+            border: 1px solid #1e1e30;
+            border-radius: 16px;
+            padding: 40px 32px;
+        }
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border-left-color: #00d2d3;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        h1 {
+            color: #00d2d3;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+        p {
+            color: #a0a0b0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .link {
+            color: #00d2d3;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        const MANIFEST_URL = "https://gist.githubusercontent.com/alexxdavid/5ee90639e27ef4b2aba1fe25272d9543/raw/update_manifest.json";
+
+        async function startDownload() {
+            try {
+                const response = await fetch(MANIFEST_URL, { cache: "no-store" });
+                const manifest = await response.json();
+                
+                let downloadUrl = manifest.installer_url;
+                if (!downloadUrl) {
+                    document.getElementById('status-msg').textContent = "Error: Download link not found. Please contact support.";
+                    return;
+                }
+                
+                // If it is a GitHub API asset URL, fetch the actual browser_download_url
+                if (downloadUrl.includes("api.github.com/repos/")) {
+                    try {
+                        const assetResponse = await fetch(downloadUrl);
+                        if (assetResponse.ok) {
+                            const assetMeta = await assetResponse.json();
+                            if (assetMeta.browser_download_url) {
+                                downloadUrl = assetMeta.browser_download_url;
+                            }
+                        }
+                    } catch (apiErr) {
+                        console.error("Failed to resolve browser download URL from API:", apiErr);
+                    }
+                }
+                
+                // Update text and trigger direct download
+                document.getElementById('status-msg').innerHTML = 
+                    'Your download has started! If it did not begin, <a class="link" href="' + downloadUrl + '">click here to download manually</a>.';
+                window.location.href = downloadUrl;
+            } catch (err) {
+                console.error(err);
+                document.getElementById('status-msg').textContent = "Error fetching download link. Please contact support.";
+            }
+        }
+        window.onload = startDownload;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <h1>Downloading Gold Snipers EA</h1>
+        <p id="status-msg">Fetching the latest installer build, please wait...</p>
+    </div>
+</body>
+</html>
