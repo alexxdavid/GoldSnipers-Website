@@ -61,14 +61,31 @@
                 const response = await fetch(MANIFEST_URL, { cache: "no-store" });
                 const manifest = await response.json();
                 
-                if (manifest.installer_url) {
-                    // Update text and trigger direct download
-                    document.getElementById('status-msg').innerHTML = 
-                        'Your download has started! If it did not begin, <a class="link" href="' + manifest.installer_url + '">click here to download manually</a>.';
-                    window.location.href = manifest.installer_url;
-                } else {
+                let downloadUrl = manifest.installer_url;
+                if (!downloadUrl) {
                     document.getElementById('status-msg').textContent = "Error: Download link not found. Please contact support.";
+                    return;
                 }
+                
+                // If it is a GitHub API asset URL, fetch the actual browser_download_url
+                if (downloadUrl.includes("api.github.com/repos/")) {
+                    try {
+                        const assetResponse = await fetch(downloadUrl);
+                        if (assetResponse.ok) {
+                            const assetMeta = await assetResponse.json();
+                            if (assetMeta.browser_download_url) {
+                                downloadUrl = assetMeta.browser_download_url;
+                            }
+                        }
+                    } catch (apiErr) {
+                        console.error("Failed to resolve browser download URL from API:", apiErr);
+                    }
+                }
+                
+                // Update text and trigger direct download
+                document.getElementById('status-msg').innerHTML = 
+                    'Your download has started! If it did not begin, <a class="link" href="' + downloadUrl + '">click here to download manually</a>.';
+                window.location.href = downloadUrl;
             } catch (err) {
                 console.error(err);
                 document.getElementById('status-msg').textContent = "Error fetching download link. Please contact support.";
