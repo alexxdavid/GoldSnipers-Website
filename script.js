@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initHeroChart();
     initShowcaseTabs();
     initScrollspy();
-    initInfographicLightbox();
 });
 
 // --- Sticky Header ---
@@ -451,48 +450,4 @@ function initScrollspy() {
     changeActiveLink();
 }
 
-// --- Infographic Lightbox ---
-function initInfographicLightbox() {
-    const modal = document.getElementById("imageModal");
-    const modalImage = document.getElementById("modalImage");
-    const closeBtn = modal?.querySelector(".modal-close");
-    if (!modal || !modalImage) return;
-
-    function openModal(src, alt) {
-        modalImage.src = src;
-        modalImage.alt = alt;
-        modal.hidden = false;
-        document.body.style.overflow = "hidden";
-        closeBtn?.focus();
-    }
-
-    function closeModal() {
-        modal.hidden = true;
-        modalImage.src = "";
-        document.body.style.overflow = "";
-    }
-
-    document.querySelectorAll(".infographic-container[data-full]").forEach(container => {
-        function activate() {
-            const full = container.getAttribute("data-full");
-            const img = container.querySelector("img");
-            if (full) openModal(full, img?.alt || "");
-        }
-
-        container.addEventListener("click", activate);
-        container.addEventListener("keydown", (e) => {
-            if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                activate();
-            }
-        });
-    });
-
-    closeBtn?.addEventListener("click", closeModal);
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) closeModal();
-    });
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && !modal.hidden) closeModal();
-    });
-}
+// --- Placeholder (infographic lightbox removed) ---
