@@ -455,8 +455,8 @@ nav {
 .pt-multi-tp { top: 47%; left: 22%; color: #00E676; }
 .pt-grid-ladder { top: 38%; left: 80%; color: #00D2D3; }
 .pt-equity-protect { top: 25%; left: 42%; color: #FFD93D; }
-.pt-harvest { top: 66%; left: 82%; color: #B080FF; }
-.pt-stealth { top: 84%; left: 12%; color: #FF6B6B; }
+.pt-harvest { top: 66%; left: 28%; color: #B080FF; }
+.pt-stealth { top: 66%; left: 63%; color: #FF6B6B; }
 
 .pt-multi-tp .pulse-dot-inner { background-color: #00E676; box-shadow: 0 0 10px #00E676; }
 .pt-grid-ladder .pulse-dot-inner { background-color: #00D2D3; box-shadow: 0 0 10px #00D2D3; }
@@ -477,8 +477,8 @@ nav {
 .fl-multi-tp { top: 47%; left: -140px; animation-delay: 0s; }
 .fl-grid-ladder { top: 38%; right: -140px; animation-delay: 0.5s; }
 .fl-equity-protect { top: 25%; left: -140px; animation-delay: 1s; }
-.fl-harvest { top: 66%; right: -145px; animation-delay: 1.5s; }
-.fl-stealth { top: 84%; left: -135px; animation-delay: 2s; }
+.fl-harvest { top: 66%; left: -145px; animation-delay: 1.5s; }
+.fl-stealth { top: 66%; right: -135px; animation-delay: 2s; }
 
 .label-badge {
     background: #0d111a;
@@ -512,23 +512,23 @@ nav {
 
 .fl-multi-tp .label-line,
 .fl-equity-protect .label-line,
-.fl-stealth .label-line {
+.fl-harvest .label-line {
     left: 100%;
     background: linear-gradient(to right, currentColor, rgba(255,255,255,0));
 }
 
 .fl-multi-tp .label-line { width: 45px; }
 .fl-equity-protect .label-line { width: 55px; }
-.fl-stealth .label-line { width: 50px; }
+.fl-harvest .label-line { width: 50px; }
 
 .fl-grid-ladder .label-line,
-.fl-harvest .label-line {
+.fl-stealth .label-line {
     right: 100%;
     background: linear-gradient(to left, currentColor, rgba(255,255,255,0));
 }
 
 .fl-grid-ladder .label-line { width: 45px; }
-.fl-harvest .label-line { width: 50px; }
+.fl-stealth .label-line { width: 50px; }
 
 /* Responsive styling to overlay on smaller viewports */
 @media (max-width: 1024px) {
@@ -538,10 +538,10 @@ nav {
     
     .fl-multi-tp { left: 4%; }
     .fl-equity-protect { left: 4%; }
-    .fl-stealth { left: 4%; }
+    .fl-harvest { left: 4%; }
     
     .fl-grid-ladder { right: 4%; }
-    .fl-harvest { right: 4%; }
+    .fl-stealth { right: 4%; }
     
     .label-line {
         display: none !important;
