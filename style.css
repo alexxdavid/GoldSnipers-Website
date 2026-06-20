@@ -454,9 +454,9 @@ nav {
 /* Specific pulse point coordinates */
 .pt-multi-tp { top: 47%; left: 22%; color: #00E676; }
 .pt-grid-ladder { top: 38%; left: 80%; color: #00D2D3; }
-.pt-equity-protect { top: 28%; left: 45%; color: #FFD93D; }
-.pt-harvest { top: 61%; left: 68%; color: #B080FF; }
-.pt-stealth { top: 72%; left: 22%; color: #FF6B6B; }
+.pt-equity-protect { top: 25%; left: 42%; color: #FFD93D; }
+.pt-harvest { top: 66%; left: 82%; color: #B080FF; }
+.pt-stealth { top: 84%; left: 12%; color: #FF6B6B; }
 
 .pt-multi-tp .pulse-dot-inner { background-color: #00E676; box-shadow: 0 0 10px #00E676; }
 .pt-grid-ladder .pulse-dot-inner { background-color: #00D2D3; box-shadow: 0 0 10px #00D2D3; }
@@ -476,9 +476,9 @@ nav {
 /* Animation delays to desynchronize bobbing */
 .fl-multi-tp { top: 47%; left: -140px; animation-delay: 0s; }
 .fl-grid-ladder { top: 38%; right: -140px; animation-delay: 0.5s; }
-.fl-equity-protect { top: 28%; left: -140px; animation-delay: 1s; }
-.fl-harvest { top: 61%; right: -145px; animation-delay: 1.5s; }
-.fl-stealth { top: 72%; left: -135px; animation-delay: 2s; }
+.fl-equity-protect { top: 25%; left: -140px; animation-delay: 1s; }
+.fl-harvest { top: 66%; right: -145px; animation-delay: 1.5s; }
+.fl-stealth { top: 84%; left: -135px; animation-delay: 2s; }
 
 .label-badge {
     background: #0d111a;
