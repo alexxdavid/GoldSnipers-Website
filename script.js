@@ -449,5 +449,3 @@ function initScrollspy() {
 
     changeActiveLink();
 }
-
-// --- Placeholder (infographic lightbox removed) ---

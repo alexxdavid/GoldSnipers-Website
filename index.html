@@ -173,12 +173,30 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-preview" style="display: flex; justify-content: center; align-items: center;">
-                    <div style="max-width: 437px; width: 100%; overflow: hidden; border-radius: 12px;">
-                        <picture>
-                            <source srcset="ea_manual_preview.webp?v=1" type="image/webp">
-                            <img src="ea_manual_preview.png?v=1" alt="Gold Snipers MT5 Expert Advisor Chart Panel" style="width: 100%; height: auto; display: block;" loading="eager" width="437" height="608">
-                        </picture>
+                <div class="hero-preview" style="display: flex; justify-content: center; align-items: center; position: relative;">
+                    <div style="position: relative; max-width: 437px; width: 100%;">
+                        <div style="overflow: hidden; border-radius: 12px;">
+                            <picture>
+                                <source srcset="ea_manual_preview.webp?v=1" type="image/webp">
+                                <img src="ea_manual_preview.png?v=1" alt="Gold Snipers MT5 Expert Advisor Chart Panel" style="width: 100%; height: auto; display: block;" loading="eager" width="437" height="608">
+                            </picture>
+                        </div>
+                        <!-- Floating Feature Labels -->
+                        <div class="float-label" style="position: absolute; top: 30%; left: -90px; animation: floatBob 3s ease-in-out infinite;">
+                            <span style="background: #0d111a; border: 1.5px solid #FFD93D; color: #FFD93D; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 15px rgba(255, 217, 61, 0.25);">Equity Protection</span>
+                        </div>
+                        <div class="float-label" style="position: absolute; top: 41%; right: -100px; animation: floatBob 3s ease-in-out infinite 0.5s;">
+                            <span style="background: #0d111a; border: 1.5px solid #00D2D3; color: #00D2D3; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 15px rgba(0, 210, 211, 0.25);">Grid Ladder Engine</span>
+                        </div>
+                        <div class="float-label" style="position: absolute; top: 53%; left: -90px; animation: floatBob 3s ease-in-out infinite 1s;">
+                            <span style="background: #0d111a; border: 1.5px solid #00D2D3; color: #00D2D3; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 15px rgba(0, 210, 211, 0.25);">Multi-TP Scaling</span>
+                        </div>
+                        <div class="float-label" style="position: absolute; top: 67%; right: -90px; animation: floatBob 3s ease-in-out infinite 1.5s;">
+                            <span style="background: #0d111a; border: 1.5px solid #B080FF; color: #B080FF; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 15px rgba(130, 80, 255, 0.25);">Harvest &amp; Break-Even</span>
+                        </div>
+                        <div class="float-label" style="position: absolute; top: 80%; left: -75px; animation: floatBob 3s ease-in-out infinite 2s;">
+                            <span style="background: #0d111a; border: 1.5px solid #FF6B6B; color: #FF6B6B; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 15px rgba(255, 107, 107, 0.25);">Stealth TP/SL</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -187,17 +205,23 @@
         <!-- Live Execution Ticker -->
         <div class="ticker-wrap">
             <div class="ticker">
-                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> BUY <span class="profit">+45 Pips</span> | TIER 3 SECURED</div>
-                <div class="ticker-item">⚡ <span class="symbol">EURUSD</span> SELL <span class="profit">+20 Pips</span> | ANCHOR HIT</div>
-                <div class="ticker-item">⚡ <span class="symbol">GBPUSD</span> BUY <span class="profit">+35 Pips</span> | BREAK-EVEN SET</div>
-                <div class="ticker-item">⚡ <span class="symbol">US30</span> BUY <span class="profit">+150 Pips</span> | FULL HARVEST</div>
-                <div class="ticker-item">⚡ <span class="symbol">XAGUSD</span> SELL <span class="profit">+60 Pips</span> | TIER 2 SECURED</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> BUY TP1 HIT <span class="profit">+20 Pips</span> | SHAVE 20%</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> TP2 HIT <span class="profit">+50 Pips</span> | SHAVE 20%</div>
+                <div class="ticker-item">⚡ <span class="symbol">EURUSD</span> SELL <span class="profit">+12 Pips</span> | BREAKEVEN SET</div>
+                <div class="ticker-item">⚡ <span class="symbol">GBPUSD</span> BUY TP3 HIT <span class="profit">+90 Pips</span> | SHAVE 20%</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> TP5 HIT <span class="profit">+200 Pips</span> | FULL HARVEST</div>
+                <div class="ticker-item">⚡ <span class="symbol">US30</span> BUY <span class="profit">+150 Pips</span> | TRAIL STEP ACTIVE</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAGUSD</span> SELL TP1 HIT <span class="profit">+60 Pips</span> | SHAVE 20%</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> PENDING LADDER <span class="profit">3 LEVELS</span> | PLACED</div>
                 <!-- Duplicate for seamless loop -->
-                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> BUY <span class="profit">+45 Pips</span> | TIER 3 SECURED</div>
-                <div class="ticker-item">⚡ <span class="symbol">EURUSD</span> SELL <span class="profit">+20 Pips</span> | ANCHOR HIT</div>
-                <div class="ticker-item">⚡ <span class="symbol">GBPUSD</span> BUY <span class="profit">+35 Pips</span> | BREAK-EVEN SET</div>
-                <div class="ticker-item">⚡ <span class="symbol">US30</span> BUY <span class="profit">+150 Pips</span> | FULL HARVEST</div>
-                <div class="ticker-item">⚡ <span class="symbol">XAGUSD</span> SELL <span class="profit">+60 Pips</span> | TIER 2 SECURED</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> BUY TP1 HIT <span class="profit">+20 Pips</span> | SHAVE 20%</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> TP2 HIT <span class="profit">+50 Pips</span> | SHAVE 20%</div>
+                <div class="ticker-item">⚡ <span class="symbol">EURUSD</span> SELL <span class="profit">+12 Pips</span> | BREAKEVEN SET</div>
+                <div class="ticker-item">⚡ <span class="symbol">GBPUSD</span> BUY TP3 HIT <span class="profit">+90 Pips</span> | SHAVE 20%</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> TP5 HIT <span class="profit">+200 Pips</span> | FULL HARVEST</div>
+                <div class="ticker-item">⚡ <span class="symbol">US30</span> BUY <span class="profit">+150 Pips</span> | TRAIL STEP ACTIVE</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAGUSD</span> SELL TP1 HIT <span class="profit">+60 Pips</span> | SHAVE 20%</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> PENDING LADDER <span class="profit">3 LEVELS</span> | PLACED</div>
             </div>
         </div>
     </section>
@@ -223,7 +247,7 @@
                 <div class="why-card glass-panel">
                     <div class="why-icon">🛡️</div>
                     <h3>Manage Risk Like a Pro</h3>
-                    <p>Stealth TP/SL hides your levels from the broker, equity protection safeguards your capital, and dynamic grid controls keep sizing disciplined.</p>
+                    <p>Stealth TP/SL hides your levels from the broker, equity protection protects prop-firm accounts, and dynamic grid controls keep sizing disciplined.</p>
                 </div>
             </div>
         </div>
@@ -263,7 +287,7 @@
                 <h2>The Automation <span class="cyan-text">Flow</span></h2>
                 <p>From Telegram signal to executed trade on MetaTrader 5 — fully automated in under 50ms.</p>
             </div>
-            <div class="infographic-container" style="margin-bottom: 0;">
+            <div class="infographic-container">
                 <picture>
                     <source srcset="gold-snipers-overview.webp?v=10" type="image/webp">
                     <img src="gold-snipers-overview.webp" alt="Gold Snipers automation flow: Telegram signals are detected, processed, and executed on MetaTrader 5" class="infographic" loading="lazy" width="1024" height="1024">
@@ -285,6 +309,7 @@
                     <img src="gold-snipers-features.webp" alt="Gold Snipers core features: Bridge auto-reads Telegram signals and the EA handles automated MT5 trading, multi-level take profits, partial exits, grid defense, break-even, and equity protection" class="infographic" loading="lazy" width="1024" height="1024">
                 </picture>
             </div>
+            <div style="height: 50px;"></div>
             <div class="features-grid">
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">⚡</div>
@@ -389,7 +414,7 @@
                 <h2>Safety & <span class="cyan-text">Power Add-ons</span></h2>
                 <p>Advanced protection and execution tools built for serious traders and prop-firm challenges.</p>
             </div>
-            <div class="infographic-container" style="margin-bottom: 0;">
+            <div class="infographic-container">
                 <picture>
                     <source srcset="gold-snipers-addons.webp?v=10" type="image/webp">
                     <img src="gold-snipers-addons.webp" alt="Gold Snipers safety and power add-ons: performance tracker, pivot levels, FVG and order block scanner, interactive trades terminal, GMT session killzones, anchor shave allocations, trailing engines, and trailing stop modes" class="infographic" loading="lazy" width="1024" height="1024">
@@ -498,8 +523,7 @@
                 <div class="pricing-card glass-panel">
                     <h3>Starter</h3>
                     <div class="price-container">
-                        <span class="price price-value">$19</span>
-                        <span class="billing-period">/ month</span>
+                        <span class="price price-value" style="font-size: 1em; color: #888;">Coming Soon</span>
                     </div>
                     <ul>
                         <li>1 MT5 Instance · 1 Broker Account</li>
@@ -509,44 +533,42 @@
                         <li>Harvest &amp; Break-Even Engines</li>
                         <li>SMC FVG &amp; OB Filters</li>
                         <li style="color:#777;text-decoration:line-through;">Stealth TP/SL Mode</li>
-                        <li style="color:#777;text-decoration:line-through;">Low-Latency Socket IPC</li>
                         <li style="color:#777;text-decoration:line-through;">AI Market Insights</li>
-                        <li style="color:#777;text-decoration:line-through;">Analytics Dashboard</li>
                         <li style="color:#777;text-decoration:line-through;">Telegram Remote Control</li>
+                        <li style="color:#777;text-decoration:line-through;">Low-Latency Socket IPC</li>
+                        <li style="color:#777;text-decoration:line-through;">Analytics Dashboard</li>
                         <li>Updates &amp; Support</li>
                     </ul>
-                    <a href="https://buy.stripe.com/14AfZh46d3hu5zucLba3u0i" id="btn-starter" class="btn btn-secondary" target="_blank">Get Starter License</a>
+                    <button class="btn btn-secondary" disabled style="opacity: 0.5; cursor: not-allowed;">Coming Soon</button>
                 </div>
                 <!-- Plan 2 (Popular) -->
                 <div class="pricing-card glass-panel popular">
                     <div class="badge">Most Popular</div>
                     <h3>Pro</h3>
                     <div class="price-container">
-                        <span class="price price-value">$29</span>
-                        <span class="billing-period">/ month</span>
+                        <span class="price price-value" style="font-size: 1em; color: #888;">Coming Soon</span>
                     </div>
                     <ul>
                         <li>3 MT5 Instances · 3 Broker Accounts</li>
                         <li>6 Telegram Channels</li>
                         <li>All Symbols Unlocked</li>
+                        <li>✦ Low-Latency Socket IPC</li>
                         <li>Grid Ladder Engine <span style="color:#888;font-size:0.8em">(up to 5 levels)</span></li>
                         <li>Harvest &amp; Break-Even Engines</li>
                         <li>SMC FVG &amp; OB Filters</li>
                         <li>✦ Stealth TP/SL Mode</li>
-                        <li>✦ Low-Latency Socket IPC</li>
                         <li>✦ AI Market Insights</li>
                         <li>✦ Analytics Dashboard</li>
-                        <li>✦ Telegram Remote Control</li>
+                        <li>✦ Telegram Remote Control <span style="color:#888;font-size:0.8em">(settings)</span></li>
                         <li>Priority Bug Fixes &amp; Support</li>
                     </ul>
-                    <a href="https://buy.stripe.com/6oUbJ15ah6tG6Dy6mNa3u0k" id="btn-pro" class="btn btn-primary" target="_blank">Get Pro License</a>
+                    <button class="btn btn-primary" disabled style="opacity: 0.5; cursor: not-allowed;">Coming Soon</button>
                 </div>
                 <!-- Plan 3 -->
                 <div class="pricing-card glass-panel">
                     <h3>Expert</h3>
                     <div class="price-container">
-                        <span class="price price-value">$39</span>
-                        <span class="billing-period">/ month</span>
+                        <span class="price price-value" style="font-size: 1em; color: #888;">Coming Soon</span>
                     </div>
                     <ul>
                         <li>6 MT5 Instances · 6 Broker Accounts</li>
@@ -556,14 +578,14 @@
                         <li>Harvest &amp; Break-Even Engines</li>
                         <li>SMC FVG &amp; OB Filters</li>
                         <li>✦ Stealth TP/SL Mode</li>
-                        <li>✦ Low-Latency Socket IPC</li>
-                        <li>✦ AI Market Insights &amp; Analytics</li>
+                        <li>✦ AI Market Insights</li>
                         <li>✦ Analytics Dashboard</li>
                         <li>✦ Full Telegram Inline Controls</li>
+                        <li>✦ Low-Latency Socket IPC</li>
                         <li>Priority Bug Fixes &amp; Feature Requests</li>
                         <li>Lifetime Updates &amp; Support</li>
                     </ul>
-                    <a href="https://buy.stripe.com/8x23cv5ah8BObXSh1ra3u0m" id="btn-lifetime" class="btn btn-secondary" target="_blank">Get Expert License</a>
+                    <button class="btn btn-secondary" disabled style="opacity: 0.5; cursor: not-allowed;">Coming Soon</button>
                 </div>
             </div>
         </div>
