@@ -93,7 +93,7 @@
                         "name": "How does the Telegram Copier Bridge work?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "The Python bridge runs on your local PC or VPS, listening to the Telegram channels you configure. The moment a signal is posted, it parses it and writes a formatted file to the MT5 Sandbox directory. The EA reads it and places the trade in under 0.5 seconds."
+                            "text": "The Python bridge runs on your local PC or VPS, listening to the Telegram channels you configure. The moment a signal is posted, it parses it and delivers it to the EA in under 50ms via named pipe IPC."
                         }
                     },
                     {
@@ -153,14 +153,14 @@
             <div class="hero-grid">
                 <div class="hero-content">
                     <h1>Trade <span class="gold-text">Gold & Forex</span> Like Institutions.</h1>
-                    <p>Automate your trading with the ultimate MT5 Expert Advisor and Telegram Bridge. Copy signals in under 0.5s with smart FVG, Order Block, and Stealth TP protection across all major asset classes.</p>
+                    <p>Automate your trading with the ultimate MT5 Expert Advisor and Telegram Bridge. Copy signals in under 50ms with smart FVG, Order Block, and Stealth TP protection across all major asset classes.</p>
                     <div class="hero-actions">
                         <a href="#pricing" class="btn btn-primary">Start Trading Now</a>
                         <a href="#features" class="btn btn-secondary">Explore Features</a>
                     </div>
                     <div class="hero-stats">
                         <div class="stat-item">
-                            <h3>0.5s</h3>
+                            <h3>&lt;50ms</h3>
                             <p>Execution Speed</p>
                         </div>
                         <div class="stat-item">
@@ -218,7 +218,7 @@
                 <div class="why-card glass-panel">
                     <div class="why-icon">⚡</div>
                     <h3>Never Miss a Signal</h3>
-                    <p>Signals are processed in under 0.5 seconds — even while you sleep. Anti-duplicate safety ensures the same alert never triggers twice.</p>
+                    <p>Signals are processed in under 50ms — even while you sleep. Anti-duplicate safety ensures the same alert never triggers twice.</p>
                 </div>
                 <div class="why-card glass-panel">
                     <div class="why-icon">🛡️</div>
@@ -261,7 +261,7 @@
         <div class="container">
             <div class="section-header text-center">
                 <h2>The Automation <span class="cyan-text">Flow</span></h2>
-                <p>From Telegram signal to executed trade on MetaTrader 5 — fully automated in under 0.5 seconds.</p>
+                <p>From Telegram signal to executed trade on MetaTrader 5 — fully automated in under 50ms.</p>
             </div>
             <div class="infographic-container" data-full="gold-snipers-overview.webp" tabindex="0" role="button" aria-label="Enlarge automation flow infographic">
                 <picture>
@@ -291,17 +291,22 @@
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">⚡</div>
                     <h3>Real-Time Signal Processing</h3>
-                    <p>Ultra-fast signal response parses Telegram alerts in under 0.5 seconds and executes trades at the optimal moment. Low-latency infrastructure ensures no opportunity is missed, even in fast-moving Gold and Forex markets.</p>
+                    <p>Ultra-fast signal response delivers Telegram alerts to the EA in under 50ms. Low-latency infrastructure ensures no opportunity is missed, even in fast-moving Gold and Forex markets.</p>
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">🛡️</div>
-                    <h3>Stealth TP / SL Guard</h3>
-                    <p>Hide your Take Profit and Stop Loss levels locally on your terminal/VPS. Your broker sees blank lines—completely stopping spread sweeps and target hunting.</p>
+                    <h3>Stealth TP Guard</h3>
+                    <p>Hide your Take Profit levels locally on your terminal/VPS. Your broker sees blank lines on your chart — completely stopping spread sweeps and target hunting. Stop Loss remains visible for safety, while TP targets stay invisible until you decide to reveal them.</p>
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">🪜</div>
                     <h3>Grid / Ladder Scaling</h3>
-                    <p>Don't risk everything on one entry. Gold Snipers splits trades into anchor and pending layers, averaging your entry price on pullbacks and locking in Break-Even.</p>
+                    <p>Don't risk everything on one entry. Gold Snipers splits trades into anchor and pending layers, averaging your entry price on pullbacks and locking in Break-Even. Anchors and layers can have their own independent Take Profit distance and shaving percentage, giving you granular control over how each tier closes.</p>
+                </div>
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Automatic Entry Management</h3>
+                    <p>Fully automated trade lifecycle from open to close. Harvest mode secures profits by moving tiers to break-even once profitable. Pending Delete cancels unfilled limit orders at configurable TP levels. Auto Breakeven, Auto TP Shaving, and Trailing Stop Loss work together to protect gains without manual intervention.</p>
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">🧮</div>
@@ -311,7 +316,12 @@
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">📈</div>
                     <h3>Prop Firm Drawdown Guard</h3>
-                    <p>Enforce strict equity drawdown limits, maximum spread filters, and trading session hours to protect funding and comply with strict challenge rules.</p>
+                    <p>Enforce strict equity drawdown limits, maximum spread filters, and lot-size caps to protect funding and comply with strict challenge rules. Live Risk Management Calculator and Automatic Stop Loss keep your account within firm requirements at all times.</p>
+                </div>
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon">🚫</div>
+                    <h3>Signal Guard Cutoff</h3>
+                    <p>Prevent late or stale entries with configurable signal age cutoffs. If a Telegram signal is older than your threshold, the EA rejects it automatically. Late Guard Pips adds an extra layer — signals that have already moved beyond a pip distance from the posted entry are skipped entirely.</p>
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">📱</div>
@@ -321,7 +331,7 @@
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">🤖</div>
                     <h3>AI Market Insights</h3>
-                    <p>Real-time AI analysis of gold market conditions. Get bias, confidence, risk assessment, key support/resistance levels, FVG & Order Block data, and multi-timeframe alignment — all displayed in a clean on-chart dashboard tab. Supports OpenAI, Anthropic, DeepSeek, and local models via Ollama.</p>
+                    <p>Real-time AI analysis of gold market conditions. Get bias, confidence, risk assessment, key support/resistance levels, FVG & Order Block data, and multi-timeframe alignment — all displayed in a clean on-chart dashboard tab. Supports OpenAI, Anthropic, DeepSeek, OpenCode, and local models via Ollama or any OpenAI-compatible API provider.</p>
                 </div>
             </div>
         </div>
@@ -339,7 +349,7 @@
                     <div class="lifecycle-icon">1</div>
                     <div class="lifecycle-content">
                         <h3>Signal Received</h3>
-                        <p>A Telegram signal is posted and parsed by the bridge in under 0.5 seconds.</p>
+                        <p>A Telegram signal is posted and parsed by the bridge in under 50ms.</p>
                     </div>
                 </div>
                 <div class="lifecycle-step">
@@ -411,7 +421,7 @@
                         <tr>
                             <td>Execution Speed</td>
                             <td>10–60 seconds</td>
-                            <td class="highlight-col">&lt; 0.5 seconds</td>
+                            <td class="highlight-col">&lt; 50ms</td>
                         </tr>
                         <tr>
                             <td>Missed Signals</td>
@@ -568,7 +578,7 @@
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-answer">
-                        The Python bridge runs on your local PC or VPS, listening to the Telegram channels you configure. The moment a signal is posted, it parses it and writes a formatted file to the MT5 Sandbox directory. The EA reads it and places the trade in under 0.5 seconds.
+                        The Python bridge runs on your local PC or VPS, listening to the Telegram channels you configure. The moment a signal is posted, it parses it and delivers it to the EA in under 50ms via named pipe IPC.
                     </div>
                 </div>
                 <div class="faq-item glass-panel">
