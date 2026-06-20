@@ -173,29 +173,57 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-preview" style="display: flex; justify-content: center; align-items: center; position: relative;">
-                    <div style="position: relative; max-width: 437px; width: 100%;">
-                        <div style="overflow: hidden; border-radius: 12px;">
+                <div class="hero-preview">
+                    <div class="preview-container">
+                        <div class="preview-image-wrapper">
                             <picture>
                                 <source srcset="ea_manual_preview.webp?v=1" type="image/webp">
-                                <img src="ea_manual_preview.png?v=1" alt="Gold Snipers MT5 Expert Advisor Chart Panel" style="width: 100%; height: auto; display: block;" loading="eager" width="437" height="608">
+                                <img src="ea_manual_preview.png?v=1" alt="Gold Snipers MT5 Expert Advisor Chart Panel" class="preview-image" loading="eager" width="437" height="608">
                             </picture>
                         </div>
+                        
+                        <!-- Pulse Point Indicators -->
+                        <div class="pulse-point pt-multi-tp">
+                            <div class="pulse-dot-inner"></div>
+                            <div class="pulse-ring"></div>
+                        </div>
+                        <div class="pulse-point pt-grid-ladder">
+                            <div class="pulse-dot-inner"></div>
+                            <div class="pulse-ring"></div>
+                        </div>
+                        <div class="pulse-point pt-equity-protect">
+                            <div class="pulse-dot-inner"></div>
+                            <div class="pulse-ring"></div>
+                        </div>
+                        <div class="pulse-point pt-harvest">
+                            <div class="pulse-dot-inner"></div>
+                            <div class="pulse-ring"></div>
+                        </div>
+                        <div class="pulse-point pt-stealth">
+                            <div class="pulse-dot-inner"></div>
+                            <div class="pulse-ring"></div>
+                        </div>
+
                         <!-- Floating Feature Labels -->
-                        <div class="float-label" style="position: absolute; top: 18%; left: -90px; animation: floatBob 3s ease-in-out infinite;">
-                            <span style="background: rgba(0,210,211,0.15); border: 1px solid rgba(0,210,211,0.4); color: #00D2D3; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; backdrop-filter: blur(4px);">Multi-TP Scaling</span>
+                        <div class="float-label fl-multi-tp">
+                            <span class="label-badge teal-badge">Multi-TP Scaling</span>
+                            <div class="label-line"></div>
                         </div>
-                        <div class="float-label" style="position: absolute; top: 35%; right: -100px; animation: floatBob 3s ease-in-out infinite 0.5s;">
-                            <span style="background: rgba(0,210,211,0.15); border: 1px solid rgba(0,210,211,0.4); color: #00D2D3; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; backdrop-filter: blur(4px);">Grid Ladder Engine</span>
+                        <div class="float-label fl-grid-ladder">
+                            <span class="label-badge cyan-badge">Grid Ladder Engine</span>
+                            <div class="label-line"></div>
                         </div>
-                        <div class="float-label" style="position: absolute; top: 52%; left: -80px; animation: floatBob 3s ease-in-out infinite 1s;">
-                            <span style="background: rgba(255,217,61,0.15); border: 1px solid rgba(255,217,61,0.4); color: #FFD93D; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; backdrop-filter: blur(4px);">Equity Protection</span>
+                        <div class="float-label fl-equity-protect">
+                            <span class="label-badge gold-badge">Equity Protection</span>
+                            <div class="label-line"></div>
                         </div>
-                        <div class="float-label" style="position: absolute; top: 65%; right: -90px; animation: floatBob 3s ease-in-out infinite 1.5s;">
-                            <span style="background: rgba(130,80,255,0.15); border: 1px solid rgba(130,80,255,0.4); color: #B080FF; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; backdrop-filter: blur(4px);">Harvest &amp; Break-Even</span>
+                        <div class="float-label fl-harvest">
+                            <span class="label-badge purple-badge">Harvest &amp; Break-Even</span>
+                            <div class="label-line"></div>
                         </div>
-                        <div class="float-label" style="position: absolute; top: 80%; left: -70px; animation: floatBob 3s ease-in-out infinite 2s;">
-                            <span style="background: rgba(255,107,107,0.15); border: 1px solid rgba(255,107,107,0.4); color: #FF6B6B; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; backdrop-filter: blur(4px);">Stealth TP/SL</span>
+                        <div class="float-label fl-stealth">
+                            <span class="label-badge red-badge">Stealth TP/SL</span>
+                            <div class="label-line"></div>
                         </div>
                     </div>
                 </div>
@@ -207,21 +235,25 @@
             <div class="ticker">
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> BUY TP1 HIT <span class="profit">+20 Pips</span> | SHAVE 20%</div>
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> TP2 HIT <span class="profit">+50 Pips</span> | SHAVE 20%</div>
-                <div class="ticker-item">⚡ <span class="symbol">EURUSD</span> SELL <span class="profit">+12 Pips</span> | BREAKEVEN SET</div>
+                <div class="ticker-item">⚡ <span class="symbol">EURUSD</span> BREAKEVEN ACTIVE <span class="profit">SL MOVED</span> | TO ENTRY</div>
                 <div class="ticker-item">⚡ <span class="symbol">GBPUSD</span> BUY TP3 HIT <span class="profit">+90 Pips</span> | SHAVE 20%</div>
-                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> TP5 HIT <span class="profit">+200 Pips</span> | FULL HARVEST</div>
-                <div class="ticker-item">⚡ <span class="symbol">US30</span> BUY <span class="profit">+150 Pips</span> | TRAIL STEP ACTIVE</div>
-                <div class="ticker-item">⚡ <span class="symbol">XAGUSD</span> SELL TP1 HIT <span class="profit">+60 Pips</span> | SHAVE 20%</div>
-                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> PENDING LADDER <span class="profit">3 LEVELS</span> | PLACED</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> HARVESTED | HIGH TIERS CLOSED BE</div>
+                <div class="ticker-item">⚡ <span class="symbol">US30</span> BUY TRAILING CANDLE <span class="profit">ACTIVE</span> | SECURING +150 Pips</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAGUSD</span> SELL TP4 HIT <span class="profit">+120 Pips</span> | SHAVE 50%</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> EQUITY PROTECTION <span class="profit">TRIGGERED</span> | MASTER CLEARANCE</div>
+                <div class="ticker-item">⚡ <span class="symbol">NAS100</span> BUY TRAILING FRACTAL <span class="profit">ACTIVE</span> | SECURING +220 Pips</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> LADDER ENGAGED | 5 TIER PENDING LEVELS</div>
                 <!-- Duplicate for seamless loop -->
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> BUY TP1 HIT <span class="profit">+20 Pips</span> | SHAVE 20%</div>
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> TP2 HIT <span class="profit">+50 Pips</span> | SHAVE 20%</div>
-                <div class="ticker-item">⚡ <span class="symbol">EURUSD</span> SELL <span class="profit">+12 Pips</span> | BREAKEVEN SET</div>
+                <div class="ticker-item">⚡ <span class="symbol">EURUSD</span> BREAKEVEN ACTIVE <span class="profit">SL MOVED</span> | TO ENTRY</div>
                 <div class="ticker-item">⚡ <span class="symbol">GBPUSD</span> BUY TP3 HIT <span class="profit">+90 Pips</span> | SHAVE 20%</div>
-                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> TP5 HIT <span class="profit">+200 Pips</span> | FULL HARVEST</div>
-                <div class="ticker-item">⚡ <span class="symbol">US30</span> BUY <span class="profit">+150 Pips</span> | TRAIL STEP ACTIVE</div>
-                <div class="ticker-item">⚡ <span class="symbol">XAGUSD</span> SELL TP1 HIT <span class="profit">+60 Pips</span> | SHAVE 20%</div>
-                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> PENDING LADDER <span class="profit">3 LEVELS</span> | PLACED</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> HARVESTED | HIGH TIERS CLOSED BE</div>
+                <div class="ticker-item">⚡ <span class="symbol">US30</span> BUY TRAILING CANDLE <span class="profit">ACTIVE</span> | SECURING +150 Pips</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAGUSD</span> SELL TP4 HIT <span class="profit">+120 Pips</span> | SHAVE 50%</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> EQUITY PROTECTION <span class="profit">TRIGGERED</span> | MASTER CLEARANCE</div>
+                <div class="ticker-item">⚡ <span class="symbol">NAS100</span> BUY TRAILING FRACTAL <span class="profit">ACTIVE</span> | SECURING +220 Pips</div>
+                <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> LADDER ENGAGED | 5 TIER PENDING LEVELS</div>
             </div>
         </div>
     </section>
@@ -407,18 +439,143 @@
         </div>
     </section>
 
-    <!-- Safety & Power Add-ons Infographic -->
+    <!-- Safety & Power Add-ons Interactive Infographic -->
     <section class="infographic-section section-padding" style="padding-top: 0;">
         <div class="container">
             <div class="section-header text-center">
                 <h2>Safety & <span class="cyan-text">Power Add-ons</span></h2>
                 <p>Advanced protection and execution tools built for serious traders and prop-firm challenges.</p>
             </div>
-            <div class="infographic-container">
-                <picture>
-                    <source srcset="gold-snipers-addons.webp?v=10" type="image/webp">
-                    <img src="gold-snipers-addons.webp" alt="Gold Snipers safety and power add-ons: performance tracker, pivot levels, FVG and order block scanner, interactive trades terminal, GMT session killzones, anchor shave allocations, trailing engines, and trailing stop modes" class="infographic" loading="lazy" width="1024" height="1024">
-                </picture>
+            
+            <div class="addons-grid">
+                <!-- Card 1: Technical & SMC Scanner -->
+                <div class="addon-card glass-panel">
+                    <div class="addon-header">
+                        <div class="addon-number">01</div>
+                        <div class="addon-icon-wrap">
+                            <!-- Technical Scanner SVG -->
+                            <svg class="addon-svg" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(0, 210, 211, 0.15)" stroke-width="2"/>
+                                <line x1="50" y1="10" x2="50" y2="90" stroke="rgba(0, 210, 211, 0.2)" stroke-width="1"/>
+                                <line x1="10" y1="50" x2="90" y2="50" stroke="rgba(0, 210, 211, 0.2)" stroke-width="1"/>
+                                <circle cx="50" cy="50" r="25" fill="none" stroke="rgba(0, 210, 211, 0.3)" stroke-width="1.5" stroke-dasharray="4,4"/>
+                                <path d="M 50 50 L 78 30" stroke="#00D2D3" stroke-width="3" stroke-linecap="round">
+                                    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="5s" repeatCount="indefinite"/>
+                                </path>
+                                <circle cx="68" cy="38" r="4" fill="#00D2D3">
+                                    <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="35" cy="65" r="3" fill="#E5A93B">
+                                    <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite"/>
+                                </circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="addon-body">
+                        <h3>Technical & SMC Scanner</h3>
+                        <p>Real-time market structure scanning and intraday calculations directly on your chart.</p>
+                        <ul class="addon-features">
+                            <li>Smart FVG & Order Block Scanner</li>
+                            <li>Daily Pivot & Key Technical Levels</li>
+                            <li>GMT Session Killzone Lines</li>
+                            <li>Built-in Performance Tracker</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2: Execution Terminal -->
+                <div class="addon-card glass-panel">
+                    <div class="addon-header">
+                        <div class="addon-number">02</div>
+                        <div class="addon-icon-wrap">
+                            <!-- Execution Terminal SVG -->
+                            <svg class="addon-svg" viewBox="0 0 100 100">
+                                <rect x="15" y="20" width="70" height="60" rx="8" fill="none" stroke="rgba(176, 128, 255, 0.2)" stroke-width="3"/>
+                                <line x1="15" y1="35" x2="85" y2="35" stroke="rgba(176, 128, 255, 0.3)" stroke-width="2"/>
+                                <circle cx="25" cy="27" r="2.5" fill="#FF6B6B"/>
+                                <circle cx="33" cy="27" r="2.5" fill="#FFD93D"/>
+                                <circle cx="41" cy="27" r="2.5" fill="#00E676"/>
+                                <path d="M25 48 L35 53 L25 58" fill="none" stroke="#B080FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <line x1="40" y1="58" x2="55" y2="58" stroke="#B080FF" stroke-width="3" stroke-linecap="round">
+                                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                                </line>
+                                <rect x="40" y="44" width="35" height="8" rx="2" fill="rgba(176, 128, 255, 0.15)" stroke="rgba(176, 128, 255, 0.4)" stroke-width="1"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="addon-body">
+                        <h3>Execution Terminal</h3>
+                        <p>Granular position management tools to execute advanced discretionary and auto-parsed rules.</p>
+                        <ul class="addon-features">
+                            <li>Interactive On-Chart Trades Terminal</li>
+                            <li>Anchor Shave Allocations (Unified/Distributed)</li>
+                            <li>Multi-Instance Copier Configurations</li>
+                            <li>Ultra Low-Latency TCP Socket IPC</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3: Equity Protection -->
+                <div class="addon-card glass-panel">
+                    <div class="addon-header">
+                        <div class="addon-number">03</div>
+                        <div class="addon-icon-wrap">
+                            <!-- Equity Protection SVG -->
+                            <svg class="addon-svg" viewBox="0 0 100 100">
+                                <path d="M50 15 C65 15, 75 25, 75 45 C75 65, 50 85, 50 85 C50 85, 25 65, 25 45 C25 25, 35 15, 50 15 Z" fill="none" stroke="#FFD93D" stroke-width="3" stroke-linejoin="round"/>
+                                <path d="M50 15 L50 85" stroke="rgba(255, 217, 61, 0.2)" stroke-width="2"/>
+                                <path d="M35 48 L45 58 L65 38" fill="none" stroke="#FFD93D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(255, 217, 61, 0.1)" stroke-width="1" stroke-dasharray="3,3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="addon-body">
+                        <h3>Equity Protection</h3>
+                        <p>Intelligent capital-protection engines to defend your account balance and secure funding targets.</p>
+                        <ul class="addon-features">
+                            <li>Max Drawdown Protection (Negative Cash Floor)</li>
+                            <li>Take Profit Master Kill-Switch (Positive Target)</li>
+                            <li>Prop-Firm Sizing & Spread Safeguards</li>
+                            <li>Smart Position Closure & Auto-Liquidation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 4: Trailing Engines -->
+                <div class="addon-card glass-panel">
+                    <div class="addon-header">
+                        <div class="addon-number">04</div>
+                        <div class="addon-icon-wrap">
+                            <!-- Trailing Engines SVG -->
+                            <svg class="addon-svg" viewBox="0 0 100 100">
+                                <path d="M30 75 L45 60 L60 65 L80 35" fill="none" stroke="#00D2D3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <polygon points="80,35 70,36 78,44" fill="#00D2D3"/>
+                                <path d="M 80 35 L 50 20 L 40 30" fill="none" stroke="rgba(0, 210, 211, 0.2)" stroke-width="1.5" stroke-linecap="round"/>
+                                <!-- Rocket Shape -->
+                                <g transform="translate(68, 28) rotate(-45)">
+                                    <path d="M-5,-15 C-5,-15 0,-25 5,-15 L5,15 L-5,15 Z" fill="#00D2D3"/>
+                                    <path d="M-5,15 L-10,22 L-5,22 Z" fill="#FF6B6B"/>
+                                    <path d="M5,15 L10,22 L5,22 Z" fill="#FF6B6B"/>
+                                    <circle cx="0" cy="-5" r="2" fill="#0d111a"/>
+                                </g>
+                                <!-- Flame -->
+                                <path d="M26 79 L22 85 L28 83 L30 89 L34 81 Z" fill="#FF6B6B">
+                                    <animate attributeName="opacity" values="0.5;1;0.5" dur="0.5s" repeatCount="indefinite"/>
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="addon-body">
+                        <h3>Trailing Engines</h3>
+                        <p>Advanced stop-loss trailing algorithms to lock in profits during trending market cycles.</p>
+                        <ul class="addon-features">
+                            <li>3 Modes: <strong>Step Trailing</strong> / <strong>Candle Trailing</strong> / <strong>Fractal Trailing</strong></li>
+                            <li>Dynamic Profit Locking & Risk-Free Locks</li>
+                            <li>Rule-Based Exits & Partial Scale-outs</li>
+                            <li>Volatility-Adjusted Trailing Logic</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
