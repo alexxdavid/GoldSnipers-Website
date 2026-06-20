@@ -295,8 +295,8 @@
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">🛡️</div>
-                    <h3>Stealth TP/SL Guard</h3>
-                    <p>Hide both Take Profit and Stop Loss targets locally on your chart/VPS. The broker sees zero TP and only a far-out Emergency SL, making target hunting and spread manipulation impossible. The EA executes market closures instantly when the true levels are hit, and plots virtual targets on-chart.</p>
+                    <h3>Stealth TP Guard</h3>
+                    <p>Hide your Take Profit levels locally on your terminal/VPS. Your broker sees blank lines on your chart — completely stopping spread sweeps and target hunting. Stop Loss remains visible for safety, while TP targets stay invisible until you decide to reveal them.</p>
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">🪜</div>
@@ -485,54 +485,84 @@
         <div class="container">
             <div class="section-header text-center">
                 <h2>Choose Your <span class="cyan-text">License Plan</span></h2>
-                <p>Select a tier to match your trading needs. Contact support or your affiliate provider to obtain a license key.</p>
+                <p>Secure global payments via Stripe. Standard VAT/Sales tax calculated automatically at checkout.</p>
+            </div>
+
+            <div class="pricing-toggle-container">
+                <span class="toggle-label active" id="billing-monthly">Monthly</span>
+                <div class="toggle-switch">
+                    <div class="toggle-knob"></div>
+                </div>
+                <span class="toggle-label" id="billing-annual">Lifetime</span>
             </div>
 
             <div class="pricing-grid">
                 <!-- Plan 1 -->
                 <div class="pricing-card glass-panel">
                     <h3>Starter</h3>
-                    <div style="margin-bottom: 20px;"></div>
+                    <div class="price-container">
+                        <span class="price price-value">$19</span>
+                        <span class="billing-period">/ month</span>
+                    </div>
                     <ul>
-                        <li>1 MT5 Instance</li>
+                        <li>1 MT5 Instance · 1 Broker Account</li>
                         <li>2 Telegram Channels</li>
-                        <li>SMC FVG & OB Filters</li>
-                        <li>Grid Ladder Engine</li>
-                        <li>Stealth & Harvest Modes</li>
-                        <li>Updates & Support</li>
+                        <li>XAUUSD / Gold Only <span style="color:#888;font-size:0.8em">(symbol lock)</span></li>
+                        <li>Grid Ladder Engine <span style="color:#888;font-size:0.8em">(max 3 levels)</span></li>
+                        <li>Harvest &amp; Break-Even Engines</li>
+                        <li>SMC FVG &amp; OB Filters</li>
+                        <li style="color:#777;text-decoration:line-through;">Stealth TP/SL Mode</li>
+                        <li style="color:#777;text-decoration:line-through;">AI Market Insights</li>
+                        <li style="color:#777;text-decoration:line-through;">Telegram Remote Control</li>
+                        <li>Updates &amp; Support</li>
                     </ul>
-                    <a href="https://t.me/goldsniperssupport" id="btn-starter" class="btn btn-secondary" target="_blank">Select Starter Plan</a>
+                    <a href="https://buy.stripe.com/14AfZh46d3hu5zucLba3u0i" id="btn-starter" class="btn btn-secondary" target="_blank">Get Starter License</a>
                 </div>
                 <!-- Plan 2 (Popular) -->
                 <div class="pricing-card glass-panel popular">
                     <div class="badge">Most Popular</div>
                     <h3>Pro</h3>
-                    <div style="margin-bottom: 20px;"></div>
+                    <div class="price-container">
+                        <span class="price price-value">$29</span>
+                        <span class="billing-period">/ month</span>
+                    </div>
                     <ul>
-                        <li>3 MT5 Instances</li>
+                        <li>3 MT5 Instances · 3 Broker Accounts</li>
                         <li>6 Telegram Channels</li>
-                        <li>SMC FVG & OB Filters</li>
-                        <li>Grid Ladder Engine</li>
-                        <li>Stealth & Harvest Modes</li>
-                        <li>Priority Bug Fixes</li>
-                        <li>Updates & Support</li>
+                        <li>All Symbols Unlocked</li>
+                        <li>Grid Ladder Engine <span style="color:#888;font-size:0.8em">(up to 5 levels)</span></li>
+                        <li>Harvest &amp; Break-Even Engines</li>
+                        <li>SMC FVG &amp; OB Filters</li>
+                        <li>✦ Stealth TP/SL Mode</li>
+                        <li>✦ AI Market Insights</li>
+                        <li>✦ Telegram Remote Control <span style="color:#888;font-size:0.8em">(settings)</span></li>
+                        <li>Low-Latency Socket IPC</li>
+                        <li>Priority Bug Fixes &amp; Support</li>
                     </ul>
-                    <a href="https://t.me/goldsniperssupport" id="btn-pro" class="btn btn-primary" target="_blank">Select Pro Plan</a>
+                    <a href="https://buy.stripe.com/6oUbJ15ah6tG6Dy6mNa3u0k" id="btn-pro" class="btn btn-primary" target="_blank">Get Pro License</a>
                 </div>
                 <!-- Plan 3 -->
                 <div class="pricing-card glass-panel">
                     <h3>Expert</h3>
-                    <div style="margin-bottom: 20px;"></div>
+                    <div class="price-container">
+                        <span class="price price-value">$39</span>
+                        <span class="billing-period">/ month</span>
+                    </div>
                     <ul>
-                        <li>6 MT5 Instances</li>
+                        <li>6 MT5 Instances · 6 Broker Accounts</li>
                         <li>12 Telegram Channels</li>
-                        <li>SMC FVG & OB Filters</li>
-                        <li>Grid Ladder Engine</li>
-                        <li>Stealth & Harvest Modes</li>
-                        <li>Priority Bug Fixes & Feature Requests</li>
-                        <li>Lifetime Updates & Support</li>
+                        <li>All Symbols Unlocked</li>
+                        <li>Grid Ladder Engine <span style="color:#888;font-size:0.8em">(up to 10 levels)</span></li>
+                        <li>Harvest &amp; Break-Even Engines</li>
+                        <li>SMC FVG &amp; OB Filters</li>
+                        <li>✦ Stealth TP/SL Mode</li>
+                        <li>✦ AI Market Insights &amp; Analytics</li>
+                        <li>✦ Full Telegram Inline Controls</li>
+                        <li>Low-Latency Socket IPC</li>
+                        <li>Priority Bug Fixes &amp; Feature Requests</li>
+                        <li>Lifetime Updates &amp; Support</li>
                     </ul>
-                    <a href="https://t.me/goldsniperssupport" id="btn-lifetime" class="btn btn-secondary" target="_blank">Select Expert Plan</a>
+                    <a href="https://buy.stripe.com/8x23cv5ah8BObXSh1ra3u0m" id="btn-lifetime" class="btn btn-secondary" target="_blank">Get Expert License</a>
                 </div>
             </div>
         </div>
