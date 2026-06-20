@@ -71,6 +71,7 @@
         <li><a href="#dashboard-risk-management-setup-metrics">Dashboard Risk Management & Setup Metrics</a></li>
         <li><a href="#dual-channel-independent-copier-panels">Dual-Channel Independent Copier Panels</a></li>
         <li><a href="#take-profit-targeting-paging-add-tps">Take Profit Targeting & Paging (+ ADD TPs)</a></li>
+        <li><a href="#5-unified-take-profit-stop-loss-stealth-mode">5 Unified Take Profit & Stop Loss Stealth Mode</a></li>
         <li><a href="#core-entry-modes-ladder-vs-single">Core Entry Modes: Ladder vs. Single</a></li>
         <li><a href="#harvesting-adaptive-profit-defense">Harvesting & Adaptive Profit Defense</a></li>
         <li><a href="#tp-auto-mode-distributed-anchor-deep-runner-engine">TP AUTO Mode (Distributed Anchor & Deep Runner Engine)</a></li>
@@ -120,14 +121,21 @@
         <li><strong>Changing Your Key:</strong> Click <strong>Change License Key</strong> (green button, top-right of API Settings) to enter a new key at any time.</li>
         <li><strong>Machine Binding:</strong> Your license key is bound to your computer. It cannot be copied to another machine without admin assistance.</li>
     </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">📦 License Tiers & Instance Limits</h3>
-    <p style="margin-left: 15px;">• Tier : MT5 Instances : Price</p>
-    <p style="margin-left: 15px;">• <strong>Starter</strong> : 1 : $19/mo or $199 one-time</p>
-    <p style="margin-left: 15px;">• <strong>Pro</strong> : 3 : $29/mo or $299 one-time</p>
-    <p style="margin-left: 15px;">• <strong>Expert</strong> : 6 : $39/mo or $399 one-time</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">📦 License Tiers & Feature Matrix</h3>
+    <p>The software is distributed in three distinct product tiers, designed to fit different trading volumes and system requirements:</p>
+    <p style="margin-left: 15px;">• Feature : Starter Tier : Pro Tier : Expert Tier</p>
+    <p style="margin-left: 15px;">• <strong>MT5 Instances</strong> : 1 terminal : Up to 3 terminals : Up to 6 terminals</p>
+    <p style="margin-left: 15px;">• <strong>Unique Broker Accounts</strong> : 1 account : Up to 3 accounts : Up to 6 accounts</p>
+    <p style="margin-left: 15px;">• <strong>Trading Symbol Lock</strong> : Gold/XAUUSD only : Unlimited (All Symbols) : Unlimited (All Symbols)</p>
+    <p style="margin-left: 15px;">• <strong>Max Grid / TP Levels</strong> : Capped at 3 levels : Capped at 5 levels : Up to 10 levels</p>
+    <p style="margin-left: 15px;">• <strong>Stealth TP/SL Mode</strong> : Disabled (Forced to ON) : Allowed (Stealth/ON) : Allowed (Stealth/ON)</p>
+    <p style="margin-left: 15px;">• <strong>Low-Latency Socket IPC</strong> : Disabled (File-based fallback) : Enabled (TCP Sockets) : Enabled (TCP Sockets)</p>
+    <p style="margin-left: 15px;">• <strong>AI Insights Dashboard</strong> : Hidden / Disabled : Enabled : Enabled</p>
+    <p style="margin-left: 15px;">• <strong>Bridge UI Analytics Tab</strong> : Disabled : Enabled : Enabled</p>
+    <p style="margin-left: 15px;">• <strong>Telegram Bot Remote Control</strong> : Disabled : Settings Change only : Full Controls + Inline Buttons</p>
     <ul>
         <li><strong>MT5 Instances:</strong> The number of MetaTrader 5 terminals you can run simultaneously with the Bridge. You can configure multiple instances in the Bridge's API Settings panel (click <strong>Add MT5 Instance</strong>).</li>
-        <li><strong>MT5 Accounts:</strong> Each license tier also limits the number of unique MT5 broker accounts the EA can register. For example, Starter allows 1 MT5 account, Pro allows 3, and Expert allows 6.</li>
+        <li><strong>MT5 Accounts:</strong> Each license tier limits the number of unique MT5 broker accounts the EA can register. For example, Starter allows 1 MT5 account, Pro allows 3, and Expert allows 6.</li>
         <li><strong>Manual Trading:</strong> The EA's manual trading panel works on any MT5 terminal where the EA is attached, as long as a valid license key is loaded. No separate manual trading license is needed.</li>
     </ul>
     <h3 style="margin-top: 20px; color: #00d2d3;">⚡ Seamless Upgrades (Zero Re-Configuration)</h3>
@@ -184,6 +192,21 @@
         <li><strong>TP1 - TP5 Mode:</strong> Standard view for configuring core scales and targets.</li>
         <li><strong>TP6 - TP10 Mode:</strong> Advanced view for setting deep runner targets and long-term trend milestones.</li>
         <li><strong>Columns Design:</strong> Displays targets in clean, tactile vertical columns, styled for effortless scanning and real-time editing of pips and partial shave percentages (%).</li>
+    </ul>
+</section>
+
+<section id="5-unified-take-profit-stop-loss-stealth-mode" class="doc-section">
+    <h2>4.5 Unified Take Profit & Stop Loss Stealth Mode</h2>
+    <p>The <strong>Stealth TP/SL Mode</strong> (enabled via <code>TP MODE: STEALTH</code> or setting <code>InpCx_TPMode = 1</code>) allows you to hide your actual profit and loss targets from your broker to avoid stop-hunting and spread manipulation, while maintaining institutional-grade protections.</p>
+    <ul>
+        <li><strong>Broker Target Camouflage:</strong> When Stealth Mode is activated, the EA places orders with a Take Profit of <code>0</code> and a far-out <strong>Emergency Stop Loss</strong> (calculated as your configured SL multiplied by <code>InpEmergencySLMultiplier</code>, protected by the broker's minimum <code>Stops Level</code>). This ensures that your broker sees no active profit targets and only a distant emergency exit line in case of network or power failure.</li>
+        <li><strong>Local Virtual Targets:</strong> The true, narrow virtual SL and TP targets are kept entirely on-chart and persisted to MT5 Global Variables (<code>GSAE_VSL_</code> and <code>GSAE_VTP_</code>).</li>
+        <li><strong>Real-Time Tick Tracking:</strong> The EA's background trading engine monitors price ticks in real-time. The moment the market Bid/Ask price touches your virtual TP or SL, the engine fires instant market execution commands to close your positions.</li>
+        <li><strong>Dynamic Moves Propagation:</strong> Any automated trailing stop moves, manual "PUSH SL" adjustments, or Break-Even locks automatically update your virtual global targets (<code>GSAE_VSL_</code>) locally instead of sending stop modifications to the broker, automatically shifting the broker-side Emergency SL to keep it aligned as a safety net.</li>
+        <li><strong>Tactile Chart Visualization:</strong> Renders premium dashed indicators directly on your chart:</li>
+        <li><strong><code>VTP</code> (Green Dashed Line):</strong> Indicates the current virtual Take Profit target.</li>
+        <li><strong><code>VSL</code> (Red Dashed Line):</strong> Indicates the current virtual Stop Loss target.</li>
+        <li><strong>Clean Local Analytics:</strong> All exits are logged in your local SQLite Analytics database with clear exit comments (e.g. <code>"STEALTH_TP"</code> or <code>"STEALTH_SL"</code>), while broker-side history comments remain completely generic.</li>
     </ul>
 </section>
 
