@@ -699,7 +699,9 @@
     <p>Default startup settings and core risk parameters.</p>
     <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
     <p style="margin-left: 15px;">• <code>InpStartupMode</code> : Enum : <code>STARTUP_COPIER</code> : UI view mode on startup: <code>STARTUP_COPIER</code> (Mini Copier Panel), <code>STARTUP_FULL</code> (Side-by-Side Panel), <code>STARTUP_MANUAL</code> (Manual Only).</p>
-    <p style="margin-left: 15px;">• <code>InpMinimalCustomerUI</code> : Bool : <code>true</code> : Toggles a simplified dashboard layout, hiding advanced parameter settings from the chart.</p>
+    <p style="margin-left: 15px;">• <code>InpUiMode</code> : Enum : <code>UI_MODE_RESIZE</code> : Panel scaling mode. <code>Enabled</code> — drag the bottom-right corner to resize the EA panel. <code>Disabled</code> — fixed-size panel, use Windows DPI scaling instead.</p>
+    <p style="margin-left: 15px;">• <code>InpFontDpiAdj</code> : Enum : <code>FONT_DPI_DYNAMIC</code> : Font DPI compensation. <code>Dynamic</code> — auto-reduces font size based on monitor DPI. <code>Off</code> — no adjustment. <code>Manual</code> — use <code>InpFontDpiManual</code> value.</p>
+    <p style="margin-left: 15px;">• <code>InpFontDpiManual</code> : Int : <code>1</code> : Font reduction in points. Only used when <code>InpFontDpiAdj</code> is set to <code>Manual</code>.</p>
     <p style="margin-left: 15px;">• <code>InpEnableTelegram</code> : Bool : <code>true</code> : Master toggle to enable processing of incoming signal files from the Telegram Bridge.</p>
     <p style="margin-left: 15px;">• <code>InpLotSize</code> : Double : <code>0.01</code> : Default lot size per trade for manual dashboard orders.</p>
     <p style="margin-left: 15px;">• <code>InpStopLossPips</code> : Double : <code>50.0</code> : Default protective Stop Loss distance in pips for manual trades.</p>
@@ -709,6 +711,14 @@
     <p style="margin-left: 15px;">• <code>InpATR_TP1_Mult</code> : Double : <code>1.5</code> : Volatility multiplier used to calculate the dynamic TP1 target.</p>
     <p style="margin-left: 15px;">• <code>InpMagic</code> : Int : <code>26022791</code> : EA Magic Number. Uniquely labels and isolates this EA instance's trades on the account.</p>
     <p style="margin-left: 15px;">• <code>InpDefaultEquityProtect</code> : Double : <code>0.0</code> : Startup Equity Protection target ($): A positive value acts as a profit target; a negative value acts as a drawdown cash floor. <code>0.0</code> disables.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🖥️ Panel Scaling & DPI</h3>
+    <p style="margin-left: 15px;">• Resize : Font DPI : What the user gets</p>
+    <p style="margin-left: 15px;">• Enabled : Dynamic : Drag to resize panel + font auto-adjusts for high-DPI monitors. Best for most users.</p>
+    <p style="margin-left: 15px;">• Enabled : Off : Drag to resize panel + no font changes. Good if text looks fine already.</p>
+    <p style="margin-left: 15px;">• Enabled : Manual : Drag to resize panel + you pick exactly how many points to reduce font by.</p>
+    <p style="margin-left: 15px;">• Disabled : Dynamic : Fixed panel size + font auto-adjusts for DPI. Use this if you prefer Windows to handle scaling.</p>
+    <p style="margin-left: 15px;">• Disabled : Off : Fixed panel + no font changes.</p>
+    <p style="margin-left: 15px;">• Disabled : Manual : Fixed panel + you pick the font reduction.</p>
     <h3 style="margin-top: 20px; color: #00d2d3;">📊 Visual FVG & Order Blocks</h3>
     <p>Settings for the Fair Value Gap (FVG) and Order Block (OB) scanner and on-chart visualizations.</p>
     <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
