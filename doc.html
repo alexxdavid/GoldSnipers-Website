@@ -1,183 +1,183 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gold Snipers | Documentation & User Guide</title>
-    <meta name="description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite. Setup tutorials, signal configuration, and EA inputs.">
-    <link rel="canonical" href="https://goldsnipersbot.com/doc.html">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Gold Snipers | Documentation & User Guide">
-    <meta property="og:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
-    <meta property="og:image" content="https://goldsnipersbot.com/dashboard.png">
-    <meta property="og:url" content="https://goldsnipersbot.com/doc.html">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gold Snipers | Documentation & User Guide">
-    <meta name="twitter:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
-    <meta name="twitter:image" content="https://goldsnipersbot.com/dashboard.png">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css?v=2.0.9">
-</head>
-<body>
-    <!-- Animated Background Elements -->
-    <div class="bg-glow"></div>
-    <div class="bg-glow-gold"></div>
-
-    <!-- Header / Navigation -->
-    <header class="scrolled">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="logo-header.png" alt="" width="32" height="32">
-                    Gold<span>Snipers</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html#features">Features</a></li>
-                    <li><a href="index.html#pricing">Pricing</a></li>
-                    <li><a href="index.html#faq">FAQ</a></li>
-                    <li><a href="doc.html" class="active">Documentation</a></li>
-                </ul>
-                <a href="index.html#pricing" class="btn btn-primary btn-sm">Get Started</a>
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="doc-layout">
-            <!-- Table of Contents Sidebar -->
-            <aside class="doc-sidebar glass-panel">
-    <h3>User Guide Reference</h3>
-    <style>
-        .doc-sidebar .nav-group { margin-bottom: 4px; }
-        .doc-sidebar .nav-group-header {
-            display: flex; align-items: center; justify-content: space-between;
-            cursor: pointer; padding: 7px 10px; border-radius: 6px;
-            font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em;
-            text-transform: uppercase; color: #a0a0b0;
-            background: rgba(255,255,255,0.03);
-            transition: background 0.2s, color 0.2s;
-            user-select: none; border: none; width: 100%; text-align: left;
-        }
-        .doc-sidebar .nav-group-header:hover { background: rgba(255,215,0,0.07); color: #ffd700; }
-        .doc-sidebar .nav-group-header.open { color: #ffd700; background: rgba(255,215,0,0.06); }
-        .doc-sidebar .nav-group-header .chevron {
-            font-style: normal; font-size: 0.7rem; transition: transform 0.25s;
-            flex-shrink: 0; margin-left: 6px;
-        }
-        .doc-sidebar .nav-group-header.open .chevron { transform: rotate(90deg); }
-        .doc-sidebar .nav-sub {
-            list-style: none; margin: 0; padding: 0;
-            overflow: hidden; max-height: 0;
-            transition: max-height 0.35s ease;
-        }
-        .doc-sidebar .nav-sub.open { max-height: 1000px; }
-        .doc-sidebar .nav-sub li a {
-            display: block; padding: 5px 10px 5px 18px;
-            font-size: 0.8rem; color: #b0b0c0; border-radius: 5px;
-            text-decoration: none; transition: color 0.2s, background 0.2s;
-            border-left: 2px solid transparent; margin: 1px 0;
-        }
-        .doc-sidebar .nav-sub li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); border-left-color: #ffd700; }
-        .doc-sidebar ul.top-links { list-style: none; margin: 0 0 8px 0; padding: 0; }
-        .doc-sidebar ul.top-links li a {
-            display: block; padding: 6px 10px; font-size: 0.82rem;
-            color: #b0b0c0; border-radius: 6px; text-decoration: none;
-            transition: color 0.2s, background 0.2s;
-        }
-        .doc-sidebar ul.top-links li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); }
-        .doc-sidebar ul.top-links li a.active-link { color: #00d2d3; }
-    </style>
-
-    <!-- Top-level non-grouped links -->
-    <ul class="top-links">
-        <li><a href="#welcome">👋 Welcome</a></li>
-        <li><a href="#initial-setup-upgrades-connection-guide">🚀 Setup &amp; Connection Guide</a></li>
-        <li><a href="#dashboard-risk-management-setup-metrics">📊 Dashboard &amp; Risk Metrics</a></li>
-        <li><a href="#dual-channel-independent-copier-panels">📡 Dual-Channel Copier Panels</a></li>
-    </ul>
-
-    <!-- Group: Profit Management -->
-    <div class="nav-group">
-        <button class="nav-group-header open" onclick="toggleGroup(this)">
-            💰 Trade Profit Management <span class="chevron">▶</span>
-        </button>
-        <ul class="nav-sub open">
-            <li><a href="#take-profit-targeting-paging-add-tps">TP Targeting &amp; Paging</a></li>
-            <li><a href="#5-unified-take-profit-stop-loss-stealth-mode">Stealth TP/SL Mode</a></li>
-            <li><a href="#tp-auto-mode-distributed-anchor-deep-runner-engine">TP AUTO Mode</a></li>
-            <li><a href="#anchor-strategy-toggles-unified-vs-distributed">Anchor Strategy Toggles</a></li>
-            <li><a href="#harvesting-adaptive-profit-defense">Harvesting &amp; Profit Defense</a></li>
-            <li><a href="#precision-break-even-engines-auto-sl-move-be-settings">Break-Even Engines</a></li>
-            <li><a href="#cancel-pending-button-delete-pending-limits-on-tp">Cancel Pending on TP</a></li>
-        </ul>
-    </div>
-
-    <!-- Group: Entry & Signals -->
-    <div class="nav-group">
-        <button class="nav-group-header" onclick="toggleGroup(this)">
-            ⚡ Entry &amp; Signal Routing <span class="chevron">▶</span>
-        </button>
-        <ul class="nav-sub">
-            <li><a href="#core-entry-modes-ladder-vs-single">Entry Modes: Ladder vs. Single</a></li>
-            <li><a href="#signal-entry-cutoff-telegram-routing">Signal Cutoff &amp; Routing</a></li>
-        </ul>
-    </div>
-
-    <!-- Group: Dashboard & Analytics -->
-    <div class="nav-group">
-        <button class="nav-group-header" onclick="toggleGroup(this)">
-            📈 Analytics &amp; UI Engines <span class="chevron">▶</span>
-        </button>
-        <ul class="nav-sub">
-            <li><a href="#live-analytics-equity-protect-matrix">Live Analytics &amp; Equity Protect</a></li>
-            <li><a href="#manual-panel-technical-intel-deck">Manual Panel &amp; Intel Deck</a></li>
-            <li><a href="#intraday-extension-panels-trades-levels-helper">Intraday Panels (Trades &amp; Levels)</a></li>
-            <li><a href="#ergonomic-action-buttons-ui-modes">Action Buttons &amp; UI Modes</a></li>
-            <li><a href="#ui-modes-sync-safety-engines">UI Sync &amp; Safety Engines</a></li>
-            <li><a href="#core-pip-scaling-goldxauusd-scaling">Pip Scaling (Gold/XAUUSD)</a></li>
-        </ul>
-    </div>
-
-    <!-- Group: Bridge & Advanced -->
-    <div class="nav-group">
-        <button class="nav-group-header" onclick="toggleGroup(this)">
-            🌉 Bridge &amp; Advanced <span class="chevron">▶</span>
-        </button>
-        <ul class="nav-sub">
-            <li><a href="#the-copier-bridge-desktop-engine">Copier Bridge Desktop Engine</a></li>
-            <li><a href="#performance-execution-engine-upgrades-v36295">Performance &amp; Engine Upgrades</a></li>
-            <li><a href="#advanced-guide-trade-exclusions-command-routing-copier-workflow">Trade Exclusions &amp; Copier Workflow</a></li>
-            <li><a href="#remote-admin-control-panel-telegram-saved-messages">Remote Admin Control Panel</a></li>
-            <li><a href="#mt5-input-settings-reference">MT5 Input Settings Reference</a></li>
-        </ul>
-    </div>
-
-    <script>
-        function toggleGroup(btn) {
-            btn.classList.toggle('open');
-            btn.nextElementSibling.classList.toggle('open');
-        }
-    </script>
-</aside>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Snipers | Documentation & User Guide</title>
+    <meta name="description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite. Setup tutorials, signal configuration, and EA inputs.">
+    <link rel="canonical" href="https://goldsnipersbot.com/doc.html">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gold Snipers | Documentation & User Guide">
+    <meta property="og:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
+    <meta property="og:image" content="https://goldsnipersbot.com/dashboard.png">
+    <meta property="og:url" content="https://goldsnipersbot.com/doc.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gold Snipers | Documentation & User Guide">
+    <meta name="twitter:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
+    <meta name="twitter:image" content="https://goldsnipersbot.com/dashboard.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css?v=2.0.9">
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="bg-glow"></div>
+    <div class="bg-glow-gold"></div>
+
+    <!-- Header / Navigation -->
+    <header class="scrolled">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="logo-header.png" alt="" width="32" height="32">
+                    Gold<span>Snipers</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="doc.html" class="active">Documentation</a></li>
+                </ul>
+                <a href="index.html#pricing" class="btn btn-primary btn-sm">Get Started</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="doc-layout">
+            <!-- Table of Contents Sidebar -->
+            <aside class="doc-sidebar glass-panel">
+    <h3>User Guide Reference</h3>
+    <style>
+        .doc-sidebar .nav-group { margin-bottom: 4px; }
+        .doc-sidebar .nav-group-header {
+            display: flex; align-items: center; justify-content: space-between;
+            cursor: pointer; padding: 7px 10px; border-radius: 6px;
+            font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em;
+            text-transform: uppercase; color: #a0a0b0;
+            background: rgba(255,255,255,0.03);
+            transition: background 0.2s, color 0.2s;
+            user-select: none; border: none; width: 100%; text-align: left;
+        }
+        .doc-sidebar .nav-group-header:hover { background: rgba(255,215,0,0.07); color: #ffd700; }
+        .doc-sidebar .nav-group-header.open { color: #ffd700; background: rgba(255,215,0,0.06); }
+        .doc-sidebar .nav-group-header .chevron {
+            font-style: normal; font-size: 0.7rem; transition: transform 0.25s;
+            flex-shrink: 0; margin-left: 6px;
+        }
+        .doc-sidebar .nav-group-header.open .chevron { transform: rotate(90deg); }
+        .doc-sidebar .nav-sub {
+            list-style: none; margin: 0; padding: 0;
+            overflow: hidden; max-height: 0;
+            transition: max-height 0.35s ease;
+        }
+        .doc-sidebar .nav-sub.open { max-height: 1000px; }
+        .doc-sidebar .nav-sub li a {
+            display: block; padding: 5px 10px 5px 18px;
+            font-size: 0.8rem; color: #b0b0c0; border-radius: 5px;
+            text-decoration: none; transition: color 0.2s, background 0.2s;
+            border-left: 2px solid transparent; margin: 1px 0;
+        }
+        .doc-sidebar .nav-sub li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); border-left-color: #ffd700; }
+        .doc-sidebar ul.top-links { list-style: none; margin: 0 0 8px 0; padding: 0; }
+        .doc-sidebar ul.top-links li a {
+            display: block; padding: 6px 10px; font-size: 0.82rem;
+            color: #b0b0c0; border-radius: 6px; text-decoration: none;
+            transition: color 0.2s, background 0.2s;
+        }
+        .doc-sidebar ul.top-links li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); }
+        .doc-sidebar ul.top-links li a.active-link { color: #00d2d3; }
+    </style>
+
+    <!-- Top-level non-grouped links -->
+    <ul class="top-links">
+        <li><a href="#welcome">👋 Welcome</a></li>
+        <li><a href="#initial-setup-upgrades-connection-guide">🚀 Setup &amp; Connection Guide</a></li>
+        <li><a href="#dashboard-risk-management-setup-metrics">📊 Dashboard &amp; Risk Metrics</a></li>
+        <li><a href="#dual-channel-independent-copier-panels">📡 Dual-Channel Copier Panels</a></li>
+    </ul>
+
+    <!-- Group: Profit Management -->
+    <div class="nav-group">
+        <button class="nav-group-header open" onclick="toggleGroup(this)">
+            💰 Trade Profit Management <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub open">
+            <li><a href="#take-profit-targeting-paging-add-tps">TP Targeting &amp; Paging</a></li>
+            <li><a href="#5-unified-take-profit-stop-loss-stealth-mode">Stealth TP/SL Mode</a></li>
+            <li><a href="#tp-auto-mode-distributed-anchor-deep-runner-engine">TP AUTO Mode</a></li>
+            <li><a href="#anchor-strategy-toggles-unified-vs-distributed">Anchor Strategy Toggles</a></li>
+            <li><a href="#harvesting-adaptive-profit-defense">Harvesting &amp; Profit Defense</a></li>
+            <li><a href="#precision-break-even-engines-auto-sl-move-be-settings">Break-Even Engines</a></li>
+            <li><a href="#cancel-pending-button-delete-pending-limits-on-tp">Cancel Pending on TP</a></li>
+        </ul>
+    </div>
+
+    <!-- Group: Entry & Signals -->
+    <div class="nav-group">
+        <button class="nav-group-header" onclick="toggleGroup(this)">
+            ⚡ Entry &amp; Signal Routing <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub">
+            <li><a href="#core-entry-modes-ladder-vs-single">Entry Modes: Ladder vs. Single</a></li>
+            <li><a href="#signal-entry-cutoff-telegram-routing">Signal Cutoff &amp; Routing</a></li>
+        </ul>
+    </div>
+
+    <!-- Group: Dashboard & Analytics -->
+    <div class="nav-group">
+        <button class="nav-group-header" onclick="toggleGroup(this)">
+            📈 Analytics &amp; UI Engines <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub">
+            <li><a href="#live-analytics-equity-protect-matrix">Live Analytics &amp; Equity Protect</a></li>
+            <li><a href="#manual-panel-technical-intel-deck">Manual Panel &amp; Intel Deck</a></li>
+            <li><a href="#intraday-extension-panels-trades-levels-helper">Intraday Panels (Trades &amp; Levels)</a></li>
+            <li><a href="#ergonomic-action-buttons-ui-modes">Action Buttons &amp; UI Modes</a></li>
+            <li><a href="#ui-modes-sync-safety-engines">UI Sync &amp; Safety Engines</a></li>
+            <li><a href="#core-pip-scaling-goldxauusd-scaling">Pip Scaling (Gold/XAUUSD)</a></li>
+        </ul>
+    </div>
+
+    <!-- Group: Bridge & Advanced -->
+    <div class="nav-group">
+        <button class="nav-group-header" onclick="toggleGroup(this)">
+            🌉 Bridge &amp; Advanced <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub">
+            <li><a href="#the-copier-bridge-desktop-engine">Copier Bridge Desktop Engine</a></li>
+            <li><a href="#performance-execution-engine-upgrades-v36295">Performance &amp; Engine Upgrades</a></li>
+            <li><a href="#advanced-guide-trade-exclusions-command-routing-copier-workflow">Trade Exclusions &amp; Copier Workflow</a></li>
+            <li><a href="#remote-admin-control-panel-telegram-saved-messages">Remote Admin Control Panel</a></li>
+            <li><a href="#mt5-input-settings-reference">MT5 Input Settings Reference</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleGroup(btn) {
+            btn.classList.toggle('open');
+            btn.nextElementSibling.classList.toggle('open');
+        }
+    </script>
+</aside>
+
             <!-- Main Documentation Content -->
             <main class="doc-content glass-panel">
 <section id="welcome" class="doc-section">
@@ -208,21 +208,25 @@
     </ul>
     <h3 style="margin-top: 20px; color: #00d2d3;">📦 License Tiers & Feature Matrix</h3>
     <p>The software is distributed in three distinct product tiers, designed to fit different trading volumes and system requirements:</p>
-    <p style="margin-left: 15px;">• Feature : Starter Tier : Pro Tier : Expert Tier</p>
-    <p style="margin-left: 15px;">• <strong>MT5 Instances</strong> : 1 terminal : Up to 3 terminals : Up to 6 terminals</p>
-    <p style="margin-left: 15px;">• <strong>Unique Broker Accounts</strong> : 1 account : Up to 3 accounts : Up to 6 accounts</p>
-    <p style="margin-left: 15px;">• <strong>Trading Symbol Lock</strong> : Gold/XAUUSD only : All Symbols : All Symbols</p>
-    <p style="margin-left: 15px;">• <strong>Max Grid / TP Levels</strong> : Capped at 3 levels : Capped at 5 levels : Up to 10 levels</p>
-    <p style="margin-left: 15px;">• <strong>Stealth TP/SL Mode</strong> : Disabled (Forced to ON) : Allowed (Stealth/ON) : Allowed (Stealth/ON)</p>
-    <p style="margin-left: 15px;">• <strong>Low-Latency Socket IPC</strong> : Disabled (File-based) : Enabled (TCP Sockets) : Enabled (TCP Sockets)</p>
-    <p style="margin-left: 15px;">• <strong>AI Insights</strong> : Disabled : Enabled : Enabled</p>
-    <p style="margin-left: 15px;">• <strong>Analytics Dashboard</strong> : Disabled : Enabled : Enabled</p>
-    <p style="margin-left: 15px;">• <strong>Telegram Bot Control</strong> : Disabled : Enabled : Enabled</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Feature</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Starter Tier</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Pro Tier</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Expert Tier</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>MT5 Instances</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">1 terminal</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Up to 3 terminals</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Up to 6 terminals</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Unique Broker Accounts</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">1 account</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Up to 3 accounts</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Up to 6 accounts</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Trading Symbol Lock</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Gold/XAUUSD only</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">All Symbols</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">All Symbols</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Max Grid / TP Levels</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Capped at 3 levels</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Capped at 5 levels</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Up to 10 levels</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Stealth TP/SL Mode</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled (Forced to ON)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Allowed (Stealth/ON)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Allowed (Stealth/ON)</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Low-Latency Socket IPC</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled (File-based)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled (TCP Sockets)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled (TCP Sockets)</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>AI Insights</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Analytics Dashboard</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Telegram Bot Control</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td></tr>
     <ul>
         <li><strong>MT5 Instances:</strong> The number of MetaTrader 5 terminals you can run simultaneously with the Bridge. You can configure multiple instances in the Bridge's API Settings panel (click <strong>Add MT5 Instance</strong>).</li>
         <li><strong>MT5 Accounts:</strong> Each license tier limits the number of unique MT5 broker accounts the EA can register. For example, Starter allows 1 MT5 account, Pro allows 3, and Expert allows 6.</li>
         <li><strong>Manual Trading:</strong> The EA's manual trading panel works on any MT5 terminal where the EA is attached, as long as a valid license key is loaded. No separate manual trading license is needed.</li>
         <li><strong>Tier Enforcement:</strong> All tier limits are enforced at multiple levels — UI controls are greyed out for restricted features, input parameters are clamped on initialization, and admin commands (Telegram SET) are blocked at the engine level. Switching tiers takes effect on the next bridge restart.</li>
+    </tbody></table></div>
     </ul>
     <h3 style="margin-top: 20px; color: #00d2d3;">⚡ Seamless Upgrades (Zero Re-Configuration)</h3>
     <p>When installing a new version or upgrading the software, you <strong>do not</strong> need to re-enter your credentials or repeat the setup wizard:</p>
@@ -285,10 +289,14 @@
     <h2>4.5 Unified Take Profit & Stop Loss Stealth Mode</h2>
     <p>The <strong>TP/SL Mode</strong> button (on both the Manual and Copier panels) controls how the EA manages your Take Profit and Stop Loss levels. Click the button to cycle through three modes:</p>
     <h3 style="margin-top: 20px; color: #00d2d3;">TP/SL Modes Explained</h3>
-    <p style="margin-left: 15px;">• Mode : Button Text : What Happens</p>
-    <p style="margin-left: 15px;">• <strong>TP/SL OFF</strong> : <code>TP/SL OFF</code> : No TP or SL levels are managed by the EA. Positions run with no targets.</p>
-    <p style="margin-left: 15px;">• <strong>TP/SL STEALTH</strong> : <code>TP/SL STEALTH</code> : Both TP and SL are hidden from the broker. The EA monitors price locally and closes positions when targets are hit.</p>
-    <p style="margin-left: 15px;">• <strong>TP/SL ON</strong> : <code>TP/SL ON</code> : Hard TP and SL levels are sent directly to the broker. The EA places visible targets on the broker's server.</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Mode</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Button Text</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">What Happens</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>TP/SL OFF</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>TP/SL OFF</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">No TP or SL levels are managed by the EA. Positions run with no targets.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>TP/SL STEALTH</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>TP/SL STEALTH</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Both TP and SL are hidden from the broker. The EA monitors price locally and closes positions when targets are hit.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>TP/SL ON</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>TP/SL ON</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Hard TP and SL levels are sent directly to the broker. The EA places visible targets on the broker's server.</td></tr>
+    </tbody></table></div>
     <div class="doc-tip"><strong>💡 Note:</strong> <strong>Note:</strong> Starter tier licenses are forced to <code>TP/SL ON</code> and cannot access Stealth mode.</div>
     <h3 style="margin-top: 20px; color: #00d2d3;">How Stealth Mode Works</h3>
     <p>When <strong>TP/SL STEALTH</strong> is active, the EA keeps your real SL and TP targets entirely in its own memory — invisible to your broker. This prevents stop-hunting and spread manipulation.</p>
@@ -300,9 +308,13 @@
     </ul>
     <h3 style="margin-top: 20px; color: #00d2d3;">Emergency SL Safety Net</h3>
     <p>When Stealth Mode is active, you can optionally place an <strong>Emergency Stop Loss</strong> on the broker as a safety net. This protects your account if the EA loses connection (terminal crash, internet outage, power failure).</p>
-    <p style="margin-left: 15px;">• Setting : Default : Effect</p>
-    <p style="margin-left: 15px;">• <strong>Use Emergency SL</strong> (<code>InpUseEmergencySL</code>) : <code>false</code> (OFF) : When ON, the broker sees a wide SL beyond your virtual SL as a safety net. When OFF, the broker sees SL = <code>0</code> — fully hidden.</p>
-    <p style="margin-left: 15px;">• <strong>Emergency SL Multiplier</strong> (<code>InpEmergencySLMultiplier</code>) : <code>2.0</code> : How much wider the Emergency SL is compared to your real SL. A multiplier of <code>2.0</code> means the Emergency SL is placed at 2x your normal SL distance.</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Setting</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Effect</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Use Emergency SL</strong> (<code>InpUseEmergencySL</code>)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code> (OFF)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">When ON, the broker sees a wide SL beyond your virtual SL as a safety net. When OFF, the broker sees SL = <code>0</code> — fully hidden.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Emergency SL Multiplier</strong> (<code>InpEmergencySLMultiplier</code>)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>2.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">How much wider the Emergency SL is compared to your real SL. A multiplier of <code>2.0</code> means the Emergency SL is placed at 2x your normal SL distance.</td></tr>
+    </tbody></table></div>
     <p><strong>How the Emergency SL works:</strong></p>
     <ul>
         <li>Your real SL is at, say, 2450 (50 pips below entry at 2500).</li>
@@ -680,12 +692,16 @@
     <p>Bot: ✅ C1 Lot Size updated to 0.20</p>
     <p>```</p>
     <h3 style="margin-top: 20px; color: #00d2d3;">💰 Instant Trading Commands</h3>
-    <p style="margin-left: 15px;">• Command : Action</p>
-    <p style="margin-left: 15px;">• <strong>3</strong> : Execute BUY ladder using current copier settings</p>
-    <p style="margin-left: 15px;">• <strong>4</strong> : Execute SELL ladder using current copier settings</p>
-    <p style="margin-left: 15px;">• <strong>6</strong> : Close all open positions and pending orders</p>
-    <p style="margin-left: 15px;">• <strong>7</strong> : Move all SL to break-even + harvest buffer</p>
-    <p style="margin-left: 15px;">• <strong>8</strong> : Delete all pending limit orders</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Command</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Action</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>3</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Execute BUY ladder using current copier settings</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>4</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Execute SELL ladder using current copier settings</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>6</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Close all open positions and pending orders</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>7</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Move all SL to break-even + harvest buffer</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>8</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Delete all pending limit orders</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">📊 Status Queries</h3>
     <p>Reply <strong>5</strong> to receive real-time account telemetry:</p>
     <ul>
@@ -726,156 +742,208 @@
     <p>This section provides a complete, structured reference of all user-configurable input parameters inside the MetaTrader 5 Expert Advisor (<code>Gold_Snipers.mq5</code>).</p>
     <h3 style="margin-top: 20px; color: #00d2d3;">📡 Telegram Copier Defaults (Channel 1 & Channel 2)</h3>
     <p>The copier supports two independent channels, each with a symmetrical set of parameters prefixed with <code>InpC1_</code> or <code>InpC2_</code>.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpSignalFile</code> : Enum : <code>SIGNAL_FILE_1</code> : Selects which copier profile file (<code>gsae_signal.txt</code> to <code>gsae_signal6.txt</code>) this EA chart instance listens to.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_ID</code> : String : <code>""</code> : The numerical Telegram Chat ID of the signal channel/group (e.g., <code>-100123456789</code>).</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Name</code> : String : <code>"Channel X"</code> : A custom display name for the channel, shown on the copier dashboard sub-tabs.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Active</code> : Bool : <code>true</code> : Toggles whether the copier actively monitors and executes signals from this channel.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_LotAnc</code> : Double : <code>0.01</code> : Lot size used for the primary market execution orders (Anchors).</p>
-    <p style="margin-left: 15px;">• <code>InpCx_LotPen</code> : Double : <code>0.01</code> : Lot size used for pending limit grid orders (Pendings).</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Anchors</code> : Int : <code>1</code> : Number of immediate market orders (Anchors) to execute when a signal triggers.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Pendings</code> : Int : <code>1</code> : Number of pending limit orders placed at each tier down the ladder grid.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Levels</code> : Int : <code>5</code> : Total depth of the ladder grid (number of limit grid tiers generated).</p>
-    <p style="margin-left: 15px;">• <code>InpCx_TPMode</code> : Int : <code>2</code> (ON) : Take Profit target mode: <code>0</code> = OFF (Disabled), <code>1</code> = STEALTH (monitored locally and hidden from broker), <code>2</code> = ON (hard TP targets sent to the broker).</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Partials</code> : Bool : <code>true</code> : Toggles the partial closing/shaving engine for this channel's trades at TP milestones.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Harvest</code> : Bool : <code>false</code> : Toggles the profit harvesting engine for active ladders, liquidating upper tiers at BE+1.0 pip during deep pullbacks.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_AutoSL</code> : Bool : <code>true</code> : Toggles automatic Stop Loss adjustment to Break-Even when a specific TP target is hit.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_CancelPendingLevel</code> : Int : <code>2</code> (TP2) : The Take Profit milestone at which outstanding unhit pending limit orders are automatically deleted.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_TriggerBELevel</code> : Int : <code>2</code> (TP2) : The Take Profit milestone at which the Break-Even engine is triggered, securing the position.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_AllowCmds</code> : Bool : <code>false</code> : Determines whether the EA processes remote conversational commands (e.g., <code>Risk Free</code>, <code>Close All</code>) sent by channel admins.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_LateGuardPips</code> : Int : <code>0</code> (OFF) : Signal Cutoff threshold. If the market price is further than this distance from the original signal price, it prevents entry. If within range, it will enter at market price. Set to <code>0</code> to disable late signal filtering.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_AncShave</code> : Bool : <code>true</code> : Anchor Unified TP toggle. When <code>true</code> (Unified), all anchors target the deepest TP level and participate in partial shaving. When <code>false</code> (Distributed), anchors exit 100% at staggered levels (e.g. TP1, TP2, TP3) and bypass partial shaving.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_SL</code> : Double : <code>50.0</code> : Stop Loss distance in pips for the channel's order family.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_TP1</code> to <code>TP10</code> : Double : (staged) : Target distances in pips from anchor entry for Take Profits 1 through 10. (TP1=30, TP2=50, TP3=80, TP4=100, TP5=130, TP6-10=0)</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Pct1</code> to <code>Pct10</code> : Double : (staged) : Percentage of position volume to close at each Take Profit target. (Pct1-4=20%, Pct5=100%, Pct6-10=0%)</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpSignalFile</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enum</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>SIGNAL_FILE_1</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Selects which copier profile file (<code>gsae_signal.txt</code> to <code>gsae_signal6.txt</code>) this EA chart instance listens to.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_ID</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">String</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>""</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">The numerical Telegram Chat ID of the signal channel/group (e.g., <code>-100123456789</code>).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_Name</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">String</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>"Channel X"</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">A custom display name for the channel, shown on the copier dashboard sub-tabs.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_Active</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Toggles whether the copier actively monitors and executes signals from this channel.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_LotAnc</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>0.01</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Lot size used for the primary market execution orders (Anchors).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_LotPen</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>0.01</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Lot size used for pending limit grid orders (Pendings).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_Anchors</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>1</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Number of immediate market orders (Anchors) to execute when a signal triggers.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_Pendings</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>1</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Number of pending limit orders placed at each tier down the ladder grid.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_Levels</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>5</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Total depth of the ladder grid (number of limit grid tiers generated).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_TPMode</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>2</code> (ON)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Take Profit target mode: <code>0</code> = OFF (Disabled), <code>1</code> = STEALTH (monitored locally and hidden from broker), <code>2</code> = ON (hard TP targets sent to the broker).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_Partials</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Toggles the partial closing/shaving engine for this channel's trades at TP milestones.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_Harvest</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Toggles the profit harvesting engine for active ladders, liquidating upper tiers at BE+1.0 pip during deep pullbacks.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_AutoSL</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Toggles automatic Stop Loss adjustment to Break-Even when a specific TP target is hit.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_CancelPendingLevel</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>2</code> (TP2)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">The Take Profit milestone at which outstanding unhit pending limit orders are automatically deleted.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_TriggerBELevel</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>2</code> (TP2)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">The Take Profit milestone at which the Break-Even engine is triggered, securing the position.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_AllowCmds</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Determines whether the EA processes remote conversational commands (e.g., <code>Risk Free</code>, <code>Close All</code>) sent by channel admins.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_LateGuardPips</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>0</code> (OFF)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Signal Cutoff threshold. If the market price is further than this distance from the original signal price, it prevents entry. If within range, it will enter at market price. Set to <code>0</code> to disable late signal filtering.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_AncShave</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Anchor Unified TP toggle. When <code>true</code> (Unified), all anchors target the deepest TP level and participate in partial shaving. When <code>false</code> (Distributed), anchors exit 100% at staggered levels (e.g. TP1, TP2, TP3) and bypass partial shaving.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_SL</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>50.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Stop Loss distance in pips for the channel's order family.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_TP1</code> to <code>TP10</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Target distances in pips from anchor entry for Take Profits 1 through 10. (TP1=30, TP2=50, TP3=80, TP4=100, TP5=130, TP6-10=0)</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_Pct1</code> to <code>Pct10</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Percentage of position volume to close at each Take Profit target. (Pct1-4=20%, Pct5=100%, Pct6-10=0%)</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">🪜 Channel 1 & 2 Pending TP</h3>
     <p>Custom Take Profits and close percentages applied specifically to pending limit orders in the ladder grid.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpCx_TP_PEN1</code> to <code>TP_PEN10</code> : Double : (staged) : Take Profit target distances in pips for pending limit orders. (PEN1=40, PEN2=70, PEN3=110, PEN4=150, PEN5=250, PEN6-10=0)</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Pct_PEN1</code> to <code>Pct_PEN10</code> : Double : (staged) : Close volume percentages at each TP target for pending limit orders. (PEN1-4=20%, PEN5=100%, PEN6-10=0%)</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_TP_PEN1</code> to <code>TP_PEN10</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Take Profit target distances in pips for pending limit orders. (PEN1=40, PEN2=70, PEN3=110, PEN4=150, PEN5=250, PEN6-10=0)</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_Pct_PEN1</code> to <code>Pct_PEN10</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Close volume percentages at each TP target for pending limit orders. (PEN1-4=20%, PEN5=100%, PEN6-10=0%)</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">⏰ Main Session Lines</h3>
     <p>Controls the visual rendering of session ranges on the MT5 chart.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpDrawSessionLines</code> : Bool : <code>false</code> : Draws Asia, London, and NY high/low range lines on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpRemoveSweptLevels</code> : Bool : <code>true</code> : Auto-hides session lines on the chart once the price crosses/sweeps them.</p>
-    <p style="margin-left: 15px;">• <code>InpSessionLookbackDays</code> : Int : <code>2</code> : Number of history days to calculate and draw session lines for.</p>
-    <p style="margin-left: 15px;">• <code>InpAsiaHighColor</code> / <code>LowColor</code> : Color : <code>clrBlack</code> : Colors used to draw Asia session high and low lines.</p>
-    <p style="margin-left: 15px;">• <code>InpLondonHighColor</code> / <code>LowColor</code> : Color : <code>clrBlack</code> : Colors used to draw London session high and low lines.</p>
-    <p style="margin-left: 15px;">• <code>InpNYHighColor</code> / <code>LowColor</code> : Color : <code>clrBlack</code> : Colors used to draw New York session high and low lines.</p>
-    <p style="margin-left: 15px;">• <code>InpSessionLabelColor</code> : Color : <code>clrBlack</code> : Color of text labels on session lines.</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpDrawSessionLines</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Draws Asia, London, and NY high/low range lines on the chart.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpRemoveSweptLevels</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Auto-hides session lines on the chart once the price crosses/sweeps them.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpSessionLookbackDays</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>2</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Number of history days to calculate and draw session lines for.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpAsiaHighColor</code> / <code>LowColor</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Color</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>clrBlack</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Colors used to draw Asia session high and low lines.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpLondonHighColor</code> / <code>LowColor</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Color</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>clrBlack</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Colors used to draw London session high and low lines.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpNYHighColor</code> / <code>LowColor</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Color</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>clrBlack</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Colors used to draw New York session high and low lines.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpSessionLabelColor</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Color</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>clrBlack</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Color of text labels on session lines.</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">🏹 Custom Killzones (Server Time GMT+3 Defaults)</h3>
     <p>Draws color-shaded rectangles on the chart matching specific trading sessions.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpShowKillzones</code> : Bool : <code>false</code> : Draws translucent Killzone rectangles on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpKillzoneLookbackDays</code> : Int : <code>2</code> : Number of trading days of Killzones to draw on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpKillzoneLabelColor</code> : Color : <code>clrBlack</code> : Label text color for the Killzone indicators.</p>
-    <p style="margin-left: 15px;">• <code>InpZone1_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code> : Mixed : (staged) : Asia Zone color and hours (4:00 - 11:00 server time).</p>
-    <p style="margin-left: 15px;">• <code>InpZone2_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code> : Mixed : (staged) : London Zone color and hours (11:00 - 16:00 server time).</p>
-    <p style="margin-left: 15px;">• <code>InpZone3_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code> : Mixed : (staged) : Overlap Zone color and hours (16:00 - 20:00 server time).</p>
-    <p style="margin-left: 15px;">• <code>InpZone4_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code> : Mixed : (staged) : New York Zone color and hours (20:00 - 1:00 server time).</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpShowKillzones</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Draws translucent Killzone rectangles on the chart.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpKillzoneLookbackDays</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>2</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Number of trading days of Killzones to draw on the chart.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpKillzoneLabelColor</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Color</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>clrBlack</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Label text color for the Killzone indicators.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpZone1_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Mixed</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Asia Zone color and hours (4:00 - 11:00 server time).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpZone2_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Mixed</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">London Zone color and hours (11:00 - 16:00 server time).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpZone3_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Mixed</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Overlap Zone color and hours (16:00 - 20:00 server time).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpZone4_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Mixed</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">New York Zone color and hours (20:00 - 1:00 server time).</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">🧠 Institutional Engine</h3>
     <p>Parameters governing the smart Trend Bias and displacement detection filters.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpTradingStyle</code> : Enum : <code>STYLE_SWING</code> : EMA strategy bias used: <code>STYLE_LONG_TERM</code> (200 EMA), <code>STYLE_SWING</code> (50 EMA), <code>STYLE_DAY</code> (9/20 EMA Cross).</p>
-    <p style="margin-left: 15px;">• <code>InpHTFTimeframe</code> : Enum : <code>PERIOD_H1</code> : Higher timeframe utilized by the HTF Scanner to calculate structural order flow.</p>
-    <p style="margin-left: 15px;">• <code>InpDisplacementMult</code> : Double : <code>1.5</code> : Minimum candle body size relative to average body size required to qualify as a displacement candle.</p>
-    <p style="margin-left: 15px;">• <code>InpVolumeMult</code> : Double : <code>1.2</code> : Minimum tick volume relative to average volume required to confirm structural displacement.</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpTradingStyle</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enum</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>STYLE_SWING</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">EMA strategy bias used: <code>STYLE_LONG_TERM</code> (200 EMA), <code>STYLE_SWING</code> (50 EMA), <code>STYLE_DAY</code> (9/20 EMA Cross).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpHTFTimeframe</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enum</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>PERIOD_H1</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Higher timeframe utilized by the HTF Scanner to calculate structural order flow.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpDisplacementMult</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>1.5</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Minimum candle body size relative to average body size required to qualify as a displacement candle.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpVolumeMult</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>1.2</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Minimum tick volume relative to average volume required to confirm structural displacement.</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">⚙️ Basic Defaults</h3>
     <p>Default startup settings and core risk parameters.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpStartupMode</code> : Enum : <code>STARTUP_COPIER</code> : UI view mode on startup: <code>STARTUP_COPIER</code> (Mini Copier Panel), <code>STARTUP_FULL</code> (Side-by-Side Panel), <code>STARTUP_MANUAL</code> (Manual Only).</p>
-    <p style="margin-left: 15px;">• <code>InpUiMode</code> : Enum : <code>UI_MODE_RESIZE</code> : Panel scaling mode. <code>Enabled</code> — drag the bottom-right corner to resize the EA panel. <code>Disabled</code> — fixed-size panel, use Windows DPI scaling instead.</p>
-    <p style="margin-left: 15px;">• <code>InpFontDpiAdj</code> : Enum : <code>FONT_DPI_DYNAMIC</code> : Font DPI compensation. <code>Dynamic</code> — auto-reduces font size based on monitor DPI. <code>Off</code> — no adjustment. <code>Manual</code> — use <code>InpFontDpiManual</code> value.</p>
-    <p style="margin-left: 15px;">• <code>InpFontDpiManual</code> : Int : <code>1</code> : Font reduction in points. Only used when <code>InpFontDpiAdj</code> is set to <code>Manual</code>.</p>
-    <p style="margin-left: 15px;">• <code>InpEnableTelegram</code> : Bool : <code>true</code> : Master toggle to enable processing of incoming signal files from the Telegram Bridge.</p>
-    <p style="margin-left: 15px;">• <code>InpLotSize</code> : Double : <code>0.01</code> : Default lot size per trade for manual dashboard orders.</p>
-    <p style="margin-left: 15px;">• <code>InpStopLossPips</code> : Double : <code>50.0</code> : Default protective Stop Loss distance in pips for manual trades.</p>
-    <p style="margin-left: 15px;">• <code>InpUseDynamicATR</code> : Bool : <code>false</code> : Enables Average True Range (ATR) calculation for dynamic SL and TP targets.</p>
-    <p style="margin-left: 15px;">• <code>InpATRPeriod</code> : Int : <code>14</code> : Indicator period for ATR calculation lookback.</p>
-    <p style="margin-left: 15px;">• <code>InpATR_SL_Mult</code> : Double : <code>1.5</code> : Volatility multiplier used to calculate the dynamic Stop Loss.</p>
-    <p style="margin-left: 15px;">• <code>InpATR_TP1_Mult</code> : Double : <code>1.5</code> : Volatility multiplier used to calculate the dynamic TP1 target.</p>
-    <p style="margin-left: 15px;">• <code>InpMagic</code> : Int : <code>26022791</code> : EA Magic Number. Uniquely labels and isolates this EA instance's trades on the account.</p>
-    <p style="margin-left: 15px;">• <code>InpDefaultEquityProtect</code> : Double : <code>0.0</code> : Startup Equity Protection target ($): A positive value acts as a profit target; a negative value acts as a drawdown cash floor. <code>0.0</code> disables.</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpStartupMode</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enum</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>STARTUP_COPIER</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">UI view mode on startup: <code>STARTUP_COPIER</code> (Mini Copier Panel), <code>STARTUP_FULL</code> (Side-by-Side Panel), <code>STARTUP_MANUAL</code> (Manual Only).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpUiMode</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enum</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>UI_MODE_RESIZE</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Panel scaling mode. <code>Enabled</code> — drag the bottom-right corner to resize the EA panel. <code>Disabled</code> — fixed-size panel, use Windows DPI scaling instead.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpFontDpiAdj</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enum</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>FONT_DPI_DYNAMIC</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Font DPI compensation. <code>Dynamic</code> — auto-reduces font size based on monitor DPI. <code>Off</code> — no adjustment. <code>Manual</code> — use <code>InpFontDpiManual</code> value.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpFontDpiManual</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>1</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Font reduction in points. Only used when <code>InpFontDpiAdj</code> is set to <code>Manual</code>.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpEnableTelegram</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Master toggle to enable processing of incoming signal files from the Telegram Bridge.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpLotSize</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>0.01</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Default lot size per trade for manual dashboard orders.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpStopLossPips</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>50.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Default protective Stop Loss distance in pips for manual trades.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpUseDynamicATR</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enables Average True Range (ATR) calculation for dynamic SL and TP targets.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpATRPeriod</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>14</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Indicator period for ATR calculation lookback.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpATR_SL_Mult</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>1.5</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Volatility multiplier used to calculate the dynamic Stop Loss.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpATR_TP1_Mult</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>1.5</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Volatility multiplier used to calculate the dynamic TP1 target.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpMagic</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>26022791</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">EA Magic Number. Uniquely labels and isolates this EA instance's trades on the account.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpDefaultEquityProtect</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>0.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Startup Equity Protection target ($): A positive value acts as a profit target; a negative value acts as a drawdown cash floor. <code>0.0</code> disables.</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">🖥️ Panel Scaling & DPI</h3>
-    <p style="margin-left: 15px;">• Resize : Font DPI : What the user gets</p>
-    <p style="margin-left: 15px;">• Enabled : Dynamic : Drag to resize panel + font auto-adjusts for high-DPI monitors. Best for most users.</p>
-    <p style="margin-left: 15px;">• Enabled : Off : Drag to resize panel + no font changes. Good if text looks fine already.</p>
-    <p style="margin-left: 15px;">• Enabled : Manual : Drag to resize panel + you pick exactly how many points to reduce font by.</p>
-    <p style="margin-left: 15px;">• Disabled : Dynamic : Fixed panel size + font auto-adjusts for DPI. Use this if you prefer Windows to handle scaling.</p>
-    <p style="margin-left: 15px;">• Disabled : Off : Fixed panel + no font changes.</p>
-    <p style="margin-left: 15px;">• Disabled : Manual : Fixed panel + you pick the font reduction.</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Resize</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Font DPI</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">What the user gets</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Dynamic</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Drag to resize panel + font auto-adjusts for high-DPI monitors. Best for most users.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Off</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Drag to resize panel + no font changes. Good if text looks fine already.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Manual</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Drag to resize panel + you pick exactly how many points to reduce font by.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Dynamic</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Fixed panel size + font auto-adjusts for DPI. Use this if you prefer Windows to handle scaling.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Off</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Fixed panel + no font changes.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Manual</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Fixed panel + you pick the font reduction.</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">📊 Visual FVG & Order Blocks</h3>
     <p>Settings for the Fair Value Gap (FVG) and Order Block (OB) scanner and on-chart visualizations.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpFVGLookback</code> : Int : <code>100</code> : Lookback depth in bars to scan for FVGs and OBs.</p>
-    <p style="margin-left: 15px;">• <code>InpDrawOrderBlocks</code> : Bool : <code>true</code> : Toggles drawing of institutional Order Block zones.</p>
-    <p style="margin-left: 15px;">• <code>InpDrawFVG</code> : Bool : <code>true</code> : Toggles drawing of FVG imbalance rectangles.</p>
-    <p style="margin-left: 15px;">• <code>InpDrawIOFArrows</code> : Bool : <code>false</code> : Enables drawing of trade entry and stop loss arrows on 50% mitigation events.</p>
-    <p style="margin-left: 15px;">• <code>InpEnableFVGMitigationAlerts</code> : Bool : <code>true</code> : Enables alerts when the price mitigates 50% of an active FVG.</p>
-    <p style="margin-left: 15px;">• <code>InpBuyOBColor</code> / <code>SellOBColor</code> : Color : <code>clrGreen</code>/<code>clrRed</code> : Colors used to draw Bullish and Bearish Order Blocks.</p>
-    <p style="margin-left: 15px;">• <code>InpBuyPeakOBColor</code> / <code>SellPeakOBColor</code> : Color : <code>clrTeal</code>/<code>clrDarkRed</code> : Colors used to draw Extreme/Peak structural swing Order Blocks.</p>
-    <p style="margin-left: 15px;">• <code>InpPeakLookback</code> : Int : <code>15</code> : Lookback period in bars used to locate peak swing structures.</p>
-    <p style="margin-left: 15px;">• <code>InpBuyFVGColor</code> / <code>SellFVGColor</code> : Color : <code>clrLimeGreen</code>/<code>clrYellow</code> : Colors used to draw Bullish and Bearish FVG zones.</p>
-    <p style="margin-left: 15px;">• <code>InpFillFVG</code> : Bool : <code>true</code> : If true, FVG rectangles are drawn as filled boxes. If false, they are outlines.</p>
-    <p style="margin-left: 15px;">• <code>InpFVGExtensionBars</code> : Int : <code>20</code> : Number of bars to extend the FVG box forward on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpFVGPartialMitigation</code> : Bool : <code>true</code> : If true, FVGs mitigate (hide) when the price sweeps 50% of the zone. If false, they require full sweeps.</p>
-    <p style="margin-left: 15px;">• <code>InpRefreshMs</code> : Int : <code>250</code> : Scanner refresh execution delay in milliseconds.</p>
-    <p style="margin-left: 15px;">• <code>InpmidLineColor</code> / <code>Style</code> : Mixed : <code>clrGray</code> / <code>STYLE_DOT</code> : Color and line style settings for the FVG 50% midline.</p>
-    <p style="margin-left: 15px;">• <code>InpFvgDispFilter</code> : Bool : <code>true</code> : If true, FVGs are only valid if formed by a high-momentum candle meeting displacement multipliers.</p>
-    <p style="margin-left: 15px;">• <code>InpFvgAvgBodyPeriod</code> : Int : <code>10</code> : Lookback period for calculating average candle body size.</p>
-    <p style="margin-left: 15px;">• <code>InpFvgBodyMult</code> : Double : <code>1.5</code> : Minimum body size multiplier to qualify for displacement.</p>
-    <p style="margin-left: 15px;">• <code>InpFvgMinGapPips</code> : Double : <code>3.0</code> : Filters out micro-imbalances; gaps must be wider than this in pips to be drawn.</p>
-    <p style="margin-left: 15px;">• <code>InpObStructFilter</code> : Bool : <code>false</code> : If true, an Order Block is only valid if it resulted in a subsequent Break of Structure (BOS) or Market Structure Shift (MSS).</p>
-    <p style="margin-left: 15px;">• <code>InpObExtraDisplacement</code> : Bool : <code>false</code> : Requires structural displacement on the leg that created the Order Block.</p>
-    <p style="margin-left: 15px;">• <code>InpObLinkFvg</code> : Bool : <code>false</code> : If true, an Order Block is only valid if it overlaps with its corresponding FVG zone.</p>
-    <p style="margin-left: 15px;">• <code>InpObFvgLinkMode</code> : Enum : <code>OB_FVG_LINK_OVERLAP</code> : Link validation mode: <code>OB_FVG_LINK_OVERLAP</code> (overlaps FVG), <code>CONTAIN_CANDLE</code> (contains FVG candle), <code>CONTAIN_BODY</code> (contains FVG candle body).</p>
-    <p style="margin-left: 15px;">• <code>InpObFvgNearPips</code> : Double : <code>2.0</code> : Proximity tolerance in pips for links that are close but not strictly overlapping.</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpFVGLookback</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>100</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Lookback depth in bars to scan for FVGs and OBs.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpDrawOrderBlocks</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Toggles drawing of institutional Order Block zones.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpDrawFVG</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Toggles drawing of FVG imbalance rectangles.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpDrawIOFArrows</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enables drawing of trade entry and stop loss arrows on 50% mitigation events.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpEnableFVGMitigationAlerts</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enables alerts when the price mitigates 50% of an active FVG.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpBuyOBColor</code> / <code>SellOBColor</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Color</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>clrGreen</code>/<code>clrRed</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Colors used to draw Bullish and Bearish Order Blocks.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpBuyPeakOBColor</code> / <code>SellPeakOBColor</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Color</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>clrTeal</code>/<code>clrDarkRed</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Colors used to draw Extreme/Peak structural swing Order Blocks.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpPeakLookback</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>15</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Lookback period in bars used to locate peak swing structures.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpBuyFVGColor</code> / <code>SellFVGColor</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Color</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>clrLimeGreen</code>/<code>clrYellow</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Colors used to draw Bullish and Bearish FVG zones.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpFillFVG</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">If true, FVG rectangles are drawn as filled boxes. If false, they are outlines.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpFVGExtensionBars</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>20</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Number of bars to extend the FVG box forward on the chart.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpFVGPartialMitigation</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">If true, FVGs mitigate (hide) when the price sweeps 50% of the zone. If false, they require full sweeps.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpRefreshMs</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>250</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Scanner refresh execution delay in milliseconds.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpmidLineColor</code> / <code>Style</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Mixed</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>clrGray</code> / <code>STYLE_DOT</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Color and line style settings for the FVG 50% midline.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpFvgDispFilter</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">If true, FVGs are only valid if formed by a high-momentum candle meeting displacement multipliers.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpFvgAvgBodyPeriod</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>10</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Lookback period for calculating average candle body size.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpFvgBodyMult</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>1.5</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Minimum body size multiplier to qualify for displacement.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpFvgMinGapPips</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>3.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Filters out micro-imbalances; gaps must be wider than this in pips to be drawn.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpObStructFilter</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">If true, an Order Block is only valid if it resulted in a subsequent Break of Structure (BOS) or Market Structure Shift (MSS).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpObExtraDisplacement</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Requires structural displacement on the leg that created the Order Block.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpObLinkFvg</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">If true, an Order Block is only valid if it overlaps with its corresponding FVG zone.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpObFvgLinkMode</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enum</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>OB_FVG_LINK_OVERLAP</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Link validation mode: <code>OB_FVG_LINK_OVERLAP</code> (overlaps FVG), <code>CONTAIN_CANDLE</code> (contains FVG candle), <code>CONTAIN_BODY</code> (contains FVG candle body).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpObFvgNearPips</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>2.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Proximity tolerance in pips for links that are close but not strictly overlapping.</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">🛡️ Safety & Execution</h3>
     <p>Critical protection barriers governing order placement and slippage.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpUsePipe</code> : Bool : <code>false</code> : Enables TCP socket IPC for low-latency signal delivery. The bridge runs a local socket server; the EA connects as a client. File polling is still used as fallback. Requires "Allow DLL imports" in MT5.</p>
-    <p style="margin-left: 15px;">• <code>InpMaxSpreadPips</code> : Double : <code>4.0</code> : Maximum broker spread in pips. Rejects execution of new trades if current spread exceeds this.</p>
-    <p style="margin-left: 15px;">• <code>InpDefaultGuardPips</code> : Double : <code>10.0</code> : The maximum deviation/slippage in pips allowed when Signal Cutoff is active (Default Guard Mode).</p>
-    <p style="margin-left: 15px;">• <code>InpSafetyCapPips</code> : Int : <code>10</code> : Baseline fallback slippage/guard limit in pips used when Signal Cutoff is disabled (0).</p>
-    <p style="margin-left: 15px;">• <code>InpSlippage</code> : Ulong : <code>20</code> : Broker-level slippage tolerance in points.</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpUsePipe</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enables TCP socket IPC for low-latency signal delivery. The bridge runs a local socket server; the EA connects as a client. File polling is still used as fallback. Requires "Allow DLL imports" in MT5.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpMaxSpreadPips</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>4.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Maximum broker spread in pips. Rejects execution of new trades if current spread exceeds this.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpDefaultGuardPips</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>10.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">The maximum deviation/slippage in pips allowed when Signal Cutoff is active (Default Guard Mode).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpSafetyCapPips</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>10</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Baseline fallback slippage/guard limit in pips used when Signal Cutoff is disabled (0).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpSlippage</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Ulong</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>20</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Broker-level slippage tolerance in points.</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">🪜 Ladder & Harvesting</h3>
     <p>Defaults governing manually fired ladder grids and harvest targets.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpLadderTrades</code> : Int : <code>5</code> : Default number of pending limit orders placed in manual ladder grids.</p>
-    <p style="margin-left: 15px;">• <code>InpLadderStep</code> : Double : <code>10.0</code> : Pip step distance between each level in the ladder grid.</p>
-    <p style="margin-left: 15px;">• <code>InpAnchorEntries</code> : Int : <code>1</code> : Default number of anchor orders executed at market price for manual ladders.</p>
-    <p style="margin-left: 15px;">• <code>InpPendingEntries</code> : Int : <code>5</code> : Default number of pending orders placed per tier in manual ladders.</p>
-    <p style="margin-left: 15px;">• <code>InpHarvestPips</code> : Double : <code>1.0</code> : Profit cushion in pips added to Break-Even when a tier is harvested.</p>
-    <p style="margin-left: 15px;">• <code>InpCancelPendingOnTP</code> : Bool : <code>true</code> : If enabled, remaining pending limit orders are automatically deleted when the price triggers a configured Take Profit target.</p>
-    <p style="margin-left: 15px;">• <code>InpCancelPendingTPLevel</code> : Int : <code>2</code> (TP2) : The specific TP milestone that triggers deletion of remaining pending limit orders.</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpLadderTrades</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>5</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Default number of pending limit orders placed in manual ladder grids.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpLadderStep</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>10.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Pip step distance between each level in the ladder grid.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpAnchorEntries</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>1</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Default number of anchor orders executed at market price for manual ladders.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpPendingEntries</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>5</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Default number of pending orders placed per tier in manual ladders.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpHarvestPips</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>1.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Profit cushion in pips added to Break-Even when a tier is harvested.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCancelPendingOnTP</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">If enabled, remaining pending limit orders are automatically deleted when the price triggers a configured Take Profit target.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCancelPendingTPLevel</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>2</code> (TP2)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">The specific TP milestone that triggers deletion of remaining pending limit orders.</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">🔄 Auto SL Move & Trailing</h3>
     <p>Protective actions that secure trades and trail profits dynamically.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpEnableAutoSLM</code> : Bool : <code>true</code> : Toggles whether the auto Stop Loss move to Break-Even is active on startup.</p>
-    <p style="margin-left: 15px;">• <code>InpShowVirtualTPs</code> : Bool : <code>false</code> : If true, renders visual stealth TP lines on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpShowVirtualSL</code> : Bool : <code>false</code> : If true, renders visual stealth SL lines on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpUseEmergencySL</code> : Bool : <code>false</code> : If true, places a wide Emergency SL on the broker as a safety net during Stealth Mode. If false, the broker sees SL = 0 (fully hidden).</p>
-    <p style="margin-left: 15px;">• <code>InpEmergencySLMultiplier</code> : Double : <code>2.0</code> : How much wider the Emergency SL is compared to your real SL. Only applies when <code>InpUseEmergencySL</code> is true.</p>
-    <p style="margin-left: 15px;">• <code>InpTP1_TriggerLevel</code> : Int : <code>3</code> (TP3) : The TP target milestone that triggers the first auto Break-Even move.</p>
-    <p style="margin-left: 15px;">• <code>InpBreakEvenLockPips</code> : Double : <code>1.0</code> : Pip cushion added to the entry price when moving Stop Loss to Break-Even.</p>
-    <p style="margin-left: 15px;">• <code>InpManualSLPushPips</code> : Double : <code>10.0</code> : Distance in pips used when hitting the manual "PUSH SL" button on the dashboard.</p>
-    <p style="margin-left: 15px;">• <code>InpBE_RefMode</code> : Enum : <code>BE_REF_ENTRY</code> : BE calculation mode. <code>BE_REF_ENTRY</code> tracks each position's own entry price; <code>BE_REF_ANCHOR</code> tracks all positions relative to the high anchor price.</p>
-    <p style="margin-left: 15px;">• <code>InpTrailDistance</code> : Double : <code>20.0</code> : Trailing stop distance in pips behind the current market price.</p>
-    <p style="margin-left: 15px;">• <code>InpTrailStep</code> : Double : <code>5.0</code> : Minimum step increment in pips for trailing stops.</p>
-    <p style="margin-left: 15px;">• <code>InpTrailPadding</code> : Double : <code>15.0</code> : Distance in pips added as structural buffer behind candlestick wicks or fractals.</p>
-    <p style="margin-left: 15px;">• <code>InpSignalRRRatio</code> : Double : <code>2.0</code> : Risk-to-Reward ratio used by the internal scanner signal engine.</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpEnableAutoSLM</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Toggles whether the auto Stop Loss move to Break-Even is active on startup.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpShowVirtualTPs</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">If true, renders visual stealth TP lines on the chart.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpShowVirtualSL</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">If true, renders visual stealth SL lines on the chart.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpUseEmergencySL</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">If true, places a wide Emergency SL on the broker as a safety net during Stealth Mode. If false, the broker sees SL = 0 (fully hidden).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpEmergencySLMultiplier</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>2.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">How much wider the Emergency SL is compared to your real SL. Only applies when <code>InpUseEmergencySL</code> is true.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpTP1_TriggerLevel</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>3</code> (TP3)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">The TP target milestone that triggers the first auto Break-Even move.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpBreakEvenLockPips</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>1.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Pip cushion added to the entry price when moving Stop Loss to Break-Even.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpManualSLPushPips</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>10.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Distance in pips used when hitting the manual "PUSH SL" button on the dashboard.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpBE_RefMode</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enum</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>BE_REF_ENTRY</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">BE calculation mode. <code>BE_REF_ENTRY</code> tracks each position's own entry price; <code>BE_REF_ANCHOR</code> tracks all positions relative to the high anchor price.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpTrailDistance</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>20.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Trailing stop distance in pips behind the current market price.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpTrailStep</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>5.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Minimum step increment in pips for trailing stops.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpTrailPadding</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>15.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Distance in pips added as structural buffer behind candlestick wicks or fractals.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpSignalRRRatio</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>2.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Risk-to-Reward ratio used by the internal scanner signal engine.</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">🌎 Global Sync Partials</h3>
     <p>Default Take Profit distances and close percentages for manual grids and default behavior.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpTP1_Pips</code> to <code>TP5_Pips</code> : Double : (staged) : Target distances in pips from entry for global Take Profits 1 through 5. (TP1=30, TP2=50, TP3=80, TP4=100, TP5=130, TP6-10=0)</p>
-    <p style="margin-left: 15px;">• <code>InpTP1_ClosePct</code> to <code>TP5_ClosePct</code> : Double : (staged) : Percentage of position volume to close at each global TP milestone. (TP1-4=20%, TP5=100%, TP6-10=0%)</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpTP1_Pips</code> to <code>TP5_Pips</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Target distances in pips from entry for global Take Profits 1 through 5. (TP1=30, TP2=50, TP3=80, TP4=100, TP5=130, TP6-10=0)</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpTP1_ClosePct</code> to <code>TP5_ClosePct</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Percentage of position volume to close at each global TP milestone. (TP1-4=20%, TP5=100%, TP6-10=0%)</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">💼 Manual Panel TP</h3>
     <p>Standalone target distances and close percentages specifically for trades entered manually through the dashboard.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpMan_TP1</code> to <code>TP5</code> : Double : (staged) : Target distances in pips from manual market order entry for TP1 through TP5. (Man_TP1=20, Man_TP2=50, Man_TP3=90, Man_TP4=120, Man_TP5=200, Man_TP6-10=0)</p>
-    <p style="margin-left: 15px;">• <code>InpMan_Pct1</code> to <code>Pct5</code> : Double : (staged) : Percentage of position volume to close at each manual market order TP milestone. (Man_Pct1-2=25%, Man_Pct3-4=20%, Man_Pct5=100%, Man_Pct6-10=0%)</p>
-    <p style="margin-left: 15px;">• <code>InpMan_TP_PEN1</code> to <code>TP_PEN5</code> : Double : (staged) : Target distances in pips from manual pending limit order entry for TP1 through TP5. (PEN1=30, PEN2=60, PEN3=100, PEN4=160, PEN5=250, PEN6-10=0)</p>
-    <p style="margin-left: 15px;">• <code>InpMan_Pct_PEN1</code> to <code>Pct_PEN5</code> : Double : (staged) : Percentage of position volume to close at each manual pending order TP milestone. (PEN1-4=20%, PEN5=100%, PEN6-10=0%)</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpMan_TP1</code> to <code>TP5</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Target distances in pips from manual market order entry for TP1 through TP5. (Man_TP1=20, Man_TP2=50, Man_TP3=90, Man_TP4=120, Man_TP5=200, Man_TP6-10=0)</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpMan_Pct1</code> to <code>Pct5</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Percentage of position volume to close at each manual market order TP milestone. (Man_Pct1-2=25%, Man_Pct3-4=20%, Man_Pct5=100%, Man_Pct6-10=0%)</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpMan_TP_PEN1</code> to <code>TP_PEN5</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Target distances in pips from manual pending limit order entry for TP1 through TP5. (PEN1=30, PEN2=60, PEN3=100, PEN4=160, PEN5=250, PEN6-10=0)</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpMan_Pct_PEN1</code> to <code>Pct_PEN5</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Percentage of position volume to close at each manual pending order TP milestone. (PEN1-4=20%, PEN5=100%, PEN6-10=0%)</td></tr>
+    </tbody></table></div>
     <h3 style="margin-top: 20px; color: #00d2d3;">🤖 AI Insights (Read-Only Analytics)</h3>
     <p>AI-powered market analysis displayed in the 4th tab of the trades panel. The AI provides market bias, confidence levels, risk assessment, and key level identification. <strong>The AI has ZERO influence on trade execution</strong> — it is purely informational.</p>
     <h4 style="margin-top: 15px; color: #e0e0e0;">How It Works</h4>
@@ -888,11 +956,15 @@
     </ul>
     <p><strong>No trades are placed or modified by the AI.</strong> It reads market data and reports — nothing more.</p>
     <h4 style="margin-top: 15px; color: #e0e0e0;">EA Input Parameters</h4>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpAIEnabled</code> : Bool : <code>false</code> : Enables the AI Insights tab in the trades panel.</p>
-    <p style="margin-left: 15px;">• <code>InpAIWriteData</code> : Bool : <code>true</code> : Writes market data JSON file for the bridge to process.</p>
-    <p style="margin-left: 15px;">• <code>InpAIInterval</code> : Int : <code>30</code> : Analysis interval in seconds (minimum 10, maximum 300).</p>
-    <p style="margin-left: 15px;">• <code>InpAICandlesPerTF</code> : Int : <code>20</code> : Number of candles per timeframe in the data payload (5-50).</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpAIEnabled</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enables the AI Insights tab in the trades panel.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpAIWriteData</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Writes market data JSON file for the bridge to process.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpAIInterval</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>30</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Analysis interval in seconds (minimum 10, maximum 300).</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpAICandlesPerTF</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>20</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Number of candles per timeframe in the data payload (5-50).</td></tr>
+    </tbody></table></div>
     <h4 style="margin-top: 15px; color: #e0e0e0;">Market Data Sent to AI</h4>
     <p>The EA sends the following to the Bridge for analysis:</p>
     <ul>
@@ -927,11 +999,15 @@
         <li><strong>Interval</strong> — How often to run analysis (default: 30 seconds)</li>
     </ul>
     <h4 style="margin-top: 15px; color: #e0e0e0;">Supported AI Providers</h4>
-    <p style="margin-left: 15px;">• Provider : Estimated Cost : Models</p>
-    <p style="margin-left: 15px;">• OpenAI : ~$6.50/month : gpt-4o-mini, gpt-4o</p>
-    <p style="margin-left: 15px;">• Anthropic : ~$6.50/month : claude-haiku-3.5, claude-sonnet-4</p>
-    <p style="margin-left: 15px;">• OpenCode Go : $5-10/month : mimo-v2.5, kimi-k2.7, deepseek-v4-pro, glm-5.2, minimax-m3</p>
-    <p style="margin-left: 15px;">• Ollama (Local) : Free : llama3, any downloaded model</p>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Provider</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Estimated Cost</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Models</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">OpenAI</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">~$6.50/month</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">gpt-4o-mini, gpt-4o</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Anthropic</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">~$6.50/month</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">claude-haiku-3.5, claude-sonnet-4</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">OpenCode Go</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">$5-10/month</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">mimo-v2.5, kimi-k2.7, deepseek-v4-pro, glm-5.2, minimax-m3</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Ollama (Local)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Free</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">llama3, any downloaded model</td></tr>
+    </tbody></table></div>
     <h4 style="margin-top: 15px; color: #e0e0e0;">AI Provider Performance Notes</h4>
     <ul>
         <li><strong>Reasoning models</strong> (deepseek-v4-pro, mimo-v2.5) may return analysis in the <code>reasoning_content</code> field instead of <code>content</code>. The Bridge handles this automatically.</li>
@@ -942,39 +1018,39 @@
 </section>
 </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h2><img src="logo-header.png" alt="" width="32" height="32"> Gold<span>Snipers</span></h2>
-                    <p>Professional algorithmic trading solutions for MetaTrader 5 and Telegram integrations. Built by traders, for traders.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="index.html#pricing">Pricing</a></li>
-                        <li><a href="doc.html">Documentation</a></li>
-                        <li><a href="infographics.html">Infographics</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="index.html#faq">FAQ</a></li>
-                        <li><a href="mailto:support@goldsnipers.com">Contact Support</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-disclaimer">
-                <strong>Risk Warning:</strong> Trading financial instruments, including foreign exchange (Forex) and contracts for difference (CFDs) on margin, carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade, you should carefully consider your investment objectives, level of experience, and risk appetite. Past performance of any automated strategy or EA is not indicative of future results.
-                <br><br>
-                &copy; 2026 Gold Snipers. All rights reserved. Built for MT5.
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js?v=2.1.0"></script>
-</body>
-</html>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2><img src="logo-header.png" alt="" width="32" height="32"> Gold<span>Snipers</span></h2>
+                    <p>Professional algorithmic trading solutions for MetaTrader 5 and Telegram integrations. Built by traders, for traders.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="doc.html">Documentation</a></li>
+                        <li><a href="infographics.html">Infographics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="mailto:support@goldsnipers.com">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <strong>Risk Warning:</strong> Trading financial instruments, including foreign exchange (Forex) and contracts for difference (CFDs) on margin, carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade, you should carefully consider your investment objectives, level of experience, and risk appetite. Past performance of any automated strategy or EA is not indicative of future results.
+                <br><br>
+                &copy; 2026 Gold Snipers. All rights reserved. Built for MT5.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=2.1.0"></script>
+</body>
+</html>
