@@ -1,980 +1,937 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gold Snipers | Documentation & User Guide</title>
-    <meta name="description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite. Setup tutorials, signal configuration, and EA inputs.">
-    <link rel="canonical" href="https://goldsnipersbot.com/doc.html">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Gold Snipers | Documentation & User Guide">
-    <meta property="og:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
-    <meta property="og:image" content="https://goldsnipersbot.com/dashboard.png">
-    <meta property="og:url" content="https://goldsnipersbot.com/doc.html">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gold Snipers | Documentation & User Guide">
-    <meta name="twitter:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
-    <meta name="twitter:image" content="https://goldsnipersbot.com/dashboard.png">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css?v=2.0.9">
-</head>
-<body>
-    <!-- Animated Background Elements -->
-    <div class="bg-glow"></div>
-    <div class="bg-glow-gold"></div>
-
-    <!-- Header / Navigation -->
-    <header class="scrolled">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="logo-header.png" alt="" width="32" height="32">
-                    Gold<span>Snipers</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html#features">Features</a></li>
-                    <li><a href="index.html#pricing">Pricing</a></li>
-                    <li><a href="index.html#faq">FAQ</a></li>
-                    <li><a href="doc.html" class="active">Documentation</a></li>
-                </ul>
-                <a href="index.html#pricing" class="btn btn-primary btn-sm">Get Started</a>
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="doc-layout">
-            <!-- Table of Contents Sidebar -->
-            <aside class="doc-sidebar glass-panel">
-    <h3>User Guide Reference</h3>
-    <style>
-        .doc-sidebar .nav-group { margin-bottom: 4px; }
-        .doc-sidebar .nav-group-header {
-            display: flex; align-items: center; justify-content: space-between;
-            cursor: pointer; padding: 7px 10px; border-radius: 6px;
-            font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em;
-            text-transform: uppercase; color: #a0a0b0;
-            background: rgba(255,255,255,0.03);
-            transition: background 0.2s, color 0.2s;
-            user-select: none; border: none; width: 100%; text-align: left;
-        }
-        .doc-sidebar .nav-group-header:hover { background: rgba(255,215,0,0.07); color: #ffd700; }
-        .doc-sidebar .nav-group-header.open { color: #ffd700; background: rgba(255,215,0,0.06); }
-        .doc-sidebar .nav-group-header .chevron {
-            font-style: normal; font-size: 0.7rem; transition: transform 0.25s;
-            flex-shrink: 0; margin-left: 6px;
-        }
-        .doc-sidebar .nav-group-header.open .chevron { transform: rotate(90deg); }
-        .doc-sidebar .nav-sub {
-            list-style: none; margin: 0; padding: 0;
-            overflow: hidden; max-height: 0;
-            transition: max-height 0.35s ease;
-        }
-        .doc-sidebar .nav-sub.open { max-height: 1000px; }
-        .doc-sidebar .nav-sub li a {
-            display: block; padding: 5px 10px 5px 18px;
-            font-size: 0.8rem; color: #b0b0c0; border-radius: 5px;
-            text-decoration: none; transition: color 0.2s, background 0.2s;
-            border-left: 2px solid transparent; margin: 1px 0;
-        }
-        .doc-sidebar .nav-sub li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); border-left-color: #ffd700; }
-        .doc-sidebar ul.top-links { list-style: none; margin: 0 0 8px 0; padding: 0; }
-        .doc-sidebar ul.top-links li a {
-            display: block; padding: 6px 10px; font-size: 0.82rem;
-            color: #b0b0c0; border-radius: 6px; text-decoration: none;
-            transition: color 0.2s, background 0.2s;
-        }
-        .doc-sidebar ul.top-links li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); }
-        .doc-sidebar ul.top-links li a.active-link { color: #00d2d3; }
-    </style>
-
-    <!-- Top-level non-grouped links -->
-    <ul class="top-links">
-        <li><a href="#welcome">?? Welcome</a></li>
-        <li><a href="#initial-setup-upgrades-connection-guide">?? Setup &amp; Connection Guide</a></li>
-        <li><a href="#dashboard-risk-management-setup-metrics">?? Dashboard &amp; Risk Metrics</a></li>
-        <li><a href="#dual-channel-independent-copier-panels">?? Dual-Channel Copier Panels</a></li>
-    </ul>
-
-    <!-- Group: Profit Management -->
-    <div class="nav-group">
-        <button class="nav-group-header open" onclick="toggleGroup(this)">
-            ?? Trade Profit Management <span class="chevron">?</span>
-        </button>
-        <ul class="nav-sub open">
-            <li><a href="#take-profit-targeting-paging-add-tps">TP Targeting &amp; Paging</a></li>
-            <li><a href="#5-unified-take-profit-stop-loss-stealth-mode">Stealth TP/SL Mode</a></li>
-            <li><a href="#tp-auto-mode-distributed-anchor-deep-runner-engine">TP AUTO Mode</a></li>
-            <li><a href="#anchor-strategy-toggles-unified-vs-distributed">Anchor Strategy Toggles</a></li>
-            <li><a href="#harvesting-adaptive-profit-defense">Harvesting &amp; Profit Defense</a></li>
-            <li><a href="#precision-break-even-engines-auto-sl-move-be-settings">Break-Even Engines</a></li>
-            <li><a href="#cancel-pending-button-delete-pending-limits-on-tp">Cancel Pending on TP</a></li>
-        </ul>
-    </div>
-
-    <!-- Group: Entry & Signals -->
-    <div class="nav-group">
-        <button class="nav-group-header" onclick="toggleGroup(this)">
-            ? Entry &amp; Signal Routing <span class="chevron">?</span>
-        </button>
-        <ul class="nav-sub">
-            <li><a href="#core-entry-modes-ladder-vs-single">Entry Modes: Ladder vs. Single</a></li>
-            <li><a href="#signal-entry-cutoff-telegram-routing">Signal Cutoff &amp; Routing</a></li>
-        </ul>
-    </div>
-
-    <!-- Group: Dashboard & Analytics -->
-    <div class="nav-group">
-        <button class="nav-group-header" onclick="toggleGroup(this)">
-            ?? Analytics &amp; UI Engines <span class="chevron">?</span>
-        </button>
-        <ul class="nav-sub">
-            <li><a href="#live-analytics-equity-protect-matrix">Live Analytics &amp; Equity Protect</a></li>
-            <li><a href="#manual-panel-technical-intel-deck">Manual Panel &amp; Intel Deck</a></li>
-            <li><a href="#intraday-extension-panels-trades-levels-helper">Intraday Panels (Trades &amp; Levels)</a></li>
-            <li><a href="#ergonomic-action-buttons-ui-modes">Action Buttons &amp; UI Modes</a></li>
-            <li><a href="#ui-modes-sync-safety-engines">UI Sync &amp; Safety Engines</a></li>
-            <li><a href="#core-pip-scaling-goldxauusd-scaling">Pip Scaling (Gold/XAUUSD)</a></li>
-        </ul>
-    </div>
-
-    <!-- Group: Bridge & Advanced -->
-    <div class="nav-group">
-        <button class="nav-group-header" onclick="toggleGroup(this)">
-            ?? Bridge &amp; Advanced <span class="chevron">?</span>
-        </button>
-        <ul class="nav-sub">
-            <li><a href="#the-copier-bridge-desktop-engine">Copier Bridge Desktop Engine</a></li>
-            <li><a href="#performance-execution-engine-upgrades-v36295">Performance &amp; Engine Upgrades</a></li>
-            <li><a href="#advanced-guide-trade-exclusions-command-routing-copier-workflow">Trade Exclusions &amp; Copier Workflow</a></li>
-            <li><a href="#remote-admin-control-panel-telegram-saved-messages">Remote Admin Control Panel</a></li>
-            <li><a href="#mt5-input-settings-reference">MT5 Input Settings Reference</a></li>
-        </ul>
-    </div>
-
-    <script>
-        function toggleGroup(btn) {
-            btn.classList.toggle('open');
-            btn.nextElementSibling.classList.toggle('open');
-        }
-    </script>
-</aside>
-
-            <!-- Main Documentation Content -->
-            <main class="doc-content glass-panel">
-<section id="welcome" class="doc-section">
-    <h2>Welcome to Gold Snipers</h2>
-    <p>Welcome to the official manual for the <strong>Gold Snipers EA</strong>. This document details the trade management engines and features of the EA, organized from top-to-bottom to mirror its physical on-chart dashboard layout.</p>
-    <p>---</p>
-</section>
-
-<section id="initial-setup-upgrades-connection-guide" class="doc-section">
-    <h2>1. Initial Setup, Upgrades & Connection Guide</h2>
-    <p>Before activating the EA on your charts, you must complete the one-time authorization link between your Telegram account and the trading terminal.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🚀 The First-Time Activation Wizard</h3>
-    <p>When you run the <strong>Gold Snipers Bridge</strong> (<code>GoldSnipersBridge.exe</code>) for the very first time, it initiates an interactive, high-speed setup console:</p>
-    <ul>
-        <li><strong>License Key:</strong> A dialog will appear asking for your Gold Snipers license key (format: <code>GS-XXXX-XXXX-XXXX</code>). This key is provided after purchase and is required before anything else.</li>
-        <li><strong>API ID & API Hash:</strong> The console will prompt you to enter your Telegram credentials (obtained from <code>my.telegram.org</code>).</li>
-        <li>*💡 Shortcut:* If you do not have custom keys, simply press <strong>[ENTER]</strong> to automatically use our secure, pre-configured developer engine.</li>
-        <li><strong>Secure Authentication:</strong> Enter your phone number (with country code, e.g., <code>+1...</code>). The console will ask for the OTP code sent to your Telegram App, followed by your 2-Step Verification Password (if enabled).</li>
-        <li><strong>Channel Subscriptions:</strong> The Bridge will print a list of your active groups/channels. Type the numbers corresponding to the channels you want to monitor (e.g., <code>2, 5, 9</code>).</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🔑 License Key System</h3>
-    <p>Gold Snipers uses a cloud-based license key system. Here's how it works:</p>
-    <ul>
-        <li><strong>Obtaining a License:</strong> Once you purchase a license from your provider, your license key (format: <code>GS-XXXX-XXXX-XXXX</code>) is automatically generated and displayed on the checkout success screen, allowing you to copy it and download the installer immediately.</li>
-        <li><strong>Entering Your Key:</strong> On first launch, the Bridge displays a dialog asking for your license key. Enter it once — it's stored securely on your machine.</li>
-        <li><strong>Changing Your Key:</strong> Click <strong>Change License Key</strong> (green button, top-right of API Settings) to enter a new key at any time.</li>
-        <li><strong>Machine Binding:</strong> Your license key is bound to your computer. It cannot be copied to another machine without admin assistance.</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">📦 License Tiers & Feature Matrix</h3>
-    <p>The software is distributed in three distinct product tiers, designed to fit different trading volumes and system requirements:</p>
-    <p style="margin-left: 15px;">• Feature : Starter Tier : Pro Tier : Expert Tier</p>
-    <p style="margin-left: 15px;">• <strong>MT5 Instances</strong> : 1 terminal : Up to 3 terminals : Up to 6 terminals</p>
-    <p style="margin-left: 15px;">• <strong>Unique Broker Accounts</strong> : 1 account : Up to 3 accounts : Up to 6 accounts</p>
-    <p style="margin-left: 15px;">• <strong>Trading Symbol Lock</strong> : Gold/XAUUSD only : All Symbols : All Symbols</p>
-    <p style="margin-left: 15px;">• <strong>Max Grid / TP Levels</strong> : Capped at 3 levels : Capped at 5 levels : Up to 10 levels</p>
-    <p style="margin-left: 15px;">• <strong>Stealth TP/SL Mode</strong> : Disabled (Forced to ON) : Allowed (Stealth/ON) : Allowed (Stealth/ON)</p>
-    <p style="margin-left: 15px;">• <strong>Low-Latency Socket IPC</strong> : Disabled (File-based) : Enabled (TCP Sockets) : Enabled (TCP Sockets)</p>
-    <p style="margin-left: 15px;">• <strong>AI Insights</strong> : Disabled : Enabled : Enabled</p>
-    <p style="margin-left: 15px;">• <strong>Analytics Dashboard</strong> : Disabled : Enabled : Enabled</p>
-    <p style="margin-left: 15px;">• <strong>Telegram Bot Control</strong> : Disabled : Enabled : Enabled</p>
-    <ul>
-        <li><strong>MT5 Instances:</strong> The number of MetaTrader 5 terminals you can run simultaneously with the Bridge. You can configure multiple instances in the Bridge's API Settings panel (click <strong>Add MT5 Instance</strong>).</li>
-        <li><strong>MT5 Accounts:</strong> Each license tier limits the number of unique MT5 broker accounts the EA can register. For example, Starter allows 1 MT5 account, Pro allows 3, and Expert allows 6.</li>
-        <li><strong>Manual Trading:</strong> The EA's manual trading panel works on any MT5 terminal where the EA is attached, as long as a valid license key is loaded. No separate manual trading license is needed.</li>
-        <li><strong>Tier Enforcement:</strong> All tier limits are enforced at multiple levels — UI controls are greyed out for restricted features, input parameters are clamped on initialization, and admin commands (Telegram SET) are blocked at the engine level. Switching tiers takes effect on the next bridge restart.</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">⚡ Seamless Upgrades (Zero Re-Configuration)</h3>
-    <p>When installing a new version or upgrading the software, you <strong>do not</strong> need to re-enter your credentials or repeat the setup wizard:</p>
-    <ul>
-        <li><strong>Active Session Protection:</strong> All authorizations, API keys, and channel choices are saved securely in your local data directory (specifically <code>gsae_session.session</code> and <code>gsae_config.json</code>).</li>
-        <li><strong>Automatic Upgrade Recognition:</strong> The new Bridge binary automatically detects these existing files on startup. It immediately bypasses the setup wizard and logs you straight into active monitoring within 2 seconds!</li>
-        <li><strong>Manual Reset:</strong> If you ever need to change channels or log in with a different phone number, simply press any key during the 3-second banner countdown on startup to access the Configuration Menu.</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🔧 WebRequest Configuration (EA Required)</h3>
-    <p>The Expert Advisor needs to communicate with our license server. After installing, you must whitelist this URL in MetaTrader 5:</p>
-    <ul>
-        <li>Open MetaTrader 5</li>
-        <li>Go to <strong>Tools → Options → Expert Advisors</strong></li>
-        <li>Check <strong>Allow WebRequest for listed URL</strong></li>
-        <li>Add: <code>https://hxlqbctnkqqtueuyqyyv.supabase.co</code></li>
-        <li>Click OK, then re-attach the EA to your chart</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🖥️ MT5 WebRequest Configuration (Optional, Pre-Filled)</h3>
-    <p>During installation, the Setup Wizard will display a <strong>WebRequest Configuration Page</strong> with the URL to add. This page is automatically skipped on upgrades.</p>
-</section>
-
-<section id="dashboard-risk-management-setup-metrics" class="doc-section">
-    <h2>2. Dashboard Risk Management & Setup Metrics</h2>
-    <p>The top-right quadrant of your Copier Dashboard features a dynamic, real-time Risk Projection Matrix. This engine displays your active sizing parameters and instantly calculates your maximum capital exposure before you fire your ladder.</p>
-    <ul>
-        <li><strong>ANCHOR COUNT:</strong> The number of initial market orders executed immediately at the current market price. (e.g., an Anchor Count of 3 will fire 3 separate positions upon execution).</li>
-        <li><strong>ANCHOR LOT:</strong> The specific lot size assigned individually to each market (Anchor) order.</li>
-        <li><strong>PENDING COUNT:</strong> The number of pending limit orders placed at <strong>each</strong> individual tier down the ladder grid. (If set to 2, the EA places a twin-order block at every grid step).</li>
-        <li><strong>PENDING LOT:</strong> The lot size assigned individually to each pending limit order.</li>
-        <li><strong>LAYER COUNT:</strong> Sets the total depth of the ladder (number of limit grid tiers) generated down the chart. A Layer Count of 5 will generate 5 distinct pending levels spaced at your configured pip-step intervals.</li>
-        <li><strong>STOP LOSS (PIPS):</strong> The protective distance (in pips) for the entire grid family, measured relative to the primary anchor entry price.</li>
-        <li><strong>MAX RISK CALCULATOR:</strong> A dynamic, real-time math engine projecting your worst-case total loss scenario:</li>
-        <li><strong>The Assessment:</strong> The EA instantly calculates the exact dollar and percentage loss if your initial Anchors are hit, <strong>AND</strong> every single configured Pending Layer is 100% filled, before the entire family hits your Stop Loss.</li>
-        <li><strong>Dynamic Color Warning:</strong> Displays in <strong>Green (Safe)</strong> for conservative exposure, scaling into <strong>Amber/Red (Aggressive)</strong> as risk percentages grow, ensuring you maintain ultimate oversight of your account margin.</li>
-    </ul>
-</section>
-
-<section id="dual-channel-independent-copier-panels" class="doc-section">
-    <h2>3. Dual-Channel Independent Copier Panels</h2>
-    <p>Provides two completely independent trading profiles (<strong>CH1</strong> and <strong>CH2</strong>) without any settings leakage into your manual setup:</p>
-    <ul>
-        <li><strong>Dual Sub-Tabs:</strong> Click <strong>CH1</strong> or <strong>CH2</strong> at the top of the panel to instantly switch between and configure distinct preset blocks (lot sizes, grid counts, and TP targets).</li>
-        <li><strong>Isolated Trade Execution (TradeContext Architecture):</strong> Clicking <code>BUY</code> or <code>SELL</code> on the Copier panel automatically packages the active channel's configuration into a thread-safe <code>TradeContext</code> structure. The trade executes directly from this localized memory profile, ensuring that your Manual Dashboard settings remain 100% untouched and isolated.</li>
-        <li><strong>Channel Identity:</strong> Features dedicated fields for <strong>CHANNEL NAME</strong> and <strong>CHANNEL ID</strong> directly under the selection tabs, keeping your signal routing perfectly organized and visible.</li>
-    </ul>
-</section>
-
-<section id="take-profit-targeting-paging-add-tps" class="doc-section">
-    <h2>4. Take Profit Targeting & Paging (+ ADD TPs)</h2>
-    <p>Configure up to 10 customized Take Profit levels without cluttering your chart:</p>
-    <ul>
-        <li><strong>➕ ADD TPs Button:</strong> Instantly toggles the card layout at the top of the panel between two distinct configuration pages.</li>
-        <li><strong>TP1 - TP5 Mode:</strong> Standard view for configuring core scales and targets.</li>
-        <li><strong>TP6 - TP10 Mode:</strong> Advanced view for setting deep runner targets and long-term trend milestones.</li>
-        <li><strong>Columns Design:</strong> Displays targets in clean, tactile vertical columns, styled for effortless scanning and real-time editing of pips and partial shave percentages (%).</li>
-    </ul>
-</section>
-
-<section id="5-unified-take-profit-stop-loss-stealth-mode" class="doc-section">
-    <h2>4.5 Unified Take Profit & Stop Loss Stealth Mode</h2>
-    <p>The <strong>TP/SL Mode</strong> button (on both the Manual and Copier panels) controls how the EA manages your Take Profit and Stop Loss levels. Click the button to cycle through three modes:</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">TP/SL Modes Explained</h3>
-    <p style="margin-left: 15px;">• Mode : Button Text : What Happens</p>
-    <p style="margin-left: 15px;">• <strong>TP/SL OFF</strong> : <code>TP/SL OFF</code> : No TP or SL levels are managed by the EA. Positions run with no targets.</p>
-    <p style="margin-left: 15px;">• <strong>TP/SL STEALTH</strong> : <code>TP/SL STEALTH</code> : Both TP and SL are hidden from the broker. The EA monitors price locally and closes positions when targets are hit.</p>
-    <p style="margin-left: 15px;">• <strong>TP/SL ON</strong> : <code>TP/SL ON</code> : Hard TP and SL levels are sent directly to the broker. The EA places visible targets on the broker's server.</p>
-    <div class="doc-tip"><strong>💡 Note:</strong> <strong>Note:</strong> Starter tier licenses are forced to <code>TP/SL ON</code> and cannot access Stealth mode.</div>
-    <h3 style="margin-top: 20px; color: #00d2d3;">How Stealth Mode Works</h3>
-    <p>When <strong>TP/SL STEALTH</strong> is active, the EA keeps your real SL and TP targets entirely in its own memory — invisible to your broker. This prevents stop-hunting and spread manipulation.</p>
-    <ul>
-        <li><strong>Virtual Targets:</strong> The true, narrow SL and TP targets are stored locally in MT5 Global Variables (<code>GSAE_VSL_</code> and <code>GSAE_VTP_</code>), not on the broker's server.</li>
-        <li><strong>Broker Sees Nothing:</strong> Orders are placed with TP = <code>0</code> and (optionally) a wide Emergency SL as a safety net.</li>
-        <li><strong>Real-Time Monitoring:</strong> The EA's <code>StealthMonitor</code> engine checks every 200ms. When price touches your virtual TP or SL, the EA instantly closes or partially closes the position.</li>
-        <li><strong>All Features Work:</strong> Trailing stop, break-even, harvest, and manual SL/TP adjustments all update the virtual targets locally — nothing is sent to the broker.</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">Emergency SL Safety Net</h3>
-    <p>When Stealth Mode is active, you can optionally place an <strong>Emergency Stop Loss</strong> on the broker as a safety net. This protects your account if the EA loses connection (terminal crash, internet outage, power failure).</p>
-    <p style="margin-left: 15px;">• Setting : Default : Effect</p>
-    <p style="margin-left: 15px;">• <strong>Use Emergency SL</strong> (<code>InpUseEmergencySL</code>) : <code>false</code> (OFF) : When ON, the broker sees a wide SL beyond your virtual SL as a safety net. When OFF, the broker sees SL = <code>0</code> — fully hidden.</p>
-    <p style="margin-left: 15px;">• <strong>Emergency SL Multiplier</strong> (<code>InpEmergencySLMultiplier</code>) : <code>2.0</code> : How much wider the Emergency SL is compared to your real SL. A multiplier of <code>2.0</code> means the Emergency SL is placed at 2x your normal SL distance.</p>
-    <p><strong>How the Emergency SL works:</strong></p>
-    <ul>
-        <li>Your real SL is at, say, 2450 (50 pips below entry at 2500).</li>
-        <li>With multiplier <code>2.0</code>, the Emergency SL is placed at 2400 (100 pips below entry).</li>
-        <li>If the EA crashes, the broker will close the trade at 2400 — worse than your intended 2450, but prevents unlimited loss.</li>
-        <li>If the EA is running, it monitors the virtual SL at 2450 and closes before the Emergency SL is ever reached.</li>
-    </ul>
-    <p><strong>When to use Emergency SL:</strong></p>
-    <ul>
-        <li><strong>ON</strong> — Recommended for unattended trading (VPS, overnight). Provides a safety net against EA/terminal failures.</li>
-        <li><strong>OFF</strong> — Maximum stealth. The broker sees SL = <code>0</code>, TP = <code>0</code>. No visibility into your targets. Best when you're actively monitoring or accept the disconnect risk.</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">Chart Visualization</h3>
-    <p>When Stealth Mode is active, dashed lines can appear on your chart:</p>
-    <ul>
-        <li><strong>VSL (Red Dashed):</strong> Your virtual Stop Loss target. Enable via <code>Show Visual SL Targets on Chart</code> input.</li>
-        <li><strong>VTP (Green Dashed):</strong> Your virtual Take Profit target. Enable via <code>Show Visual TP Targets on Chart</code> input.</li>
-        <li><strong>Emergency SL (Orange Dotted):</strong> The broker-side Emergency SL safety net (only visible when Emergency SL is enabled).</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">Analytics & Exit Tracking</h3>
-    <p>All stealth exits are logged in your local SQLite Analytics database with clear exit comments (<code>STEALTH_TP</code> or <code>STEALTH_SL</code>), while broker-side history comments remain completely generic — no trace of stealth mode visible to your broker.</p>
-</section>
-
-<section id="core-entry-modes-ladder-vs-single" class="doc-section">
-    <h2>5. Core Entry Modes: Ladder vs. Single</h2>
-    <p>The <strong>LADDER ON / SINGLE ON</strong> toggle button controls how your trade entries are structured:</p>
-    <ul>
-        <li><strong>SINGLE Mode:</strong></li>
-        <li>Opens a single set of market orders at the current price level.</li>
-        <li>No grid limit orders are created.</li>
-        <li><strong>LADDER Mode:</strong></li>
-        <li>Opens your anchor trades immediately at the current market price.</li>
-        <li>Simultaneously places pending limit orders below your entry (if Buying) or above your entry (if Selling) at regular price step intervals.</li>
-    </ul>
-</section>
-
-<section id="harvesting-adaptive-profit-defense" class="doc-section">
-    <h2>6. Harvesting & Adaptive Profit Defense</h2>
-    <p>Controlled via the <strong>HARVEST ON / OFF</strong> toggle button, <strong>Harvesting</strong> is an intelligent, automated risk-defense engine designed specifically for active <strong>Ladder</strong> grids.</p>
-    <ul>
-        <li><strong>Objective:</strong> Secures profits on upper trade tiers during deep market pullbacks, allowing your portfolio to recover capital incrementally.</li>
-        <li><strong>How it Works:</strong> When the price dives deep enough to trigger discount limit orders, the engine steps in to protect your higher-priced entry tiers. It automatically moves the <strong>Take Profit</strong> of previous upper tiers down to their own entry prices (+1.0 pip cushion).</li>
-        <li><strong>The Advantage:</strong> On any minor market bounce, your upper "underwater" tiers are instantly liquidated at 100% Break-Even, freeing up your margin while leaving your <strong>deepest discount tier active</strong> to run all the way to its full profit target!</li>
-        <li><strong>Threshold Guard:</strong> Uses a mathematical safety threshold (at least 50% of your grid step distance) to ensure that minor spread noise or slippage never triggers a harvest prematurely.</li>
-    </ul>
-</section>
-
-<section id="tp-auto-mode-distributed-anchor-deep-runner-engine" class="doc-section">
-    <h2>7. TP AUTO Mode (Distributed Anchor & Deep Runner Engine)</h2>
-    <p>The <strong>TP AUTO</strong> mode is a specialized, math-driven Take Profit engine designed to extract quick early profits from your primary entries while letting deep-discount limit entries run for maximum capital extraction.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">How it Works (Example Setup)</h3>
-    <ul>
-        <li><strong>Multi-Anchor Count:</strong> 3 Market Entries (Anchors)</li>
-        <li><strong>Ladder Grid Count:</strong> 10 Pending Limit Levels</li>
-        <li><strong>Deepest Configured Level:</strong> TP10</li>
-    </ul>
-    <h4 style="margin-top: 15px; color: #e0e0e0;">Phase 1: Strategic TP Assignment</h4>
-    <p>When you fire your ladder in <strong>TP AUTO</strong> mode, the EA applies two distinct Take Profit strategies to secure your portfolio:</p>
-    <ul>
-        <li><strong>Anchors (Market Orders):</strong> Your primary market entries are distributed sequentially across your nearest configured Take Profit targets to ensure rapid capital recovery:</li>
-        <li><strong>Anchor #1:</strong> Targets <strong>TP1</strong> (Immediate profit & risk mitigation trigger)</li>
-        <li><strong>Anchor #2:</strong> Targets <strong>TP2</strong></li>
-        <li><strong>Anchor #3:</strong> Targets <strong>TP3</strong></li>
-        <li><strong>Pending Tiers (Limit Grid Orders):</strong> ALL limit orders placed down the ladder (Tiers 1 through 10) are automatically assigned to target the single <strong>deepest configured Take Profit (e.g., TP10)</strong>. This ensures that any deep pullback fills run all the way back up for maximum profit extraction.</li>
-    </ul>
-    <div class="doc-tip"><strong>💡 Note:</strong> </div>
-    <div class="doc-tip"><strong>💡 Note:</strong> If you only trade a <strong>Single Anchor</strong>, or if you use the <strong>ANCHOR: UNIFIED TP</strong> setting (configured in the Copier Panel Settings area), the Anchors will target the single deepest active Take Profit and actively participate in cumulative partial percentage shaving.</div>
-    <h4 style="margin-top: 15px; color: #e0e0e0;">Phase 2: Execution & Risk Mitigation</h4>
-    <p>When the market triggers your limits and moves back in your favor:</p>
-    <ul>
-        <li><strong>Anchor Target is Hit:</strong></li>
-        <li>As soon as your primary Anchor hits its assigned target (e.g., TP1), it liquidates for an immediate profit.</li>
-        <li>This triggers the Auto Break-Even engine, which automatically moves the Stop Loss for <strong>all remaining active trades and pending limits</strong> to your entry price plus a safety cushion (+1.0 pip).</li>
-        <li>Your entire remaining ladder exposure is now <strong>100% risk-free</strong>.</li>
-        <li><strong>Deep Runners Run to Finish:</strong></li>
-        <li>Any limit trades that were triggered during the pullback are now completely secured at Break-Even and will run to target the maximum Take Profit (e.g., TP10), capturing massive gains on major trend expansions.</li>
-    </ul>
-</section>
-
-<section id="anchor-strategy-toggles-unified-vs-distributed" class="doc-section">
-    <h2>8. Anchor Strategy Toggles (Unified vs. Distributed)</h2>
-    <p>Control exactly how profits are extracted across multiple market entries:</p>
-    <ul>
-        <li><strong>DISTRIBUTED TP:</strong> (Standard View) Distributes your Take Profit targets sequentially across your open market positions (e.g., Position 1 targets TP1, Position 2 targets TP2). In this mode, Anchors bypass the partial shave engine and exit 100% at their staggered targets. Ideal for quick scale-outs.</li>
-        <li><strong>UNIFIED TP:</strong> (Auto Shave Integration) Directs ALL active market entries to target the single <strong>deepest active Take Profit</strong> currently configured (scaling fully up to <strong>TP10</strong>). Crucially, this mode authorizes the core <code>FamilyShaveEngine</code> to process all anchors, executing partial percentage shaves sequentially at each target rather than bypassing shave triggers. Perfect for extracting maximum capitalization while locked into progressive profit-securing!</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🧬 High-IQ Institutional Shave Architecture</h3>
-    <p>To prevent the standard industry trap of "shrinking residuals" (where EAs calculate percentages on shrinking remainders, leaving microscopic open trades indefinitely), the <strong>Gold Scalper EA</strong> implements an institutional-grade, self-correcting scaling algorithm:</p>
-    <ul>
-        <li><strong>Initial Entry Caching:</strong> The moment your ticket opens, the EA mathematically "memorizes" the <strong>Original Opening Lot Volume</strong> (e.g., 0.50 Lots) inside its persistent cache memory.</li>
-        <li><strong>Cumulative Target Grid:</strong> At every TP level, the engine computes the ideal <strong>Cumulative Remaining Volume</strong> rather than isolated closed amounts. (For 0.50 lots @ 20% increments: TP1 target is <code>0.40</code> lots, TP2 target is <code>0.30</code> lots).</li>
-        <li><strong>Self-Correcting Cuts:</strong> The EA calculates the exact gap between the *active live volume* and the *ideal target volume* at the next trigger. This mathematically compensates for any broker slippage, spread drift, or manual micro-adjustments, ensuring a guaranteed perfect liquidation at your final target!</li>
-    </ul>
-</section>
-
-<section id="precision-break-even-engines-auto-sl-move-be-settings" class="doc-section">
-    <h2>9. Precision Break-Even Engines (Auto SL Move & BE Settings)</h2>
-    <p>The EA features automated and customizable Break-Even protection, allowing you to surgically manage position lifecycles and lock in profits directly from the panel:</p>
-    <ul>
-        <li><strong>AUTO SL MOVE:</strong> (Displays as <strong><code>AUTO SL MOVE: ON</code></strong> / <strong><code>OFF</code></strong>) Toggle to automatically move your safety stops to lock in capital as configured milestones are triggered.</li>
-        <li><strong>BE MODE:</strong> (e.g., <strong><code>BE MODE: ANCHOR</code></strong> / <strong><code>ENTRY</code></strong>)</li>
-        <li><strong>ENTRY:</strong> (Individual Mode) Each individual position moves its Stop Loss to its own unique opening fill price, securing every entry independently.</li>
-        <li><strong>ANCHOR:</strong> (Massive Lock-In Mode) Forces EVERY trade in the active grid (including your deeper discount limit fills) to move its Stop Loss to align with the high <strong>original Anchor Entry Price</strong>. This means that any deeper discount entries are locked into massive, locked-in gains on a trend continuation!</li>
-        <li><strong>TRIGGER BE:</strong> (e.g., <strong><code>TRIGGER BE: TP2</code></strong>) Milestone selector to set exactly at which TP target the EA initiates Break-Even logic (e.g., lock in safety once price hits TP1 or TP2).</li>
-        <li><strong>Secured Profit Buffer (BE Lock-In):</strong> Once triggered, the EA automatically moves your Stop Loss to your entry price plus a configurable safety cushion (defaulting to +1.0 pip) to cover transactional spreads.</li>
-    </ul>
-</section>
-
-<section id="cancel-pending-button-delete-pending-limits-on-tp" class="doc-section">
-    <h2>10. CANCEL PENDING Button (Delete Pending Limits on TP)</h2>
-    <p>The <strong>CANCEL PENDING</strong> button (e.g., <strong><code>CANCEL PENDING: TP2</code></strong>) allows you to toggle the auto-cancel feature for pending limit orders on the fly:</p>
-    <ul>
-        <li><strong>CANCEL PENDING: OFF:</strong> Keeps all pending limit orders active.</li>
-        <li><strong>CANCEL PENDING: TP1</strong> through <strong>TP5:</strong> Automatically deletes remaining pending limits as soon as the price hits your configured Take Profit milestone (e.g., set to <code>CANCEL PENDING: TP2</code> to clear pending orders immediately once price triggers TP2).</li>
-    </ul>
-</section>
-
-<section id="signal-entry-cutoff-telegram-routing" class="doc-section">
-    <h2>11. Signal Entry Cutoff & Telegram Routing</h2>
-    <p>Interacts dynamically with the Telegram Bridge to capture, verify, and route incoming community alerts:</p>
-    <ul>
-        <li><strong>TG CMDS:</strong> (e.g., <strong><code>TG CMDS: INACTIVE</code></strong> / <strong><code>ACTIVE</code></strong>) Master bypass valve per-channel. Set to <strong>ACTIVE</strong> (Green) to let remote signals trigger live trades. Set to <strong>INACTIVE</strong> (Grey) to safely ignore them.</li>
-        <li><strong>Surgical Code-Level Gate:</strong> Toggling to INACTIVE permanently seals the core execution loops. The Expert Advisor will aggressively reject incoming remote files, log a "Skipping Signal" event in your terminal, and prevent any order dispatching, providing a total defensive shield.</li>
-        <li><strong>ENTRY CUTOFF:</strong> (e.g., <strong><code>ENTRY CUTOFF: TP1</code></strong>) (Late Signal Guard & Dynamic Market Chasing) High-IQ entry matrix protecting your portfolio from chasing active trends too late. Cycles from <code>DEFAULT</code> (user-defined pip limit) through <code>TP1</code> to <code>TP5</code>.</li>
-        <li><strong>The Block:</strong> Rejects the signal completely if market price is beyond the cutoff.</li>
-        <li><strong>The Chase:</strong> If the live market price has moved from the signal entry but sits <strong>inside</strong> your chosen cutoff (e.g., TP1), the EA dynamically approves an instant <strong>Market Order fallback</strong> to secure the fill, ensuring you don't miss critical entries by transforming them into unfillable limit grids!</li>
-        <li><strong>Isolated Signal Processing:</strong> Incoming community alerts are routed through localized <code>TradeContext</code> objects, preventing remote activations from ever overriding your manual dashboard variables.</li>
-        <li><strong>Decentralized HistorySelect:</strong> The signal engine utilizes an asynchronous <code>HistorySelect</code> polling mechanism to decouple trade verification from the main UI thread, ensuring signal processing never hangs during volatile news events.</li>
-        <li><strong>Smart Channel Routing:</strong> The background engine dynamically maps incoming Telegram IDs to your configured channel presets (CH1 or CH2) to auto-execute with intended sizing and targets.</li>
-        <li><strong>Stale Signal Guard:</strong> Protects account margin by automatically discarding any incoming signals older than 60 seconds.</li>
-    </ul>
-</section>
-
-<section id="live-analytics-equity-protect-matrix" class="doc-section">
-    <h2>12. Live Analytics & Equity Protect Matrix</h2>
-    <p>Located at the bottom of the configuration dashboard in Full View, this analytics suite monitors real-time transaction metrics and implements a highly flexible, dual-action capital safety valve.</p>
-    <ul>
-        <li><strong>EQUITY PROTECT ($):</strong> A powerful, absolute-dollar safety guardian governing the entire family of trades currently open on the chart.</li>
-        <li><strong>Take Profit Kill-Switch (Positive Value):</strong> If you enter a positive number (e.g., <code>1000</code>), the EA monitors your floating Profit. Once the combined profit hits or exceeds this value, it triggers a <strong>Master Clearance</strong> to immediately close all active and pending orders, securing your cash profit.</li>
-        <li><strong>Equity Protection (Negative Value):</strong> If you enter a negative number (e.g., <code>-500</code>), the EA establishes a hard cash-loss floor. If the combined floating drawdown drops to or below this negative threshold, the EA triggers an instant <strong>Master Clearance</strong> to flatten all positions, surgically protecting your account equity from runaway losses.</li>
-        <li><strong>Deactivated (0.00):</strong> Setting the field to <code>0.00</code> completely disables the Equity Protect safeguard.</li>
-        <li><strong>Profit Telemetry:</strong> Displays your cumulative, real-time floating profit or loss (P&L) for all active grid entries on the current chart. Dynamically updates color from <strong>Green (Profitable)</strong> to <strong>Red (Drawdown)</strong> for instant visual assessment.</li>
-        <li><strong>Spread Tracker:</strong> Measures and displays the broker's real-time Ask/Bid spread directly on the dashboard, helping you gauge liquidity and entry conditions.</li>
-        <li><strong>Live Status Log Footer:</strong> A rolling diagnostic line displaying the most recent action performed by the trade engine (e.g., execution confirmations like <code>SWEEP SELL @ MKT</code>, automated adjustments, partial shaves, or server rejection alerts).</li>
-    </ul>
-</section>
-
-<section id="manual-panel-technical-intel-deck" class="doc-section">
-    <h2>13. Manual Panel & Technical Intel Deck</h2>
-    <p>Sitting to the immediate right of the configuration dashboard, the Manual Panel provides standalone discretionary execution power paired with an institutional-grade technical intelligence engine that evaluates real-time order flow and multi-timeframe trends.</p>
-    <ul>
-        <li><strong>ORDER FLOW (HTF Bias Score):</strong> An advanced analysis engine that computes structural bias on a Higher Timeframe (HTF, e.g., H1) using a proprietary <strong>Trade Confidence Matrix</strong>:</li>
-        <li><strong>Multi-Factor Evaluation:</strong> Weighs confluence factors including Fair Value Gaps (FVGs), Liquidity Sweeps, Market Displacement, and algorithmic Kill Zones.</li>
-        <li><strong>Output:</strong> Displays the dominant bias (<code>BUY BIAS</code> / <code>SELL BIAS</code>) alongside the mathematical confidence score in points (e.g., <code>80pts</code>), giving you instant insight into institutional momentum.</li>
-        <li><strong>TF SCANNER (Timeframe Matrix):</strong> A sequential micro-trend scanner evaluating market structure simultaneously across <strong>M1</strong>, <strong>M5</strong>, and <strong>M15</strong> intervals. It ensures your rapid manual entries are fully synchronized with the broader macro Order Flow.</li>
-        <li><strong>BID / ASK Telemetry:</strong> Dedicated real-time price display providing instant visual tracking of broker Ask/Bid quote mechanics.</li>
-        <li><strong>Standalone Execution Controls:</strong> Complete manual sizing controls (<code>LOT SIZE</code> and hard <code>STOP LOSS</code> price inputs) isolated from Copier settings, paired with high-visibility <code>BUY</code> and <code>SELL</code> execution triggers.</li>
-        <li><strong>Precision Layer & Trade Management Console:</strong> High-IQ manual overrides providing surgical control over entries and protection thresholds:</li>
-        <li><strong>Direct LIMIT Buttons (<code>BUY LIMIT</code> / <code>SELL LIMIT</code>):</strong> Generates customized pending limit orders exactly at the price level typed into the corresponding input field.</li>
-        <li><strong>TP Synchronization (<code>BUY TP</code> / <code>SELL TP</code>):</strong> Instantly modifies the Take Profit of <strong>ALL</strong> open positions and pending orders on the chart to align perfectly with the typed target price, perfect for mass-synchronizing to key resistance zones.</li>
-        <li><strong>SL Synchronization (<code>BUY SL</code> / <code>SELL SL</code>):</strong> Instantly overwrites the Stop Loss of <strong>ALL</strong> open positions and pending orders on the chart to match the typed protective price level.</li>
-        <li><strong>The PUSH SL Engine (<code>PUSH BUY SL</code> / <code>PUSH SELL SL</code>):</strong> A proprietary one-click trailing engine. Reads the pip value in the center input (e.g., <code>10.0</code>) and instantly <strong>shifts (pushes)</strong> the Stop Loss of all open positions and pending orders closer to current profit (moving Buy SLs UP or Sell SLs DOWN) relative to their current SL or entry price. It acts as a rapid manual shield to secure capital during sudden breakouts!</li>
-    </ul>
-</section>
-
-<section id="intraday-extension-panels-trades-levels-helper" class="doc-section">
-    <h2>14. Intraday Extension Panels (Trades & Levels Helper)</h2>
-    <p>Expands a secondary visual intelligence dock when clicking the <strong><code>TRADES</code></strong> utility button on the top bar:</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">Sub-Tab A: 💼 TRADES (Portfolio Dock)</h3>
-    <p>Provides clean, grouped oversight of your active exposure:</p>
-    <ul>
-        <li><strong>Family Grouping:</strong> Bundles individual grid orders into their parent families (e.g., manual trades vs. channel grids).</li>
-        <li><strong>Total Profit Tracker:</strong> Monitors combined real-time floating P&L specifically for each family.</li>
-        <li><strong>One-Click Liquidation:</strong> Click the dedicated <strong><code>CLOSE</code></strong> button next to any family to instantly close that specific grid without affecting others.</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">Sub-Tab B: 📊 LEVELS (Technical Assistant)</h3>
-    <p>An on-chart analyst that auto-generates critical market boundaries:</p>
-    <ul>
-        <li><strong>Intraday Pivots:</strong> Automatically calculates the Daily Pivot Point (PP), Resistance levels (R1-R3), and Support levels (S1-S3).</li>
-        <li><strong>Live Gap Matrix:</strong> Dynamically tracks current Bid price and lists the <strong>exact real-time pip distance</strong> to every major support and resistance line.</li>
-    </ul>
-</section>
-
-<section id="ergonomic-action-buttons-ui-modes" class="doc-section">
-    <h2>15. Ergonomic Action Buttons & UI Modes</h2>
-    <p>Clicking the <strong><code>📊 FULL / MINI</code></strong> utility button on the top bar adapts the dashboard's layout spacing based on the active view mode to maximize ergonomic execution:</p>
-    <ul>
-        <li><strong>Execution Grids:</strong> Depending on view, rapid-fire controls provide instant trading power:</li>
-        <li><strong><code>SELL</code></strong> & <strong><code>BUY</code></strong>: Instant order execution.</li>
-        <li><strong><code>CLOSE LIMITS</code></strong>: Deletes all outstanding pending grid orders on the broker server.</li>
-        <li><strong><code>CLOSE ALL</code></strong>: Flattens all open positions for this specific chart immediately.</li>
-        <li><strong>Live Analytics (Full Mode):</strong> Populates the left panel with Equity Protection thresholds, live Floating Profit/Spread displays, and an integrated System Status log footer.</li>
-        <li><strong>Operational States:</strong> Uses high-contrast operational color states (Amber Gold, Oceans Cyan) to make active trading modes instantly recognizable.</li>
-    </ul>
-</section>
-
-<section id="core-pip-scaling-goldxauusd-scaling" class="doc-section">
-    <h2>16. Core Pip Scaling (Gold/XAUUSD Scaling)</h2>
-    <p>The EA's pip calculation is optimized for Gold and standard Forex charts:</p>
-    <ul>
-        <li><strong>1 Pip on Gold (<code>XAUUSD</code>)</strong> = <strong>$0.10</strong></li>
-        <li><strong>10 Pips on Gold (<code>XAUUSD</code>)</strong> = <strong>$1.00</strong></li>
-        <li>A <strong>50 pip</strong> Stop Loss translates exactly to <strong>$5.00</strong> of price movement.</li>
-        <li>A <strong>10 pip</strong> Ladder Step spaces out your limit tiers by <strong>$1.00</strong> of price movement.</li>
-    </ul>
-</section>
-
-<section id="ui-modes-sync-safety-engines" class="doc-section">
-    <h2>17. UI Modes Sync & Safety Engines</h2>
-    <p>To prevent strategic conflicts, the EA automatically adjusts the panel buttons when selecting modes:</p>
-    <ul>
-        <li><strong>Enabling TP AUTO:</strong> Automatically configures Partials to <strong>LADDER</strong>, Harvesting to <strong>OFF</strong>, and Auto Stop Loss Move to <strong>ON</strong>. This ensures the Distributed TP Ladder runs safely and initiates Break-Even right when TP1 is hit.</li>
-        <li><strong>Hardened Chart Layout Redraw:</strong> To maintain precise alignment when changing charts, altering timeframes, or loading MT5 profiles, the <code>CHARTEVENT_CHART_CHANGE</code> engine automatically cleanses visual elements, resets the UI initialization states, and forces a dynamic, pixel-perfect rebuild.</li>
-        <li><strong>Intelligent Input Protection:</strong> Built-in guards ensure that typing new numbers into input fields is smooth, instant, and never loses focus during volatile markets.</li>
-    </ul>
-</section>
-
-<section id="the-copier-bridge-desktop-engine" class="doc-section">
-    <h2>18. The Copier Bridge Desktop Engine</h2>
-    <p>The <strong>Telegram Copier Bridge</strong> (<code>GoldScalperBridge.exe</code>) is the high-speed external engine that connects your community alerts directly to your trading terminal. It logs into your Telegram account, listens to your chosen signal channels, and transforms unstructured chat text into precise trade data delivered to the EA in under 50ms via named pipe IPC.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">1. Setup & Initial Credentials</h3>
-    <p>When launched for the first time, the bridge initiates a secure interactive setup wizard:</p>
-    <ul>
-        <li><strong>API Registration:</strong> Prompts for your Telegram API ID and Hash. (Pressing ENTER defaults to our secure, optimized Telegram App Engine).</li>
-        <li><strong>Secure Authentication:</strong> Asks for your Telegram phone number, followed by your Telegram App OTP and 2-step Verification Password (if active). The authentication state is stored securely in your local <code>gsae_session.session</code> file.</li>
-        <li><strong>Channel Subscription Matrix:</strong> Reads and displays up to 50 of your active groups/channels. You select target channels by typing their corresponding list numbers (e.g., <code>1, 4, 7</code>).</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">2. Low-Latency Signal Delivery (Socket IPC)</h3>
-    <p>In the bridge's <strong>API Settings</strong> panel, scroll to the <strong>"Low-Latency Signal Delivery"</strong> section:</p>
-    <ul>
-        <li><strong>Enable Socket IPC:</strong> When checked, the bridge establishes a high-speed local TCP socket server. The EA connects to this socket and receives signals instantly via network-byte-order IPC, bypassing disk I/O entirely.</li>
-        <li><strong>Performance & Ports:</strong> Reduces signal latency from ~250ms (file polling) to under 10ms (socket connection). It runs on port <code>28731</code> by default.</li>
-        <li><strong>Multi-Instance:</strong> Each MT5 profile gets its own local port automatically (e.g. instance 1 on <code>28731</code>, instance 2 on <code>28732</code>, etc.).</li>
-        <li><strong>Backward Compatibility:</strong> If the bridge has Socket IPC disabled, the EA silently falls back to file polling at a default 250ms interval. No configuration changes required.</li>
-        <li><strong>MT5 Requirement:</strong> The EA must have "Allow DLL imports" enabled in the Properties → Common tab to utilize Winsock library connections.</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">2. Intelligent Parsing & Conversational Commands</h3>
-    <p>The bridge's text interpreter is designed to extract precise trading data from diverse, unstructured formats:</p>
-    <ul>
-        <li><strong>Structure Extractor:</strong> Identifies Order Direction (<code>BUY</code> / <code>SELL</code>), Entry Zones (<code>@1950 - 1948</code>), Stop Losses (<code>SL</code>), and scales up to <strong>TP10</strong> (<code>TP1</code> to <code>TP10</code> or consecutive <code>TP</code> listings).</li>
-        <li><strong>Conversational Command Gate:</strong> Monitors for real-time administrative commands typed by channel leaders and instantly maps them to EA global actions:</li>
-        <li><strong><code>CMD,CLOSE_ALL</code>:</strong> Triggered by phrases like <code>CLOSE ALL</code>, <code>CLOSE NOW</code>, <code>I AM OUT</code>, <code>EXIT TRADE</code>, or <code>CANCEL SETUP</code>.</li>
-        <li><strong><code>CMD,RISK_FREE</code>:</strong> Triggered by phrases like <code>RISK FREE</code>, <code>SECURE RUNNERS</code>, <code>MOVE TO BE</code>, <code>BREAK EVEN</code>, or <code>LOCK PROFITS</code>.</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">3. Strict Anti-Noise Filter Suite</h3>
-    <p>To protect your capital from unintentional activations, the bridge executes five rigorous filtering checks on every incoming message:</p>
-    <ul>
-        <li><strong>Strict Chatter Guard:</strong> Rejects any message containing zero numerical levels (no entries/TPs/SLs) unless it contains explicit entry confirmation tokens like <code>NOW</code>, <code>MARKET</code>, <code>GO</code>, or <code>LIVE</code>.</li>
-        <li><strong>Media Isolation:</strong> Automatically ignores any message containing a <strong>Photo</strong> or <strong>Voice Note</strong> to avoid false parsing of charts or banter.</li>
-        <li><strong>Forwarding Protection:</strong> Detects and automatically discards forwarded messages to eliminate cross-channel echo.</li>
-        <li><strong>Status Updates Filter:</strong> Ignores messages stating <code>"AT TPx"</code> (e.g., "Gold at TP1") to prevent re-firing filled setups.</li>
-        <li><strong>Keyword Matrix:</strong> Filters out any unstructured chatter that doesn't contain the explicit instrument identifiers <strong><code>GOLD</code></strong> or <strong><code>XAU</code></strong> (excluding emergency exit commands).</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">4. Advanced Smart Mechanics</h3>
-    <ul>
-        <li><strong>Smart Split-Signal Merging:</strong> If an analyst posts an immediate entry signal (e.g., <code>"BUY GOLD NOW"</code>) and then replies to their own message 2 minutes later with the targets (<code>"SL: 1930, TP1: 1950"</code>), the bridge recognizes the follow-up window (180 seconds). It automatically merges the updates to the original message ID, allowing the EA to update the active ladder cleanly instead of firing duplicate trades!</li>
-        <li><strong>Deduplication Guard:</strong> Utilizes an internal memory cache to drop identical Telegram event payloads generated when members add emoji reactions or edits that do not change text content.</li>
-        <li><strong>Connection Heartbeat Matrix:</strong> Writes a secure timestamp (<code>gsae_signal_heartbeat.txt</code>) every 30 seconds. The MT5 EA actively monitors this file to display a visual "Live Connection" state on your dashboard.</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">5. The Copier Config Menu</h3>
-    <p>Upon restarting, the bridge displays the <strong>GOLD SNIPERS</strong> banner and holds a <strong>3-second non-blocking countdown</strong>. Pressing any key opens the configuration utility:</p>
-    <ul>
-        <li><strong><code>[1]</code> Re-select Telegram Channels (Keeps Login):</strong> Instantly re-scans your Telegram account to select different channels (preserving your active login session).</li>
-        <li><strong><code>[2]</code> Full Factory Reset (Wipes all credentials & config):</strong> Deletes all local configuration files, saved authorization credentials, and local license settings to allow a completely fresh deployment.</li>
-        <li><strong><code>[3]</code> Cancel & Start Bridge Now:</strong> Immediately bypasses the menu and activates active signal monitoring.</li>
-    </ul>
-</section>
-
-<section id="performance-execution-engine-upgrades-v36295" class="doc-section">
-    <h2>19. Performance & Execution Engine Upgrades (v362.95+)</h2>
-    <p>The latest architecture includes massive under-the-hood institutional performance optimizations designed specifically for high-volatility events:</p>
-    <ul>
-        <li><strong>UI Engine Throttling:</strong> Real-time Dashboard redraw requests and session line plotting are now mechanically throttled to prevent terminal freezing and high CPU usage during major news spikes.</li>
-        <li><strong>Optimized Liquidity Matrix (<code>MqlRates</code>):</strong> Core market structure scanning (<code>DetectLiquiditySweep</code> and multi-timeframe scanners) now utilizes optimized <code>CopyRates</code> batch-fetching, significantly reducing latency when identifying wicks and displacement candles.</li>
-        <li><strong>Family Identification Engine:</strong> Positions are now tracked through an upgraded, high-speed <code>GetTrackedFamilyID</code> router, ensuring faster trade grouping and flawless partial-shave calculations during high-speed grid executions.</li>
-    </ul>
-</section>
-
-<section id="advanced-guide-trade-exclusions-command-routing-copier-workflow" class="doc-section">
-    <h2>20. Advanced Guide: Trade Exclusions, Command Routing & Copier Workflow</h2>
-    <p>This section provides an advanced, user-friendly breakdown of how the <strong>Copier Bridge</strong> and the <strong>Gold Scalper EA</strong> interact under the hood, and how to surgically customize trade exclusions, keywords, and automated remote commands.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🔄 The End-to-End Copier Workflow</h3>
-    <p>To help you understand exactly how your signals are copied from Telegram to MetaTrader 5, here is the lifecycle of a copied trade:</p>
-    <ul>
-        <li><strong>Signal Broadcast:</strong> A signal provider posts a message in your subscribed Telegram Channel (e.g., <code>"BUY XAUUSD @ 2030, SL: 2020, TP1: 2035, TP2: 2040"</code>).</li>
-        <li><strong>Bridge Parsing:</strong> The <strong>Copier Bridge Desktop Engine</strong> instantly intercepts the message, processes it through the <strong>Strict Anti-Noise Filters</strong>, and extracts the entry price, Stop Loss, and Take Profits.</li>
-        <li><strong>Secure Delivery:</strong> The Bridge delivers the parsed signal to the EA via named pipe IPC (~50ms latency). As a fallback, it also writes a <code>.tmp</code> file that swaps to a finalized <code>.txt</code> signal file inside the secure shared MetaQuotes Common directory.</li>
-        <li><strong>EA Detection & Context Routing:</strong> The MT5 EA immediately receives the signal, matches the Telegram Channel ID to your preset tab (<strong>CH1</strong> or <strong>CH2</strong>), and extracts the trade context.</li>
-        <li><strong>Filters & Cutoffs Evaluation:</strong> Before execution, the EA verifies:</li>
-        <li>Is the signal older than 60 seconds? (If yes, discarded).</li>
-        <li>Does it contain any configured <strong>Trade Exclusions</strong>? (If yes, ignored).</li>
-        <li>Is the current market price within the <strong>Entry Cutoff</strong> range? (If yes, executed).</li>
-        <li><strong>Instant Execution:</strong> The EA fires the anchor trades and pending limit grid precisely matching your channel settings (CH1 or CH2 lot size, steps, and take profits).</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🚫 How to Configure Trade Exclusions (Keyword Blocking)</h3>
-    <p>You can configure <strong>Trade Exclusions</strong> to prevent specific setups from firing. This is highly useful if a channel provider posts a setup you want to ignore, or posts standard chat messages that look like trades.</p>
-    <ul>
-        <li><strong>Exclusion Keywords Box:</strong> Located in your Copier UI under the <strong>Parsing Settings</strong> tab.</li>
-        <li><strong>How to Add Exclusions:</strong> Enter comma-separated keywords into the <strong>Exclusions</strong> text box (e.g. <code>pending, test, limit, break, demo</code>).</li>
-        <li><strong>Surgical Filtering:</strong> If an incoming message contains <strong>any</strong> of your configured exclusion keywords, the Bridge instantly blocks the signal. The EA will not open any trades, and the Copier log footer will record: <code>"Signal skipped due to exclusion keyword filter."</code></li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">💻 Automated Remote Commands (Conversational Triggers)</h3>
-    <p>The Copier Bridge does not just fire new setups; it listens for active updates from channel leaders to automatically protect your open positions:</p>
-    <ul>
-        <li><strong>Breakeven Commands (<code>CMD,RISK_FREE</code>):</strong></li>
-        <li><strong>Triggers:</strong> Channel updates containing terms like <code>risk free</code>, <code>secure profit</code>, <code>move sl to be</code>, <code>break even</code>, <code>lock profits</code>, <code>sl to entry</code>, or <code>secure now</code>.</li>
-        <li><strong>Action:</strong> The Copier Bridge translates this into a high-speed command. The MT5 EA immediately moves the Stop Loss of <strong>all active trades in that channel's family</strong> to their entry price plus a safety spread buffer, instantly locking in safety.</li>
-        <li><strong>Close All Commands (<code>CMD,CLOSE_ALL</code>):</strong></li>
-        <li><strong>Triggers:</strong> Channel updates containing terms like <code>close all</code>, <code>close now</code>, <code>exit trade</code>, <code>cancel setup</code>, <code>close gold</code>, <code>i am out</code>, or <code>exit now</code>.</li>
-        <li><strong>Action:</strong> The Copier Bridge immediately signals a total flat command. The MT5 EA forcefully liquidates all open positions and deletes all pending limit grid levels for that specific channel's family, securing your cash profits immediately.</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">❓ Troubleshooting & Visual State Checks</h3>
-    <ul>
-        <li><strong>The Green Connection Indicator:</strong> Under the <strong>Performance Stats</strong> tab in your Copier, check the <code>Connected Platform</code> card. If it shows a green <strong><code>EA WORKING</code></strong> badge, it means the bridge is actively communicating with the MT5 EA and the connection heartbeat file is successfully ticking!</li>
-        <li><strong>Resetting Stats:</strong> If your metrics contain old phantom broker transactions or balance adjustments from testing, click the crimson <strong><code>🔄 Reset Stats</code></strong> button in the header of the Copier UI to instantly purge the SQLite database and start with a clean slate.</li>
-    </ul>
-</section>
-
-<section id="remote-admin-control-panel-telegram-saved-messages" class="doc-section">
-    <h2>21. Remote Admin Control Panel (Telegram Saved Messages)</h2>
-    <p>The <strong>Remote Admin Control Panel</strong> allows you to fully control the EA from your phone via Telegram <strong>Saved Messages</strong>, without needing to access your computer.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🚀 How to Access</h3>
-    <ul>
-        <li>Open <strong>Telegram</strong> on your phone</li>
-        <li>Navigate to <strong>Saved Messages</strong> (your own chat with yourself)</li>
-        <li>Type <code>/admin</code> and send</li>
-        <li>The Bridge will reply with a numbered text menu</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🎮 Main Control Panel</h3>
-    <p>```</p>
-    <p>🎮 Gold Snipers Control Panel</p>
-    <p>Reply with a number:</p>
-    <ul>
-        <li>⚙️ C1 Settings</li>
-        <li>⚙️ C2 Settings</li>
-        <li>🟢 BUY NOW</li>
-        <li>🔴 SELL NOW</li>
-        <li>📊 Status</li>
-        <li>❌ Close All</li>
-        <li>🛡 Risk Free</li>
-        <li>🚫 Cancel Limits</li>
-    </ul>
-    <p>```</p>
-    <p><strong>Reply with a number</strong> (e.g., type <code>1</code> and send) to select an option.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">⚙️ Channel Settings Menu</h3>
-    <p>Reply <code>1</code> or <code>2</code> to access C1 or C2 settings:</p>
-    <p>```</p>
-    <p>⚙️ C1 Settings</p>
-    <p>Reply with a number:</p>
-    <ul>
-        <li>💰 Lot Size</li>
-        <li>🎯 Anchors</li>
-        <li>📊 Levels</li>
-        <li>✂️ Cutoff</li>
-        <li>🌾 Harvest</li>
-        <li>🪜 Partials</li>
-        <li>🛡 Auto SL</li>
-        <li>📏 SL Pips</li>
-        <li>🎯 TP Mode</li>
-        <li>🚫 Cancel Lvl</li>
-        <li>⚡ BE Trigger</li>
-        <li>📍 BE Ref</li>
-        <li>← Back</li>
-    </ul>
-    <p>```</p>
-    <p>Then reply with a number to set the value. Example flow:</p>
-    <p>```</p>
-    <p>You: /admin</p>
-    <p>Bot: 🎮 Gold Snipers Control Panel (menu)</p>
-    <p>You: 1</p>
-    <p>Bot: ⚙️ C1 Settings (menu)</p>
-    <p>You: 1</p>
-    <p>Bot: 💰 C1 Lot Size (options: 1. 0.01, 2. 0.02, etc.)</p>
-    <p>You: 5</p>
-    <p>Bot: ✅ C1 Lot Size updated to 0.20</p>
-    <p>```</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">💰 Instant Trading Commands</h3>
-    <p style="margin-left: 15px;">• Command : Action</p>
-    <p style="margin-left: 15px;">• <strong>3</strong> : Execute BUY ladder using current copier settings</p>
-    <p style="margin-left: 15px;">• <strong>4</strong> : Execute SELL ladder using current copier settings</p>
-    <p style="margin-left: 15px;">• <strong>6</strong> : Close all open positions and pending orders</p>
-    <p style="margin-left: 15px;">• <strong>7</strong> : Move all SL to break-even + harvest buffer</p>
-    <p style="margin-left: 15px;">• <strong>8</strong> : Delete all pending limit orders</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">📊 Status Queries</h3>
-    <p>Reply <strong>5</strong> to receive real-time account telemetry:</p>
-    <ul>
-        <li><strong>Balance</strong> — Current account balance</li>
-        <li><strong>Equity</strong> — Current equity</li>
-        <li><strong>Open PnL</strong> — Combined floating profit/loss</li>
-        <li><strong>Active Trades</strong> — Number of open positions</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🔒 Security</h3>
-    <ul>
-        <li><strong>Owner-only:</strong> Commands are accepted <strong>only from your Telegram account</strong> (detected automatically via Saved Messages)</li>
-        <li><strong>No configuration required:</strong> Works out of the box — no bot setup, no API keys, no group invites</li>
-        <li><strong>Private by design:</strong> All commands and responses stay entirely within your own Saved Messages</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">⚡ How It Works</h3>
-    <ul>
-        <li>You type <code>/admin</code> in Saved Messages</li>
-        <li>Bridge sends a numbered menu</li>
-        <li>You reply with a number (e.g., <code>1</code>, <code>5</code>, <code>0</code>)</li>
-        <li>Bridge writes a command file</li>
-        <li>EA's background timer polls and executes within 250ms</li>
-        <li>EA writes a response JSON</li>
-        <li>Bridge sends confirmation back to Saved Messages</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">📝 Command Reference</h3>
-    <p>The numbered menus translate into these internal commands:</p>
-    <p>```</p>
-    <p>SET C1 LOT_ANC 0.05      → Update Channel 1 anchor lot</p>
-    <p>SET C2 CUTOFF 15         → Update Channel 2 signal cutoff to 15 pips</p>
-    <p>CMD BUY_NOW              → Execute buy ladder</p>
-    <p>CMD CLOSE_ALL            → Flatten all positions</p>
-    <p>GET STATUS               → Query balance, equity, PnL</p>
-    <p>```</p>
-</section>
-
-<section id="mt5-input-settings-reference" class="doc-section">
-    <h2>22. MT5 Input Settings Reference</h2>
-    <p>This section provides a complete, structured reference of all user-configurable input parameters inside the MetaTrader 5 Expert Advisor (<code>Gold_Snipers.mq5</code>).</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">📡 Telegram Copier Defaults (Channel 1 & Channel 2)</h3>
-    <p>The copier supports two independent channels, each with a symmetrical set of parameters prefixed with <code>InpC1_</code> or <code>InpC2_</code>.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpSignalFile</code> : Enum : <code>SIGNAL_FILE_1</code> : Selects which copier profile file (<code>gsae_signal.txt</code> to <code>gsae_signal6.txt</code>) this EA chart instance listens to.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_ID</code> : String : <code>""</code> : The numerical Telegram Chat ID of the signal channel/group (e.g., <code>-100123456789</code>).</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Name</code> : String : <code>"Channel X"</code> : A custom display name for the channel, shown on the copier dashboard sub-tabs.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Active</code> : Bool : <code>true</code> : Toggles whether the copier actively monitors and executes signals from this channel.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_LotAnc</code> : Double : <code>0.01</code> : Lot size used for the primary market execution orders (Anchors).</p>
-    <p style="margin-left: 15px;">• <code>InpCx_LotPen</code> : Double : <code>0.01</code> : Lot size used for pending limit grid orders (Pendings).</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Anchors</code> : Int : <code>1</code> : Number of immediate market orders (Anchors) to execute when a signal triggers.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Pendings</code> : Int : <code>1</code> : Number of pending limit orders placed at each tier down the ladder grid.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Levels</code> : Int : <code>5</code> : Total depth of the ladder grid (number of limit grid tiers generated).</p>
-    <p style="margin-left: 15px;">• <code>InpCx_TPMode</code> : Int : <code>2</code> (ON) : Take Profit target mode: <code>0</code> = OFF (Disabled), <code>1</code> = STEALTH (monitored locally and hidden from broker), <code>2</code> = ON (hard TP targets sent to the broker).</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Partials</code> : Bool : <code>true</code> : Toggles the partial closing/shaving engine for this channel's trades at TP milestones.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Harvest</code> : Bool : <code>false</code> : Toggles the profit harvesting engine for active ladders, liquidating upper tiers at BE+1.0 pip during deep pullbacks.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_AutoSL</code> : Bool : <code>true</code> : Toggles automatic Stop Loss adjustment to Break-Even when a specific TP target is hit.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_CancelPendingLevel</code> : Int : <code>2</code> (TP2) : The Take Profit milestone at which outstanding unhit pending limit orders are automatically deleted.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_TriggerBELevel</code> : Int : <code>2</code> (TP2) : The Take Profit milestone at which the Break-Even engine is triggered, securing the position.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_AllowCmds</code> : Bool : <code>false</code> : Determines whether the EA processes remote conversational commands (e.g., <code>Risk Free</code>, <code>Close All</code>) sent by channel admins.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_LateGuardPips</code> : Int : <code>0</code> (OFF) : Signal Cutoff threshold. If the market price is further than this distance from the original signal price, it prevents entry. If within range, it will enter at market price. Set to <code>0</code> to disable late signal filtering.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_AncShave</code> : Bool : <code>true</code> : Anchor Unified TP toggle. When <code>true</code> (Unified), all anchors target the deepest TP level and participate in partial shaving. When <code>false</code> (Distributed), anchors exit 100% at staggered levels (e.g. TP1, TP2, TP3) and bypass partial shaving.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_SL</code> : Double : <code>50.0</code> : Stop Loss distance in pips for the channel's order family.</p>
-    <p style="margin-left: 15px;">• <code>InpCx_TP1</code> to <code>TP10</code> : Double : (staged) : Target distances in pips from anchor entry for Take Profits 1 through 10. (TP1=30, TP2=50, TP3=80, TP4=100, TP5=130, TP6-10=0)</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Pct1</code> to <code>Pct10</code> : Double : (staged) : Percentage of position volume to close at each Take Profit target. (Pct1-4=20%, Pct5=100%, Pct6-10=0%)</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🪜 Channel 1 & 2 Pending TP</h3>
-    <p>Custom Take Profits and close percentages applied specifically to pending limit orders in the ladder grid.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpCx_TP_PEN1</code> to <code>TP_PEN10</code> : Double : (staged) : Take Profit target distances in pips for pending limit orders. (PEN1=40, PEN2=70, PEN3=110, PEN4=150, PEN5=250, PEN6-10=0)</p>
-    <p style="margin-left: 15px;">• <code>InpCx_Pct_PEN1</code> to <code>Pct_PEN10</code> : Double : (staged) : Close volume percentages at each TP target for pending limit orders. (PEN1-4=20%, PEN5=100%, PEN6-10=0%)</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">⏰ Main Session Lines</h3>
-    <p>Controls the visual rendering of session ranges on the MT5 chart.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpDrawSessionLines</code> : Bool : <code>false</code> : Draws Asia, London, and NY high/low range lines on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpRemoveSweptLevels</code> : Bool : <code>true</code> : Auto-hides session lines on the chart once the price crosses/sweeps them.</p>
-    <p style="margin-left: 15px;">• <code>InpSessionLookbackDays</code> : Int : <code>2</code> : Number of history days to calculate and draw session lines for.</p>
-    <p style="margin-left: 15px;">• <code>InpAsiaHighColor</code> / <code>LowColor</code> : Color : <code>clrBlack</code> : Colors used to draw Asia session high and low lines.</p>
-    <p style="margin-left: 15px;">• <code>InpLondonHighColor</code> / <code>LowColor</code> : Color : <code>clrBlack</code> : Colors used to draw London session high and low lines.</p>
-    <p style="margin-left: 15px;">• <code>InpNYHighColor</code> / <code>LowColor</code> : Color : <code>clrBlack</code> : Colors used to draw New York session high and low lines.</p>
-    <p style="margin-left: 15px;">• <code>InpSessionLabelColor</code> : Color : <code>clrBlack</code> : Color of text labels on session lines.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🏹 Custom Killzones (Server Time GMT+3 Defaults)</h3>
-    <p>Draws color-shaded rectangles on the chart matching specific trading sessions.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpShowKillzones</code> : Bool : <code>false</code> : Draws translucent Killzone rectangles on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpKillzoneLookbackDays</code> : Int : <code>2</code> : Number of trading days of Killzones to draw on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpKillzoneLabelColor</code> : Color : <code>clrBlack</code> : Label text color for the Killzone indicators.</p>
-    <p style="margin-left: 15px;">• <code>InpZone1_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code> : Mixed : (staged) : Asia Zone color and hours (4:00 - 11:00 server time).</p>
-    <p style="margin-left: 15px;">• <code>InpZone2_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code> : Mixed : (staged) : London Zone color and hours (11:00 - 16:00 server time).</p>
-    <p style="margin-left: 15px;">• <code>InpZone3_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code> : Mixed : (staged) : Overlap Zone color and hours (16:00 - 20:00 server time).</p>
-    <p style="margin-left: 15px;">• <code>InpZone4_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code> : Mixed : (staged) : New York Zone color and hours (20:00 - 1:00 server time).</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🧠 Institutional Engine</h3>
-    <p>Parameters governing the smart Trend Bias and displacement detection filters.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpTradingStyle</code> : Enum : <code>STYLE_SWING</code> : EMA strategy bias used: <code>STYLE_LONG_TERM</code> (200 EMA), <code>STYLE_SWING</code> (50 EMA), <code>STYLE_DAY</code> (9/20 EMA Cross).</p>
-    <p style="margin-left: 15px;">• <code>InpHTFTimeframe</code> : Enum : <code>PERIOD_H1</code> : Higher timeframe utilized by the HTF Scanner to calculate structural order flow.</p>
-    <p style="margin-left: 15px;">• <code>InpDisplacementMult</code> : Double : <code>1.5</code> : Minimum candle body size relative to average body size required to qualify as a displacement candle.</p>
-    <p style="margin-left: 15px;">• <code>InpVolumeMult</code> : Double : <code>1.2</code> : Minimum tick volume relative to average volume required to confirm structural displacement.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">⚙️ Basic Defaults</h3>
-    <p>Default startup settings and core risk parameters.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpStartupMode</code> : Enum : <code>STARTUP_COPIER</code> : UI view mode on startup: <code>STARTUP_COPIER</code> (Mini Copier Panel), <code>STARTUP_FULL</code> (Side-by-Side Panel), <code>STARTUP_MANUAL</code> (Manual Only).</p>
-    <p style="margin-left: 15px;">• <code>InpUiMode</code> : Enum : <code>UI_MODE_RESIZE</code> : Panel scaling mode. <code>Enabled</code> — drag the bottom-right corner to resize the EA panel. <code>Disabled</code> — fixed-size panel, use Windows DPI scaling instead.</p>
-    <p style="margin-left: 15px;">• <code>InpFontDpiAdj</code> : Enum : <code>FONT_DPI_DYNAMIC</code> : Font DPI compensation. <code>Dynamic</code> — auto-reduces font size based on monitor DPI. <code>Off</code> — no adjustment. <code>Manual</code> — use <code>InpFontDpiManual</code> value.</p>
-    <p style="margin-left: 15px;">• <code>InpFontDpiManual</code> : Int : <code>1</code> : Font reduction in points. Only used when <code>InpFontDpiAdj</code> is set to <code>Manual</code>.</p>
-    <p style="margin-left: 15px;">• <code>InpEnableTelegram</code> : Bool : <code>true</code> : Master toggle to enable processing of incoming signal files from the Telegram Bridge.</p>
-    <p style="margin-left: 15px;">• <code>InpLotSize</code> : Double : <code>0.01</code> : Default lot size per trade for manual dashboard orders.</p>
-    <p style="margin-left: 15px;">• <code>InpStopLossPips</code> : Double : <code>50.0</code> : Default protective Stop Loss distance in pips for manual trades.</p>
-    <p style="margin-left: 15px;">• <code>InpUseDynamicATR</code> : Bool : <code>false</code> : Enables Average True Range (ATR) calculation for dynamic SL and TP targets.</p>
-    <p style="margin-left: 15px;">• <code>InpATRPeriod</code> : Int : <code>14</code> : Indicator period for ATR calculation lookback.</p>
-    <p style="margin-left: 15px;">• <code>InpATR_SL_Mult</code> : Double : <code>1.5</code> : Volatility multiplier used to calculate the dynamic Stop Loss.</p>
-    <p style="margin-left: 15px;">• <code>InpATR_TP1_Mult</code> : Double : <code>1.5</code> : Volatility multiplier used to calculate the dynamic TP1 target.</p>
-    <p style="margin-left: 15px;">• <code>InpMagic</code> : Int : <code>26022791</code> : EA Magic Number. Uniquely labels and isolates this EA instance's trades on the account.</p>
-    <p style="margin-left: 15px;">• <code>InpDefaultEquityProtect</code> : Double : <code>0.0</code> : Startup Equity Protection target ($): A positive value acts as a profit target; a negative value acts as a drawdown cash floor. <code>0.0</code> disables.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🖥️ Panel Scaling & DPI</h3>
-    <p style="margin-left: 15px;">• Resize : Font DPI : What the user gets</p>
-    <p style="margin-left: 15px;">• Enabled : Dynamic : Drag to resize panel + font auto-adjusts for high-DPI monitors. Best for most users.</p>
-    <p style="margin-left: 15px;">• Enabled : Off : Drag to resize panel + no font changes. Good if text looks fine already.</p>
-    <p style="margin-left: 15px;">• Enabled : Manual : Drag to resize panel + you pick exactly how many points to reduce font by.</p>
-    <p style="margin-left: 15px;">• Disabled : Dynamic : Fixed panel size + font auto-adjusts for DPI. Use this if you prefer Windows to handle scaling.</p>
-    <p style="margin-left: 15px;">• Disabled : Off : Fixed panel + no font changes.</p>
-    <p style="margin-left: 15px;">• Disabled : Manual : Fixed panel + you pick the font reduction.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">📊 Visual FVG & Order Blocks</h3>
-    <p>Settings for the Fair Value Gap (FVG) and Order Block (OB) scanner and on-chart visualizations.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpFVGLookback</code> : Int : <code>100</code> : Lookback depth in bars to scan for FVGs and OBs.</p>
-    <p style="margin-left: 15px;">• <code>InpDrawOrderBlocks</code> : Bool : <code>true</code> : Toggles drawing of institutional Order Block zones.</p>
-    <p style="margin-left: 15px;">• <code>InpDrawFVG</code> : Bool : <code>true</code> : Toggles drawing of FVG imbalance rectangles.</p>
-    <p style="margin-left: 15px;">• <code>InpDrawIOFArrows</code> : Bool : <code>false</code> : Enables drawing of trade entry and stop loss arrows on 50% mitigation events.</p>
-    <p style="margin-left: 15px;">• <code>InpEnableFVGMitigationAlerts</code> : Bool : <code>true</code> : Enables alerts when the price mitigates 50% of an active FVG.</p>
-    <p style="margin-left: 15px;">• <code>InpBuyOBColor</code> / <code>SellOBColor</code> : Color : <code>clrGreen</code>/<code>clrRed</code> : Colors used to draw Bullish and Bearish Order Blocks.</p>
-    <p style="margin-left: 15px;">• <code>InpBuyPeakOBColor</code> / <code>SellPeakOBColor</code> : Color : <code>clrTeal</code>/<code>clrDarkRed</code> : Colors used to draw Extreme/Peak structural swing Order Blocks.</p>
-    <p style="margin-left: 15px;">• <code>InpPeakLookback</code> : Int : <code>15</code> : Lookback period in bars used to locate peak swing structures.</p>
-    <p style="margin-left: 15px;">• <code>InpBuyFVGColor</code> / <code>SellFVGColor</code> : Color : <code>clrLimeGreen</code>/<code>clrYellow</code> : Colors used to draw Bullish and Bearish FVG zones.</p>
-    <p style="margin-left: 15px;">• <code>InpFillFVG</code> : Bool : <code>true</code> : If true, FVG rectangles are drawn as filled boxes. If false, they are outlines.</p>
-    <p style="margin-left: 15px;">• <code>InpFVGExtensionBars</code> : Int : <code>20</code> : Number of bars to extend the FVG box forward on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpFVGPartialMitigation</code> : Bool : <code>true</code> : If true, FVGs mitigate (hide) when the price sweeps 50% of the zone. If false, they require full sweeps.</p>
-    <p style="margin-left: 15px;">• <code>InpRefreshMs</code> : Int : <code>250</code> : Scanner refresh execution delay in milliseconds.</p>
-    <p style="margin-left: 15px;">• <code>InpmidLineColor</code> / <code>Style</code> : Mixed : <code>clrGray</code> / <code>STYLE_DOT</code> : Color and line style settings for the FVG 50% midline.</p>
-    <p style="margin-left: 15px;">• <code>InpFvgDispFilter</code> : Bool : <code>true</code> : If true, FVGs are only valid if formed by a high-momentum candle meeting displacement multipliers.</p>
-    <p style="margin-left: 15px;">• <code>InpFvgAvgBodyPeriod</code> : Int : <code>10</code> : Lookback period for calculating average candle body size.</p>
-    <p style="margin-left: 15px;">• <code>InpFvgBodyMult</code> : Double : <code>1.5</code> : Minimum body size multiplier to qualify for displacement.</p>
-    <p style="margin-left: 15px;">• <code>InpFvgMinGapPips</code> : Double : <code>3.0</code> : Filters out micro-imbalances; gaps must be wider than this in pips to be drawn.</p>
-    <p style="margin-left: 15px;">• <code>InpObStructFilter</code> : Bool : <code>false</code> : If true, an Order Block is only valid if it resulted in a subsequent Break of Structure (BOS) or Market Structure Shift (MSS).</p>
-    <p style="margin-left: 15px;">• <code>InpObExtraDisplacement</code> : Bool : <code>false</code> : Requires structural displacement on the leg that created the Order Block.</p>
-    <p style="margin-left: 15px;">• <code>InpObLinkFvg</code> : Bool : <code>false</code> : If true, an Order Block is only valid if it overlaps with its corresponding FVG zone.</p>
-    <p style="margin-left: 15px;">• <code>InpObFvgLinkMode</code> : Enum : <code>OB_FVG_LINK_OVERLAP</code> : Link validation mode: <code>OB_FVG_LINK_OVERLAP</code> (overlaps FVG), <code>CONTAIN_CANDLE</code> (contains FVG candle), <code>CONTAIN_BODY</code> (contains FVG candle body).</p>
-    <p style="margin-left: 15px;">• <code>InpObFvgNearPips</code> : Double : <code>2.0</code> : Proximity tolerance in pips for links that are close but not strictly overlapping.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🛡️ Safety & Execution</h3>
-    <p>Critical protection barriers governing order placement and slippage.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpUsePipe</code> : Bool : <code>false</code> : Enables TCP socket IPC for low-latency signal delivery. The bridge runs a local socket server; the EA connects as a client. File polling is still used as fallback. Requires "Allow DLL imports" in MT5.</p>
-    <p style="margin-left: 15px;">• <code>InpMaxSpreadPips</code> : Double : <code>4.0</code> : Maximum broker spread in pips. Rejects execution of new trades if current spread exceeds this.</p>
-    <p style="margin-left: 15px;">• <code>InpDefaultGuardPips</code> : Double : <code>10.0</code> : The maximum deviation/slippage in pips allowed when Signal Cutoff is active (Default Guard Mode).</p>
-    <p style="margin-left: 15px;">• <code>InpSafetyCapPips</code> : Int : <code>10</code> : Baseline fallback slippage/guard limit in pips used when Signal Cutoff is disabled (0).</p>
-    <p style="margin-left: 15px;">• <code>InpSlippage</code> : Ulong : <code>20</code> : Broker-level slippage tolerance in points.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🪜 Ladder & Harvesting</h3>
-    <p>Defaults governing manually fired ladder grids and harvest targets.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpLadderTrades</code> : Int : <code>5</code> : Default number of pending limit orders placed in manual ladder grids.</p>
-    <p style="margin-left: 15px;">• <code>InpLadderStep</code> : Double : <code>10.0</code> : Pip step distance between each level in the ladder grid.</p>
-    <p style="margin-left: 15px;">• <code>InpAnchorEntries</code> : Int : <code>1</code> : Default number of anchor orders executed at market price for manual ladders.</p>
-    <p style="margin-left: 15px;">• <code>InpPendingEntries</code> : Int : <code>5</code> : Default number of pending orders placed per tier in manual ladders.</p>
-    <p style="margin-left: 15px;">• <code>InpHarvestPips</code> : Double : <code>1.0</code> : Profit cushion in pips added to Break-Even when a tier is harvested.</p>
-    <p style="margin-left: 15px;">• <code>InpCancelPendingOnTP</code> : Bool : <code>true</code> : If enabled, remaining pending limit orders are automatically deleted when the price triggers a configured Take Profit target.</p>
-    <p style="margin-left: 15px;">• <code>InpCancelPendingTPLevel</code> : Int : <code>2</code> (TP2) : The specific TP milestone that triggers deletion of remaining pending limit orders.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🔄 Auto SL Move & Trailing</h3>
-    <p>Protective actions that secure trades and trail profits dynamically.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpEnableAutoSLM</code> : Bool : <code>true</code> : Toggles whether the auto Stop Loss move to Break-Even is active on startup.</p>
-    <p style="margin-left: 15px;">• <code>InpShowVirtualTPs</code> : Bool : <code>false</code> : If true, renders visual stealth TP lines on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpShowVirtualSL</code> : Bool : <code>false</code> : If true, renders visual stealth SL lines on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpUseEmergencySL</code> : Bool : <code>false</code> : If true, places a wide Emergency SL on the broker as a safety net during Stealth Mode. If false, the broker sees SL = 0 (fully hidden).</p>
-    <p style="margin-left: 15px;">• <code>InpEmergencySLMultiplier</code> : Double : <code>2.0</code> : How much wider the Emergency SL is compared to your real SL. Only applies when <code>InpUseEmergencySL</code> is true.</p>
-    <p style="margin-left: 15px;">• <code>InpTP1_TriggerLevel</code> : Int : <code>3</code> (TP3) : The TP target milestone that triggers the first auto Break-Even move.</p>
-    <p style="margin-left: 15px;">• <code>InpBreakEvenLockPips</code> : Double : <code>1.0</code> : Pip cushion added to the entry price when moving Stop Loss to Break-Even.</p>
-    <p style="margin-left: 15px;">• <code>InpManualSLPushPips</code> : Double : <code>10.0</code> : Distance in pips used when hitting the manual "PUSH SL" button on the dashboard.</p>
-    <p style="margin-left: 15px;">• <code>InpBE_RefMode</code> : Enum : <code>BE_REF_ENTRY</code> : BE calculation mode. <code>BE_REF_ENTRY</code> tracks each position's own entry price; <code>BE_REF_ANCHOR</code> tracks all positions relative to the high anchor price.</p>
-    <p style="margin-left: 15px;">• <code>InpTrailDistance</code> : Double : <code>20.0</code> : Trailing stop distance in pips behind the current market price.</p>
-    <p style="margin-left: 15px;">• <code>InpTrailStep</code> : Double : <code>5.0</code> : Minimum step increment in pips for trailing stops.</p>
-    <p style="margin-left: 15px;">• <code>InpTrailPadding</code> : Double : <code>15.0</code> : Distance in pips added as structural buffer behind candlestick wicks or fractals.</p>
-    <p style="margin-left: 15px;">• <code>InpSignalRRRatio</code> : Double : <code>2.0</code> : Risk-to-Reward ratio used by the internal scanner signal engine.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🌎 Global Sync Partials</h3>
-    <p>Default Take Profit distances and close percentages for manual grids and default behavior.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpTP1_Pips</code> to <code>TP5_Pips</code> : Double : (staged) : Target distances in pips from entry for global Take Profits 1 through 5. (TP1=30, TP2=50, TP3=80, TP4=100, TP5=130, TP6-10=0)</p>
-    <p style="margin-left: 15px;">• <code>InpTP1_ClosePct</code> to <code>TP5_ClosePct</code> : Double : (staged) : Percentage of position volume to close at each global TP milestone. (TP1-4=20%, TP5=100%, TP6-10=0%)</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">💼 Manual Panel TP</h3>
-    <p>Standalone target distances and close percentages specifically for trades entered manually through the dashboard.</p>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpMan_TP1</code> to <code>TP5</code> : Double : (staged) : Target distances in pips from manual market order entry for TP1 through TP5. (Man_TP1=20, Man_TP2=50, Man_TP3=90, Man_TP4=120, Man_TP5=200, Man_TP6-10=0)</p>
-    <p style="margin-left: 15px;">• <code>InpMan_Pct1</code> to <code>Pct5</code> : Double : (staged) : Percentage of position volume to close at each manual market order TP milestone. (Man_Pct1-2=25%, Man_Pct3-4=20%, Man_Pct5=100%, Man_Pct6-10=0%)</p>
-    <p style="margin-left: 15px;">• <code>InpMan_TP_PEN1</code> to <code>TP_PEN5</code> : Double : (staged) : Target distances in pips from manual pending limit order entry for TP1 through TP5. (PEN1=30, PEN2=60, PEN3=100, PEN4=160, PEN5=250, PEN6-10=0)</p>
-    <p style="margin-left: 15px;">• <code>InpMan_Pct_PEN1</code> to <code>Pct_PEN5</code> : Double : (staged) : Percentage of position volume to close at each manual pending order TP milestone. (PEN1-4=20%, PEN5=100%, PEN6-10=0%)</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🤖 AI Insights (Read-Only Analytics)</h3>
-    <p>AI-powered market analysis displayed in the 4th tab of the trades panel. The AI provides market bias, confidence levels, risk assessment, and key level identification. <strong>The AI has ZERO influence on trade execution</strong> — it is purely informational.</p>
-    <h4 style="margin-top: 15px; color: #e0e0e0;">How It Works</h4>
-    <ul>
-        <li>The EA serializes live market data to <code>gsae_ai_market_data.json</code> (Common Files directory)</li>
-        <li>The Bridge reads the file, sends it to your chosen AI provider</li>
-        <li>The AI returns a structured analysis (JSON with bias, confidence, risk, reasoning, key levels, warnings, market regime, MTF alignment)</li>
-        <li>The Bridge writes the analysis to <code>gsae_ai_insights.txt</code></li>
-        <li>The EA reads the file and displays the results in the AI tab</li>
-    </ul>
-    <p><strong>No trades are placed or modified by the AI.</strong> It reads market data and reports — nothing more.</p>
-    <h4 style="margin-top: 15px; color: #e0e0e0;">EA Input Parameters</h4>
-    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
-    <p style="margin-left: 15px;">• <code>InpAIEnabled</code> : Bool : <code>false</code> : Enables the AI Insights tab in the trades panel.</p>
-    <p style="margin-left: 15px;">• <code>InpAIWriteData</code> : Bool : <code>true</code> : Writes market data JSON file for the bridge to process.</p>
-    <p style="margin-left: 15px;">• <code>InpAIInterval</code> : Int : <code>30</code> : Analysis interval in seconds (minimum 10, maximum 300).</p>
-    <p style="margin-left: 15px;">• <code>InpAICandlesPerTF</code> : Int : <code>20</code> : Number of candles per timeframe in the data payload (5-50).</p>
-    <h4 style="margin-top: 15px; color: #e0e0e0;">Market Data Sent to AI</h4>
-    <p>The EA sends the following to the Bridge for analysis:</p>
-    <ul>
-        <li><strong>OHLCV data</strong> for 5 timeframes (M1, M5, M15, H1, H4) with candle body/wick percentages</li>
-        <li><strong>Swing structure</strong> — detected swing highs and lows across each timeframe</li>
-        <li><strong>EMA trend</strong> — 20/50 EMA crossover per timeframe</li>
-        <li><strong>Indicators</strong> — ATR(14), RSI(14), Bollinger Bands(20, 2.0)</li>
-        <li><strong>Multi-timeframe alignment</strong> — score across H4, H1, M15 (STRONG_BULL → STRONG_BEAR)</li>
-        <li><strong>Market regime</strong> — VOLATILE, RANGING, QUIET, OVERBOUGHT, OVERSOLD</li>
-        <li><strong>FVG & Order Block data</strong> — active Fair Value Gap zones and Order Block top/bottom levels</li>
-        <li><strong>Open positions</strong> — type, lots, entry price, PnL</li>
-        <li><strong>Account risk</strong> — balance, equity, margin usage %</li>
-    </ul>
-    <h4 style="margin-top: 15px; color: #e0e0e0;">AI Tab Display</h4>
-    <p>The AI tab shows a compact, color-coded layout:</p>
-    <ul>
-        <li><strong>Row 1:</strong> Bias (BULLISH/BEARISH/NEUTRAL) with confidence % | Risk level</li>
-        <li><strong>Row 2:</strong> Market regime | MTF alignment</li>
-        <li><strong>Row 3:</strong> Key support/resistance levels (full width)</li>
-        <li><strong>Row 4:</strong> Warnings (full width)</li>
-        <li><strong>Analysis:</strong> 2-3 sentence market reasoning from the AI</li>
-        <li><strong>Footer:</strong> Last update timestamp</li>
-    </ul>
-    <h4 style="margin-top: 15px; color: #e0e0e0;">Bridge AI Configuration</h4>
-    <p>In the Bridge's Settings panel, scroll to "AI Insights Configuration":</p>
-    <ul>
-        <li><strong>Enable AI Insights</strong> — Must be checked for AI to work</li>
-        <li><strong>AI Provider</strong> — Select: OpenAI, Anthropic, OpenCode Go, or Ollama</li>
-        <li><strong>API Key</strong> — Your provider's API key (not needed for Built-in or Ollama)</li>
-        <li><strong>Base URL</strong> — Auto-filled based on provider, editable for custom endpoints</li>
-        <li><strong>Model</strong> — Click "Fetch Available Models" or type manually (e.g., <code>deepseek-v4-pro</code>)</li>
-        <li><strong>Interval</strong> — How often to run analysis (default: 30 seconds)</li>
-    </ul>
-    <h4 style="margin-top: 15px; color: #e0e0e0;">Supported AI Providers</h4>
-    <p style="margin-left: 15px;">• Provider : Estimated Cost : Models</p>
-    <p style="margin-left: 15px;">• OpenAI : ~$6.50/month : gpt-4o-mini, gpt-4o</p>
-    <p style="margin-left: 15px;">• Anthropic : ~$6.50/month : claude-haiku-3.5, claude-sonnet-4</p>
-    <p style="margin-left: 15px;">• OpenCode Go : $5-10/month : mimo-v2.5, kimi-k2.7, deepseek-v4-pro, glm-5.2, minimax-m3</p>
-    <p style="margin-left: 15px;">• Ollama (Local) : Free : llama3, any downloaded model</p>
-    <h4 style="margin-top: 15px; color: #e0e0e0;">AI Provider Performance Notes</h4>
-    <ul>
-        <li><strong>Reasoning models</strong> (deepseek-v4-pro, mimo-v2.5) may return analysis in the <code>reasoning_content</code> field instead of <code>content</code>. The Bridge handles this automatically.</li>
-        <li><strong>JSON responses</strong> wrapped in markdown code blocks (```<code>json ... </code>`<code> </code>) are stripped and parsed correctly.</li>
-        <li><strong>Fallback parsing</strong> — If JSON extraction fails, the Bridge extracts bias, confidence, and market analysis from raw text using keyword detection.</li>
-        <li><strong>No trading instructions</strong> — The AI system prompt explicitly forbids buy/sell/execute signals. It only provides analytical context.</li>
-    </ul>
-</section>
-</main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h2><img src="logo-header.png" alt="" width="32" height="32"> Gold<span>Snipers</span></h2>
-                    <p>Professional algorithmic trading solutions for MetaTrader 5 and Telegram integrations. Built by traders, for traders.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="index.html#pricing">Pricing</a></li>
-                        <li><a href="doc.html">Documentation</a></li>
-                        <li><a href="infographics.html">Infographics</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="index.html#faq">FAQ</a></li>
-                        <li><a href="mailto:support@goldsnipers.com">Contact Support</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-disclaimer">
-                <strong>Risk Warning:</strong> Trading financial instruments, including foreign exchange (Forex) and contracts for difference (CFDs) on margin, carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade, you should carefully consider your investment objectives, level of experience, and risk appetite. Past performance of any automated strategy or EA is not indicative of future results.
-                <br><br>
-                &copy; 2026 Gold Snipers. All rights reserved. Built for MT5.
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js?v=2.1.0"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Snipers | Documentation & User Guide</title>
+    <meta name="description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite. Setup tutorials, signal configuration, and EA inputs.">
+    <link rel="canonical" href="https://goldsnipersbot.com/doc.html">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gold Snipers | Documentation & User Guide">
+    <meta property="og:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
+    <meta property="og:image" content="https://goldsnipersbot.com/dashboard.png">
+    <meta property="og:url" content="https://goldsnipersbot.com/doc.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gold Snipers | Documentation & User Guide">
+    <meta name="twitter:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
+    <meta name="twitter:image" content="https://goldsnipersbot.com/dashboard.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css?v=2.0.9">
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="bg-glow"></div>
+    <div class="bg-glow-gold"></div>
+
+    <!-- Header / Navigation -->
+    <header class="scrolled">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="logo-header.png" alt="" width="32" height="32">
+                    Gold<span>Snipers</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="doc.html" class="active">Documentation</a></li>
+                </ul>
+                <a href="index.html#pricing" class="btn btn-primary btn-sm">Get Started</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="doc-layout">
+            <!-- Table of Contents Sidebar -->
+            <aside class="doc-sidebar glass-panel">
+    <h3>User Guide Reference</h3>
+    <style>
+        .doc-sidebar .nav-group { margin-bottom: 4px; }
+        .doc-sidebar .nav-group-header {
+            display: flex; align-items: center; justify-content: space-between;
+            cursor: pointer; padding: 7px 10px; border-radius: 6px;
+            font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em;
+            text-transform: uppercase; color: #a0a0b0;
+            background: rgba(255,255,255,0.03);
+            transition: background 0.2s, color 0.2s;
+            user-select: none; border: none; width: 100%; text-align: left;
+        }
+        .doc-sidebar .nav-group-header:hover { background: rgba(255,215,0,0.07); color: #ffd700; }
+        .doc-sidebar .nav-group-header.open { color: #ffd700; background: rgba(255,215,0,0.06); }
+        .doc-sidebar .nav-group-header .chevron {
+            font-style: normal; font-size: 0.7rem; transition: transform 0.25s;
+            flex-shrink: 0; margin-left: 6px;
+        }
+        .doc-sidebar .nav-group-header.open .chevron { transform: rotate(90deg); }
+        .doc-sidebar .nav-sub {
+            list-style: none; margin: 0; padding: 0;
+            overflow: hidden; max-height: 0;
+            transition: max-height 0.35s ease;
+        }
+        .doc-sidebar .nav-sub.open { max-height: 1000px; }
+        .doc-sidebar .nav-sub li a {
+            display: block; padding: 5px 10px 5px 18px;
+            font-size: 0.8rem; color: #b0b0c0; border-radius: 5px;
+            text-decoration: none; transition: color 0.2s, background 0.2s;
+            border-left: 2px solid transparent; margin: 1px 0;
+        }
+        .doc-sidebar .nav-sub li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); border-left-color: #ffd700; }
+        .doc-sidebar ul.top-links { list-style: none; margin: 0 0 8px 0; padding: 0; }
+        .doc-sidebar ul.top-links li a {
+            display: block; padding: 6px 10px; font-size: 0.82rem;
+            color: #b0b0c0; border-radius: 6px; text-decoration: none;
+            transition: color 0.2s, background 0.2s;
+        }
+        .doc-sidebar ul.top-links li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); }
+        .doc-sidebar ul.top-links li a.active-link { color: #00d2d3; }
+    </style>
+
+    <!-- Top-level non-grouped links -->
+    <ul class="top-links">
+        <li><a href="#welcome">👋 Welcome</a></li>
+        <li><a href="#initial-setup-upgrades-connection-guide">🚀 Setup &amp; Connection Guide</a></li>
+        <li><a href="#dashboard-risk-management-setup-metrics">📊 Dashboard &amp; Risk Metrics</a></li>
+        <li><a href="#dual-channel-independent-copier-panels">📡 Dual-Channel Copier Panels</a></li>
+    </ul>
+
+    <!-- Group: Profit Management -->
+    <div class="nav-group">
+        <button class="nav-group-header open" onclick="toggleGroup(this)">
+            💰 Trade Profit Management <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub open">
+            <li><a href="#take-profit-targeting-paging-add-tps">TP Targeting &amp; Paging</a></li>
+            <li><a href="#5-unified-take-profit-stop-loss-stealth-mode">Stealth TP/SL Mode</a></li>
+            <li><a href="#tp-auto-mode-distributed-anchor-deep-runner-engine">TP AUTO Mode</a></li>
+            <li><a href="#anchor-strategy-toggles-unified-vs-distributed">Anchor Strategy Toggles</a></li>
+            <li><a href="#harvesting-adaptive-profit-defense">Harvesting &amp; Profit Defense</a></li>
+            <li><a href="#precision-break-even-engines-auto-sl-move-be-settings">Break-Even Engines</a></li>
+            <li><a href="#cancel-pending-button-delete-pending-limits-on-tp">Cancel Pending on TP</a></li>
+        </ul>
+    </div>
+
+    <!-- Group: Entry & Signals -->
+    <div class="nav-group">
+        <button class="nav-group-header" onclick="toggleGroup(this)">
+            ⚡ Entry &amp; Signal Routing <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub">
+            <li><a href="#core-entry-modes-ladder-vs-single">Entry Modes: Ladder vs. Single</a></li>
+            <li><a href="#signal-entry-cutoff-telegram-routing">Signal Cutoff &amp; Routing</a></li>
+        </ul>
+    </div>
+
+    <!-- Group: Dashboard & Analytics -->
+    <div class="nav-group">
+        <button class="nav-group-header" onclick="toggleGroup(this)">
+            📈 Analytics &amp; UI Engines <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub">
+            <li><a href="#live-analytics-equity-protect-matrix">Live Analytics &amp; Equity Protect</a></li>
+            <li><a href="#manual-panel-technical-intel-deck">Manual Panel &amp; Intel Deck</a></li>
+            <li><a href="#intraday-extension-panels-trades-levels-helper">Intraday Panels (Trades &amp; Levels)</a></li>
+            <li><a href="#ergonomic-action-buttons-ui-modes">Action Buttons &amp; UI Modes</a></li>
+            <li><a href="#ui-modes-sync-safety-engines">UI Sync &amp; Safety Engines</a></li>
+            <li><a href="#core-pip-scaling-goldxauusd-scaling">Pip Scaling (Gold/XAUUSD)</a></li>
+        </ul>
+    </div>
+
+    <!-- Group: Bridge & Advanced -->
+    <div class="nav-group">
+        <button class="nav-group-header" onclick="toggleGroup(this)">
+            🌉 Bridge &amp; Advanced <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub">
+            <li><a href="#the-copier-bridge-desktop-engine">Copier Bridge Desktop Engine</a></li>
+            <li><a href="#performance-execution-engine-upgrades-v36295">Performance &amp; Engine Upgrades</a></li>
+            <li><a href="#advanced-guide-trade-exclusions-command-routing-copier-workflow">Trade Exclusions &amp; Copier Workflow</a></li>
+            <li><a href="#remote-admin-control-panel-telegram-saved-messages">Remote Admin Control Panel</a></li>
+            <li><a href="#mt5-input-settings-reference">MT5 Input Settings Reference</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleGroup(btn) {
+            btn.classList.toggle('open');
+            btn.nextElementSibling.classList.toggle('open');
+        }
+    </script>
+</aside>
+
+            <!-- Main Documentation Content -->
+            <main class="doc-content glass-panel">
+<section id="welcome" class="doc-section">
+    <h2>Welcome to Gold Snipers</h2>
+    <p>Welcome to the official manual for the <strong>Gold Snipers EA</strong>. This document details the trade management engines and features of the EA, organized from top-to-bottom to mirror its physical on-chart dashboard layout.</p>
+    <p>---</p>
+</section>
+
+<section id="initial-setup-upgrades-connection-guide" class="doc-section">
+    <h2>1. Initial Setup, Upgrades & Connection Guide</h2>
+    <p>Before activating the EA on your charts, you must complete the one-time authorization link between your Telegram account and the trading terminal.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🚀 The First-Time Activation Wizard</h3>
+    <p>When you run the <strong>Gold Snipers Bridge</strong> (<code>GoldSnipersBridge.exe</code>) for the very first time, it initiates an interactive, high-speed setup console:</p>
+    <ul>
+        <li><strong>License Key:</strong> A dialog will appear asking for your Gold Snipers license key (format: <code>GS-XXXX-XXXX-XXXX</code>). This key is provided after purchase and is required before anything else.</li>
+        <li><strong>API ID & API Hash:</strong> The console will prompt you to enter your Telegram credentials (obtained from <code>my.telegram.org</code>).</li>
+        <li>*💡 Shortcut:* If you do not have custom keys, simply press <strong>[ENTER]</strong> to automatically use our secure, pre-configured developer engine.</li>
+        <li><strong>Secure Authentication:</strong> Enter your phone number (with country code, e.g., <code>+1...</code>). The console will ask for the OTP code sent to your Telegram App, followed by your 2-Step Verification Password (if enabled).</li>
+        <li><strong>Channel Subscriptions:</strong> The Bridge will print a list of your active groups/channels. Type the numbers corresponding to the channels you want to monitor (e.g., <code>2, 5, 9</code>).</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🔑 License Key System</h3>
+    <p>Gold Snipers uses a cloud-based license key system. Here's how it works:</p>
+    <ul>
+        <li><strong>Obtaining a License:</strong> Once you purchase a license from your provider, your license key (format: <code>GS-XXXX-XXXX-XXXX</code>) is automatically generated and displayed on the checkout success screen, allowing you to copy it and download the installer immediately.</li>
+        <li><strong>Entering Your Key:</strong> On first launch, the Bridge displays a dialog asking for your license key. Enter it once — it's stored securely on your machine.</li>
+        <li><strong>Changing Your Key:</strong> Click <strong>Change License Key</strong> (green button, top-right of API Settings) to enter a new key at any time.</li>
+        <li><strong>Machine Binding:</strong> Your license key is bound to your computer. It cannot be copied to another machine without admin assistance.</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">📦 License Tiers & Feature Matrix</h3>
+    <p>The software is distributed in three distinct product tiers, designed to fit different trading volumes and system requirements:</p>
+    <p style="margin-left: 15px;">• Feature : Starter Tier : Pro Tier : Expert Tier</p>
+    <p style="margin-left: 15px;">• <strong>MT5 Instances</strong> : 1 terminal : Up to 3 terminals : Up to 6 terminals</p>
+    <p style="margin-left: 15px;">• <strong>Unique Broker Accounts</strong> : 1 account : Up to 3 accounts : Up to 6 accounts</p>
+    <p style="margin-left: 15px;">• <strong>Trading Symbol Lock</strong> : Gold/XAUUSD only : Unlimited (All Symbols) : Unlimited (All Symbols)</p>
+    <p style="margin-left: 15px;">• <strong>Max Grid / TP Levels</strong> : Capped at 3 levels : Capped at 5 levels : Up to 10 levels</p>
+    <p style="margin-left: 15px;">• <strong>Stealth TP/SL Mode</strong> : Disabled (Forced to ON) : Allowed (Stealth/ON) : Allowed (Stealth/ON)</p>
+    <p style="margin-left: 15px;">• <strong>Low-Latency Socket IPC</strong> : Disabled (File-based fallback) : Enabled (TCP Sockets) : Enabled (TCP Sockets)</p>
+    <p style="margin-left: 15px;">• <strong>AI Insights Dashboard</strong> : Hidden / Disabled : Enabled : Enabled</p>
+    <p style="margin-left: 15px;">• <strong>Bridge UI Analytics Tab</strong> : Disabled : Enabled : Enabled</p>
+    <p style="margin-left: 15px;">• <strong>Telegram Bot Remote Control</strong> : Disabled : Settings Change only : Full Controls + Inline Buttons</p>
+    <ul>
+        <li><strong>MT5 Instances:</strong> The number of MetaTrader 5 terminals you can run simultaneously with the Bridge. You can configure multiple instances in the Bridge's API Settings panel (click <strong>Add MT5 Instance</strong>).</li>
+        <li><strong>MT5 Accounts:</strong> Each license tier limits the number of unique MT5 broker accounts the EA can register. For example, Starter allows 1 MT5 account, Pro allows 3, and Expert allows 6.</li>
+        <li><strong>Manual Trading:</strong> The EA's manual trading panel works on any MT5 terminal where the EA is attached, as long as a valid license key is loaded. No separate manual trading license is needed.</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">⚡ Seamless Upgrades (Zero Re-Configuration)</h3>
+    <p>When installing a new version or upgrading the software, you <strong>do not</strong> need to re-enter your credentials or repeat the setup wizard:</p>
+    <ul>
+        <li><strong>Active Session Protection:</strong> All authorizations, API keys, and channel choices are saved securely in your local data directory (specifically <code>gsae_session.session</code> and <code>gsae_config.json</code>).</li>
+        <li><strong>Automatic Upgrade Recognition:</strong> The new Bridge binary automatically detects these existing files on startup. It immediately bypasses the setup wizard and logs you straight into active monitoring within 2 seconds!</li>
+        <li><strong>Manual Reset:</strong> If you ever need to change channels or log in with a different phone number, simply press any key during the 3-second banner countdown on startup to access the Configuration Menu.</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🔧 WebRequest Configuration (EA Required)</h3>
+    <p>The Expert Advisor needs to communicate with our license server. After installing, you must whitelist this URL in MetaTrader 5:</p>
+    <ul>
+        <li>Open MetaTrader 5</li>
+        <li>Go to <strong>Tools → Options → Expert Advisors</strong></li>
+        <li>Check <strong>Allow WebRequest for listed URL</strong></li>
+        <li>Add: <code>https://hxlqbctnkqqtueuyqyyv.supabase.co</code></li>
+        <li>Click OK, then re-attach the EA to your chart</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🖥️ MT5 WebRequest Configuration (Optional, Pre-Filled)</h3>
+    <p>During installation, the Setup Wizard will display a <strong>WebRequest Configuration Page</strong> with the URL to add. This page is automatically skipped on upgrades.</p>
+</section>
+
+<section id="dashboard-risk-management-setup-metrics" class="doc-section">
+    <h2>2. Dashboard Risk Management & Setup Metrics</h2>
+    <p>The top-right quadrant of your Copier Dashboard features a dynamic, real-time Risk Projection Matrix. This engine displays your active sizing parameters and instantly calculates your maximum capital exposure before you fire your ladder.</p>
+    <ul>
+        <li><strong>ANCHOR COUNT:</strong> The number of initial market orders executed immediately at the current market price. (e.g., an Anchor Count of 3 will fire 3 separate positions upon execution).</li>
+        <li><strong>ANCHOR LOT:</strong> The specific lot size assigned individually to each market (Anchor) order.</li>
+        <li><strong>PENDING COUNT:</strong> The number of pending limit orders placed at <strong>each</strong> individual tier down the ladder grid. (If set to 2, the EA places a twin-order block at every grid step).</li>
+        <li><strong>PENDING LOT:</strong> The lot size assigned individually to each pending limit order.</li>
+        <li><strong>LAYER COUNT:</strong> Sets the total depth of the ladder (number of limit grid tiers) generated down the chart. A Layer Count of 5 will generate 5 distinct pending levels spaced at your configured pip-step intervals.</li>
+        <li><strong>STOP LOSS (PIPS):</strong> The protective distance (in pips) for the entire grid family, measured relative to the primary anchor entry price.</li>
+        <li><strong>MAX RISK CALCULATOR:</strong> A dynamic, real-time math engine projecting your worst-case total loss scenario:</li>
+        <li><strong>The Assessment:</strong> The EA instantly calculates the exact dollar and percentage loss if your initial Anchors are hit, <strong>AND</strong> every single configured Pending Layer is 100% filled, before the entire family hits your Stop Loss.</li>
+        <li><strong>Dynamic Color Warning:</strong> Displays in <strong>Green (Safe)</strong> for conservative exposure, scaling into <strong>Amber/Red (Aggressive)</strong> as risk percentages grow, ensuring you maintain ultimate oversight of your account margin.</li>
+    </ul>
+</section>
+
+<section id="dual-channel-independent-copier-panels" class="doc-section">
+    <h2>3. Dual-Channel Independent Copier Panels</h2>
+    <p>Provides two completely independent trading profiles (<strong>CH1</strong> and <strong>CH2</strong>) without any settings leakage into your manual setup:</p>
+    <ul>
+        <li><strong>Dual Sub-Tabs:</strong> Click <strong>CH1</strong> or <strong>CH2</strong> at the top of the panel to instantly switch between and configure distinct preset blocks (lot sizes, grid counts, and TP targets).</li>
+        <li><strong>Isolated Trade Execution (TradeContext Architecture):</strong> Clicking <code>BUY</code> or <code>SELL</code> on the Copier panel automatically packages the active channel's configuration into a thread-safe <code>TradeContext</code> structure. The trade executes directly from this localized memory profile, ensuring that your Manual Dashboard settings remain 100% untouched and isolated.</li>
+        <li><strong>Channel Identity:</strong> Features dedicated fields for <strong>CHANNEL NAME</strong> and <strong>CHANNEL ID</strong> directly under the selection tabs, keeping your signal routing perfectly organized and visible.</li>
+    </ul>
+</section>
+
+<section id="take-profit-targeting-paging-add-tps" class="doc-section">
+    <h2>4. Take Profit Targeting & Paging (+ ADD TPs)</h2>
+    <p>Configure up to 10 customized Take Profit levels without cluttering your chart:</p>
+    <ul>
+        <li><strong>➕ ADD TPs Button:</strong> Instantly toggles the card layout at the top of the panel between two distinct configuration pages.</li>
+        <li><strong>TP1 - TP5 Mode:</strong> Standard view for configuring core scales and targets.</li>
+        <li><strong>TP6 - TP10 Mode:</strong> Advanced view for setting deep runner targets and long-term trend milestones.</li>
+        <li><strong>Columns Design:</strong> Displays targets in clean, tactile vertical columns, styled for effortless scanning and real-time editing of pips and partial shave percentages (%).</li>
+    </ul>
+</section>
+
+<section id="5-unified-take-profit-stop-loss-stealth-mode" class="doc-section">
+    <h2>4.5 Unified Take Profit & Stop Loss Stealth Mode</h2>
+    <p>The <strong>Stealth TP/SL Mode</strong> (enabled via <code>TP MODE: STEALTH</code> or setting <code>InpCx_TPMode = 1</code>) allows you to hide your actual profit and loss targets from your broker to avoid stop-hunting and spread manipulation, while maintaining institutional-grade protections.</p>
+    <ul>
+        <li><strong>Broker Target Camouflage:</strong> When Stealth Mode is activated, the EA places orders with a Take Profit of <code>0</code> and a far-out <strong>Emergency Stop Loss</strong> (calculated as your configured SL multiplied by <code>InpEmergencySLMultiplier</code>, protected by the broker's minimum <code>Stops Level</code>). This ensures that your broker sees no active profit targets and only a distant emergency exit line in case of network or power failure.</li>
+        <li><strong>Local Virtual Targets:</strong> The true, narrow virtual SL and TP targets are kept entirely on-chart and persisted to MT5 Global Variables (<code>GSAE_VSL_</code> and <code>GSAE_VTP_</code>).</li>
+        <li><strong>Real-Time Tick Tracking:</strong> The EA's background trading engine monitors price ticks in real-time. The moment the market Bid/Ask price touches your virtual TP or SL, the engine fires instant market execution commands to close your positions.</li>
+        <li><strong>Dynamic Moves Propagation:</strong> Any automated trailing stop moves, manual "PUSH SL" adjustments, or Break-Even locks automatically update your virtual global targets (<code>GSAE_VSL_</code>) locally instead of sending stop modifications to the broker, automatically shifting the broker-side Emergency SL to keep it aligned as a safety net.</li>
+        <li><strong>Tactile Chart Visualization:</strong> Renders premium dashed indicators directly on your chart:</li>
+        <li><strong><code>VTP</code> (Green Dashed Line):</strong> Indicates the current virtual Take Profit target.</li>
+        <li><strong><code>VSL</code> (Red Dashed Line):</strong> Indicates the current virtual Stop Loss target.</li>
+        <li><strong>Clean Local Analytics:</strong> All exits are logged in your local SQLite Analytics database with clear exit comments (e.g. <code>"STEALTH_TP"</code> or <code>"STEALTH_SL"</code>), while broker-side history comments remain completely generic.</li>
+    </ul>
+</section>
+
+<section id="core-entry-modes-ladder-vs-single" class="doc-section">
+    <h2>5. Core Entry Modes: Ladder vs. Single</h2>
+    <p>The <strong>LADDER ON / SINGLE ON</strong> toggle button controls how your trade entries are structured:</p>
+    <ul>
+        <li><strong>SINGLE Mode:</strong></li>
+        <li>Opens a single set of market orders at the current price level.</li>
+        <li>No grid limit orders are created.</li>
+        <li><strong>LADDER Mode:</strong></li>
+        <li>Opens your anchor trades immediately at the current market price.</li>
+        <li>Simultaneously places pending limit orders below your entry (if Buying) or above your entry (if Selling) at regular price step intervals.</li>
+    </ul>
+</section>
+
+<section id="harvesting-adaptive-profit-defense" class="doc-section">
+    <h2>6. Harvesting & Adaptive Profit Defense</h2>
+    <p>Controlled via the <strong>HARVEST ON / OFF</strong> toggle button, <strong>Harvesting</strong> is an intelligent, automated risk-defense engine designed specifically for active <strong>Ladder</strong> grids.</p>
+    <ul>
+        <li><strong>Objective:</strong> Secures profits on upper trade tiers during deep market pullbacks, allowing your portfolio to recover capital incrementally.</li>
+        <li><strong>How it Works:</strong> When the price dives deep enough to trigger discount limit orders, the engine steps in to protect your higher-priced entry tiers. It automatically moves the <strong>Take Profit</strong> of previous upper tiers down to their own entry prices (+1.0 pip cushion).</li>
+        <li><strong>The Advantage:</strong> On any minor market bounce, your upper "underwater" tiers are instantly liquidated at 100% Break-Even, freeing up your margin while leaving your <strong>deepest discount tier active</strong> to run all the way to its full profit target!</li>
+        <li><strong>Threshold Guard:</strong> Uses a mathematical safety threshold (at least 50% of your grid step distance) to ensure that minor spread noise or slippage never triggers a harvest prematurely.</li>
+    </ul>
+</section>
+
+<section id="tp-auto-mode-distributed-anchor-deep-runner-engine" class="doc-section">
+    <h2>7. TP AUTO Mode (Distributed Anchor & Deep Runner Engine)</h2>
+    <p>The <strong>TP AUTO</strong> mode is a specialized, math-driven Take Profit engine designed to extract quick early profits from your primary entries while letting deep-discount limit entries run for maximum capital extraction.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">How it Works (Example Setup)</h3>
+    <ul>
+        <li><strong>Multi-Anchor Count:</strong> 3 Market Entries (Anchors)</li>
+        <li><strong>Ladder Grid Count:</strong> 10 Pending Limit Levels</li>
+        <li><strong>Deepest Configured Level:</strong> TP10</li>
+    </ul>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">Phase 1: Strategic TP Assignment</h4>
+    <p>When you fire your ladder in <strong>TP AUTO</strong> mode, the EA applies two distinct Take Profit strategies to secure your portfolio:</p>
+    <ul>
+        <li><strong>Anchors (Market Orders):</strong> Your primary market entries are distributed sequentially across your nearest configured Take Profit targets to ensure rapid capital recovery:</li>
+        <li><strong>Anchor #1:</strong> Targets <strong>TP1</strong> (Immediate profit & risk mitigation trigger)</li>
+        <li><strong>Anchor #2:</strong> Targets <strong>TP2</strong></li>
+        <li><strong>Anchor #3:</strong> Targets <strong>TP3</strong></li>
+        <li><strong>Pending Tiers (Limit Grid Orders):</strong> ALL limit orders placed down the ladder (Tiers 1 through 10) are automatically assigned to target the single <strong>deepest configured Take Profit (e.g., TP10)</strong>. This ensures that any deep pullback fills run all the way back up for maximum profit extraction.</li>
+    </ul>
+    <div class="doc-tip"><strong>💡 Note:</strong> </div>
+    <div class="doc-tip"><strong>💡 Note:</strong> If you only trade a <strong>Single Anchor</strong>, or if you use the <strong>ANCHOR: UNIFIED TP</strong> setting (configured in the Copier Panel Settings area), the Anchors will target the single deepest active Take Profit and actively participate in cumulative partial percentage shaving.</div>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">Phase 2: Execution & Risk Mitigation</h4>
+    <p>When the market triggers your limits and moves back in your favor:</p>
+    <ul>
+        <li><strong>Anchor Target is Hit:</strong></li>
+        <li>As soon as your primary Anchor hits its assigned target (e.g., TP1), it liquidates for an immediate profit.</li>
+        <li>This triggers the Auto Break-Even engine, which automatically moves the Stop Loss for <strong>all remaining active trades and pending limits</strong> to your entry price plus a safety cushion (+1.0 pip).</li>
+        <li>Your entire remaining ladder exposure is now <strong>100% risk-free</strong>.</li>
+        <li><strong>Deep Runners Run to Finish:</strong></li>
+        <li>Any limit trades that were triggered during the pullback are now completely secured at Break-Even and will run to target the maximum Take Profit (e.g., TP10), capturing massive gains on major trend expansions.</li>
+    </ul>
+</section>
+
+<section id="anchor-strategy-toggles-unified-vs-distributed" class="doc-section">
+    <h2>8. Anchor Strategy Toggles (Unified vs. Distributed)</h2>
+    <p>Control exactly how profits are extracted across multiple market entries:</p>
+    <ul>
+        <li><strong>DISTRIBUTED TP:</strong> (Standard View) Distributes your Take Profit targets sequentially across your open market positions (e.g., Position 1 targets TP1, Position 2 targets TP2). In this mode, Anchors bypass the partial shave engine and exit 100% at their staggered targets. Ideal for quick scale-outs.</li>
+        <li><strong>UNIFIED TP:</strong> (Auto Shave Integration) Directs ALL active market entries to target the single <strong>deepest active Take Profit</strong> currently configured (scaling fully up to <strong>TP10</strong>). Crucially, this mode authorizes the core <code>FamilyShaveEngine</code> to process all anchors, executing partial percentage shaves sequentially at each target rather than bypassing shave triggers. Perfect for extracting maximum capitalization while locked into progressive profit-securing!</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🧬 High-IQ Institutional Shave Architecture</h3>
+    <p>To prevent the standard industry trap of "shrinking residuals" (where EAs calculate percentages on shrinking remainders, leaving microscopic open trades indefinitely), the <strong>Gold Scalper EA</strong> implements an institutional-grade, self-correcting scaling algorithm:</p>
+    <ul>
+        <li><strong>Initial Entry Caching:</strong> The moment your ticket opens, the EA mathematically "memorizes" the <strong>Original Opening Lot Volume</strong> (e.g., 0.50 Lots) inside its persistent cache memory.</li>
+        <li><strong>Cumulative Target Grid:</strong> At every TP level, the engine computes the ideal <strong>Cumulative Remaining Volume</strong> rather than isolated closed amounts. (For 0.50 lots @ 20% increments: TP1 target is <code>0.40</code> lots, TP2 target is <code>0.30</code> lots).</li>
+        <li><strong>Self-Correcting Cuts:</strong> The EA calculates the exact gap between the *active live volume* and the *ideal target volume* at the next trigger. This mathematically compensates for any broker slippage, spread drift, or manual micro-adjustments, ensuring a guaranteed perfect liquidation at your final target!</li>
+    </ul>
+</section>
+
+<section id="precision-break-even-engines-auto-sl-move-be-settings" class="doc-section">
+    <h2>9. Precision Break-Even Engines (Auto SL Move & BE Settings)</h2>
+    <p>The EA features automated and customizable Break-Even protection, allowing you to surgically manage position lifecycles and lock in profits directly from the panel:</p>
+    <ul>
+        <li><strong>AUTO SL MOVE:</strong> (Displays as <strong><code>AUTO SL MOVE: ON</code></strong> / <strong><code>OFF</code></strong>) Toggle to automatically move your safety stops to lock in capital as configured milestones are triggered.</li>
+        <li><strong>BE MODE:</strong> (e.g., <strong><code>BE MODE: ANCHOR</code></strong> / <strong><code>ENTRY</code></strong>)</li>
+        <li><strong>ENTRY:</strong> (Individual Mode) Each individual position moves its Stop Loss to its own unique opening fill price, securing every entry independently.</li>
+        <li><strong>ANCHOR:</strong> (Massive Lock-In Mode) Forces EVERY trade in the active grid (including your deeper discount limit fills) to move its Stop Loss to align with the high <strong>original Anchor Entry Price</strong>. This means that any deeper discount entries are locked into massive, locked-in gains on a trend continuation!</li>
+        <li><strong>TRIGGER BE:</strong> (e.g., <strong><code>TRIGGER BE: TP2</code></strong>) Milestone selector to set exactly at which TP target the EA initiates Break-Even logic (e.g., lock in safety once price hits TP1 or TP2).</li>
+        <li><strong>Secured Profit Buffer (BE Lock-In):</strong> Once triggered, the EA automatically moves your Stop Loss to your entry price plus a configurable safety cushion (defaulting to +1.0 pip) to cover transactional spreads.</li>
+    </ul>
+</section>
+
+<section id="cancel-pending-button-delete-pending-limits-on-tp" class="doc-section">
+    <h2>10. CANCEL PENDING Button (Delete Pending Limits on TP)</h2>
+    <p>The <strong>CANCEL PENDING</strong> button (e.g., <strong><code>CANCEL PENDING: TP2</code></strong>) allows you to toggle the auto-cancel feature for pending limit orders on the fly:</p>
+    <ul>
+        <li><strong>CANCEL PENDING: OFF:</strong> Keeps all pending limit orders active.</li>
+        <li><strong>CANCEL PENDING: TP1</strong> through <strong>TP5:</strong> Automatically deletes remaining pending limits as soon as the price hits your configured Take Profit milestone (e.g., set to <code>CANCEL PENDING: TP2</code> to clear pending orders immediately once price triggers TP2).</li>
+    </ul>
+</section>
+
+<section id="signal-entry-cutoff-telegram-routing" class="doc-section">
+    <h2>11. Signal Entry Cutoff & Telegram Routing</h2>
+    <p>Interacts dynamically with the Telegram Bridge to capture, verify, and route incoming community alerts:</p>
+    <ul>
+        <li><strong>TG CMDS:</strong> (e.g., <strong><code>TG CMDS: INACTIVE</code></strong> / <strong><code>ACTIVE</code></strong>) Master bypass valve per-channel. Set to <strong>ACTIVE</strong> (Green) to let remote signals trigger live trades. Set to <strong>INACTIVE</strong> (Grey) to safely ignore them.</li>
+        <li><strong>Surgical Code-Level Gate:</strong> Toggling to INACTIVE permanently seals the core execution loops. The Expert Advisor will aggressively reject incoming remote files, log a "Skipping Signal" event in your terminal, and prevent any order dispatching, providing a total defensive shield.</li>
+        <li><strong>ENTRY CUTOFF:</strong> (e.g., <strong><code>ENTRY CUTOFF: TP1</code></strong>) (Late Signal Guard & Dynamic Market Chasing) High-IQ entry matrix protecting your portfolio from chasing active trends too late. Cycles from <code>DEFAULT</code> (user-defined pip limit) through <code>TP1</code> to <code>TP5</code>.</li>
+        <li><strong>The Block:</strong> Rejects the signal completely if market price is beyond the cutoff.</li>
+        <li><strong>The Chase:</strong> If the live market price has moved from the signal entry but sits <strong>inside</strong> your chosen cutoff (e.g., TP1), the EA dynamically approves an instant <strong>Market Order fallback</strong> to secure the fill, ensuring you don't miss critical entries by transforming them into unfillable limit grids!</li>
+        <li><strong>Isolated Signal Processing:</strong> Incoming community alerts are routed through localized <code>TradeContext</code> objects, preventing remote activations from ever overriding your manual dashboard variables.</li>
+        <li><strong>Decentralized HistorySelect:</strong> The signal engine utilizes an asynchronous <code>HistorySelect</code> polling mechanism to decouple trade verification from the main UI thread, ensuring signal processing never hangs during volatile news events.</li>
+        <li><strong>Smart Channel Routing:</strong> The background engine dynamically maps incoming Telegram IDs to your configured channel presets (CH1 or CH2) to auto-execute with intended sizing and targets.</li>
+        <li><strong>Stale Signal Guard:</strong> Protects account margin by automatically discarding any incoming signals older than 60 seconds.</li>
+    </ul>
+</section>
+
+<section id="live-analytics-equity-protect-matrix" class="doc-section">
+    <h2>12. Live Analytics & Equity Protect Matrix</h2>
+    <p>Located at the bottom of the configuration dashboard in Full View, this analytics suite monitors real-time transaction metrics and implements a highly flexible, dual-action capital safety valve.</p>
+    <ul>
+        <li><strong>EQUITY PROTECT ($):</strong> A powerful, absolute-dollar safety guardian governing the entire family of trades currently open on the chart.</li>
+        <li><strong>Take Profit Kill-Switch (Positive Value):</strong> If you enter a positive number (e.g., <code>1000</code>), the EA monitors your floating Profit. Once the combined profit hits or exceeds this value, it triggers a <strong>Master Clearance</strong> to immediately close all active and pending orders, securing your cash profit.</li>
+        <li><strong>Equity Protection (Negative Value):</strong> If you enter a negative number (e.g., <code>-500</code>), the EA establishes a hard cash-loss floor. If the combined floating drawdown drops to or below this negative threshold, the EA triggers an instant <strong>Master Clearance</strong> to flatten all positions, surgically protecting your account equity from runaway losses.</li>
+        <li><strong>Deactivated (0.00):</strong> Setting the field to <code>0.00</code> completely disables the Equity Protect safeguard.</li>
+        <li><strong>Profit Telemetry:</strong> Displays your cumulative, real-time floating profit or loss (P&L) for all active grid entries on the current chart. Dynamically updates color from <strong>Green (Profitable)</strong> to <strong>Red (Drawdown)</strong> for instant visual assessment.</li>
+        <li><strong>Spread Tracker:</strong> Measures and displays the broker's real-time Ask/Bid spread directly on the dashboard, helping you gauge liquidity and entry conditions.</li>
+        <li><strong>Live Status Log Footer:</strong> A rolling diagnostic line displaying the most recent action performed by the trade engine (e.g., execution confirmations like <code>SWEEP SELL @ MKT</code>, automated adjustments, partial shaves, or server rejection alerts).</li>
+    </ul>
+</section>
+
+<section id="manual-panel-technical-intel-deck" class="doc-section">
+    <h2>13. Manual Panel & Technical Intel Deck</h2>
+    <p>Sitting to the immediate right of the configuration dashboard, the Manual Panel provides standalone discretionary execution power paired with an institutional-grade technical intelligence engine that evaluates real-time order flow and multi-timeframe trends.</p>
+    <ul>
+        <li><strong>ORDER FLOW (HTF Bias Score):</strong> An advanced analysis engine that computes structural bias on a Higher Timeframe (HTF, e.g., H1) using a proprietary <strong>Trade Confidence Matrix</strong>:</li>
+        <li><strong>Multi-Factor Evaluation:</strong> Weighs confluence factors including Fair Value Gaps (FVGs), Liquidity Sweeps, Market Displacement, and algorithmic Kill Zones.</li>
+        <li><strong>Output:</strong> Displays the dominant bias (<code>BUY BIAS</code> / <code>SELL BIAS</code>) alongside the mathematical confidence score in points (e.g., <code>80pts</code>), giving you instant insight into institutional momentum.</li>
+        <li><strong>TF SCANNER (Timeframe Matrix):</strong> A sequential micro-trend scanner evaluating market structure simultaneously across <strong>M1</strong>, <strong>M5</strong>, and <strong>M15</strong> intervals. It ensures your rapid manual entries are fully synchronized with the broader macro Order Flow.</li>
+        <li><strong>BID / ASK Telemetry:</strong> Dedicated real-time price display providing instant visual tracking of broker Ask/Bid quote mechanics.</li>
+        <li><strong>Standalone Execution Controls:</strong> Complete manual sizing controls (<code>LOT SIZE</code> and hard <code>STOP LOSS</code> price inputs) isolated from Copier settings, paired with high-visibility <code>BUY</code> and <code>SELL</code> execution triggers.</li>
+        <li><strong>Precision Layer & Trade Management Console:</strong> High-IQ manual overrides providing surgical control over entries and protection thresholds:</li>
+        <li><strong>Direct LIMIT Buttons (<code>BUY LIMIT</code> / <code>SELL LIMIT</code>):</strong> Generates customized pending limit orders exactly at the price level typed into the corresponding input field.</li>
+        <li><strong>TP Synchronization (<code>BUY TP</code> / <code>SELL TP</code>):</strong> Instantly modifies the Take Profit of <strong>ALL</strong> open positions and pending orders on the chart to align perfectly with the typed target price, perfect for mass-synchronizing to key resistance zones.</li>
+        <li><strong>SL Synchronization (<code>BUY SL</code> / <code>SELL SL</code>):</strong> Instantly overwrites the Stop Loss of <strong>ALL</strong> open positions and pending orders on the chart to match the typed protective price level.</li>
+        <li><strong>The PUSH SL Engine (<code>PUSH BUY SL</code> / <code>PUSH SELL SL</code>):</strong> A proprietary one-click trailing engine. Reads the pip value in the center input (e.g., <code>10.0</code>) and instantly <strong>shifts (pushes)</strong> the Stop Loss of all open positions and pending orders closer to current profit (moving Buy SLs UP or Sell SLs DOWN) relative to their current SL or entry price. It acts as a rapid manual shield to secure capital during sudden breakouts!</li>
+    </ul>
+</section>
+
+<section id="intraday-extension-panels-trades-levels-helper" class="doc-section">
+    <h2>14. Intraday Extension Panels (Trades & Levels Helper)</h2>
+    <p>Expands a secondary visual intelligence dock when clicking the <strong><code>TRADES</code></strong> utility button on the top bar:</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">Sub-Tab A: 💼 TRADES (Portfolio Dock)</h3>
+    <p>Provides clean, grouped oversight of your active exposure:</p>
+    <ul>
+        <li><strong>Family Grouping:</strong> Bundles individual grid orders into their parent families (e.g., manual trades vs. channel grids).</li>
+        <li><strong>Total Profit Tracker:</strong> Monitors combined real-time floating P&L specifically for each family.</li>
+        <li><strong>One-Click Liquidation:</strong> Click the dedicated <strong><code>CLOSE</code></strong> button next to any family to instantly close that specific grid without affecting others.</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">Sub-Tab B: 📊 LEVELS (Technical Assistant)</h3>
+    <p>An on-chart analyst that auto-generates critical market boundaries:</p>
+    <ul>
+        <li><strong>Intraday Pivots:</strong> Automatically calculates the Daily Pivot Point (PP), Resistance levels (R1-R3), and Support levels (S1-S3).</li>
+        <li><strong>Live Gap Matrix:</strong> Dynamically tracks current Bid price and lists the <strong>exact real-time pip distance</strong> to every major support and resistance line.</li>
+    </ul>
+</section>
+
+<section id="ergonomic-action-buttons-ui-modes" class="doc-section">
+    <h2>15. Ergonomic Action Buttons & UI Modes</h2>
+    <p>Clicking the <strong><code>📊 FULL / MINI</code></strong> utility button on the top bar adapts the dashboard's layout spacing based on the active view mode to maximize ergonomic execution:</p>
+    <ul>
+        <li><strong>Execution Grids:</strong> Depending on view, rapid-fire controls provide instant trading power:</li>
+        <li><strong><code>SELL</code></strong> & <strong><code>BUY</code></strong>: Instant order execution.</li>
+        <li><strong><code>CLOSE LIMITS</code></strong>: Deletes all outstanding pending grid orders on the broker server.</li>
+        <li><strong><code>CLOSE ALL</code></strong>: Flattens all open positions for this specific chart immediately.</li>
+        <li><strong>Live Analytics (Full Mode):</strong> Populates the left panel with Equity Protection thresholds, live Floating Profit/Spread displays, and an integrated System Status log footer.</li>
+        <li><strong>Operational States:</strong> Uses high-contrast operational color states (Amber Gold, Oceans Cyan) to make active trading modes instantly recognizable.</li>
+    </ul>
+</section>
+
+<section id="core-pip-scaling-goldxauusd-scaling" class="doc-section">
+    <h2>16. Core Pip Scaling (Gold/XAUUSD Scaling)</h2>
+    <p>The EA's pip calculation is optimized for Gold and standard Forex charts:</p>
+    <ul>
+        <li><strong>1 Pip on Gold (<code>XAUUSD</code>)</strong> = <strong>$0.10</strong></li>
+        <li><strong>10 Pips on Gold (<code>XAUUSD</code>)</strong> = <strong>$1.00</strong></li>
+        <li>A <strong>50 pip</strong> Stop Loss translates exactly to <strong>$5.00</strong> of price movement.</li>
+        <li>A <strong>10 pip</strong> Ladder Step spaces out your limit tiers by <strong>$1.00</strong> of price movement.</li>
+    </ul>
+</section>
+
+<section id="ui-modes-sync-safety-engines" class="doc-section">
+    <h2>17. UI Modes Sync & Safety Engines</h2>
+    <p>To prevent strategic conflicts, the EA automatically adjusts the panel buttons when selecting modes:</p>
+    <ul>
+        <li><strong>Enabling TP AUTO:</strong> Automatically configures Partials to <strong>LADDER</strong>, Harvesting to <strong>OFF</strong>, and Auto Stop Loss Move to <strong>ON</strong>. This ensures the Distributed TP Ladder runs safely and initiates Break-Even right when TP1 is hit.</li>
+        <li><strong>Hardened Chart Layout Redraw:</strong> To maintain precise alignment when changing charts, altering timeframes, or loading MT5 profiles, the <code>CHARTEVENT_CHART_CHANGE</code> engine automatically cleanses visual elements, resets the UI initialization states, and forces a dynamic, pixel-perfect rebuild.</li>
+        <li><strong>Intelligent Input Protection:</strong> Built-in guards ensure that typing new numbers into input fields is smooth, instant, and never loses focus during volatile markets.</li>
+    </ul>
+</section>
+
+<section id="the-copier-bridge-desktop-engine" class="doc-section">
+    <h2>18. The Copier Bridge Desktop Engine</h2>
+    <p>The <strong>Telegram Copier Bridge</strong> (<code>GoldScalperBridge.exe</code>) is the high-speed external engine that connects your community alerts directly to your trading terminal. It logs into your Telegram account, listens to your chosen signal channels, and transforms unstructured chat text into precise trade data delivered to the EA in under 50ms via named pipe IPC.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">1. Setup & Initial Credentials</h3>
+    <p>When launched for the first time, the bridge initiates a secure interactive setup wizard:</p>
+    <ul>
+        <li><strong>API Registration:</strong> Prompts for your Telegram API ID and Hash. (Pressing ENTER defaults to our secure, optimized Telegram App Engine).</li>
+        <li><strong>Secure Authentication:</strong> Asks for your Telegram phone number, followed by your Telegram App OTP and 2-step Verification Password (if active). The authentication state is stored securely in your local <code>gsae_session.session</code> file.</li>
+        <li><strong>Channel Subscription Matrix:</strong> Reads and displays up to 50 of your active groups/channels. You select target channels by typing their corresponding list numbers (e.g., <code>1, 4, 7</code>).</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">2. Low-Latency Signal Delivery (Socket IPC)</h3>
+    <p>In the bridge's <strong>API Settings</strong> panel, scroll to the <strong>"Low-Latency Signal Delivery"</strong> section:</p>
+    <ul>
+        <li><strong>Enable Socket IPC:</strong> When checked, the bridge establishes a high-speed local TCP socket server. The EA connects to this socket and receives signals instantly via network-byte-order IPC, bypassing disk I/O entirely.</li>
+        <li><strong>Performance & Ports:</strong> Reduces signal latency from ~250ms (file polling) to under 10ms (socket connection). It runs on port <code>28731</code> by default.</li>
+        <li><strong>Multi-Instance:</strong> Each MT5 profile gets its own local port automatically (e.g. instance 1 on <code>28731</code>, instance 2 on <code>28732</code>, etc.).</li>
+        <li><strong>Backward Compatibility:</strong> If the bridge has Socket IPC disabled, the EA silently falls back to file polling at a default 250ms interval. No configuration changes required.</li>
+        <li><strong>MT5 Requirement:</strong> The EA must have "Allow DLL imports" enabled in the Properties → Common tab to utilize Winsock library connections.</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">2. Intelligent Parsing & Conversational Commands</h3>
+    <p>The bridge's text interpreter is designed to extract precise trading data from diverse, unstructured formats:</p>
+    <ul>
+        <li><strong>Structure Extractor:</strong> Identifies Order Direction (<code>BUY</code> / <code>SELL</code>), Entry Zones (<code>@1950 - 1948</code>), Stop Losses (<code>SL</code>), and scales up to <strong>TP10</strong> (<code>TP1</code> to <code>TP10</code> or consecutive <code>TP</code> listings).</li>
+        <li><strong>Conversational Command Gate:</strong> Monitors for real-time administrative commands typed by channel leaders and instantly maps them to EA global actions:</li>
+        <li><strong><code>CMD,CLOSE_ALL</code>:</strong> Triggered by phrases like <code>CLOSE ALL</code>, <code>CLOSE NOW</code>, <code>I AM OUT</code>, <code>EXIT TRADE</code>, or <code>CANCEL SETUP</code>.</li>
+        <li><strong><code>CMD,RISK_FREE</code>:</strong> Triggered by phrases like <code>RISK FREE</code>, <code>SECURE RUNNERS</code>, <code>MOVE TO BE</code>, <code>BREAK EVEN</code>, or <code>LOCK PROFITS</code>.</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">3. Strict Anti-Noise Filter Suite</h3>
+    <p>To protect your capital from unintentional activations, the bridge executes five rigorous filtering checks on every incoming message:</p>
+    <ul>
+        <li><strong>Strict Chatter Guard:</strong> Rejects any message containing zero numerical levels (no entries/TPs/SLs) unless it contains explicit entry confirmation tokens like <code>NOW</code>, <code>MARKET</code>, <code>GO</code>, or <code>LIVE</code>.</li>
+        <li><strong>Media Isolation:</strong> Automatically ignores any message containing a <strong>Photo</strong> or <strong>Voice Note</strong> to avoid false parsing of charts or banter.</li>
+        <li><strong>Forwarding Protection:</strong> Detects and automatically discards forwarded messages to eliminate cross-channel echo.</li>
+        <li><strong>Status Updates Filter:</strong> Ignores messages stating <code>"AT TPx"</code> (e.g., "Gold at TP1") to prevent re-firing filled setups.</li>
+        <li><strong>Keyword Matrix:</strong> Filters out any unstructured chatter that doesn't contain the explicit instrument identifiers <strong><code>GOLD</code></strong> or <strong><code>XAU</code></strong> (excluding emergency exit commands).</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">4. Advanced Smart Mechanics</h3>
+    <ul>
+        <li><strong>Smart Split-Signal Merging:</strong> If an analyst posts an immediate entry signal (e.g., <code>"BUY GOLD NOW"</code>) and then replies to their own message 2 minutes later with the targets (<code>"SL: 1930, TP1: 1950"</code>), the bridge recognizes the follow-up window (180 seconds). It automatically merges the updates to the original message ID, allowing the EA to update the active ladder cleanly instead of firing duplicate trades!</li>
+        <li><strong>Deduplication Guard:</strong> Utilizes an internal memory cache to drop identical Telegram event payloads generated when members add emoji reactions or edits that do not change text content.</li>
+        <li><strong>Connection Heartbeat Matrix:</strong> Writes a secure timestamp (<code>gsae_signal_heartbeat.txt</code>) every 30 seconds. The MT5 EA actively monitors this file to display a visual "Live Connection" state on your dashboard.</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">5. The Copier Config Menu</h3>
+    <p>Upon restarting, the bridge displays the <strong>GOLD SNIPERS</strong> banner and holds a <strong>3-second non-blocking countdown</strong>. Pressing any key opens the configuration utility:</p>
+    <ul>
+        <li><strong><code>[1]</code> Re-select Telegram Channels (Keeps Login):</strong> Instantly re-scans your Telegram account to select different channels (preserving your active login session).</li>
+        <li><strong><code>[2]</code> Full Factory Reset (Wipes all credentials & config):</strong> Deletes all local configuration files, saved authorization credentials, and local license settings to allow a completely fresh deployment.</li>
+        <li><strong><code>[3]</code> Cancel & Start Bridge Now:</strong> Immediately bypasses the menu and activates active signal monitoring.</li>
+    </ul>
+</section>
+
+<section id="performance-execution-engine-upgrades-v36295" class="doc-section">
+    <h2>19. Performance & Execution Engine Upgrades (v362.95+)</h2>
+    <p>The latest architecture includes massive under-the-hood institutional performance optimizations designed specifically for high-volatility events:</p>
+    <ul>
+        <li><strong>UI Engine Throttling:</strong> Real-time Dashboard redraw requests and session line plotting are now mechanically throttled to prevent terminal freezing and high CPU usage during major news spikes.</li>
+        <li><strong>Optimized Liquidity Matrix (<code>MqlRates</code>):</strong> Core market structure scanning (<code>DetectLiquiditySweep</code> and multi-timeframe scanners) now utilizes optimized <code>CopyRates</code> batch-fetching, significantly reducing latency when identifying wicks and displacement candles.</li>
+        <li><strong>Family Identification Engine:</strong> Positions are now tracked through an upgraded, high-speed <code>GetTrackedFamilyID</code> router, ensuring faster trade grouping and flawless partial-shave calculations during high-speed grid executions.</li>
+    </ul>
+</section>
+
+<section id="advanced-guide-trade-exclusions-command-routing-copier-workflow" class="doc-section">
+    <h2>20. Advanced Guide: Trade Exclusions, Command Routing & Copier Workflow</h2>
+    <p>This section provides an advanced, user-friendly breakdown of how the <strong>Copier Bridge</strong> and the <strong>Gold Scalper EA</strong> interact under the hood, and how to surgically customize trade exclusions, keywords, and automated remote commands.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🔄 The End-to-End Copier Workflow</h3>
+    <p>To help you understand exactly how your signals are copied from Telegram to MetaTrader 5, here is the lifecycle of a copied trade:</p>
+    <ul>
+        <li><strong>Signal Broadcast:</strong> A signal provider posts a message in your subscribed Telegram Channel (e.g., <code>"BUY XAUUSD @ 2030, SL: 2020, TP1: 2035, TP2: 2040"</code>).</li>
+        <li><strong>Bridge Parsing:</strong> The <strong>Copier Bridge Desktop Engine</strong> instantly intercepts the message, processes it through the <strong>Strict Anti-Noise Filters</strong>, and extracts the entry price, Stop Loss, and Take Profits.</li>
+        <li><strong>Secure Delivery:</strong> The Bridge delivers the parsed signal to the EA via named pipe IPC (~50ms latency). As a fallback, it also writes a <code>.tmp</code> file that swaps to a finalized <code>.txt</code> signal file inside the secure shared MetaQuotes Common directory.</li>
+        <li><strong>EA Detection & Context Routing:</strong> The MT5 EA immediately receives the signal, matches the Telegram Channel ID to your preset tab (<strong>CH1</strong> or <strong>CH2</strong>), and extracts the trade context.</li>
+        <li><strong>Filters & Cutoffs Evaluation:</strong> Before execution, the EA verifies:</li>
+        <li>Is the signal older than 60 seconds? (If yes, discarded).</li>
+        <li>Does it contain any configured <strong>Trade Exclusions</strong>? (If yes, ignored).</li>
+        <li>Is the current market price within the <strong>Entry Cutoff</strong> range? (If yes, executed).</li>
+        <li><strong>Instant Execution:</strong> The EA fires the anchor trades and pending limit grid precisely matching your channel settings (CH1 or CH2 lot size, steps, and take profits).</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🚫 How to Configure Trade Exclusions (Keyword Blocking)</h3>
+    <p>You can configure <strong>Trade Exclusions</strong> to prevent specific setups from firing. This is highly useful if a channel provider posts a setup you want to ignore, or posts standard chat messages that look like trades.</p>
+    <ul>
+        <li><strong>Exclusion Keywords Box:</strong> Located in your Copier UI under the <strong>Parsing Settings</strong> tab.</li>
+        <li><strong>How to Add Exclusions:</strong> Enter comma-separated keywords into the <strong>Exclusions</strong> text box (e.g. <code>pending, test, limit, break, demo</code>).</li>
+        <li><strong>Surgical Filtering:</strong> If an incoming message contains <strong>any</strong> of your configured exclusion keywords, the Bridge instantly blocks the signal. The EA will not open any trades, and the Copier log footer will record: <code>"Signal skipped due to exclusion keyword filter."</code></li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">💻 Automated Remote Commands (Conversational Triggers)</h3>
+    <p>The Copier Bridge does not just fire new setups; it listens for active updates from channel leaders to automatically protect your open positions:</p>
+    <ul>
+        <li><strong>Breakeven Commands (<code>CMD,RISK_FREE</code>):</strong></li>
+        <li><strong>Triggers:</strong> Channel updates containing terms like <code>risk free</code>, <code>secure profit</code>, <code>move sl to be</code>, <code>break even</code>, <code>lock profits</code>, <code>sl to entry</code>, or <code>secure now</code>.</li>
+        <li><strong>Action:</strong> The Copier Bridge translates this into a high-speed command. The MT5 EA immediately moves the Stop Loss of <strong>all active trades in that channel's family</strong> to their entry price plus a safety spread buffer, instantly locking in safety.</li>
+        <li><strong>Close All Commands (<code>CMD,CLOSE_ALL</code>):</strong></li>
+        <li><strong>Triggers:</strong> Channel updates containing terms like <code>close all</code>, <code>close now</code>, <code>exit trade</code>, <code>cancel setup</code>, <code>close gold</code>, <code>i am out</code>, or <code>exit now</code>.</li>
+        <li><strong>Action:</strong> The Copier Bridge immediately signals a total flat command. The MT5 EA forcefully liquidates all open positions and deletes all pending limit grid levels for that specific channel's family, securing your cash profits immediately.</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">❓ Troubleshooting & Visual State Checks</h3>
+    <ul>
+        <li><strong>The Green Connection Indicator:</strong> Under the <strong>Performance Stats</strong> tab in your Copier, check the <code>Connected Platform</code> card. If it shows a green <strong><code>EA WORKING</code></strong> badge, it means the bridge is actively communicating with the MT5 EA and the connection heartbeat file is successfully ticking!</li>
+        <li><strong>Resetting Stats:</strong> If your metrics contain old phantom broker transactions or balance adjustments from testing, click the crimson <strong><code>🔄 Reset Stats</code></strong> button in the header of the Copier UI to instantly purge the SQLite database and start with a clean slate.</li>
+    </ul>
+</section>
+
+<section id="remote-admin-control-panel-telegram-saved-messages" class="doc-section">
+    <h2>21. Remote Admin Control Panel (Telegram Saved Messages)</h2>
+    <p>The <strong>Remote Admin Control Panel</strong> allows you to fully control the EA from your phone via Telegram <strong>Saved Messages</strong>, without needing to access your computer.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🚀 How to Access</h3>
+    <ul>
+        <li>Open <strong>Telegram</strong> on your phone</li>
+        <li>Navigate to <strong>Saved Messages</strong> (your own chat with yourself)</li>
+        <li>Type <code>/admin</code> and send</li>
+        <li>The Bridge will reply with a numbered text menu</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🎮 Main Control Panel</h3>
+    <p>```</p>
+    <p>🎮 Gold Snipers Control Panel</p>
+    <p>Reply with a number:</p>
+    <ul>
+        <li>⚙️ C1 Settings</li>
+        <li>⚙️ C2 Settings</li>
+        <li>🟢 BUY NOW</li>
+        <li>🔴 SELL NOW</li>
+        <li>📊 Status</li>
+        <li>❌ Close All</li>
+        <li>🛡 Risk Free</li>
+        <li>🚫 Cancel Limits</li>
+    </ul>
+    <p>```</p>
+    <p><strong>Reply with a number</strong> (e.g., type <code>1</code> and send) to select an option.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">⚙️ Channel Settings Menu</h3>
+    <p>Reply <code>1</code> or <code>2</code> to access C1 or C2 settings:</p>
+    <p>```</p>
+    <p>⚙️ C1 Settings</p>
+    <p>Reply with a number:</p>
+    <ul>
+        <li>💰 Lot Size</li>
+        <li>🎯 Anchors</li>
+        <li>📊 Levels</li>
+        <li>✂️ Cutoff</li>
+        <li>🌾 Harvest</li>
+        <li>🪜 Partials</li>
+        <li>🛡 Auto SL</li>
+        <li>📏 SL Pips</li>
+        <li>🎯 TP Mode</li>
+        <li>🚫 Cancel Lvl</li>
+        <li>⚡ BE Trigger</li>
+        <li>📍 BE Ref</li>
+        <li>← Back</li>
+    </ul>
+    <p>```</p>
+    <p>Then reply with a number to set the value. Example flow:</p>
+    <p>```</p>
+    <p>You: /admin</p>
+    <p>Bot: 🎮 Gold Snipers Control Panel (menu)</p>
+    <p>You: 1</p>
+    <p>Bot: ⚙️ C1 Settings (menu)</p>
+    <p>You: 1</p>
+    <p>Bot: 💰 C1 Lot Size (options: 1. 0.01, 2. 0.02, etc.)</p>
+    <p>You: 5</p>
+    <p>Bot: ✅ C1 Lot Size updated to 0.20</p>
+    <p>```</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">💰 Instant Trading Commands</h3>
+    <p style="margin-left: 15px;">• Command : Action</p>
+    <p style="margin-left: 15px;">• <strong>3</strong> : Execute BUY ladder using current copier settings</p>
+    <p style="margin-left: 15px;">• <strong>4</strong> : Execute SELL ladder using current copier settings</p>
+    <p style="margin-left: 15px;">• <strong>6</strong> : Close all open positions and pending orders</p>
+    <p style="margin-left: 15px;">• <strong>7</strong> : Move all SL to break-even + harvest buffer</p>
+    <p style="margin-left: 15px;">• <strong>8</strong> : Delete all pending limit orders</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">📊 Status Queries</h3>
+    <p>Reply <strong>5</strong> to receive real-time account telemetry:</p>
+    <ul>
+        <li><strong>Balance</strong> — Current account balance</li>
+        <li><strong>Equity</strong> — Current equity</li>
+        <li><strong>Open PnL</strong> — Combined floating profit/loss</li>
+        <li><strong>Active Trades</strong> — Number of open positions</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🔒 Security</h3>
+    <ul>
+        <li><strong>Owner-only:</strong> Commands are accepted <strong>only from your Telegram account</strong> (detected automatically via Saved Messages)</li>
+        <li><strong>No configuration required:</strong> Works out of the box — no bot setup, no API keys, no group invites</li>
+        <li><strong>Private by design:</strong> All commands and responses stay entirely within your own Saved Messages</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">⚡ How It Works</h3>
+    <ul>
+        <li>You type <code>/admin</code> in Saved Messages</li>
+        <li>Bridge sends a numbered menu</li>
+        <li>You reply with a number (e.g., <code>1</code>, <code>5</code>, <code>0</code>)</li>
+        <li>Bridge writes a command file</li>
+        <li>EA's background timer polls and executes within 250ms</li>
+        <li>EA writes a response JSON</li>
+        <li>Bridge sends confirmation back to Saved Messages</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">📝 Command Reference</h3>
+    <p>The numbered menus translate into these internal commands:</p>
+    <p>```</p>
+    <p>SET C1 LOT_ANC 0.05      → Update Channel 1 anchor lot</p>
+    <p>SET C2 CUTOFF 15         → Update Channel 2 signal cutoff to 15 pips</p>
+    <p>CMD BUY_NOW              → Execute buy ladder</p>
+    <p>CMD CLOSE_ALL            → Flatten all positions</p>
+    <p>GET STATUS               → Query balance, equity, PnL</p>
+    <p>```</p>
+</section>
+
+<section id="mt5-input-settings-reference" class="doc-section">
+    <h2>22. MT5 Input Settings Reference</h2>
+    <p>This section provides a complete, structured reference of all user-configurable input parameters inside the MetaTrader 5 Expert Advisor (<code>Gold_Snipers.mq5</code>).</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">📡 Telegram Copier Defaults (Channel 1 & Channel 2)</h3>
+    <p>The copier supports two independent channels, each with a symmetrical set of parameters prefixed with <code>InpC1_</code> or <code>InpC2_</code>.</p>
+    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
+    <p style="margin-left: 15px;">• <code>InpSignalFile</code> : Enum : <code>SIGNAL_FILE_1</code> : Selects which copier profile file (<code>gsae_signal.txt</code> to <code>gsae_signal6.txt</code>) this EA chart instance listens to.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_ID</code> : String : <code>""</code> : The numerical Telegram Chat ID of the signal channel/group (e.g., <code>-100123456789</code>).</p>
+    <p style="margin-left: 15px;">• <code>InpCx_Name</code> : String : <code>"Channel X"</code> : A custom display name for the channel, shown on the copier dashboard sub-tabs.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_Active</code> : Bool : <code>true</code> : Toggles whether the copier actively monitors and executes signals from this channel.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_LotAnc</code> : Double : <code>0.01</code> : Lot size used for the primary market execution orders (Anchors).</p>
+    <p style="margin-left: 15px;">• <code>InpCx_LotPen</code> : Double : <code>0.01</code> : Lot size used for pending limit grid orders (Pendings).</p>
+    <p style="margin-left: 15px;">• <code>InpCx_Anchors</code> : Int : <code>1</code> : Number of immediate market orders (Anchors) to execute when a signal triggers.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_Pendings</code> : Int : <code>1</code> : Number of pending limit orders placed at each tier down the ladder grid.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_Levels</code> : Int : <code>5</code> : Total depth of the ladder grid (number of limit grid tiers generated).</p>
+    <p style="margin-left: 15px;">• <code>InpCx_TPMode</code> : Int : <code>2</code> (ON) : Take Profit target mode: <code>0</code> = OFF (Disabled), <code>1</code> = STEALTH (monitored locally and hidden from broker), <code>2</code> = ON (hard TP targets sent to the broker).</p>
+    <p style="margin-left: 15px;">• <code>InpCx_Partials</code> : Bool : <code>true</code> : Toggles the partial closing/shaving engine for this channel's trades at TP milestones.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_Harvest</code> : Bool : <code>false</code> : Toggles the profit harvesting engine for active ladders, liquidating upper tiers at BE+1.0 pip during deep pullbacks.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_AutoSL</code> : Bool : <code>true</code> : Toggles automatic Stop Loss adjustment to Break-Even when a specific TP target is hit.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_CancelPendingLevel</code> : Int : <code>2</code> (TP2) : The Take Profit milestone at which outstanding unhit pending limit orders are automatically deleted.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_TriggerBELevel</code> : Int : <code>2</code> (TP2) : The Take Profit milestone at which the Break-Even engine is triggered, securing the position.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_AllowCmds</code> : Bool : <code>false</code> : Determines whether the EA processes remote conversational commands (e.g., <code>Risk Free</code>, <code>Close All</code>) sent by channel admins.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_LateGuardPips</code> : Int : <code>0</code> (OFF) : Signal Cutoff threshold. If the market price is further than this distance from the original signal price, it prevents entry. If within range, it will enter at market price. Set to <code>0</code> to disable late signal filtering.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_AncShave</code> : Bool : <code>true</code> : Anchor Unified TP toggle. When <code>true</code> (Unified), all anchors target the deepest TP level and participate in partial shaving. When <code>false</code> (Distributed), anchors exit 100% at staggered levels (e.g. TP1, TP2, TP3) and bypass partial shaving.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_SL</code> : Double : <code>50.0</code> : Stop Loss distance in pips for the channel's order family.</p>
+    <p style="margin-left: 15px;">• <code>InpCx_TP1</code> to <code>TP10</code> : Double : (staged) : Target distances in pips from anchor entry for Take Profits 1 through 10. (TP1=30, TP2=50, TP3=80, TP4=100, TP5=130, TP6-10=0)</p>
+    <p style="margin-left: 15px;">• <code>InpCx_Pct1</code> to <code>Pct10</code> : Double : (staged) : Percentage of position volume to close at each Take Profit target. (Pct1-4=20%, Pct5=100%, Pct6-10=0%)</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🪜 Channel 1 & 2 Pending TP</h3>
+    <p>Custom Take Profits and close percentages applied specifically to pending limit orders in the ladder grid.</p>
+    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
+    <p style="margin-left: 15px;">• <code>InpCx_TP_PEN1</code> to <code>TP_PEN10</code> : Double : (staged) : Take Profit target distances in pips for pending limit orders. (PEN1=40, PEN2=70, PEN3=110, PEN4=150, PEN5=250, PEN6-10=0)</p>
+    <p style="margin-left: 15px;">• <code>InpCx_Pct_PEN1</code> to <code>Pct_PEN10</code> : Double : (staged) : Close volume percentages at each TP target for pending limit orders. (PEN1-4=20%, PEN5=100%, PEN6-10=0%)</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">⏰ Main Session Lines</h3>
+    <p>Controls the visual rendering of session ranges on the MT5 chart.</p>
+    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
+    <p style="margin-left: 15px;">• <code>InpDrawSessionLines</code> : Bool : <code>false</code> : Draws Asia, London, and NY high/low range lines on the chart.</p>
+    <p style="margin-left: 15px;">• <code>InpRemoveSweptLevels</code> : Bool : <code>true</code> : Auto-hides session lines on the chart once the price crosses/sweeps them.</p>
+    <p style="margin-left: 15px;">• <code>InpSessionLookbackDays</code> : Int : <code>2</code> : Number of history days to calculate and draw session lines for.</p>
+    <p style="margin-left: 15px;">• <code>InpAsiaHighColor</code> / <code>LowColor</code> : Color : <code>clrBlack</code> : Colors used to draw Asia session high and low lines.</p>
+    <p style="margin-left: 15px;">• <code>InpLondonHighColor</code> / <code>LowColor</code> : Color : <code>clrBlack</code> : Colors used to draw London session high and low lines.</p>
+    <p style="margin-left: 15px;">• <code>InpNYHighColor</code> / <code>LowColor</code> : Color : <code>clrBlack</code> : Colors used to draw New York session high and low lines.</p>
+    <p style="margin-left: 15px;">• <code>InpSessionLabelColor</code> : Color : <code>clrBlack</code> : Color of text labels on session lines.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🏹 Custom Killzones (Server Time GMT+3 Defaults)</h3>
+    <p>Draws color-shaded rectangles on the chart matching specific trading sessions.</p>
+    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
+    <p style="margin-left: 15px;">• <code>InpShowKillzones</code> : Bool : <code>false</code> : Draws translucent Killzone rectangles on the chart.</p>
+    <p style="margin-left: 15px;">• <code>InpKillzoneLookbackDays</code> : Int : <code>2</code> : Number of trading days of Killzones to draw on the chart.</p>
+    <p style="margin-left: 15px;">• <code>InpKillzoneLabelColor</code> : Color : <code>clrBlack</code> : Label text color for the Killzone indicators.</p>
+    <p style="margin-left: 15px;">• <code>InpZone1_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code> : Mixed : (staged) : Asia Zone color and hours (4:00 - 11:00 server time).</p>
+    <p style="margin-left: 15px;">• <code>InpZone2_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code> : Mixed : (staged) : London Zone color and hours (11:00 - 16:00 server time).</p>
+    <p style="margin-left: 15px;">• <code>InpZone3_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code> : Mixed : (staged) : Overlap Zone color and hours (16:00 - 20:00 server time).</p>
+    <p style="margin-left: 15px;">• <code>InpZone4_Color</code>, <code>StartHour</code>, <code>StartMin</code>, <code>EndHour</code>, <code>EndMin</code> : Mixed : (staged) : New York Zone color and hours (20:00 - 1:00 server time).</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🧠 Institutional Engine</h3>
+    <p>Parameters governing the smart Trend Bias and displacement detection filters.</p>
+    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
+    <p style="margin-left: 15px;">• <code>InpTradingStyle</code> : Enum : <code>STYLE_SWING</code> : EMA strategy bias used: <code>STYLE_LONG_TERM</code> (200 EMA), <code>STYLE_SWING</code> (50 EMA), <code>STYLE_DAY</code> (9/20 EMA Cross).</p>
+    <p style="margin-left: 15px;">• <code>InpHTFTimeframe</code> : Enum : <code>PERIOD_H1</code> : Higher timeframe utilized by the HTF Scanner to calculate structural order flow.</p>
+    <p style="margin-left: 15px;">• <code>InpDisplacementMult</code> : Double : <code>1.5</code> : Minimum candle body size relative to average body size required to qualify as a displacement candle.</p>
+    <p style="margin-left: 15px;">• <code>InpVolumeMult</code> : Double : <code>1.2</code> : Minimum tick volume relative to average volume required to confirm structural displacement.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">⚙️ Basic Defaults</h3>
+    <p>Default startup settings and core risk parameters.</p>
+    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
+    <p style="margin-left: 15px;">• <code>InpStartupMode</code> : Enum : <code>STARTUP_COPIER</code> : UI view mode on startup: <code>STARTUP_COPIER</code> (Mini Copier Panel), <code>STARTUP_FULL</code> (Side-by-Side Panel), <code>STARTUP_MANUAL</code> (Manual Only).</p>
+    <p style="margin-left: 15px;">• <code>InpMinimalCustomerUI</code> : Bool : <code>true</code> : Toggles a simplified dashboard layout, hiding advanced parameter settings from the chart.</p>
+    <p style="margin-left: 15px;">• <code>InpEnableTelegram</code> : Bool : <code>true</code> : Master toggle to enable processing of incoming signal files from the Telegram Bridge.</p>
+    <p style="margin-left: 15px;">• <code>InpLotSize</code> : Double : <code>0.01</code> : Default lot size per trade for manual dashboard orders.</p>
+    <p style="margin-left: 15px;">• <code>InpStopLossPips</code> : Double : <code>50.0</code> : Default protective Stop Loss distance in pips for manual trades.</p>
+    <p style="margin-left: 15px;">• <code>InpUseDynamicATR</code> : Bool : <code>false</code> : Enables Average True Range (ATR) calculation for dynamic SL and TP targets.</p>
+    <p style="margin-left: 15px;">• <code>InpATRPeriod</code> : Int : <code>14</code> : Indicator period for ATR calculation lookback.</p>
+    <p style="margin-left: 15px;">• <code>InpATR_SL_Mult</code> : Double : <code>1.5</code> : Volatility multiplier used to calculate the dynamic Stop Loss.</p>
+    <p style="margin-left: 15px;">• <code>InpATR_TP1_Mult</code> : Double : <code>1.5</code> : Volatility multiplier used to calculate the dynamic TP1 target.</p>
+    <p style="margin-left: 15px;">• <code>InpMagic</code> : Int : <code>26022791</code> : EA Magic Number. Uniquely labels and isolates this EA instance's trades on the account.</p>
+    <p style="margin-left: 15px;">• <code>InpDefaultEquityProtect</code> : Double : <code>0.0</code> : Startup Equity Protection target ($): A positive value acts as a profit target; a negative value acts as a drawdown cash floor. <code>0.0</code> disables.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">📊 Visual FVG & Order Blocks</h3>
+    <p>Settings for the Fair Value Gap (FVG) and Order Block (OB) scanner and on-chart visualizations.</p>
+    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
+    <p style="margin-left: 15px;">• <code>InpFVGLookback</code> : Int : <code>100</code> : Lookback depth in bars to scan for FVGs and OBs.</p>
+    <p style="margin-left: 15px;">• <code>InpDrawOrderBlocks</code> : Bool : <code>true</code> : Toggles drawing of institutional Order Block zones.</p>
+    <p style="margin-left: 15px;">• <code>InpDrawFVG</code> : Bool : <code>true</code> : Toggles drawing of FVG imbalance rectangles.</p>
+    <p style="margin-left: 15px;">• <code>InpDrawIOFArrows</code> : Bool : <code>false</code> : Enables drawing of trade entry and stop loss arrows on 50% mitigation events.</p>
+    <p style="margin-left: 15px;">• <code>InpEnableFVGMitigationAlerts</code> : Bool : <code>true</code> : Enables alerts when the price mitigates 50% of an active FVG.</p>
+    <p style="margin-left: 15px;">• <code>InpBuyOBColor</code> / <code>SellOBColor</code> : Color : <code>clrGreen</code>/<code>clrRed</code> : Colors used to draw Bullish and Bearish Order Blocks.</p>
+    <p style="margin-left: 15px;">• <code>InpBuyPeakOBColor</code> / <code>SellPeakOBColor</code> : Color : <code>clrTeal</code>/<code>clrDarkRed</code> : Colors used to draw Extreme/Peak structural swing Order Blocks.</p>
+    <p style="margin-left: 15px;">• <code>InpPeakLookback</code> : Int : <code>15</code> : Lookback period in bars used to locate peak swing structures.</p>
+    <p style="margin-left: 15px;">• <code>InpBuyFVGColor</code> / <code>SellFVGColor</code> : Color : <code>clrLimeGreen</code>/<code>clrYellow</code> : Colors used to draw Bullish and Bearish FVG zones.</p>
+    <p style="margin-left: 15px;">• <code>InpFillFVG</code> : Bool : <code>true</code> : If true, FVG rectangles are drawn as filled boxes. If false, they are outlines.</p>
+    <p style="margin-left: 15px;">• <code>InpFVGExtensionBars</code> : Int : <code>20</code> : Number of bars to extend the FVG box forward on the chart.</p>
+    <p style="margin-left: 15px;">• <code>InpFVGPartialMitigation</code> : Bool : <code>true</code> : If true, FVGs mitigate (hide) when the price sweeps 50% of the zone. If false, they require full sweeps.</p>
+    <p style="margin-left: 15px;">• <code>InpRefreshMs</code> : Int : <code>250</code> : Scanner refresh execution delay in milliseconds.</p>
+    <p style="margin-left: 15px;">• <code>InpmidLineColor</code> / <code>Style</code> : Mixed : <code>clrGray</code> / <code>STYLE_DOT</code> : Color and line style settings for the FVG 50% midline.</p>
+    <p style="margin-left: 15px;">• <code>InpFvgDispFilter</code> : Bool : <code>true</code> : If true, FVGs are only valid if formed by a high-momentum candle meeting displacement multipliers.</p>
+    <p style="margin-left: 15px;">• <code>InpFvgAvgBodyPeriod</code> : Int : <code>10</code> : Lookback period for calculating average candle body size.</p>
+    <p style="margin-left: 15px;">• <code>InpFvgBodyMult</code> : Double : <code>1.5</code> : Minimum body size multiplier to qualify for displacement.</p>
+    <p style="margin-left: 15px;">• <code>InpFvgMinGapPips</code> : Double : <code>3.0</code> : Filters out micro-imbalances; gaps must be wider than this in pips to be drawn.</p>
+    <p style="margin-left: 15px;">• <code>InpObStructFilter</code> : Bool : <code>false</code> : If true, an Order Block is only valid if it resulted in a subsequent Break of Structure (BOS) or Market Structure Shift (MSS).</p>
+    <p style="margin-left: 15px;">• <code>InpObExtraDisplacement</code> : Bool : <code>false</code> : Requires structural displacement on the leg that created the Order Block.</p>
+    <p style="margin-left: 15px;">• <code>InpObLinkFvg</code> : Bool : <code>false</code> : If true, an Order Block is only valid if it overlaps with its corresponding FVG zone.</p>
+    <p style="margin-left: 15px;">• <code>InpObFvgLinkMode</code> : Enum : <code>OB_FVG_LINK_OVERLAP</code> : Link validation mode: <code>OB_FVG_LINK_OVERLAP</code> (overlaps FVG), <code>CONTAIN_CANDLE</code> (contains FVG candle), <code>CONTAIN_BODY</code> (contains FVG candle body).</p>
+    <p style="margin-left: 15px;">• <code>InpObFvgNearPips</code> : Double : <code>2.0</code> : Proximity tolerance in pips for links that are close but not strictly overlapping.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🛡️ Safety & Execution</h3>
+    <p>Critical protection barriers governing order placement and slippage.</p>
+    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
+    <p style="margin-left: 15px;">• <code>InpUsePipe</code> : Bool : <code>false</code> : Enables TCP socket IPC for low-latency signal delivery. The bridge runs a local socket server; the EA connects as a client. File polling is still used as fallback. Requires "Allow DLL imports" in MT5.</p>
+    <p style="margin-left: 15px;">• <code>InpMaxSpreadPips</code> : Double : <code>4.0</code> : Maximum broker spread in pips. Rejects execution of new trades if current spread exceeds this.</p>
+    <p style="margin-left: 15px;">• <code>InpDefaultGuardPips</code> : Double : <code>10.0</code> : The maximum deviation/slippage in pips allowed when Signal Cutoff is active (Default Guard Mode).</p>
+    <p style="margin-left: 15px;">• <code>InpSafetyCapPips</code> : Int : <code>10</code> : Baseline fallback slippage/guard limit in pips used when Signal Cutoff is disabled (0).</p>
+    <p style="margin-left: 15px;">• <code>InpSlippage</code> : Ulong : <code>20</code> : Broker-level slippage tolerance in points.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🪜 Ladder & Harvesting</h3>
+    <p>Defaults governing manually fired ladder grids and harvest targets.</p>
+    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
+    <p style="margin-left: 15px;">• <code>InpLadderTrades</code> : Int : <code>5</code> : Default number of pending limit orders placed in manual ladder grids.</p>
+    <p style="margin-left: 15px;">• <code>InpLadderStep</code> : Double : <code>10.0</code> : Pip step distance between each level in the ladder grid.</p>
+    <p style="margin-left: 15px;">• <code>InpAnchorEntries</code> : Int : <code>1</code> : Default number of anchor orders executed at market price for manual ladders.</p>
+    <p style="margin-left: 15px;">• <code>InpPendingEntries</code> : Int : <code>5</code> : Default number of pending orders placed per tier in manual ladders.</p>
+    <p style="margin-left: 15px;">• <code>InpHarvestPips</code> : Double : <code>1.0</code> : Profit cushion in pips added to Break-Even when a tier is harvested.</p>
+    <p style="margin-left: 15px;">• <code>InpCancelPendingOnTP</code> : Bool : <code>true</code> : If enabled, remaining pending limit orders are automatically deleted when the price triggers a configured Take Profit target.</p>
+    <p style="margin-left: 15px;">• <code>InpCancelPendingTPLevel</code> : Int : <code>2</code> (TP2) : The specific TP milestone that triggers deletion of remaining pending limit orders.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🔄 Auto SL Move & Trailing</h3>
+    <p>Protective actions that secure trades and trail profits dynamically.</p>
+    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
+    <p style="margin-left: 15px;">• <code>InpEnableAutoSLM</code> : Bool : <code>true</code> : Toggles whether the auto Stop Loss move to Break-Even is active on startup.</p>
+    <p style="margin-left: 15px;">• <code>InpShowVirtualTPs</code> : Bool : <code>false</code> : If true, renders visual stealth TP lines on the chart.</p>
+    <p style="margin-left: 15px;">• <code>InpTP1_TriggerLevel</code> : Int : <code>3</code> (TP3) : The TP target milestone that triggers the first auto Break-Even move.</p>
+    <p style="margin-left: 15px;">• <code>InpBreakEvenLockPips</code> : Double : <code>1.0</code> : Pip cushion added to the entry price when moving Stop Loss to Break-Even.</p>
+    <p style="margin-left: 15px;">• <code>InpManualSLPushPips</code> : Double : <code>10.0</code> : Distance in pips used when hitting the manual "PUSH SL" button on the dashboard.</p>
+    <p style="margin-left: 15px;">• <code>InpBE_RefMode</code> : Enum : <code>BE_REF_ENTRY</code> : BE calculation mode. <code>BE_REF_ENTRY</code> tracks each position's own entry price; <code>BE_REF_ANCHOR</code> tracks all positions relative to the high anchor price.</p>
+    <p style="margin-left: 15px;">• <code>InpTrailDistance</code> : Double : <code>20.0</code> : Trailing stop distance in pips behind the current market price.</p>
+    <p style="margin-left: 15px;">• <code>InpTrailStep</code> : Double : <code>5.0</code> : Minimum step increment in pips for trailing stops.</p>
+    <p style="margin-left: 15px;">• <code>InpTrailPadding</code> : Double : <code>15.0</code> : Distance in pips added as structural buffer behind candlestick wicks or fractals.</p>
+    <p style="margin-left: 15px;">• <code>InpSignalRRRatio</code> : Double : <code>2.0</code> : Risk-to-Reward ratio used by the internal scanner signal engine.</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🌎 Global Sync Partials</h3>
+    <p>Default Take Profit distances and close percentages for manual grids and default behavior.</p>
+    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
+    <p style="margin-left: 15px;">• <code>InpTP1_Pips</code> to <code>TP5_Pips</code> : Double : (staged) : Target distances in pips from entry for global Take Profits 1 through 5. (TP1=30, TP2=50, TP3=80, TP4=100, TP5=130, TP6-10=0)</p>
+    <p style="margin-left: 15px;">• <code>InpTP1_ClosePct</code> to <code>TP5_ClosePct</code> : Double : (staged) : Percentage of position volume to close at each global TP milestone. (TP1-4=20%, TP5=100%, TP6-10=0%)</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">💼 Manual Panel TP</h3>
+    <p>Standalone target distances and close percentages specifically for trades entered manually through the dashboard.</p>
+    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
+    <p style="margin-left: 15px;">• <code>InpMan_TP1</code> to <code>TP5</code> : Double : (staged) : Target distances in pips from manual market order entry for TP1 through TP5. (Man_TP1=20, Man_TP2=50, Man_TP3=90, Man_TP4=120, Man_TP5=200, Man_TP6-10=0)</p>
+    <p style="margin-left: 15px;">• <code>InpMan_Pct1</code> to <code>Pct5</code> : Double : (staged) : Percentage of position volume to close at each manual market order TP milestone. (Man_Pct1-2=25%, Man_Pct3-4=20%, Man_Pct5=100%, Man_Pct6-10=0%)</p>
+    <p style="margin-left: 15px;">• <code>InpMan_TP_PEN1</code> to <code>TP_PEN5</code> : Double : (staged) : Target distances in pips from manual pending limit order entry for TP1 through TP5. (PEN1=30, PEN2=60, PEN3=100, PEN4=160, PEN5=250, PEN6-10=0)</p>
+    <p style="margin-left: 15px;">• <code>InpMan_Pct_PEN1</code> to <code>Pct_PEN5</code> : Double : (staged) : Percentage of position volume to close at each manual pending order TP milestone. (PEN1-4=20%, PEN5=100%, PEN6-10=0%)</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🤖 AI Insights (Read-Only Analytics)</h3>
+    <p>AI-powered market analysis displayed in the 4th tab of the trades panel. The AI provides market bias, confidence levels, risk assessment, and key level identification. <strong>The AI has ZERO influence on trade execution</strong> — it is purely informational.</p>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">How It Works</h4>
+    <ul>
+        <li>The EA serializes live market data to <code>gsae_ai_market_data.json</code> (Common Files directory)</li>
+        <li>The Bridge reads the file, sends it to your chosen AI provider</li>
+        <li>The AI returns a structured analysis (JSON with bias, confidence, risk, reasoning, key levels, warnings, market regime, MTF alignment)</li>
+        <li>The Bridge writes the analysis to <code>gsae_ai_insights.txt</code></li>
+        <li>The EA reads the file and displays the results in the AI tab</li>
+    </ul>
+    <p><strong>No trades are placed or modified by the AI.</strong> It reads market data and reports — nothing more.</p>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">EA Input Parameters</h4>
+    <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
+    <p style="margin-left: 15px;">• <code>InpAIEnabled</code> : Bool : <code>false</code> : Enables the AI Insights tab in the trades panel.</p>
+    <p style="margin-left: 15px;">• <code>InpAIWriteData</code> : Bool : <code>true</code> : Writes market data JSON file for the bridge to process.</p>
+    <p style="margin-left: 15px;">• <code>InpAIInterval</code> : Int : <code>30</code> : Analysis interval in seconds (minimum 10, maximum 300).</p>
+    <p style="margin-left: 15px;">• <code>InpAICandlesPerTF</code> : Int : <code>20</code> : Number of candles per timeframe in the data payload (5-50).</p>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">Market Data Sent to AI</h4>
+    <p>The EA sends the following to the Bridge for analysis:</p>
+    <ul>
+        <li><strong>OHLCV data</strong> for 5 timeframes (M1, M5, M15, H1, H4) with candle body/wick percentages</li>
+        <li><strong>Swing structure</strong> — detected swing highs and lows across each timeframe</li>
+        <li><strong>EMA trend</strong> — 20/50 EMA crossover per timeframe</li>
+        <li><strong>Indicators</strong> — ATR(14), RSI(14), Bollinger Bands(20, 2.0)</li>
+        <li><strong>Multi-timeframe alignment</strong> — score across H4, H1, M15 (STRONG_BULL → STRONG_BEAR)</li>
+        <li><strong>Market regime</strong> — VOLATILE, RANGING, QUIET, OVERBOUGHT, OVERSOLD</li>
+        <li><strong>FVG & Order Block data</strong> — active Fair Value Gap zones and Order Block top/bottom levels</li>
+        <li><strong>Open positions</strong> — type, lots, entry price, PnL</li>
+        <li><strong>Account risk</strong> — balance, equity, margin usage %</li>
+    </ul>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">AI Tab Display</h4>
+    <p>The AI tab shows a compact, color-coded layout:</p>
+    <ul>
+        <li><strong>Row 1:</strong> Bias (BULLISH/BEARISH/NEUTRAL) with confidence % | Risk level</li>
+        <li><strong>Row 2:</strong> Market regime | MTF alignment</li>
+        <li><strong>Row 3:</strong> Key support/resistance levels (full width)</li>
+        <li><strong>Row 4:</strong> Warnings (full width)</li>
+        <li><strong>Analysis:</strong> 2-3 sentence market reasoning from the AI</li>
+        <li><strong>Footer:</strong> Last update timestamp</li>
+    </ul>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">Bridge AI Configuration</h4>
+    <p>In the Bridge's Settings panel, scroll to "AI Insights Configuration":</p>
+    <ul>
+        <li><strong>Enable AI Insights</strong> — Must be checked for AI to work</li>
+        <li><strong>AI Provider</strong> — Select: Built-in, OpenAI, Anthropic, OpenCode Go, or Ollama</li>
+        <li><strong>API Key</strong> — Your provider's API key (not needed for Built-in or Ollama)</li>
+        <li><strong>Base URL</strong> — Auto-filled based on provider, editable for custom endpoints</li>
+        <li><strong>Model</strong> — Click "Fetch Available Models" or type manually (e.g., <code>deepseek-v4-pro</code>)</li>
+        <li><strong>Interval</strong> — How often to run analysis (default: 30 seconds)</li>
+    </ul>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">Supported AI Providers</h4>
+    <p style="margin-left: 15px;">• Provider : Cost : Models</p>
+    <p style="margin-left: 15px;">• Built-in : Bundled in subscription : Default model</p>
+    <p style="margin-left: 15px;">• OpenAI : ~$6.50/month : gpt-4o-mini, gpt-4o</p>
+    <p style="margin-left: 15px;">• Anthropic : ~$6.50/month : claude-haiku-3.5, claude-sonnet-4</p>
+    <p style="margin-left: 15px;">• OpenCode Go : $5-10/month : mimo-v2.5, kimi-k2.7, deepseek-v4-pro, glm-5.2, minimax-m3</p>
+    <p style="margin-left: 15px;">• Ollama (Local) : Free : llama3, any downloaded model</p>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">AI Provider Performance Notes</h4>
+    <ul>
+        <li><strong>Reasoning models</strong> (deepseek-v4-pro, mimo-v2.5) may return analysis in the <code>reasoning_content</code> field instead of <code>content</code>. The Bridge handles this automatically.</li>
+        <li><strong>JSON responses</strong> wrapped in markdown code blocks (```<code>json ... </code>`<code> </code>) are stripped and parsed correctly.</li>
+        <li><strong>Fallback parsing</strong> — If JSON extraction fails, the Bridge extracts bias, confidence, and market analysis from raw text using keyword detection.</li>
+        <li><strong>No trading instructions</strong> — The AI system prompt explicitly forbids buy/sell/execute signals. It only provides analytical context.</li>
+    </ul>
+</section>
+</main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2><img src="logo-header.png" alt="" width="32" height="32"> Gold<span>Snipers</span></h2>
+                    <p>Professional algorithmic trading solutions for MetaTrader 5 and Telegram integrations. Built by traders, for traders.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="doc.html">Documentation</a></li>
+                        <li><a href="infographics.html">Infographics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="mailto:support@goldsnipers.com">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <strong>Risk Warning:</strong> Trading financial instruments, including foreign exchange (Forex) and contracts for difference (CFDs) on margin, carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade, you should carefully consider your investment objectives, level of experience, and risk appetite. Past performance of any automated strategy or EA is not indicative of future results.
+                <br><br>
+                &copy; 2026 Gold Snipers. All rights reserved. Built for MT5.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=2.1.0"></script>
+</body>
+</html>
