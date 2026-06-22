@@ -65,32 +65,117 @@
             <!-- Table of Contents Sidebar -->
             <aside class="doc-sidebar glass-panel">
     <h3>User Guide Reference</h3>
-    <ul>
-        <li><a href="#welcome">Welcome</a></li>
-        <li><a href="#initial-setup-upgrades-connection-guide">Initial Setup, Upgrades & Connection Guide</a></li>
-        <li><a href="#dashboard-risk-management-setup-metrics">Dashboard Risk Management & Setup Metrics</a></li>
-        <li><a href="#dual-channel-independent-copier-panels">Dual-Channel Independent Copier Panels</a></li>
-        <li><a href="#take-profit-targeting-paging-add-tps">Take Profit Targeting & Paging (+ ADD TPs)</a></li>
-        <li><a href="#5-unified-take-profit-stop-loss-stealth-mode">5 Unified Take Profit & Stop Loss Stealth Mode</a></li>
-        <li><a href="#core-entry-modes-ladder-vs-single">Core Entry Modes: Ladder vs. Single</a></li>
-        <li><a href="#harvesting-adaptive-profit-defense">Harvesting & Adaptive Profit Defense</a></li>
-        <li><a href="#tp-auto-mode-distributed-anchor-deep-runner-engine">TP AUTO Mode (Distributed Anchor & Deep Runner Engine)</a></li>
-        <li><a href="#anchor-strategy-toggles-unified-vs-distributed">Anchor Strategy Toggles (Unified vs. Distributed)</a></li>
-        <li><a href="#precision-break-even-engines-auto-sl-move-be-settings">Precision Break-Even Engines (Auto SL Move & BE Settings)</a></li>
-        <li><a href="#cancel-pending-button-delete-pending-limits-on-tp">CANCEL PENDING Button (Delete Pending Limits on TP)</a></li>
-        <li><a href="#signal-entry-cutoff-telegram-routing">Signal Entry Cutoff & Telegram Routing</a></li>
-        <li><a href="#live-analytics-equity-protect-matrix">Live Analytics & Equity Protect Matrix</a></li>
-        <li><a href="#manual-panel-technical-intel-deck">Manual Panel & Technical Intel Deck</a></li>
-        <li><a href="#intraday-extension-panels-trades-levels-helper">Intraday Extension Panels (Trades & Levels Helper)</a></li>
-        <li><a href="#ergonomic-action-buttons-ui-modes">Ergonomic Action Buttons & UI Modes</a></li>
-        <li><a href="#core-pip-scaling-goldxauusd-scaling">Core Pip Scaling (Gold/XAUUSD Scaling)</a></li>
-        <li><a href="#ui-modes-sync-safety-engines">UI Modes Sync & Safety Engines</a></li>
-        <li><a href="#the-copier-bridge-desktop-engine">The Copier Bridge Desktop Engine</a></li>
-        <li><a href="#performance-execution-engine-upgrades-v36295">Performance & Execution Engine Upgrades (v362.95+)</a></li>
-        <li><a href="#advanced-guide-trade-exclusions-command-routing-copier-workflow">Advanced Guide: Trade Exclusions, Command Routing & Copier Workflow</a></li>
-        <li><a href="#remote-admin-control-panel-telegram-saved-messages">Remote Admin Control Panel (Telegram Saved Messages)</a></li>
-        <li><a href="#mt5-input-settings-reference">MT5 Input Settings Reference</a></li>
+    <style>
+        .doc-sidebar .nav-group { margin-bottom: 4px; }
+        .doc-sidebar .nav-group-header {
+            display: flex; align-items: center; justify-content: space-between;
+            cursor: pointer; padding: 7px 10px; border-radius: 6px;
+            font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em;
+            text-transform: uppercase; color: #a0a0b0;
+            background: rgba(255,255,255,0.03);
+            transition: background 0.2s, color 0.2s;
+            user-select: none; border: none; width: 100%; text-align: left;
+        }
+        .doc-sidebar .nav-group-header:hover { background: rgba(255,215,0,0.07); color: #ffd700; }
+        .doc-sidebar .nav-group-header.open { color: #ffd700; background: rgba(255,215,0,0.06); }
+        .doc-sidebar .nav-group-header .chevron {
+            font-style: normal; font-size: 0.7rem; transition: transform 0.25s;
+            flex-shrink: 0; margin-left: 6px;
+        }
+        .doc-sidebar .nav-group-header.open .chevron { transform: rotate(90deg); }
+        .doc-sidebar .nav-sub {
+            list-style: none; margin: 0; padding: 0;
+            overflow: hidden; max-height: 0;
+            transition: max-height 0.35s ease;
+        }
+        .doc-sidebar .nav-sub.open { max-height: 1000px; }
+        .doc-sidebar .nav-sub li a {
+            display: block; padding: 5px 10px 5px 18px;
+            font-size: 0.8rem; color: #b0b0c0; border-radius: 5px;
+            text-decoration: none; transition: color 0.2s, background 0.2s;
+            border-left: 2px solid transparent; margin: 1px 0;
+        }
+        .doc-sidebar .nav-sub li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); border-left-color: #ffd700; }
+        .doc-sidebar ul.top-links { list-style: none; margin: 0 0 8px 0; padding: 0; }
+        .doc-sidebar ul.top-links li a {
+            display: block; padding: 6px 10px; font-size: 0.82rem;
+            color: #b0b0c0; border-radius: 6px; text-decoration: none;
+            transition: color 0.2s, background 0.2s;
+        }
+        .doc-sidebar ul.top-links li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); }
+        .doc-sidebar ul.top-links li a.active-link { color: #00d2d3; }
+    </style>
+
+    <!-- Top-level non-grouped links -->
+    <ul class="top-links">
+        <li><a href="#welcome">👋 Welcome</a></li>
+        <li><a href="#initial-setup-upgrades-connection-guide">🚀 Setup &amp; Connection Guide</a></li>
+        <li><a href="#dashboard-risk-management-setup-metrics">📊 Dashboard &amp; Risk Metrics</a></li>
+        <li><a href="#dual-channel-independent-copier-panels">📡 Dual-Channel Copier Panels</a></li>
     </ul>
+
+    <!-- Group: Profit Management -->
+    <div class="nav-group">
+        <button class="nav-group-header open" onclick="toggleGroup(this)">
+            💰 Trade Profit Management <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub open">
+            <li><a href="#take-profit-targeting-paging-add-tps">TP Targeting &amp; Paging</a></li>
+            <li><a href="#5-unified-take-profit-stop-loss-stealth-mode">Stealth TP/SL Mode</a></li>
+            <li><a href="#tp-auto-mode-distributed-anchor-deep-runner-engine">TP AUTO Mode</a></li>
+            <li><a href="#anchor-strategy-toggles-unified-vs-distributed">Anchor Strategy Toggles</a></li>
+            <li><a href="#harvesting-adaptive-profit-defense">Harvesting &amp; Profit Defense</a></li>
+            <li><a href="#precision-break-even-engines-auto-sl-move-be-settings">Break-Even Engines</a></li>
+            <li><a href="#cancel-pending-button-delete-pending-limits-on-tp">Cancel Pending on TP</a></li>
+        </ul>
+    </div>
+
+    <!-- Group: Entry & Signals -->
+    <div class="nav-group">
+        <button class="nav-group-header" onclick="toggleGroup(this)">
+            ⚡ Entry &amp; Signal Routing <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub">
+            <li><a href="#core-entry-modes-ladder-vs-single">Entry Modes: Ladder vs. Single</a></li>
+            <li><a href="#signal-entry-cutoff-telegram-routing">Signal Cutoff &amp; Routing</a></li>
+        </ul>
+    </div>
+
+    <!-- Group: Dashboard & Analytics -->
+    <div class="nav-group">
+        <button class="nav-group-header" onclick="toggleGroup(this)">
+            📈 Analytics &amp; UI Engines <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub">
+            <li><a href="#live-analytics-equity-protect-matrix">Live Analytics &amp; Equity Protect</a></li>
+            <li><a href="#manual-panel-technical-intel-deck">Manual Panel &amp; Intel Deck</a></li>
+            <li><a href="#intraday-extension-panels-trades-levels-helper">Intraday Panels (Trades &amp; Levels)</a></li>
+            <li><a href="#ergonomic-action-buttons-ui-modes">Action Buttons &amp; UI Modes</a></li>
+            <li><a href="#ui-modes-sync-safety-engines">UI Sync &amp; Safety Engines</a></li>
+            <li><a href="#core-pip-scaling-goldxauusd-scaling">Pip Scaling (Gold/XAUUSD)</a></li>
+        </ul>
+    </div>
+
+    <!-- Group: Bridge & Advanced -->
+    <div class="nav-group">
+        <button class="nav-group-header" onclick="toggleGroup(this)">
+            🌉 Bridge &amp; Advanced <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub">
+            <li><a href="#the-copier-bridge-desktop-engine">Copier Bridge Desktop Engine</a></li>
+            <li><a href="#performance-execution-engine-upgrades-v36295">Performance &amp; Engine Upgrades</a></li>
+            <li><a href="#advanced-guide-trade-exclusions-command-routing-copier-workflow">Trade Exclusions &amp; Copier Workflow</a></li>
+            <li><a href="#remote-admin-control-panel-telegram-saved-messages">Remote Admin Control Panel</a></li>
+            <li><a href="#mt5-input-settings-reference">MT5 Input Settings Reference</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleGroup(btn) {
+            btn.classList.toggle('open');
+            btn.nextElementSibling.classList.toggle('open');
+        }
+    </script>
 </aside>
 
             <!-- Main Documentation Content -->
@@ -126,18 +211,17 @@
     <p style="margin-left: 15px;">• Feature : Starter Tier : Pro Tier : Expert Tier</p>
     <p style="margin-left: 15px;">• <strong>MT5 Instances</strong> : 1 terminal : Up to 3 terminals : Up to 6 terminals</p>
     <p style="margin-left: 15px;">• <strong>Unique Broker Accounts</strong> : 1 account : Up to 3 accounts : Up to 6 accounts</p>
-    <p style="margin-left: 15px;">• <strong>Trading Symbol Lock</strong> : Gold/XAUUSD only : All Symbols : All Symbols</p>
+    <p style="margin-left: 15px;">• <strong>Trading Symbol Lock</strong> : Gold/XAUUSD only : Unlimited (All Symbols) : Unlimited (All Symbols)</p>
     <p style="margin-left: 15px;">• <strong>Max Grid / TP Levels</strong> : Capped at 3 levels : Capped at 5 levels : Up to 10 levels</p>
     <p style="margin-left: 15px;">• <strong>Stealth TP/SL Mode</strong> : Disabled (Forced to ON) : Allowed (Stealth/ON) : Allowed (Stealth/ON)</p>
-    <p style="margin-left: 15px;">• <strong>Low-Latency Socket IPC</strong> : Disabled (File-based) : Enabled (TCP Sockets) : Enabled (TCP Sockets)</p>
-    <p style="margin-left: 15px;">• <strong>AI Insights</strong> : Disabled : Enabled : Enabled</p>
-    <p style="margin-left: 15px;">• <strong>Analytics Dashboard</strong> : Disabled : Enabled : Enabled</p>
-    <p style="margin-left: 15px;">• <strong>Telegram Bot Control</strong> : Disabled : Enabled : Enabled</p>
+    <p style="margin-left: 15px;">• <strong>Low-Latency Socket IPC</strong> : Disabled (File-based fallback) : Enabled (TCP Sockets) : Enabled (TCP Sockets)</p>
+    <p style="margin-left: 15px;">• <strong>AI Insights Dashboard</strong> : Hidden / Disabled : Enabled : Enabled</p>
+    <p style="margin-left: 15px;">• <strong>Bridge UI Analytics Tab</strong> : Disabled : Enabled : Enabled</p>
+    <p style="margin-left: 15px;">• <strong>Telegram Bot Remote Control</strong> : Disabled : Settings Change only : Full Controls + Inline Buttons</p>
     <ul>
         <li><strong>MT5 Instances:</strong> The number of MetaTrader 5 terminals you can run simultaneously with the Bridge. You can configure multiple instances in the Bridge's API Settings panel (click <strong>Add MT5 Instance</strong>).</li>
         <li><strong>MT5 Accounts:</strong> Each license tier limits the number of unique MT5 broker accounts the EA can register. For example, Starter allows 1 MT5 account, Pro allows 3, and Expert allows 6.</li>
         <li><strong>Manual Trading:</strong> The EA's manual trading panel works on any MT5 terminal where the EA is attached, as long as a valid license key is loaded. No separate manual trading license is needed.</li>
-        <li><strong>Tier Enforcement:</strong> All tier limits are enforced at multiple levels — UI controls are greyed out for restricted features, input parameters are clamped on initialization, and admin commands (Telegram SET) are blocked at the engine level. Switching tiers takes effect on the next bridge restart.</li>
     </ul>
     <h3 style="margin-top: 20px; color: #00d2d3;">⚡ Seamless Upgrades (Zero Re-Configuration)</h3>
     <p>When installing a new version or upgrading the software, you <strong>do not</strong> need to re-enter your credentials or repeat the setup wizard:</p>
@@ -198,47 +282,17 @@
 
 <section id="5-unified-take-profit-stop-loss-stealth-mode" class="doc-section">
     <h2>4.5 Unified Take Profit & Stop Loss Stealth Mode</h2>
-    <p>The <strong>TP/SL Mode</strong> button (on both the Manual and Copier panels) controls how the EA manages your Take Profit and Stop Loss levels. Click the button to cycle through three modes:</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">TP/SL Modes Explained</h3>
-    <p style="margin-left: 15px;">• Mode : Button Text : What Happens</p>
-    <p style="margin-left: 15px;">• <strong>TP/SL OFF</strong> : <code>TP/SL OFF</code> : No TP or SL levels are managed by the EA. Positions run with no targets.</p>
-    <p style="margin-left: 15px;">• <strong>TP/SL STEALTH</strong> : <code>TP/SL STEALTH</code> : Both TP and SL are hidden from the broker. The EA monitors price locally and closes positions when targets are hit.</p>
-    <p style="margin-left: 15px;">• <strong>TP/SL ON</strong> : <code>TP/SL ON</code> : Hard TP and SL levels are sent directly to the broker. The EA places visible targets on the broker's server.</p>
-    <div class="doc-tip"><strong>💡 Note:</strong> <strong>Note:</strong> Starter tier licenses are forced to <code>TP/SL ON</code> and cannot access Stealth mode.</div>
-    <h3 style="margin-top: 20px; color: #00d2d3;">How Stealth Mode Works</h3>
-    <p>When <strong>TP/SL STEALTH</strong> is active, the EA keeps your real SL and TP targets entirely in its own memory — invisible to your broker. This prevents stop-hunting and spread manipulation.</p>
+    <p>The <strong>Stealth TP/SL Mode</strong> (enabled via <code>TP MODE: STEALTH</code> or setting <code>InpCx_TPMode = 1</code>) allows you to hide your actual profit and loss targets from your broker to avoid stop-hunting and spread manipulation, while maintaining institutional-grade protections.</p>
     <ul>
-        <li><strong>Virtual Targets:</strong> The true, narrow SL and TP targets are stored locally in MT5 Global Variables (<code>GSAE_VSL_</code> and <code>GSAE_VTP_</code>), not on the broker's server.</li>
-        <li><strong>Broker Sees Nothing:</strong> Orders are placed with TP = <code>0</code> and (optionally) a wide Emergency SL as a safety net.</li>
-        <li><strong>Real-Time Monitoring:</strong> The EA's <code>StealthMonitor</code> engine checks every 200ms. When price touches your virtual TP or SL, the EA instantly closes or partially closes the position.</li>
-        <li><strong>All Features Work:</strong> Trailing stop, break-even, harvest, and manual SL/TP adjustments all update the virtual targets locally — nothing is sent to the broker.</li>
+        <li><strong>Broker Target Camouflage:</strong> When Stealth Mode is activated, the EA places orders with a Take Profit of <code>0</code> and a far-out <strong>Emergency Stop Loss</strong> (calculated as your configured SL multiplied by <code>InpEmergencySLMultiplier</code>, protected by the broker's minimum <code>Stops Level</code>). This ensures that your broker sees no active profit targets and only a distant emergency exit line in case of network or power failure.</li>
+        <li><strong>Local Virtual Targets:</strong> The true, narrow virtual SL and TP targets are kept entirely on-chart and persisted to MT5 Global Variables (<code>GSAE_VSL_</code> and <code>GSAE_VTP_</code>).</li>
+        <li><strong>Real-Time Tick Tracking:</strong> The EA's background trading engine monitors price ticks in real-time. The moment the market Bid/Ask price touches your virtual TP or SL, the engine fires instant market execution commands to close your positions.</li>
+        <li><strong>Dynamic Moves Propagation:</strong> Any automated trailing stop moves, manual "PUSH SL" adjustments, or Break-Even locks automatically update your virtual global targets (<code>GSAE_VSL_</code>) locally instead of sending stop modifications to the broker, automatically shifting the broker-side Emergency SL to keep it aligned as a safety net.</li>
+        <li><strong>Tactile Chart Visualization:</strong> Renders premium dashed indicators directly on your chart:</li>
+        <li><strong><code>VTP</code> (Green Dashed Line):</strong> Indicates the current virtual Take Profit target.</li>
+        <li><strong><code>VSL</code> (Red Dashed Line):</strong> Indicates the current virtual Stop Loss target.</li>
+        <li><strong>Clean Local Analytics:</strong> All exits are logged in your local SQLite Analytics database with clear exit comments (e.g. <code>"STEALTH_TP"</code> or <code>"STEALTH_SL"</code>), while broker-side history comments remain completely generic.</li>
     </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">Emergency SL Safety Net</h3>
-    <p>When Stealth Mode is active, you can optionally place an <strong>Emergency Stop Loss</strong> on the broker as a safety net. This protects your account if the EA loses connection (terminal crash, internet outage, power failure).</p>
-    <p style="margin-left: 15px;">• Setting : Default : Effect</p>
-    <p style="margin-left: 15px;">• <strong>Use Emergency SL</strong> (<code>InpUseEmergencySL</code>) : <code>false</code> (OFF) : When ON, the broker sees a wide SL beyond your virtual SL as a safety net. When OFF, the broker sees SL = <code>0</code> — fully hidden.</p>
-    <p style="margin-left: 15px;">• <strong>Emergency SL Multiplier</strong> (<code>InpEmergencySLMultiplier</code>) : <code>2.0</code> : How much wider the Emergency SL is compared to your real SL. A multiplier of <code>2.0</code> means the Emergency SL is placed at 2x your normal SL distance.</p>
-    <p><strong>How the Emergency SL works:</strong></p>
-    <ul>
-        <li>Your real SL is at, say, 2450 (50 pips below entry at 2500).</li>
-        <li>With multiplier <code>2.0</code>, the Emergency SL is placed at 2400 (100 pips below entry).</li>
-        <li>If the EA crashes, the broker will close the trade at 2400 — worse than your intended 2450, but prevents unlimited loss.</li>
-        <li>If the EA is running, it monitors the virtual SL at 2450 and closes before the Emergency SL is ever reached.</li>
-    </ul>
-    <p><strong>When to use Emergency SL:</strong></p>
-    <ul>
-        <li><strong>ON</strong> — Recommended for unattended trading (VPS, overnight). Provides a safety net against EA/terminal failures.</li>
-        <li><strong>OFF</strong> — Maximum stealth. The broker sees SL = <code>0</code>, TP = <code>0</code>. No visibility into your targets. Best when you're actively monitoring or accept the disconnect risk.</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">Chart Visualization</h3>
-    <p>When Stealth Mode is active, dashed lines can appear on your chart:</p>
-    <ul>
-        <li><strong>VSL (Red Dashed):</strong> Your virtual Stop Loss target. Enable via <code>Show Visual SL Targets on Chart</code> input.</li>
-        <li><strong>VTP (Green Dashed):</strong> Your virtual Take Profit target. Enable via <code>Show Visual TP Targets on Chart</code> input.</li>
-        <li><strong>Emergency SL (Orange Dotted):</strong> The broker-side Emergency SL safety net (only visible when Emergency SL is enabled).</li>
-    </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">Analytics & Exit Tracking</h3>
-    <p>All stealth exits are logged in your local SQLite Analytics database with clear exit comments (<code>STEALTH_TP</code> or <code>STEALTH_SL</code>), while broker-side history comments remain completely generic — no trace of stealth mode visible to your broker.</p>
 </section>
 
 <section id="core-entry-modes-ladder-vs-single" class="doc-section">
@@ -357,7 +411,7 @@
     <ul>
         <li><strong>EQUITY PROTECT ($):</strong> A powerful, absolute-dollar safety guardian governing the entire family of trades currently open on the chart.</li>
         <li><strong>Take Profit Kill-Switch (Positive Value):</strong> If you enter a positive number (e.g., <code>1000</code>), the EA monitors your floating Profit. Once the combined profit hits or exceeds this value, it triggers a <strong>Master Clearance</strong> to immediately close all active and pending orders, securing your cash profit.</li>
-        <li><strong>Equity Protection (Negative Value):</strong> If you enter a negative number (e.g., <code>-500</code>), the EA establishes a hard cash-loss floor. If the combined floating drawdown drops to or below this negative threshold, the EA triggers an instant <strong>Master Clearance</strong> to flatten all positions, surgically protecting your account equity from runaway losses.</li>
+        <li><strong>Drawdown Guardian (Negative Value):</strong> If you enter a negative number (e.g., <code>-500</code>), the EA establishes a hard cash-loss floor. If the combined floating drawdown drops to or below this negative threshold, the EA triggers an instant <strong>Master Clearance</strong> to flatten all positions, surgically protecting your account equity from runaway losses.</li>
         <li><strong>Deactivated (0.00):</strong> Setting the field to <code>0.00</code> completely disables the Equity Protect safeguard.</li>
         <li><strong>Profit Telemetry:</strong> Displays your cumulative, real-time floating profit or loss (P&L) for all active grid entries on the current chart. Dynamically updates color from <strong>Green (Profitable)</strong> to <strong>Red (Drawdown)</strong> for instant visual assessment.</li>
         <li><strong>Spread Tracker:</strong> Measures and displays the broker's real-time Ask/Bid spread directly on the dashboard, helping you gauge liquidity and entry conditions.</li>
@@ -699,9 +753,7 @@
     <p>Default startup settings and core risk parameters.</p>
     <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
     <p style="margin-left: 15px;">• <code>InpStartupMode</code> : Enum : <code>STARTUP_COPIER</code> : UI view mode on startup: <code>STARTUP_COPIER</code> (Mini Copier Panel), <code>STARTUP_FULL</code> (Side-by-Side Panel), <code>STARTUP_MANUAL</code> (Manual Only).</p>
-    <p style="margin-left: 15px;">• <code>InpUiMode</code> : Enum : <code>UI_MODE_RESIZE</code> : Panel scaling mode. <code>Enabled</code> — drag the bottom-right corner to resize the EA panel. <code>Disabled</code> — fixed-size panel, use Windows DPI scaling instead.</p>
-    <p style="margin-left: 15px;">• <code>InpFontDpiAdj</code> : Enum : <code>FONT_DPI_DYNAMIC</code> : Font DPI compensation. <code>Dynamic</code> — auto-reduces font size based on monitor DPI. <code>Off</code> — no adjustment. <code>Manual</code> — use <code>InpFontDpiManual</code> value.</p>
-    <p style="margin-left: 15px;">• <code>InpFontDpiManual</code> : Int : <code>1</code> : Font reduction in points. Only used when <code>InpFontDpiAdj</code> is set to <code>Manual</code>.</p>
+    <p style="margin-left: 15px;">• <code>InpMinimalCustomerUI</code> : Bool : <code>true</code> : Toggles a simplified dashboard layout, hiding advanced parameter settings from the chart.</p>
     <p style="margin-left: 15px;">• <code>InpEnableTelegram</code> : Bool : <code>true</code> : Master toggle to enable processing of incoming signal files from the Telegram Bridge.</p>
     <p style="margin-left: 15px;">• <code>InpLotSize</code> : Double : <code>0.01</code> : Default lot size per trade for manual dashboard orders.</p>
     <p style="margin-left: 15px;">• <code>InpStopLossPips</code> : Double : <code>50.0</code> : Default protective Stop Loss distance in pips for manual trades.</p>
@@ -711,14 +763,6 @@
     <p style="margin-left: 15px;">• <code>InpATR_TP1_Mult</code> : Double : <code>1.5</code> : Volatility multiplier used to calculate the dynamic TP1 target.</p>
     <p style="margin-left: 15px;">• <code>InpMagic</code> : Int : <code>26022791</code> : EA Magic Number. Uniquely labels and isolates this EA instance's trades on the account.</p>
     <p style="margin-left: 15px;">• <code>InpDefaultEquityProtect</code> : Double : <code>0.0</code> : Startup Equity Protection target ($): A positive value acts as a profit target; a negative value acts as a drawdown cash floor. <code>0.0</code> disables.</p>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🖥️ Panel Scaling & DPI</h3>
-    <p style="margin-left: 15px;">• Resize : Font DPI : What the user gets</p>
-    <p style="margin-left: 15px;">• Enabled : Dynamic : Drag to resize panel + font auto-adjusts for high-DPI monitors. Best for most users.</p>
-    <p style="margin-left: 15px;">• Enabled : Off : Drag to resize panel + no font changes. Good if text looks fine already.</p>
-    <p style="margin-left: 15px;">• Enabled : Manual : Drag to resize panel + you pick exactly how many points to reduce font by.</p>
-    <p style="margin-left: 15px;">• Disabled : Dynamic : Fixed panel size + font auto-adjusts for DPI. Use this if you prefer Windows to handle scaling.</p>
-    <p style="margin-left: 15px;">• Disabled : Off : Fixed panel + no font changes.</p>
-    <p style="margin-left: 15px;">• Disabled : Manual : Fixed panel + you pick the font reduction.</p>
     <h3 style="margin-top: 20px; color: #00d2d3;">📊 Visual FVG & Order Blocks</h3>
     <p>Settings for the Fair Value Gap (FVG) and Order Block (OB) scanner and on-chart visualizations.</p>
     <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
@@ -768,9 +812,6 @@
     <p style="margin-left: 15px;">• Parameter : Type : Default Value : Description</p>
     <p style="margin-left: 15px;">• <code>InpEnableAutoSLM</code> : Bool : <code>true</code> : Toggles whether the auto Stop Loss move to Break-Even is active on startup.</p>
     <p style="margin-left: 15px;">• <code>InpShowVirtualTPs</code> : Bool : <code>false</code> : If true, renders visual stealth TP lines on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpShowVirtualSL</code> : Bool : <code>false</code> : If true, renders visual stealth SL lines on the chart.</p>
-    <p style="margin-left: 15px;">• <code>InpUseEmergencySL</code> : Bool : <code>false</code> : If true, places a wide Emergency SL on the broker as a safety net during Stealth Mode. If false, the broker sees SL = 0 (fully hidden).</p>
-    <p style="margin-left: 15px;">• <code>InpEmergencySLMultiplier</code> : Double : <code>2.0</code> : How much wider the Emergency SL is compared to your real SL. Only applies when <code>InpUseEmergencySL</code> is true.</p>
     <p style="margin-left: 15px;">• <code>InpTP1_TriggerLevel</code> : Int : <code>3</code> (TP3) : The TP target milestone that triggers the first auto Break-Even move.</p>
     <p style="margin-left: 15px;">• <code>InpBreakEvenLockPips</code> : Double : <code>1.0</code> : Pip cushion added to the entry price when moving Stop Loss to Break-Even.</p>
     <p style="margin-left: 15px;">• <code>InpManualSLPushPips</code> : Double : <code>10.0</code> : Distance in pips used when hitting the manual "PUSH SL" button on the dashboard.</p>
