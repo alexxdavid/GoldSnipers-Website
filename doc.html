@@ -1,183 +1,183 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gold Snipers | Documentation & User Guide</title>
-    <meta name="description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite. Setup tutorials, signal configuration, and EA inputs.">
-    <link rel="canonical" href="https://goldsnipersbot.com/doc.html">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Gold Snipers | Documentation & User Guide">
-    <meta property="og:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
-    <meta property="og:image" content="https://goldsnipersbot.com/dashboard.png">
-    <meta property="og:url" content="https://goldsnipersbot.com/doc.html">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gold Snipers | Documentation & User Guide">
-    <meta name="twitter:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
-    <meta name="twitter:image" content="https://goldsnipersbot.com/dashboard.png">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css?v=2.0.9">
-</head>
-<body>
-    <!-- Animated Background Elements -->
-    <div class="bg-glow"></div>
-    <div class="bg-glow-gold"></div>
-
-    <!-- Header / Navigation -->
-    <header class="scrolled">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="logo-header.png" alt="" width="32" height="32">
-                    Gold<span>Snipers</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html#features">Features</a></li>
-                    <li><a href="index.html#pricing">Pricing</a></li>
-                    <li><a href="index.html#faq">FAQ</a></li>
-                    <li><a href="doc.html" class="active">Documentation</a></li>
-                </ul>
-                <a href="index.html#pricing" class="btn btn-primary btn-sm">Get Started</a>
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="doc-layout">
-            <!-- Table of Contents Sidebar -->
-            <aside class="doc-sidebar glass-panel">
-    <h3>User Guide Reference</h3>
-    <style>
-        .doc-sidebar .nav-group { margin-bottom: 4px; }
-        .doc-sidebar .nav-group-header {
-            display: flex; align-items: center; justify-content: space-between;
-            cursor: pointer; padding: 7px 10px; border-radius: 6px;
-            font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em;
-            text-transform: uppercase; color: #a0a0b0;
-            background: rgba(255,255,255,0.03);
-            transition: background 0.2s, color 0.2s;
-            user-select: none; border: none; width: 100%; text-align: left;
-        }
-        .doc-sidebar .nav-group-header:hover { background: rgba(255,215,0,0.07); color: #ffd700; }
-        .doc-sidebar .nav-group-header.open { color: #ffd700; background: rgba(255,215,0,0.06); }
-        .doc-sidebar .nav-group-header .chevron {
-            font-style: normal; font-size: 0.7rem; transition: transform 0.25s;
-            flex-shrink: 0; margin-left: 6px;
-        }
-        .doc-sidebar .nav-group-header.open .chevron { transform: rotate(90deg); }
-        .doc-sidebar .nav-sub {
-            list-style: none; margin: 0; padding: 0;
-            overflow: hidden; max-height: 0;
-            transition: max-height 0.35s ease;
-        }
-        .doc-sidebar .nav-sub.open { max-height: 1000px; }
-        .doc-sidebar .nav-sub li a {
-            display: block; padding: 5px 10px 5px 18px;
-            font-size: 0.8rem; color: #b0b0c0; border-radius: 5px;
-            text-decoration: none; transition: color 0.2s, background 0.2s;
-            border-left: 2px solid transparent; margin: 1px 0;
-        }
-        .doc-sidebar .nav-sub li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); border-left-color: #ffd700; }
-        .doc-sidebar ul.top-links { list-style: none; margin: 0 0 8px 0; padding: 0; }
-        .doc-sidebar ul.top-links li a {
-            display: block; padding: 6px 10px; font-size: 0.82rem;
-            color: #b0b0c0; border-radius: 6px; text-decoration: none;
-            transition: color 0.2s, background 0.2s;
-        }
-        .doc-sidebar ul.top-links li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); }
-        .doc-sidebar ul.top-links li a.active-link { color: #00d2d3; }
-    </style>
-
-    <!-- Top-level non-grouped links -->
-    <ul class="top-links">
-        <li><a href="#welcome">👋 Welcome</a></li>
-        <li><a href="#initial-setup-upgrades-connection-guide">🚀 Setup &amp; Connection Guide</a></li>
-        <li><a href="#dashboard-risk-management-setup-metrics">📊 Dashboard &amp; Risk Metrics</a></li>
-        <li><a href="#dual-channel-independent-copier-panels">📡 Dual-Channel Copier Panels</a></li>
-    </ul>
-
-    <!-- Group: Profit Management -->
-    <div class="nav-group">
-        <button class="nav-group-header open" onclick="toggleGroup(this)">
-            💰 Trade Profit Management <span class="chevron">▶</span>
-        </button>
-        <ul class="nav-sub open">
-            <li><a href="#take-profit-targeting-paging-add-tps">TP Targeting &amp; Paging</a></li>
-            <li><a href="#5-unified-take-profit-stop-loss-stealth-mode">Stealth TP/SL Mode</a></li>
-            <li><a href="#tp-auto-mode-distributed-anchor-deep-runner-engine">TP AUTO Mode</a></li>
-            <li><a href="#anchor-strategy-toggles-unified-vs-distributed">Anchor Strategy Toggles</a></li>
-            <li><a href="#harvesting-adaptive-profit-defense">Harvesting &amp; Profit Defense</a></li>
-            <li><a href="#precision-break-even-engines-auto-sl-move-be-settings">Break-Even Engines</a></li>
-            <li><a href="#cancel-pending-button-delete-pending-limits-on-tp">Cancel Pending on TP</a></li>
-        </ul>
-    </div>
-
-    <!-- Group: Entry & Signals -->
-    <div class="nav-group">
-        <button class="nav-group-header" onclick="toggleGroup(this)">
-            ⚡ Entry &amp; Signal Routing <span class="chevron">▶</span>
-        </button>
-        <ul class="nav-sub">
-            <li><a href="#core-entry-modes-ladder-vs-single">Entry Modes: Ladder vs. Single</a></li>
-            <li><a href="#signal-entry-cutoff-telegram-routing">Signal Cutoff &amp; Routing</a></li>
-        </ul>
-    </div>
-
-    <!-- Group: Dashboard & Analytics -->
-    <div class="nav-group">
-        <button class="nav-group-header" onclick="toggleGroup(this)">
-            📈 Analytics &amp; UI Engines <span class="chevron">▶</span>
-        </button>
-        <ul class="nav-sub">
-            <li><a href="#live-analytics-equity-protect-matrix">Live Analytics &amp; Equity Protect</a></li>
-            <li><a href="#manual-panel-technical-intel-deck">Manual Panel &amp; Intel Deck</a></li>
-            <li><a href="#intraday-extension-panels-trades-levels-helper">Intraday Panels (Trades &amp; Levels)</a></li>
-            <li><a href="#ergonomic-action-buttons-ui-modes">Action Buttons &amp; UI Modes</a></li>
-            <li><a href="#ui-modes-sync-safety-engines">UI Sync &amp; Safety Engines</a></li>
-            <li><a href="#core-pip-scaling-goldxauusd-scaling">Pip Scaling (Gold/XAUUSD)</a></li>
-        </ul>
-    </div>
-
-    <!-- Group: Bridge & Advanced -->
-    <div class="nav-group">
-        <button class="nav-group-header" onclick="toggleGroup(this)">
-            🌉 Bridge &amp; Advanced <span class="chevron">▶</span>
-        </button>
-        <ul class="nav-sub">
-            <li><a href="#the-copier-bridge-desktop-engine">Copier Bridge Desktop Engine</a></li>
-            <li><a href="#performance-execution-engine-upgrades-v36295">Performance &amp; Engine Upgrades</a></li>
-            <li><a href="#advanced-guide-trade-exclusions-command-routing-copier-workflow">Trade Exclusions &amp; Copier Workflow</a></li>
-            <li><a href="#remote-admin-control-panel-telegram-saved-messages">Remote Admin Control Panel</a></li>
-            <li><a href="#mt5-input-settings-reference">MT5 Input Settings Reference</a></li>
-        </ul>
-    </div>
-
-    <script>
-        function toggleGroup(btn) {
-            btn.classList.toggle('open');
-            btn.nextElementSibling.classList.toggle('open');
-        }
-    </script>
-</aside>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Snipers | Documentation & User Guide</title>
+    <meta name="description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite. Setup tutorials, signal configuration, and EA inputs.">
+    <link rel="canonical" href="https://goldsnipersbot.com/doc.html">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gold Snipers | Documentation & User Guide">
+    <meta property="og:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
+    <meta property="og:image" content="https://goldsnipersbot.com/dashboard.png">
+    <meta property="og:url" content="https://goldsnipersbot.com/doc.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gold Snipers | Documentation & User Guide">
+    <meta name="twitter:description" content="Complete user guide and documentation for Gold Snipers Expert Advisor and Telegram Bridge copier suite.">
+    <meta name="twitter:image" content="https://goldsnipersbot.com/dashboard.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css?v=2.0.9">
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="bg-glow"></div>
+    <div class="bg-glow-gold"></div>
+
+    <!-- Header / Navigation -->
+    <header class="scrolled">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="logo-header.png" alt="" width="32" height="32">
+                    Gold<span>Snipers</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="doc.html" class="active">Documentation</a></li>
+                </ul>
+                <a href="index.html#pricing" class="btn btn-primary btn-sm">Get Started</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="doc-layout">
+            <!-- Table of Contents Sidebar -->
+            <aside class="doc-sidebar glass-panel">
+    <h3>User Guide Reference</h3>
+    <style>
+        .doc-sidebar .nav-group { margin-bottom: 4px; }
+        .doc-sidebar .nav-group-header {
+            display: flex; align-items: center; justify-content: space-between;
+            cursor: pointer; padding: 7px 10px; border-radius: 6px;
+            font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em;
+            text-transform: uppercase; color: #a0a0b0;
+            background: rgba(255,255,255,0.03);
+            transition: background 0.2s, color 0.2s;
+            user-select: none; border: none; width: 100%; text-align: left;
+        }
+        .doc-sidebar .nav-group-header:hover { background: rgba(255,215,0,0.07); color: #ffd700; }
+        .doc-sidebar .nav-group-header.open { color: #ffd700; background: rgba(255,215,0,0.06); }
+        .doc-sidebar .nav-group-header .chevron {
+            font-style: normal; font-size: 0.7rem; transition: transform 0.25s;
+            flex-shrink: 0; margin-left: 6px;
+        }
+        .doc-sidebar .nav-group-header.open .chevron { transform: rotate(90deg); }
+        .doc-sidebar .nav-sub {
+            list-style: none; margin: 0; padding: 0;
+            overflow: hidden; max-height: 0;
+            transition: max-height 0.35s ease;
+        }
+        .doc-sidebar .nav-sub.open { max-height: 1000px; }
+        .doc-sidebar .nav-sub li a {
+            display: block; padding: 5px 10px 5px 18px;
+            font-size: 0.8rem; color: #b0b0c0; border-radius: 5px;
+            text-decoration: none; transition: color 0.2s, background 0.2s;
+            border-left: 2px solid transparent; margin: 1px 0;
+        }
+        .doc-sidebar .nav-sub li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); border-left-color: #ffd700; }
+        .doc-sidebar ul.top-links { list-style: none; margin: 0 0 8px 0; padding: 0; }
+        .doc-sidebar ul.top-links li a {
+            display: block; padding: 6px 10px; font-size: 0.82rem;
+            color: #b0b0c0; border-radius: 6px; text-decoration: none;
+            transition: color 0.2s, background 0.2s;
+        }
+        .doc-sidebar ul.top-links li a:hover { color: #ffd700; background: rgba(255,215,0,0.05); }
+        .doc-sidebar ul.top-links li a.active-link { color: #00d2d3; }
+    </style>
+
+    <!-- Top-level non-grouped links -->
+    <ul class="top-links">
+        <li><a href="#welcome">👋 Welcome</a></li>
+        <li><a href="#initial-setup-upgrades-connection-guide">🚀 Setup &amp; Connection Guide</a></li>
+        <li><a href="#dashboard-risk-management-setup-metrics">📊 Dashboard &amp; Risk Metrics</a></li>
+        <li><a href="#dual-channel-independent-copier-panels">📡 Dual-Channel Copier Panels</a></li>
+    </ul>
+
+    <!-- Group: Profit Management -->
+    <div class="nav-group">
+        <button class="nav-group-header open" onclick="toggleGroup(this)">
+            💰 Trade Profit Management <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub open">
+            <li><a href="#take-profit-targeting-paging-add-tps">TP Targeting &amp; Paging</a></li>
+            <li><a href="#5-unified-take-profit-stop-loss-stealth-mode">Stealth TP/SL Mode</a></li>
+            <li><a href="#tp-auto-mode-distributed-anchor-deep-runner-engine">TP AUTO Mode</a></li>
+            <li><a href="#anchor-strategy-toggles-unified-vs-distributed">Anchor Strategy Toggles</a></li>
+            <li><a href="#harvesting-adaptive-profit-defense">Harvesting &amp; Profit Defense</a></li>
+            <li><a href="#precision-break-even-engines-auto-sl-move-be-settings">Break-Even Engines</a></li>
+            <li><a href="#cancel-pending-button-delete-pending-limits-on-tp">Cancel Pending on TP</a></li>
+        </ul>
+    </div>
+
+    <!-- Group: Entry & Signals -->
+    <div class="nav-group">
+        <button class="nav-group-header" onclick="toggleGroup(this)">
+            ⚡ Entry &amp; Signal Routing <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub">
+            <li><a href="#core-entry-modes-ladder-vs-single">Entry Modes: Ladder vs. Single</a></li>
+            <li><a href="#signal-entry-cutoff-telegram-routing">Signal Cutoff &amp; Routing</a></li>
+        </ul>
+    </div>
+
+    <!-- Group: Dashboard & Analytics -->
+    <div class="nav-group">
+        <button class="nav-group-header" onclick="toggleGroup(this)">
+            📈 Analytics &amp; UI Engines <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub">
+            <li><a href="#live-analytics-equity-protect-matrix">Live Analytics &amp; Equity Protect</a></li>
+            <li><a href="#manual-panel-technical-intel-deck">Manual Panel &amp; Intel Deck</a></li>
+            <li><a href="#intraday-extension-panels-trades-levels-helper">Intraday Panels (Trades &amp; Levels)</a></li>
+            <li><a href="#ergonomic-action-buttons-ui-modes">Action Buttons &amp; UI Modes</a></li>
+            <li><a href="#ui-modes-sync-safety-engines">UI Sync &amp; Safety Engines</a></li>
+            <li><a href="#core-pip-scaling-goldxauusd-scaling">Pip Scaling (Gold/XAUUSD)</a></li>
+        </ul>
+    </div>
+
+    <!-- Group: Bridge & Advanced -->
+    <div class="nav-group">
+        <button class="nav-group-header" onclick="toggleGroup(this)">
+            🌉 Bridge &amp; Advanced <span class="chevron">▶</span>
+        </button>
+        <ul class="nav-sub">
+            <li><a href="#the-copier-bridge-desktop-engine">Copier Bridge Desktop Engine</a></li>
+            <li><a href="#performance-execution-engine-upgrades-v36295">Performance &amp; Engine Upgrades</a></li>
+            <li><a href="#advanced-guide-trade-exclusions-command-routing-copier-workflow">Trade Exclusions &amp; Copier Workflow</a></li>
+            <li><a href="#remote-admin-control-panel-telegram-saved-messages">Remote Admin Control Panel</a></li>
+            <li><a href="#mt5-input-settings-reference">MT5 Input Settings Reference</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleGroup(btn) {
+            btn.classList.toggle('open');
+            btn.nextElementSibling.classList.toggle('open');
+        }
+    </script>
+</aside>
+
             <!-- Main Documentation Content -->
             <main class="doc-content glass-panel">
 <section id="welcome" class="doc-section">
@@ -215,10 +215,11 @@
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>MT5 Instances</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">1 terminal</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Up to 3 terminals</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Up to 6 terminals</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Unique Broker Accounts</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">1 account</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Up to 3 accounts</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Up to 6 accounts</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Trading Symbol Lock</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Gold/XAUUSD only</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">All Symbols</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">All Symbols</td></tr>
-    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Max Grid / TP Levels</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Capped at 3 levels</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Capped at 5 levels</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Up to 10 levels</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Max Grid Levels</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Capped at 3 levels</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Capped at 5 levels</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Up to 10 levels</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>TP Targets</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">TP1–TP3 only</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">TP1–TP5 only</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">TP1–TP10</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Stealth TP/SL Mode</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled (Forced to ON)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Allowed (Stealth/ON)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Allowed (Stealth/ON)</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Low-Latency Socket IPC</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled (File-based)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled (TCP Sockets)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled (TCP Sockets)</td></tr>
-    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>AI Insights</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>AI Insights</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Analytics Dashboard</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Telegram Bot Control</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Disabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enabled</td></tr>
     <ul>
@@ -231,18 +232,19 @@
     <h3 style="margin-top: 20px; color: #00d2d3;">⚡ Seamless Upgrades (Zero Re-Configuration)</h3>
     <p>When installing a new version or upgrading the software, you <strong>do not</strong> need to re-enter your credentials or repeat the setup wizard:</p>
     <ul>
-        <li><strong>Active Session Protection:</strong> All authorizations, API keys, and channel choices are saved securely in your local data directory (specifically <code>gsae_session.session</code> and <code>gsae_config.json</code>).</li>
+        <li><strong>Active Session Protection:</strong> All authorizations, API keys, and channel choices are saved securely in your local data directory (specifically <code>gsae_session_go.json</code> and <code>bridge_config.yaml</code>).</li>
         <li><strong>Automatic Upgrade Recognition:</strong> The new Bridge binary automatically detects these existing files on startup. It immediately bypasses the setup wizard and logs you straight into active monitoring within 2 seconds!</li>
-        <li><strong>Manual Reset:</strong> If you ever need to change channels or log in with a different phone number, simply press any key during the 3-second banner countdown on startup to access the Configuration Menu.</li>
     </ul>
-    <h3 style="margin-top: 20px; color: #00d2d3;">🔧 WebRequest Configuration (EA Required)</h3>
-    <p>The Expert Advisor needs to communicate with our license server. After installing, you must whitelist this URL in MetaTrader 5:</p>
+    <h3 style="margin-top: 20px; color: #00d2d3;">🔧 MT5 Expert Advisor Setup</h3>
+    <p>Before the EA can trade, you must configure the following settings in MetaTrader 5:</p>
     <ul>
-        <li>Open MetaTrader 5</li>
-        <li>Go to <strong>Tools → Options → Expert Advisors</strong></li>
-        <li>Check <strong>Allow WebRequest for listed URL</strong></li>
-        <li>Add: <code>https://hxlqbctnkqqtueuyqyyv.supabase.co</code></li>
-        <li>Click OK, then re-attach the EA to your chart</li>
+        <li>Open <strong>MetaTrader 5</strong> → <strong>Tools → Options → Expert Advisors</strong></li>
+        <li>Check <strong>Allow algorithmic trading</strong></li>
+        <li><strong>Uncheck</strong> "Disable algorithmic trading when the profile has been changed"</li>
+        <li><strong>Uncheck</strong> "Disable algorithmic trading when the account has been changed"</li>
+        <li>Check <strong>Allow DLL imports</strong></li>
+        <li>Check <strong>Allow WebRequest for listed URL</strong> and add: <code>https://hxlqbctnkqqtueuyqyyv.supabase.co</code></li>
+        <li>Click <strong>OK</strong>, then re-attach the EA to your chart</li>
     </ul>
 </section>
 
@@ -267,18 +269,16 @@
     <p>Provides two completely independent trading profiles (<strong>CH1</strong> and <strong>CH2</strong>) without any settings leakage into your manual setup:</p>
     <ul>
         <li><strong>Dual Sub-Tabs:</strong> Click <strong>CH1</strong> or <strong>CH2</strong> at the top of the panel to instantly switch between and configure distinct preset blocks (lot sizes, grid counts, and TP targets).</li>
-        <li><strong>Isolated Trade Execution (TradeContext Architecture):</strong> Clicking <code>BUY</code> or <code>SELL</code> on the Copier panel automatically packages the active channel's configuration into a thread-safe <code>TradeContext</code> structure. The trade executes directly from this localized memory profile, ensuring that your Manual Dashboard settings remain 100% untouched and isolated.</li>
+        <li><strong>Isolated Trade Execution:</strong> When you click <code>BUY</code> or <code>SELL</code> on the Copier panel, the EA takes a snapshot of that channel's settings (lot size, TP targets, SL, etc.) and uses only that snapshot for the trade. Your Manual Dashboard settings are never touched or overwritten.</li>
         <li><strong>Channel Identity:</strong> Features dedicated fields for <strong>CHANNEL NAME</strong> and <strong>CHANNEL ID</strong> directly under the selection tabs, keeping your signal routing perfectly organized and visible.</li>
     </ul>
 </section>
 
-<section id="take-profit-targeting-paging-add-tps" class="doc-section">
-    <h2>4. Take Profit Targeting & Paging (+ ADD TPs)</h2>
+<section id="take-profit-targeting-paging" class="doc-section">
+    <h2>4. Take Profit Targeting & Paging</h2>
     <p>Configure up to 10 customized Take Profit levels without cluttering your chart:</p>
     <ul>
-        <li><strong>➕ ADD TPs Button:</strong> Instantly toggles the card layout at the top of the panel between two distinct configuration pages.</li>
-        <li><strong>TP1 - TP5 Mode:</strong> Standard view for configuring core scales and targets.</li>
-        <li><strong>TP6 - TP10 Mode:</strong> Advanced view for setting deep runner targets and long-term trend milestones.</li>
+        <li><strong>TP1 - TP5 / TP6 - TP10 Toggle:</strong> Click the <strong>TAKE PROFIT TARGETS TP1-TP5</strong> header bar at the top of the panel to switch between TP1–TP5 (standard targets) and TP6–TP10 (deep runner targets). Click again to switch back.</li>
         <li><strong>Columns Design:</strong> Displays targets in clean, tactile vertical columns, styled for effortless scanning and real-time editing of pips and partial shave percentages (%).</li>
     </ul>
 </section>
@@ -336,14 +336,14 @@
     <p>All stealth exits are logged in your local SQLite Analytics database with clear exit comments (<code>STEALTH_TP</code> or <code>STEALTH_SL</code>), while broker-side history comments remain completely generic — no trace of stealth mode visible to your broker.</p>
 </section>
 
-<section id="core-entry-modes-ladder-vs-single" class="doc-section">
-    <h2>5. Core Entry Modes: Ladder vs. Single</h2>
-    <p>The <strong>LADDER ON / SINGLE ON</strong> toggle button controls how your trade entries are structured:</p>
+<section id="core-entry-modes-grid-vs-single" class="doc-section">
+    <h2>5. Core Entry Modes: Grid vs. Single</h2>
+    <p>The <strong>GRID ON / SINGLE ON</strong> toggle button controls how your trade entries are structured:</p>
     <ul>
         <li><strong>SINGLE Mode:</strong></li>
         <li>Opens a single set of market orders at the current price level.</li>
         <li>No grid limit orders are created.</li>
-        <li><strong>LADDER Mode:</strong></li>
+        <li><strong>GRID Mode:</strong></li>
         <li>Opens your anchor trades immediately at the current market price.</li>
         <li>Simultaneously places pending limit orders below your entry (if Buying) or above your entry (if Selling) at regular price step intervals.</li>
     </ul>
@@ -351,7 +351,7 @@
 
 <section id="harvesting-adaptive-profit-defense" class="doc-section">
     <h2>6. Harvesting & Adaptive Profit Defense</h2>
-    <p>Controlled via the <strong>HARVEST ON / OFF</strong> toggle button, <strong>Harvesting</strong> is an intelligent, automated risk-defense engine designed specifically for active <strong>Ladder</strong> grids.</p>
+    <p>Controlled via the <strong>HARVEST ON / OFF</strong> toggle button, <strong>Harvesting</strong> is an intelligent, automated risk-defense engine designed specifically for active <strong>Grid</strong> entries.</p>
     <ul>
         <li><strong>Objective:</strong> Secures profits on upper trade tiers during deep market pullbacks, allowing your portfolio to recover capital incrementally.</li>
         <li><strong>How it Works:</strong> When the price dives deep enough to trigger discount limit orders, the engine steps in to protect your higher-priced entry tiers. It automatically moves the <strong>Take Profit</strong> of previous upper tiers down to their own entry prices (+1.0 pip cushion).</li>
@@ -360,33 +360,38 @@
     </ul>
 </section>
 
-<section id="tp-auto-mode-distributed-anchor-deep-runner-engine" class="doc-section">
-    <h2>7. TP AUTO Mode (Distributed Anchor & Deep Runner Engine)</h2>
-    <p>The <strong>TP AUTO</strong> mode is a specialized, math-driven Take Profit engine designed to extract quick early profits from your primary entries while letting deep-discount limit entries run for maximum capital extraction.</p>
+<section id="tp-auto-mode" class="doc-section">
+    <h2>7. TP AUTO Mode</h2>
+    <p>The <strong>TP AUTO</strong> mode automatically distributes Take Profit targets across your entries, extracting quick early profits from market entries while letting deeper limit entries run for maximum gains.</p>
     <h3 style="margin-top: 20px; color: #00d2d3;">How it Works (Example Setup)</h3>
     <ul>
         <li><strong>Multi-Anchor Count:</strong> 3 Market Entries (Anchors)</li>
-        <li><strong>Ladder Grid Count:</strong> 10 Pending Limit Levels</li>
+        <li><strong>Grid Count:</strong> 10 Pending Limit Levels</li>
         <li><strong>Deepest Configured Level:</strong> TP10</li>
     </ul>
     <h4 style="margin-top: 15px; color: #e0e0e0;">Phase 1: Strategic TP Assignment</h4>
-    <p>When you fire your ladder in <strong>TP AUTO</strong> mode, the EA applies two distinct Take Profit strategies to secure your portfolio:</p>
+    <p>When you fire your grid in <strong>TP AUTO</strong> mode, the EA assigns Take Profit targets based on your <strong>Anchor Strategy</strong> setting:</p>
+    <p><strong>Distributed TP Mode (Default):</strong></p>
     <ul>
         <li><strong>Anchors (Market Orders):</strong> Your primary market entries are distributed sequentially across your nearest configured Take Profit targets to ensure rapid capital recovery:</li>
         <li><strong>Anchor #1:</strong> Targets <strong>TP1</strong> (Immediate profit & risk mitigation trigger)</li>
         <li><strong>Anchor #2:</strong> Targets <strong>TP2</strong></li>
         <li><strong>Anchor #3:</strong> Targets <strong>TP3</strong></li>
-        <li><strong>Pending Tiers (Limit Grid Orders):</strong> ALL limit orders placed down the ladder (Tiers 1 through 10) are automatically assigned to target the single <strong>deepest configured Take Profit (e.g., TP10)</strong>. This ensures that any deep pullback fills run all the way back up for maximum profit extraction.</li>
+        <li><strong>Pending Tiers (Limit Grid Orders):</strong> ALL limit orders placed down the grid (Tiers 1 through 10) are automatically assigned to target the single <strong>deepest configured Take Profit (e.g., TP10)</strong>. This ensures that any deep pullback fills run all the way back up for maximum profit extraction.</li>
     </ul>
-    <div class="doc-tip"><strong>💡 Note:</strong> If you only trade a <strong>Single Anchor</strong>, or if you use the <strong>ANCHOR: UNIFIED TP</strong> setting (configured in the Copier Panel Settings area), the Anchors will target the single deepest active Take Profit and actively participate in cumulative partial percentage shaving.</div>
+    <p><strong>Unified TP Mode:</strong></p>
+    <ul>
+        <li><strong>All Anchors Target Deepest TP:</strong> Every market entry targets the single <strong>deepest active Take Profit</strong> and participates in cumulative partial percentage shaving.</li>
+        <li><strong>Pending Tiers (Limit Grid Orders):</strong> Same as Distributed — all limits target the deepest configured TP.</li>
+    </ul>
     <h4 style="margin-top: 15px; color: #e0e0e0;">Phase 2: Execution & Risk Mitigation</h4>
     <p>When the market triggers your limits and moves back in your favor:</p>
     <ul>
         <li><strong>Anchor Target is Hit:</strong></li>
         <li>As soon as your primary Anchor hits its assigned target (e.g., TP1), it liquidates for an immediate profit.</li>
         <li>This triggers the Auto Break-Even engine, which automatically moves the Stop Loss for <strong>all remaining active trades and pending limits</strong> to your entry price plus a safety cushion (+1.0 pip).</li>
-        <li>Your entire remaining ladder exposure is now <strong>100% risk-free</strong>.</li>
-        <li><strong>Deep Runners Run to Finish:</strong></li>
+        <li>Your entire remaining grid exposure is now <strong>100% risk-free</strong>.</li>
+        <li><strong>Deep Entries Run to Finish:</strong></li>
         <li>Any limit trades that were triggered during the pullback are now completely secured at Break-Even and will run to target the maximum Take Profit (e.g., TP10), capturing massive gains on major trend expansions.</li>
     </ul>
 </section>
@@ -407,11 +412,20 @@
     </ul>
 </section>
 
-<section id="precision-break-even-engines-auto-sl-move-be-settings" class="doc-section">
-    <h2>9. Precision Break-Even Engines (Auto SL Move & BE Settings)</h2>
+<section id="zone-execution-mode-signal-zone-vs-ea-settings" class="doc-section">
+    <h2>9. Zone Execution Mode (Signal Zone vs EA Settings)</h2>
+    <p>When a signal provider sends a <strong>price zone</strong> (e.g., <code>BUY @ 4500-4503</code>), the EA can handle it in two ways:</p>
+    <ul>
+        <li><strong>EA Settings (Default):</strong> The EA uses its own Pending Count and Ladder Step settings. The zone top becomes a single entry price, and pending orders are placed using your configured spacing. This gives you full control over grid density regardless of the signal format.</li>
+        <li><strong>Signal Zone:</strong> The zone geometry overrides your Pending Count. The EA calculates the number of pending orders based on zone width divided by your configured Ladder Step, then places them using your channel's Ladder Step spacing. For example, a zone of 4500-4560 with a 30-pip Ladder Step generates 2 pending orders spaced 30 pips apart.</li>
+    </ul>
+    <p>Configure this per channel in the EA input parameters: <code>InpCx_RespectZone</code> (default: <code>false</code> = EA Settings).</p>
+</section>
+
+<section id="precision-break-even-engines-be-settings" class="doc-section">
+    <h2>10. Precision Break-Even Engines (BE Settings)</h2>
     <p>The EA features automated and customizable Break-Even protection, allowing you to surgically manage position lifecycles and lock in profits directly from the panel:</p>
     <ul>
-        <li><strong>AUTO SL MOVE:</strong> (Displays as <strong><code>AUTO SL MOVE: ON</code></strong> / <strong><code>OFF</code></strong>) Toggle to automatically move your safety stops to lock in capital as configured milestones are triggered.</li>
         <li><strong>BE MODE:</strong> (e.g., <strong><code>BE MODE: ANCHOR</code></strong> / <strong><code>ENTRY</code></strong>)</li>
         <li><strong>ENTRY:</strong> (Individual Mode) Each individual position moves its Stop Loss to its own unique opening fill price, securing every entry independently.</li>
         <li><strong>ANCHOR:</strong> (Massive Lock-In Mode) Forces EVERY trade in the active grid (including your deeper discount limit fills) to move its Stop Loss to align with the high <strong>original Anchor Entry Price</strong>. This means that any deeper discount entries are locked into massive, locked-in gains on a trend continuation!</li>
@@ -438,7 +452,7 @@
         <li><strong>ENTRY CUTOFF:</strong> (e.g., <strong><code>ENTRY CUTOFF: TP1</code></strong>) (Late Signal Guard & Dynamic Market Chasing) High-IQ entry matrix protecting your portfolio from chasing active trends too late. Cycles from <code>DEFAULT</code> (user-defined pip limit) through <code>TP1</code> to <code>TP5</code>.</li>
         <li><strong>The Block:</strong> Rejects the signal completely if market price is beyond the cutoff.</li>
         <li><strong>The Chase:</strong> If the live market price has moved from the signal entry but sits <strong>inside</strong> your chosen cutoff (e.g., TP1), the EA dynamically approves an instant <strong>Market Order fallback</strong> to secure the fill, ensuring you don't miss critical entries by transforming them into unfillable limit grids!</li>
-        <li><strong>Isolated Signal Processing:</strong> Incoming community alerts are routed through localized <code>TradeContext</code> objects, preventing remote activations from ever overriding your manual dashboard variables.</li>
+        <li><strong>Isolated Signal Processing:</strong> Incoming community alerts are processed using each channel's own settings, preventing remote activations from ever overriding your manual dashboard variables.</li>
         <li><strong>Decentralized HistorySelect:</strong> The signal engine utilizes an asynchronous <code>HistorySelect</code> polling mechanism to decouple trade verification from the main UI thread, ensuring signal processing never hangs during volatile news events.</li>
         <li><strong>Smart Channel Routing:</strong> The background engine dynamically maps incoming Telegram IDs to your configured channel presets (CH1 or CH2) to auto-execute with intended sizing and targets.</li>
         <li><strong>Stale Signal Guard:</strong> Protects account margin by automatically discarding any incoming signals older than 60 seconds.</li>
@@ -456,6 +470,18 @@
         <li><strong>Profit Telemetry:</strong> Displays your cumulative, real-time floating profit or loss (P&L) for all active grid entries on the current chart. Dynamically updates color from <strong>Green (Profitable)</strong> to <strong>Red (Drawdown)</strong> for instant visual assessment.</li>
         <li><strong>Spread Tracker:</strong> Measures and displays the broker's real-time Ask/Bid spread directly on the dashboard, helping you gauge liquidity and entry conditions.</li>
         <li><strong>Live Status Log Footer:</strong> A rolling diagnostic line displaying the most recent action performed by the trade engine (e.g., execution confirmations like <code>SWEEP SELL @ MKT</code>, automated adjustments, partial shaves, or server rejection alerts).</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">Multi-Instance Analytics</h3>
+    <p>When running multiple MT5 instances, the analytics dashboard supports per-instance switching:</p>
+    <ul>
+        <li><strong>Instance Selector:</strong> A dropdown at the top of the Analytics tab lets you select which MT5 instance's data to view.</li>
+        <li><strong>Automatic Selection:</strong> On startup, the bridge automatically selects the first configured instance.</li>
+        <li><strong>Switching:</strong> Selecting a different instance from the dropdown instantly swaps the active database and refreshes all stats and deal history.</li>
+        <li><strong>Database Mapping:</strong> Each instance maps to its own SQLite database file:</li>
+        <li>Instance 1: <code>gsae_analytics_v2.db</code></li>
+        <li>Instance 2: <code>gsae_analytics_v2_2.db</code></li>
+        <li>Instance 3: <code>gsae_analytics_v2_3.db</code></li>
+        <li><strong>Note:</strong> Analytics data is shown per-instance only. There is no cross-instance aggregated view at this time.</li>
     </ul>
 </section>
 
@@ -523,7 +549,7 @@
     <h2>17. UI Modes Sync & Safety Engines</h2>
     <p>To prevent strategic conflicts, the EA automatically adjusts the panel buttons when selecting modes:</p>
     <ul>
-        <li><strong>Enabling TP AUTO:</strong> Automatically configures Partials to <strong>LADDER</strong>, Harvesting to <strong>OFF</strong>, and Auto Stop Loss Move to <strong>ON</strong>. This ensures the Distributed TP Ladder runs safely and initiates Break-Even right when TP1 is hit.</li>
+        <li><strong>Enabling TP AUTO:</strong> Automatically configures Partials to <strong>GRID</strong>, Harvesting to <strong>OFF</strong>. This ensures the Distributed TP Grid runs safely and initiates Break-Even right when TP1 is hit.</li>
         <li><strong>Hardened Chart Layout Redraw:</strong> To maintain precise alignment when changing charts, altering timeframes, or loading MT5 profiles, the <code>CHARTEVENT_CHART_CHANGE</code> engine automatically cleanses visual elements, resets the UI initialization states, and forces a dynamic, pixel-perfect rebuild.</li>
         <li><strong>Intelligent Input Protection:</strong> Built-in guards ensure that typing new numbers into input fields is smooth, instant, and never loses focus during volatile markets.</li>
     </ul>
@@ -531,13 +557,84 @@
 
 <section id="the-copier-bridge-desktop-engine" class="doc-section">
     <h2>18. The Copier Bridge Desktop Engine</h2>
-    <p>The <strong>Telegram Copier Bridge</strong> (<code>GoldScalperBridge.exe</code>) is the high-speed external engine that connects your community alerts directly to your trading terminal. It logs into your Telegram account, listens to your chosen signal channels, and transforms unstructured chat text into precise trade data delivered to the EA in under 50ms via named pipe IPC.</p>
+    <p>The <strong>Telegram Copier Bridge</strong> (<code>gs-bridge.exe</code>) is the high-speed external engine that connects your community alerts directly to your trading terminal. It logs into your Telegram account, listens to your chosen signal channels, and transforms unstructured chat text into precise trade data delivered to the EA in under 50ms via TCP socket IPC.</p>
     <h3 style="margin-top: 20px; color: #00d2d3;">1. Setup & Initial Credentials</h3>
     <p>When launched for the first time, the bridge initiates a secure interactive setup wizard:</p>
     <ul>
         <li><strong>API Registration:</strong> Prompts for your Telegram API ID and Hash. (Pressing ENTER defaults to our secure, optimized Telegram App Engine).</li>
-        <li><strong>Secure Authentication:</strong> Asks for your Telegram phone number, followed by your Telegram App OTP and 2-step Verification Password (if active). The authentication state is stored securely in your local <code>gsae_session.session</code> file.</li>
+        <li><strong>Secure Authentication:</strong> Asks for your Telegram phone number, followed by your Telegram App OTP and 2-step Verification Password (if active). The authentication state is stored securely in your local <code>gsae_session_go.json</code> file.</li>
         <li><strong>Channel Subscription Matrix:</strong> Reads and displays up to 50 of your active groups/channels. You select target channels by typing their corresponding list numbers (e.g., <code>1, 4, 7</code>).</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">2. Multi-Instance Setup (Multiple Brokers / Accounts)</h3>
+    <p>The bridge supports running <strong>multiple MetaTrader 5 terminals</strong> simultaneously, each connected to a different broker account or trading environment.</p>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">How It Works</h4>
+    <p>Each bridge instance manages its own set of MT5 profiles. You configure these in the <strong>Meta Trader</strong> tab:</p>
+    <ul>
+        <li><strong>Single Instance (Default):</strong> If you only run one MT5 terminal, no configuration is needed. The default signal file is <code>gsae_signal.txt</code> and the EA reads it automatically.</li>
+        <li><strong>Multiple Instances:</strong> To connect multiple brokers or accounts, run a separate MetaTrader 5 terminal for each one. Each instance gets its own signal file:</li>
+        <li>Instance 1: <code>gsae_signal.txt</code></li>
+        <li>Instance 2: <code>gsae_signal2.txt</code></li>
+        <li>Instance 3: <code>gsae_signal3.txt</code></li>
+        <li>(and so on, up to <code>gsae_signal6.txt</code>)</li>
+    </ul>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">Configuration Steps</h4>
+    <ul>
+        <li>Open each MetaTrader 5 terminal and attach the Gold Snipers EA to your chart.</li>
+        <li>In the EA inputs, set the signal file to match the bridge instance (e.g., <code>gsae_signal2.txt</code> for Instance 2).</li>
+        <li>In the Bridge's <strong>Meta Trader</strong> tab, click <strong>+ Add MT5 Instance</strong> to create a new profile.</li>
+        <li>Assign your Telegram channels to the C1/C2 slots for each instance.</li>
+        <li>Click <strong>Save Channels & Restart</strong> to apply changes.</li>
+    </ul>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">Channel Limit</h4>
+    <p>Each bridge instance supports a maximum of <strong>2 Telegram channels</strong> (C1 and C2). To copy signals from more channels, run additional bridge instances with their own MT5 terminals.</p>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">License Tier Limits</h4>
+    <div style="overflow-x: auto; margin: 10px 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">License Tier</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Max MT5 Instances</th></tr></thead>
+<tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Starter</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">1 instance</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Pro</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">3 instances</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><strong>Expert</strong></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">6 instances</td></tr>
+    </tbody></table></div>
+    <h3 style="margin-top: 20px; color: #00d2d3;">3. Settings Templates</h3>
+    <p>The bridge includes a built-in <strong>Settings Templates</strong> system that lets you save, apply, and share complete EA configurations across channels with one click.</p>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">Built-In Templates</h4>
+    <p>The bridge ships with several pre-configured templates:</p>
+    <ul>
+        <li><strong>Conservative:</strong> 0.01 lot, 3 pending levels, 80 pip SL — ideal for small accounts</li>
+        <li><strong>Standard:</strong> 0.02 lot, 5 pending levels, 50 pip SL — balanced risk/reward</li>
+        <li><strong>Aggressive:</strong> 0.05 lot, 5 pending levels, 40 pip SL — higher risk, higher reward</li>
+        <li><strong>Scalping:</strong> 0.03 lot, 3 pending levels, 30 pip SL — quick in-and-out trades</li>
+        <li><strong>Sniper (Expert):</strong> 0.1 lot, 8 pending levels, 50 pip SL — full-featured expert setup</li>
+    </ul>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">Creating Custom Templates</h4>
+    <ul>
+        <li>Open the <strong>Templates</strong> tab in the bridge.</li>
+        <li>Click <strong>Get Settings</strong> to import the current channel configuration from the EA.</li>
+        <li>Edit any fields (lots, TP targets, strategy toggles, etc.).</li>
+        <li>Click <strong>Save Template</strong> to store it as a custom template.</li>
+    </ul>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">Applying Templates</h4>
+    <ul>
+        <li>Select a template from the list (built-in or custom).</li>
+        <li>Select the target channel from the dropdown.</li>
+        <li>Click <strong>Apply</strong> — the bridge sends all configuration values to the EA via admin commands.</li>
+        <li>The EA applies the settings and the bridge refreshes to confirm.</li>
+    </ul>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">Template Sections</h4>
+    <p>Templates can be sent in sections or all at once:</p>
+    <ul>
+        <li><strong>Entries & Lots:</strong> Anchor/Pending lot sizes, SL, ladder step</li>
+        <li><strong>Anchor TP:</strong> Take Profit distances and close percentages for anchor orders</li>
+        <li><strong>Pending TP:</strong> Take Profit distances and close percentages for pending orders</li>
+        <li><strong>Strategy:</strong> Harvest, Grid/Single mode, TP/SL mode (ON/Stealth), Anchor (Unified/Distributed), Trail</li>
+        <li><strong>Triggers:</strong> Break-Even mode, Trigger level, Cancel Pending level, Signal Guard</li>
+    </ul>
+    <h4 style="margin-top: 15px; color: #e0e0e0;">Template Management</h4>
+    <ul>
+        <li><strong>Duplicate:</strong> Create a copy of an existing template for quick customization.</li>
+        <li><strong>Export/Import:</strong> Export templates as JSON files to share between bridge installations.</li>
+        <li><strong>Delete:</strong> Remove custom templates (built-in templates cannot be deleted).</li>
     </ul>
     <h3 style="margin-top: 20px; color: #00d2d3;">2. Low-Latency Signal Delivery (Socket IPC)</h3>
     <p>In the bridge's <strong>API Settings</strong> panel, scroll to the <strong>"Low-Latency Signal Delivery"</strong> section:</p>
@@ -564,6 +661,15 @@
         <li><strong>Forwarding Protection:</strong> Detects and automatically discards forwarded messages to eliminate cross-channel echo.</li>
         <li><strong>Status Updates Filter:</strong> Ignores messages stating <code>"AT TPx"</code> (e.g., "Gold at TP1") to prevent re-firing filled setups.</li>
         <li><strong>Keyword Matrix:</strong> Filters out any unstructured chatter that doesn't contain the explicit instrument identifiers <strong><code>GOLD</code></strong> or <strong><code>XAU</code></strong> (excluding emergency exit commands).</li>
+    </ul>
+    <h3 style="margin-top: 20px; color: #00d2d3;">4. Multi-Message Signal Correlation (TP/SL in Second Message)</h3>
+    <p>Some signal providers send their entry in one message and TP/SL details in a separate follow-up message. Enable this feature to prevent duplicate trades:</p>
+    <ul>
+        <li><strong>Enable:</strong> In the Bridge's <strong>Parsing Settings</strong> tab, toggle <strong>"TP/SL in Second Message"</strong> ON for the target channel.</li>
+        <li><strong>How It Works:</strong> When enabled, after the first message triggers a trade (BUY/SELL), the bridge stores it as a pending signal. If a second message arrives from the same channel within the configured time window, it is automatically treated as an <code>UPDATE</code> signal — updating the existing trade's TP/SL instead of opening a duplicate position.</li>
+        <li><strong>Match Window:</strong> Configurable time window (default 60 seconds, range 10-300). Only messages within this window are correlated.</li>
+        <li><strong>TP/SL Parsing Dependency:</strong> The UPDATE signal is only processed by the EA if <strong>"Enable TP/SL Parsing"</strong> is also ON. If TP/SL parsing is OFF, the EA ignores the UPDATE and uses its own default TP/SL settings.</li>
+        <li><strong>Default:</strong> OFF — the bridge processes each message independently (original behavior).</li>
     </ul>
     <h3 style="margin-top: 20px; color: #00d2d3;">4. Advanced Smart Mechanics</h3>
     <ul>
@@ -598,7 +704,7 @@
     <ul>
         <li><strong>Signal Broadcast:</strong> A signal provider posts a message in your subscribed Telegram Channel (e.g., <code>"BUY XAUUSD @ 2030, SL: 2020, TP1: 2035, TP2: 2040"</code>).</li>
         <li><strong>Bridge Parsing:</strong> The <strong>Copier Bridge Desktop Engine</strong> instantly intercepts the message, processes it through the <strong>Strict Anti-Noise Filters</strong>, and extracts the entry price, Stop Loss, and Take Profits.</li>
-        <li><strong>Secure Delivery:</strong> The Bridge delivers the parsed signal to the EA via named pipe IPC (~50ms latency). As a fallback, it also writes a <code>.tmp</code> file that swaps to a finalized <code>.txt</code> signal file inside the secure shared MetaQuotes Common directory.</li>
+        <li><strong>Secure Delivery:</strong> The Bridge delivers the parsed signal to the EA via TCP socket IPC (~50ms latency). As a fallback, it also writes a <code>.txt</code> signal file inside the secure shared MetaQuotes Common directory.</li>
         <li><strong>EA Detection & Context Routing:</strong> The MT5 EA immediately receives the signal, matches the Telegram Channel ID to your preset tab (<strong>CH1</strong> or <strong>CH2</strong>), and extracts the trade context.</li>
         <li><strong>Filters & Cutoffs Evaluation:</strong> Before execution, the EA verifies:</li>
         <li>Is the signal older than 60 seconds? (If yes, discarded).</li>
@@ -761,6 +867,7 @@
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_AllowCmds</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Determines whether the EA processes remote conversational commands (e.g., <code>Risk Free</code>, <code>Close All</code>) sent by channel admins.</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_LateGuardPips</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>0</code> (OFF)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Signal Cutoff threshold. If the market price is further than this distance from the original signal price, it prevents entry. If within range, it will enter at market price. Set to <code>0</code> to disable late signal filtering.</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_AncShave</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Anchor Unified TP toggle. When <code>true</code> (Unified), all anchors target the deepest TP level and participate in partial shaving. When <code>false</code> (Distributed), anchors exit 100% at staggered levels (e.g. TP1, TP2, TP3) and bypass partial shaving.</td></tr>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_RespectZone</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Zone execution mode. When <code>false</code> (EA Settings), the EA uses its own Pending Count and Ladder Step settings even when the signal contains a price zone. When <code>true</code> (Signal Zone), the zone geometry overrides Pending Count and Ladder Step — the EA auto-fills the zone with pending orders at 10-pip intervals.</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_SL</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>50.0</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Stop Loss distance in pips for the channel's order family.</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_TP1</code> to <code>TP10</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Target distances in pips from anchor entry for Take Profits 1 through 10. (TP1=30, TP2=50, TP3=80, TP4=100, TP5=130, TP6-10=0)</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpCx_Pct1</code> to <code>Pct10</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Double</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">(staged)</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Percentage of position volume to close at each Take Profit target. (Pct1-4=20%, Pct5=100%, Pct6-10=0%)</td></tr>
@@ -957,6 +1064,7 @@
     <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
     <thead><tr><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Parameter</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Type</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Default Value</th><th style="padding: 8px 12px; text-align: left; border-bottom: 2px solid #00d2d3; color: #00d2d3; font-weight: 600;">Description</th></tr></thead>
 <tbody>
+    <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpTelegramMaxSignalAgeSec</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>10</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Maximum age of a Telegram signal in seconds before it is rejected as stale. Signals older than this are discarded on startup or after delays. Set to 0 to disable the check.</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpAIEnabled</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>false</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Enables the AI Insights tab in the trades panel.</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpAIWriteData</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Bool</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>true</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Writes market data JSON file for the bridge to process.</td></tr>
     <tr><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>InpAIInterval</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Int</td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;"><code>30</code></td><td style="padding: 6px 12px; border-bottom: 1px solid #2a2d3e; color: #e0e0e0;">Analysis interval in seconds (minimum 10, maximum 300).</td></tr>
@@ -1015,39 +1123,39 @@
 </section>
 </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h2><img src="logo-header.png" alt="" width="32" height="32"> Gold<span>Snipers</span></h2>
-                    <p>Professional algorithmic trading solutions for MetaTrader 5 and Telegram integrations. Built by traders, for traders.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="index.html#pricing">Pricing</a></li>
-                        <li><a href="doc.html">Documentation</a></li>
-                        <li><a href="infographics.html">Infographics</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="index.html#faq">FAQ</a></li>
-                        <li><a href="mailto:support@goldsnipers.com">Contact Support</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-disclaimer">
-                <strong>Risk Warning:</strong> Trading financial instruments, including foreign exchange (Forex) and contracts for difference (CFDs) on margin, carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade, you should carefully consider your investment objectives, level of experience, and risk appetite. Past performance of any automated strategy or EA is not indicative of future results.
-                <br><br>
-                &copy; 2026 Gold Snipers. All rights reserved. Built for MT5.
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js?v=2.1.0"></script>
-</body>
-</html>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2><img src="logo-header.png" alt="" width="32" height="32"> Gold<span>Snipers</span></h2>
+                    <p>Professional algorithmic trading solutions for MetaTrader 5 and Telegram integrations. Built by traders, for traders.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="doc.html">Documentation</a></li>
+                        <li><a href="infographics.html">Infographics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="mailto:support@goldsnipers.com">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <strong>Risk Warning:</strong> Trading financial instruments, including foreign exchange (Forex) and contracts for difference (CFDs) on margin, carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade, you should carefully consider your investment objectives, level of experience, and risk appetite. Past performance of any automated strategy or EA is not indicative of future results.
+                <br><br>
+                &copy; 2026 Gold Snipers. All rights reserved. Built for MT5.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=2.1.0"></script>
+</body>
+</html>
