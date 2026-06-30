@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initHeroChart();
     initShowcaseTabs();
     initScrollspy();
+    initCookieConsent();
 });
 
 // --- Sticky Header ---
@@ -448,4 +449,51 @@ function initScrollspy() {
     }, { passive: true });
 
     changeActiveLink();
+}
+
+// --- Cookie Consent Banner ---
+function initCookieConsent() {
+    const banner = document.getElementById("cookie-consent");
+    if (!banner) return;
+
+    let consent = null;
+    try {
+        consent = localStorage.getItem("gs_cookie_consent");
+    } catch (e) { /* ignore */ }
+
+    if (consent) {
+        if (consent === "accepted") loadTawk();
+        return;
+    }
+
+    setTimeout(() => banner.classList.add("visible"), 800);
+
+    const acceptBtn = banner.querySelector(".cookie-btn-accept");
+    const declineBtn = banner.querySelector(".cookie-btn-decline");
+
+    function saveConsent(value) {
+        try {
+            localStorage.setItem("gs_cookie_consent", value);
+        } catch (e) { /* ignore */ }
+        banner.classList.remove("visible");
+        setTimeout(() => banner.remove(), 400);
+        if (value === "accepted") loadTawk();
+    }
+
+    if (acceptBtn) acceptBtn.addEventListener("click", () => saveConsent("accepted"));
+    if (declineBtn) declineBtn.addEventListener("click", () => saveConsent("declined"));
+}
+
+function loadTawk() {
+    if (document.getElementById("tawk-loader")) return;
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.id = "tawk-loader";
+        s1.src = "https://embed.tawk.to/6a30c0ab16a8811d4c595c28/1jr77180j";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+    })();
 }
