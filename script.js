@@ -458,40 +458,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (src && !src.includes('Bridge-Dashboard.png')) {
                 openLightbox(src);
             }
-            });
-        }
-        displayImage.tabIndex = 0;
-        displayImage.role = "button";
-        displayImage.style.cursor = "pointer";
-    });
-}
-
-// --- Lightbox ---
-function openLightbox(src) {
-    const lb = document.getElementById("showcase-lightbox");
-    const img = document.getElementById("lightbox-image");
-    if (!lb || !img) return;
-    img.src = src.replace(/\.webp(\?v=\d+)?$/, ".png$1");
-    lb.classList.add("open");
-    document.body.style.overflow = "hidden";
-}
-
-function closeLightbox(e) {
-    if (e && e.target !== e.currentTarget) return;
-    const lb = document.getElementById("showcase-lightbox");
-    if (!lb) return;
-    lb.classList.remove("open");
-    document.body.style.overflow = "";
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    const displayImage = document.getElementById("showcase-display");
-    if (displayImage) {
-        displayImage.addEventListener("click", () => {
-            const src = displayImage.src;
-            if (src && !src.includes("Bridge-Dashboard.png")) {
-                openLightbox(src);
-            }
         });
         displayImage.tabIndex = 0;
         displayImage.role = "button";
@@ -499,7 +465,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// --- Documentation Sidebar Scrollspy ---
 function initScrollspy() {
     const sidebar = document.querySelector(".doc-sidebar");
     if (!sidebar) return;
