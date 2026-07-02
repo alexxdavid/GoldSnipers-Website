@@ -376,9 +376,9 @@ function initShowcaseTabs() {
     const displayImage = document.getElementById("showcase-display");
     const imageMap = {
         "dashboard-img": { name: "dashboard", w: 1024, h: 656, alt: "Desktop Bridge Dashboard" },
-        "parsing-img": { name: "parsing", w: 1024, h: 651, alt: "Custom Command & Parsing Settings" },
-        "test-img": { name: "signal_test", w: 1024, h: 654, alt: "Signal Tester Console" },
-        "analytics-img": { name: "analytics", w: 1024, h: 607, alt: "Local Analytics & Closed Deals" }
+        "parsing-img": { name: "parsing", w: 2291, h: 1445, alt: "Custom Command & Parsing Settings" },
+        "test-img": { name: "signal_test", w: 2295, h: 1450, alt: "Signal Tester Console" },
+        "analytics-img": { name: "analytics", w: 2299, h: 1442, alt: "Local Analytics & Closed Deals" }
     };
 
     if (!displayImage) return;
@@ -404,8 +404,8 @@ function initShowcaseTabs() {
             if (meta) {
                 displayImage.style.opacity = "0.3";
                 setTimeout(() => {
-                    const webpSrc = `${meta.name}.webp?v=4`;
-                    const pngSrc = `${meta.name}.png?v=4`;
+                    const webpSrc = `${meta.name}.webp?v=5`;
+                    const pngSrc = `${meta.name}.png?v=5`;
                     const img = new Image();
                     img.onload = () => {
                         if (source) source.srcset = webpSrc;
