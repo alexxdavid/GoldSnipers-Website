@@ -375,7 +375,7 @@ function initShowcaseTabs() {
     const tabs = document.querySelectorAll(".showcase-tab");
     const displayImage = document.getElementById("showcase-display");
     const imageMap = {
-        "dashboard-img": { name: "dashboard", w: 1024, h: 656, alt: "Desktop Bridge Dashboard" },
+        "dashboard-img": { name: "dashboard", w: 2278, h: 1441, alt: "Desktop Bridge Dashboard" },
         "parsing-img": { name: "parsing", w: 2291, h: 1445, alt: "Custom Command & Parsing Settings" },
         "test-img": { name: "signal_test", w: 2295, h: 1450, alt: "Signal Tester Console" },
         "analytics-img": { name: "analytics", w: 2299, h: 1442, alt: "Local Analytics & Closed Deals" }
