@@ -455,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (displayImage) {
         displayImage.addEventListener('click', () => {
             const src = displayImage.src;
-            if (src && !src.includes('Bridge-Dashboard.png')) {
+            if (src) {
                 openLightbox(src);
             }
         });
