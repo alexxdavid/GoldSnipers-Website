@@ -26,6 +26,18 @@ function initStickyHeader() {
     }, { passive: true });
 }
 
+// --- Doc Sidebar Toggle Groups ---
+function toggleGroup(button) {
+    const isOpen = button.classList.contains("open");
+    if (isOpen) {
+        button.classList.remove("open");
+        button.nextElementSibling.classList.remove("open");
+    } else {
+        button.classList.add("open");
+        button.nextElementSibling.classList.add("open");
+    }
+}
+
 // --- Mobile Menu Toggle ---
 function initMobileMenu() {
     const menuToggle = document.querySelector(".menu-toggle");
