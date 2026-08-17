@@ -93,7 +93,23 @@
                         "name": "How does the Telegram Copier Bridge work?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "The Python bridge runs on your local PC or VPS, listening to the Telegram channels you configure. The moment a signal is posted, it parses it and delivers it to the EA in under 50ms via named pipe IPC."
+                            "text": "The Native Go desktop bridge runs on your local PC or VPS, listening to the Telegram channels you configure. The moment a signal is posted, it parses it in under 15ms and delivers it to the EA via high-speed local TCP socket IPC."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I manage Gold Snipers remotely from my phone?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes! Gold Snipers includes an integrated Remote Web Dashboard powered by Cloudflare Quick Tunnels. You can monitor live trades, floating PnL, and adjust risk settings directly from any smartphone, tablet, or web browser without opening router ports or configuring dynamic DNS."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is Macro Sentinel & VIP Intelligence?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Macro Sentinel is an institutional news surveillance engine built into the bridge. It monitors Trump Truths, Federal Reserve leaks, geopolitical alerts, and fast squawks, calculating real-time Gold transmission bias (Bullish/Bearish/Volatility), tracking live pip reactions, and providing DXY dollar correlation analysis."
                         }
                     },
                     {
@@ -152,15 +168,15 @@
             <div class="hero-grid">
                 <div class="hero-content">
                     <h1>Trade <span class="gold-text">Gold</span> Like Institutions.</h1>
-                    <p>Automate your Gold (XAUUSD) trading with the ultimate MT5 Expert Advisor and Telegram Bridge. Copy signals in under 50ms with smart FVG, Order Block, and Stealth TP/SL protection.</p>
+                    <p>Automate your Gold (XAUUSD) trading with the ultimate MT5 Expert Advisor, Native Go Desktop Bridge, and Remote Web Dashboard. Copy signals in under 15ms with Macro Sentinel news intelligence, smart FVG/OB filters, and Stealth TP/SL protection.</p>
                     <div class="hero-actions">
                         <a href="#pricing" class="btn btn-primary">Start Trading Now</a>
                         <a href="#features" class="btn btn-secondary">Explore Features</a>
                     </div>
                     <div class="hero-stats">
                         <div class="stat-item">
-                            <h3>&lt;50ms</h3>
-                            <p>Execution Speed</p>
+                            <h3>&lt;15ms</h3>
+                            <p>Socket Speed</p>
                         </div>
                         <div class="stat-item">
                             <h3>100%</h3>
@@ -168,7 +184,7 @@
                         </div>
                         <div class="stat-item">
                             <h3 class="cyan-text">24/7</h3>
-                            <p>Uptime & Sync</p>
+                            <p>Mobile Cloud Sync</p>
                         </div>
                     </div>
                 </div>
@@ -233,10 +249,13 @@
         <div class="ticker-wrap">
             <div class="ticker">
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> BUY TP1 HIT <span class="profit">+20 Pips</span> | SHAVE 20%</div>
+                <div class="ticker-item">⚡ <span class="symbol">MACRO SENTINEL</span> TRUMP TARIFF ALERT <span class="profit">+93.0 Pips ▲</span> | GOLD SURGE</div>
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> TP2 HIT <span class="profit">+50 Pips</span> | SHAVE 20%</div>
                 <div class="ticker-item">⚡ <span class="symbol">EURUSD</span> BREAKEVEN ACTIVE <span class="profit">SL MOVED</span> | TO ENTRY</div>
+                <div class="ticker-item">⚡ <span class="symbol">REMOTE DASHBOARD</span> MOBILE SYNC <span class="profit">CONNECTED</span> | 0-CONFIG TUNNEL</div>
                 <div class="ticker-item">⚡ <span class="symbol">GBPUSD</span> BUY TP3 HIT <span class="profit">+90 Pips</span> | SHAVE 20%</div>
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> HARVESTED | HIGH TIERS CLOSED BE</div>
+                <div class="ticker-item">⚡ <span class="symbol">AI COPILOT</span> DOVISH FOMC ROTATION <span class="profit">+131 Pips ▲</span> | BULLION EXPANSION</div>
                 <div class="ticker-item">⚡ <span class="symbol">US30</span> BUY TRAILING CANDLE <span class="profit">ACTIVE</span> | SECURING +150 Pips</div>
                 <div class="ticker-item">⚡ <span class="symbol">XAGUSD</span> SELL TP4 HIT <span class="profit">+120 Pips</span> | SHAVE 50%</div>
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> EQUITY PROTECTION <span class="profit">TRIGGERED</span> | MASTER CLEARANCE</div>
@@ -244,10 +263,13 @@
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> LADDER ENGAGED | 5 TIER PENDING LEVELS</div>
                 <!-- Duplicate for seamless loop -->
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> BUY TP1 HIT <span class="profit">+20 Pips</span> | SHAVE 20%</div>
+                <div class="ticker-item">⚡ <span class="symbol">MACRO SENTINEL</span> TRUMP TARIFF ALERT <span class="profit">+93.0 Pips ▲</span> | GOLD SURGE</div>
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> TP2 HIT <span class="profit">+50 Pips</span> | SHAVE 20%</div>
                 <div class="ticker-item">⚡ <span class="symbol">EURUSD</span> BREAKEVEN ACTIVE <span class="profit">SL MOVED</span> | TO ENTRY</div>
+                <div class="ticker-item">⚡ <span class="symbol">REMOTE DASHBOARD</span> MOBILE SYNC <span class="profit">CONNECTED</span> | 0-CONFIG TUNNEL</div>
                 <div class="ticker-item">⚡ <span class="symbol">GBPUSD</span> BUY TP3 HIT <span class="profit">+90 Pips</span> | SHAVE 20%</div>
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> HARVESTED | HIGH TIERS CLOSED BE</div>
+                <div class="ticker-item">⚡ <span class="symbol">AI COPILOT</span> DOVISH FOMC ROTATION <span class="profit">+131 Pips ▲</span> | BULLION EXPANSION</div>
                 <div class="ticker-item">⚡ <span class="symbol">US30</span> BUY TRAILING CANDLE <span class="profit">ACTIVE</span> | SECURING +150 Pips</div>
                 <div class="ticker-item">⚡ <span class="symbol">XAGUSD</span> SELL TP4 HIT <span class="profit">+120 Pips</span> | SHAVE 50%</div>
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> EQUITY PROTECTION <span class="profit">TRIGGERED</span> | MASTER CLEARANCE</div>
@@ -273,7 +295,7 @@
                 <div class="why-card glass-panel">
                     <div class="why-icon">⚡</div>
                     <h3>Never Miss a Signal</h3>
-                    <p>Signals are processed in under 50ms — even while you sleep. Anti-duplicate safety ensures the same alert never triggers twice.</p>
+                    <p>Signals are processed in under 15ms — even while you sleep. Anti-duplicate safety ensures the same alert never triggers twice.</p>
                 </div>
                 <div class="why-card glass-panel">
                     <div class="why-icon">🛡️</div>
@@ -295,7 +317,7 @@
                 <div class="how-card glass-panel">
                     <div class="how-step">01</div>
                     <h3>Install Bridge & EA</h3>
-                    <p>Run the Python Telegram Bridge on your PC or VPS, and attach the Gold Snipers Expert Advisor to your MT5 chart.</p>
+                    <p>Run the high-performance Native Go Desktop Bridge on your PC or VPS, and attach the Gold Snipers Expert Advisor to your MT5 chart.</p>
                 </div>
                 <div class="how-card glass-panel">
                     <div class="how-step">02</div>
@@ -316,7 +338,7 @@
         <div class="container">
             <div class="section-header text-center">
                 <h2>The Automation <span class="cyan-text">Flow</span></h2>
-                <p>From Telegram signal to executed trade on MetaTrader 5 — fully automated in under 50ms.</p>
+                <p>From Telegram signal to executed trade on MetaTrader 5 — fully automated in under 15ms.</p>
             </div>
             <div class="infographic-container">
                 <picture>
@@ -344,8 +366,28 @@
             <div class="features-grid">
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">⚡</div>
-                    <h3>Real-Time Signal Processing</h3>
-                    <p>Ultra-fast signal response delivers Telegram alerts to the EA in under 50ms. Low-latency infrastructure ensures no opportunity is missed, even in fast-moving Gold markets.</p>
+                    <h3>Macro Sentinel & VIP Intel</h3>
+                    <p>Real-time surveillance of Trump Truths, Federal Reserve leaks, geopolitical alerts, and fast squawk wires. Features automatic Gold transmission bias scoring (Bullish/Bearish/Volatility), live pip displacement tracking, a 4-pillar thematic heatmap, and DXY dollar correlation radar.</p>
+                </div>
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Remote Web Dashboard</h3>
+                    <p>Monitor live open trades, floating PnL, account health, and adjust risk settings directly from your smartphone, tablet, or browser anywhere in the world. Powered by zero-configuration, secure Cloudflare Quick Tunnels with zero port forwarding required.</p>
+                </div>
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Multi-Model AI Copilot</h3>
+                    <p>Institutional AI market synthesis powered by OpenAI, Anthropic Claude, DeepSeek, OpenCode, or local Ollama models. Dynamically injected with live broker spot prices for precise support/resistance invalidation zones, market structure shifts, and swing risk analysis.</p>
+                </div>
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Native Go & Socket IPC</h3>
+                    <p>Engineered as a single, lightweight, native Go + Wails desktop binary. Replaces sluggish middlemen with sub-millisecond local TCP Socket IPC — passing signals to MetaTrader 5 in under 15ms with zero cloud lag.</p>
+                </div>
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon">📅</div>
+                    <h3>Economic News Sentinel</h3>
+                    <p>Real-time ForexFactory high-impact red-folder event tracking. Automatically halts incoming trades and widens safety buffers before and after CPI, NFP, and FOMC releases to prevent high-slippage stopouts.</p>
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">🛡️</div>
@@ -355,37 +397,32 @@
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">🪜</div>
                     <h3>Grid / Ladder Scaling</h3>
-                    <p>Don't risk everything on one entry. Gold Snipers splits trades into anchor and pending layers, averaging your entry price on pullbacks and locking in Break-Even. Anchors and layers can have their own independent Take Profit distance and shaving percentage, giving you granular control over how each tier closes.</p>
+                    <p>Don't risk everything on one entry. Gold Snipers splits trades into anchor and pending layers, averaging your entry price on pullbacks and locking in Break-Even. Anchors and layers have independent Take Profit distances and shave percentages.</p>
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">⚙️</div>
-                    <h3>Automatic Entry Management</h3>
-                    <p>Fully automated trade lifecycle from open to close. Harvest mode secures profits by moving tiers to break-even once profitable. Pending Delete cancels unfilled limit orders at configurable TP levels. Auto Breakeven, Auto TP Shaving, and Trailing Stop Loss work together to protect gains without manual intervention.</p>
-                </div>
-                <div class="feature-card glass-panel">
-                    <div class="feature-icon">🧮</div>
-                    <h3>Dynamic Risk Management</h3>
-                    <p>Set position sizes, stop losses, and take profits per channel. Max Drawdown Protection enforces equity floors. Risk-free mode locks trades to break-even once in profit. Break-even engines move SL to entry automatically.</p>
+                    <h3>Automated Trailing Engines</h3>
+                    <p>Lock in profits with 3 intelligent trailing algorithms: <strong>Step Trailing</strong>, <strong>Candle Trailing</strong>, and <strong>Fractal Trailing</strong>. Works alongside Auto Breakeven, Auto TP Shaving, and Harvest Mode to secure gains as momentum expands.</p>
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">📈</div>
-                    <h3>Equity Protection</h3>
-                    <p>Maximum Drawdown Protection auto-closes all positions when your equity drops below your configured threshold. Dynamic Lot Sizing scales position volume based on account balance and risk tolerance. Prop-firm safety controls enforce spread filters and lot-size caps to protect funding challenges.</p>
-                </div>
-                <div class="feature-card glass-panel">
-                    <div class="feature-icon">🚫</div>
-                    <h3>Signal Guard Cutoff</h3>
-                    <p>Prevent late or stale entries with configurable signal age cutoffs. If a Telegram signal is older than your threshold, the EA rejects it automatically. Late Guard Pips adds an extra layer — signals that have already moved beyond a pip distance from the posted entry are skipped entirely.</p>
+                    <h3>Equity Protection & Prop Firm Safety</h3>
+                    <p>Maximum Drawdown Protection auto-closes all positions when equity drops below your threshold. Enforces daily loss limits, spread filters, and lot-size caps tailored specifically for FTMO, FundedNext, and funded challenge accounts.</p>
                 </div>
                 <div class="feature-card glass-panel">
                     <div class="feature-icon">📱</div>
                     <h3>Telegram Admin Controls</h3>
-                    <p>Change settings, close trades, move stops to break-even, and request status updates directly from Telegram. Control your copier from anywhere without touching the chart or VPS.</p>
+                    <p>Change parameters, close trades, move stops to break-even, and request status dumps directly through Telegram commands. Full two-way administrative control from any chat.</p>
                 </div>
                 <div class="feature-card glass-panel">
-                    <div class="feature-icon">🤖</div>
-                    <h3>AI Market Insights</h3>
-                    <p>Real-time AI analysis of gold market conditions. Get bias, confidence, risk assessment, key support/resistance levels, FVG & Order Block data, and multi-timeframe alignment — all displayed in a clean on-chart dashboard tab. Supports OpenAI, Anthropic, DeepSeek, OpenCode, and local models via Ollama or any OpenAI-compatible API provider.</p>
+                    <div class="feature-icon">🚫</div>
+                    <h3>Signal Guard & Pip Cutoff</h3>
+                    <p>Prevent late or stale entries with configurable signal age cutoffs. If a Telegram signal is older than your threshold, or price has already moved past your Late Guard Pips tolerance, the trade is safely skipped.</p>
+                </div>
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon">📊</div>
+                    <h3>Embedded SQLite Analytics</h3>
+                    <p>Comprehensive local database tracking every trade lifecycle, win-rate, drawdown duration, and channel-by-channel performance. View instant metrics without exporting spreadsheets.</p>
                 </div>
             </div>
         </div>
@@ -403,7 +440,7 @@
                     <div class="lifecycle-icon">1</div>
                     <div class="lifecycle-content">
                         <h3>Signal Received</h3>
-                        <p>A Telegram signal is posted and parsed by the bridge in under 50ms.</p>
+                        <p>A Telegram signal is posted and parsed by the bridge in under 15ms.</p>
                     </div>
                 </div>
                 <div class="lifecycle-step">
@@ -599,7 +636,17 @@
                         <tr>
                             <td>Execution Speed</td>
                             <td>10–60 seconds</td>
-                            <td class="highlight-col">&lt; 50ms</td>
+                            <td class="highlight-col">&lt; 15ms</td>
+                        </tr>
+                        <tr>
+                            <td>Remote Monitoring</td>
+                            <td>None (stuck at desk)</td>
+                            <td class="highlight-col">Mobile Web Dashboard via Cloudflare Tunnels</td>
+                        </tr>
+                        <tr>
+                            <td>Macro Intelligence</td>
+                            <td>Manual news reading & delay</td>
+                            <td class="highlight-col">Macro Sentinel real-time bias & DXY radar</td>
                         </tr>
                         <tr>
                             <td>Missed Signals</td>
@@ -614,7 +661,7 @@
                         <tr>
                             <td>Risk Management</td>
                             <td>Manual SL/TP entry</td>
-                            <td class="highlight-col">Stealth TP/SL, grid, BE, equity protection</td>
+                            <td class="highlight-col">Stealth TP/SL, grid, BE, 3-mode trailing, equity floor</td>
                         </tr>
                         <tr>
                             <td>Prop Firm Safety</td>
@@ -624,7 +671,7 @@
                         <tr>
                             <td>Analytics</td>
                             <td>Spreadsheet tracking</td>
-                            <td class="highlight-col">SQLite performance database</td>
+                            <td class="highlight-col">Embedded SQLite performance database</td>
                         </tr>
                     </tbody>
                 </table>
@@ -637,7 +684,7 @@
         <div class="container">
             <div class="section-header text-center">
                 <h2>Inside the <span class="cyan-text">Desktop Bridge</span></h2>
-                <p>Monitor status, customize filters, test signal formats, and review local SQLite database records in real-time from the bridge panel.</p>
+                <p>Monitor status, customize filters, test signal formats, stream Macro Sentinel intel, and review local SQLite records in real-time from the 7-tab bridge suite.</p>
             </div>
             
             <div class="showcase-container glass-panel">
@@ -782,7 +829,34 @@
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-answer">
-                        The Python bridge runs on your local PC or VPS, listening to the Telegram channels you configure. The moment a signal is posted, it parses it and delivers it to the EA in under 50ms via named pipe IPC.
+                        The Native Go desktop bridge runs on your local PC or VPS, listening to the Telegram channels you configure. The moment a signal is posted, it parses it in under 15ms and delivers it to the EA via high-speed local TCP socket IPC.
+                    </div>
+                </div>
+                <div class="faq-item glass-panel">
+                    <button class="faq-question" type="button">
+                        <span>Can I monitor and control Gold Snipers from my smartphone?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes! Gold Snipers includes an integrated Remote Web Dashboard powered by Cloudflare Quick Tunnels. You can monitor open positions, floating PnL, trigger emergency stops, or update settings from any browser or mobile device with zero port forwarding or dynamic DNS.
+                    </div>
+                </div>
+                <div class="faq-item glass-panel">
+                    <button class="faq-question" type="button">
+                        <span>What is Macro Sentinel and how does it help my trading?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Macro Sentinel is an institutional surveillance tool that streams Breaking News, Trump Truths, Fed leaks, and squawks in real time. It calculates live Gold bias (Bullish/Bearish/Volatility), tracks post-alert pip reactions, displays a 4-pillar thematic heatmap, and monitors the DXY dollar index inverse correlation.
+                    </div>
+                </div>
+                <div class="faq-item glass-panel">
+                    <button class="faq-question" type="button">
+                        <span>Which AI models are supported?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        The built-in AI Copilot supports OpenAI (GPT-4o/o1), Anthropic Claude, DeepSeek, OpenCode, and local models via Ollama. It evaluates market structure, support/resistance invalidation zones, and institutional risk directly using live broker spot prices.
                     </div>
                 </div>
                 <div class="faq-item glass-panel">
