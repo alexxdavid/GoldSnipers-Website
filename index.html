@@ -818,9 +818,8 @@
             </div>
 
             <div class="pricing-grid two-cards">
-                <!-- Plan 1: Pro (Popular) -->
-                <div class="pricing-card glass-panel popular">
-                    <div class="badge">Most Popular</div>
+                <!-- Plan 1: Pro -->
+                <div class="pricing-card glass-panel">
                     <h3>Pro</h3>
                     <div class="price-container">
                         <span class="price price-value">$39</span>
@@ -841,10 +840,14 @@
                         <li style="color:#777;text-decoration:line-through;">AI Market Insights <span style="font-size:0.8em">(Expert only)</span></li>
                         <li>Priority Bug Fixes &amp; Support</li>
                     </ul>
-                    <a id="btn-pro" href="https://buy.stripe.com/00w4gz0U119mbXScLba3u0w" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get License</a>
+                    <a id="btn-pro" href="https://buy.stripe.com/00w4gz0U119mbXScLba3u0w" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Get License</a>
                 </div>
-                <!-- Plan 3 -->
-                <div class="pricing-card glass-panel">
+                <!-- Plan 2: Expert (Most Popular) -->
+                <div class="pricing-card glass-panel popular">
+                    <button type="button" class="badge badge-interactive" onclick="openWhyExpertModal()" title="Click to see why Expert is the top choice">
+                        <span>👑 Most Popular</span>
+                        <span class="badge-info-icon">Why? ⓘ</span>
+                    </button>
                     <h3>Expert</h3>
                     <div class="price-container">
                         <span class="price price-value">$49</span>
@@ -865,7 +868,7 @@
                         <li>✦ AI Market Insights</li>
                         <li>Priority Bug Fixes &amp; Support</li>
                     </ul>
-                    <a id="btn-lifetime" href="https://buy.stripe.com/fZu14ncCJ8BO8LG9yZa3u0y" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Get License</a>
+                    <a id="btn-lifetime" href="https://buy.stripe.com/fZu14ncCJ8BO8LG9yZa3u0y" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get License</a>
                 </div>
             </div>
         </div>
@@ -1013,6 +1016,56 @@
             </div>
         </div>
     </footer>
+
+    <!-- Why Expert Modal -->
+    <div id="why-expert-modal" class="lightbox-overlay" onclick="closeWhyExpertModal(event)" role="dialog" aria-label="Why Expert Plan is Most Popular">
+        <div class="why-expert-modal-card glass-panel" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeWhyExpertModal()">&times;</button>
+            
+            <div class="why-expert-header">
+                <div class="why-expert-icon">👑</div>
+                <div>
+                    <h3>Why 85% of Traders Choose <span class="gold-text">Expert</span></h3>
+                    <p>The institutional tier engineered for full account scaling &amp; multi-prop firm management.</p>
+                </div>
+            </div>
+
+            <div class="why-expert-grid">
+                <div class="why-expert-item">
+                    <div class="why-expert-item-icon">🤖</div>
+                    <div>
+                        <h4>Exclusive Multi-Model AI Copilot</h4>
+                        <p>Real-time market structure &amp; spot-price invalidation zones powered by Claude 3.7, GPT-4o, DeepSeek, and Ollama.</p>
+                    </div>
+                </div>
+                <div class="why-expert-item">
+                    <div class="why-expert-item-icon">🏢</div>
+                    <div>
+                        <h4>Double Capacity (6 MT5 &amp; 12 Channels)</h4>
+                        <p>Run up to 6 simultaneous MT5 instances (FTMO, FundedNext, personal accounts) across 12 independent VIP signal channels.</p>
+                    </div>
+                </div>
+                <div class="why-expert-item">
+                    <div class="why-expert-item-icon">🪜</div>
+                    <div>
+                        <h4>Maximum 10-Tier Grid &amp; 10 TP Targets</h4>
+                        <p>Full institutional ladder depth with independent Take Profit distances and shave percentages across all 10 tiers.</p>
+                    </div>
+                </div>
+                <div class="why-expert-item">
+                    <div class="why-expert-item-icon">💰</div>
+                    <div>
+                        <h4>Best Value Per Instance ($8.16 / account)</h4>
+                        <p>For only $10 more than Pro, you get 2x the accounts, 2x the channels, and exclusive access to the AI intelligence engine.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-expert-action">
+                <a id="btn-modal-expert" href="https://buy.stripe.com/fZu14ncCJ8BO8LG9yZa3u0y" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Expert License Now</a>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js?v=379.21"></script>
     <div id="cookie-consent" class="cookie-banner" role="dialog" aria-label="Cookie consent">
