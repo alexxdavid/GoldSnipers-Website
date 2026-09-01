@@ -375,10 +375,13 @@ function initShowcaseTabs() {
     const tabs = document.querySelectorAll(".showcase-tab");
     const displayImage = document.getElementById("showcase-display");
     const imageMap = {
-        "dashboard-img": { name: "dashboard", w: 2278, h: 1441, alt: "Desktop Bridge Dashboard" },
-        "parsing-img": { name: "parsing", w: 2291, h: 1445, alt: "Custom Command & Parsing Settings" },
-        "test-img": { name: "signal_test", w: 2295, h: 1450, alt: "Signal Tester Console" },
-        "analytics-img": { name: "analytics", w: 2299, h: 1442, alt: "Local Analytics & Closed Deals" }
+        "dashboard-img": { name: "dashboard", w: 2278, h: 1441, alt: "Desktop Bridge Live Dashboard" },
+        "intel-img": { name: "market_intelligence", w: 2278, h: 1441, alt: "Market Intelligence & Empirical Liquidity Ladder" },
+        "journal-img": { name: "ai_journal", w: 2278, h: 1441, alt: "Multi-Model AI Journal & Sentiment Synthesis" },
+        "risk-img": { name: "risk_reward", w: 2278, h: 1441, alt: "Risk & Reward Shaving Engine" },
+        "parsing-img": { name: "parsing", w: 2291, h: 1445, alt: "Custom Filter Keywords & Lexicon Engine" },
+        "test-img": { name: "signal_test", w: 2295, h: 1450, alt: "Signal Tester & Live Simulation Console" },
+        "analytics-img": { name: "analytics", w: 2299, h: 1442, alt: "Local SQLite Analytics & Performance DB" }
     };
 
     if (!displayImage) return;
@@ -404,8 +407,8 @@ function initShowcaseTabs() {
             if (meta) {
                 displayImage.style.opacity = "0.3";
                 setTimeout(() => {
-                    const webpSrc = `${meta.name}.webp?v=5`;
-                    const pngSrc = `${meta.name}.png?v=5`;
+                    const webpSrc = `${meta.name}.webp?v=379.21`;
+                    const pngSrc = `${meta.name}.png?v=379.21`;
                     const img = new Image();
                     img.onload = () => {
                         if (source) source.srcset = webpSrc;
