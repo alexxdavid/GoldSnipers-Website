@@ -1023,6 +1023,20 @@ canvas#heroChart {
     align-items: stretch;
 }
 
+.pricing-grid.two-cards {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 860px;
+    margin: 0 auto;
+    gap: 36px;
+}
+
+@media (max-width: 860px) {
+    .pricing-grid.two-cards {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+    }
+}
+
 .pricing-card {
     padding: 50px 40px;
     display: flex;

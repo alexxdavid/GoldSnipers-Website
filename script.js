@@ -87,32 +87,32 @@ function initPricingToggle() {
 
     const pricingData = {
         monthly: [
-            { price: "$29", period: "/ month", checkout: "https://buy.stripe.com/dRm00j6el05ie604eFa3u0u" },
             { price: "$39", period: "/ month", checkout: "https://buy.stripe.com/00w4gz0U119mbXScLba3u0w" },
             { price: "$49", period: "/ month", checkout: "https://buy.stripe.com/fZu14ncCJ8BO8LG9yZa3u0y" }
         ],
         annual: [
-            { price: "$299", period: "one-time", checkout: "https://buy.stripe.com/eVq8wPeKR3hu5zu9yZa3u0v" },
             { price: "$399", period: "one-time", checkout: "https://buy.stripe.com/bJe4gz46ddW80fa5iJa3u0x" },
             { price: "$499", period: "one-time", checkout: "https://buy.stripe.com/8x24gzcCJaJWbXS9yZa3u0z" }
         ]
     };
 
-    const starterBtn = document.getElementById("btn-starter");
     const proBtn = document.getElementById("btn-pro");
     const lifetimeBtn = document.getElementById("btn-lifetime");
 
     function updatePricing(billingMode) {
         prices.forEach((el, index) => {
-            el.textContent = pricingData[billingMode][index].price;
+            if (pricingData[billingMode][index]) {
+                el.textContent = pricingData[billingMode][index].price;
+            }
         });
         billingPeriods.forEach((el, index) => {
-            el.textContent = pricingData[billingMode][index].period;
+            if (pricingData[billingMode][index]) {
+                el.textContent = pricingData[billingMode][index].period;
+            }
         });
 
-        if (starterBtn) starterBtn.href = pricingData[billingMode][0].checkout;
-        if (proBtn) proBtn.href = pricingData[billingMode][1].checkout;
-        if (lifetimeBtn) lifetimeBtn.href = pricingData[billingMode][2].checkout;
+        if (proBtn) proBtn.href = pricingData[billingMode][0].checkout;
+        if (lifetimeBtn) lifetimeBtn.href = pricingData[billingMode][1].checkout;
     }
 
     function setBilling(isAnnual) {
