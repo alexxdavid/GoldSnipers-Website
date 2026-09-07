@@ -565,39 +565,63 @@ function loadTawk() {
 }
 
 // ==========================================================================
-// INTERACTIVE SIGNAL PARSER SIMULATOR
+// INTERACTIVE SIGNAL PARSER SIMULATOR (ROLLS-ROYCE DUAL-ENGINE)
 // ==========================================================================
 const SIM_PRESETS = {
-    multi_tp: {
-        text: `GOLD BUY NOW 3020.50 - 3018.00\nSL: 3010.00\nTP1: 3025.00\nTP2: 3032.00\nTP3: 3045.00\nRisk: 1% | Manage lot sizes accordingly 🚀`,
-        latency: "0.74ms",
-        badge: "DUAL-ENGINE: ANCHOR + 2 LIMITS",
-        metrics: "Socket Roundtrip: 1.2ms • Slip Guard: Active • Stealth SL: Armed",
+    dual_engine_3tp: {
+        text: `GOLD BUY NOW 3020.50 - 3014.00\nSL: 3006.00\nTP1: 3026.00 (+55 pips)\nTP2: 3034.00 (+135 pips)\nTP3: 3048.00 (+275 pips)\nRisk: 1.5% | Spread Filter: Active 🚀`,
+        latency: "0.68ms",
+        badge: "DUAL-ENGINE: 1 ANCHOR + 5 PENDING LIMITS (3 TPS)",
+        metrics: "Socket IPC: 1.1ms • Anti-Duplicate: Verified • Stealth SL: Active",
         orders: [
-            { type: "BUY", role: "ANCHOR MARKET", vol: "0.50 Lot", entry: "3020.50", sl: "3010.00 (Stealth)", tp: "3025.00 (TP1)" },
-            { type: "BUY LIMIT", role: "PENDING GRID 1", vol: "0.25 Lot", entry: "3019.25", sl: "3010.00 (Stealth)", tp: "3032.00 (TP2)" },
-            { type: "BUY LIMIT", role: "PENDING GRID 2", vol: "0.25 Lot", entry: "3018.00", sl: "3010.00 (Stealth)", tp: "3045.00 (TP3)" }
+            { type: "BUY", role: "ANCHOR MARKET", vol: "0.40 Lot", entry: "3020.50", sl: "3006.00 (Stealth)", tp: "3026.00 (TP1)" },
+            { type: "BUY LIMIT", role: "PENDING GRID 1", vol: "0.20 Lot", entry: "3019.20", sl: "3006.00 (Stealth)", tp: "3026.00 (TP1)" },
+            { type: "BUY LIMIT", role: "PENDING GRID 2", vol: "0.20 Lot", entry: "3017.90", sl: "3006.00 (Stealth)", tp: "3034.00 (TP2)" },
+            { type: "BUY LIMIT", role: "PENDING GRID 3", vol: "0.20 Lot", entry: "3016.60", sl: "3006.00 (Stealth)", tp: "3034.00 (TP2)" },
+            { type: "BUY LIMIT", role: "PENDING GRID 4", vol: "0.20 Lot", entry: "3015.30", sl: "3006.00 (Stealth)", tp: "3048.00 (TP3)" },
+            { type: "BUY LIMIT", role: "PENDING GRID 5", vol: "0.20 Lot", entry: "3014.00", sl: "3006.00 (Stealth)", tp: "3048.00 (TP3)" }
         ]
     },
-    slang_tp: {
-        text: `🔥🔥 XAUUSD TP1 SMASHED +45 PIPS!!\nClose 50% partials now and lock SL to entry 3020.50!! Let runners fly 🚀💎`,
-        latency: "0.42ms",
-        badge: "AUTONOMOUS SHAVE & SL LOCK",
-        metrics: "Socket Roundtrip: 0.9ms • Action: Partial Close + Lock Behind Price",
+    tp1_hit_be: {
+        text: `🎯🎯 XAUUSD TP1 REACHED +55 PIPS!!\nShave 50% partial profits now!\nMove all remaining Stop Losses to Entry (Break-Even)! 🛡️🔒`,
+        latency: "0.41ms",
+        badge: "AUTONOMOUS SHAVE & BREAK-EVEN TRIGGER",
+        metrics: "Socket IPC: 0.8ms • Partial Shave: 50% • SL Action: Moved to BE +5 Pips",
         orders: [
-            { type: "MODIFY", role: "ANCHOR CLOSE 50%", vol: "-0.25 Lot", entry: "3025.00", sl: "Locked @ 3020.50", tp: "Secured +$1,125" },
-            { type: "MODIFY", role: "GRID SL TRAIL", vol: "0.50 Lot", entry: "3019.25", sl: "Trailed to BE +10", tp: "Open for TP2/TP3" }
+            { type: "SHAVE 50%", role: "ANCHOR PARTIAL", vol: "-0.20 Lot", entry: "3026.00", sl: "Locked BE (3020.50)", tp: "Secured +$1,100" },
+            { type: "SL MODIFY", role: "ANCHOR RUNNER", vol: "0.20 Lot", entry: "3020.50", sl: "Protected @ 3021.00", tp: "3034.00 (TP2)" },
+            { type: "SL MODIFY", role: "LIMIT 1 (FILLED)", vol: "0.20 Lot", entry: "3019.20", sl: "Protected @ 3020.00", tp: "3034.00 (TP2)" },
+            { type: "SL MODIFY", role: "LIMIT 2 (FILLED)", vol: "0.20 Lot", entry: "3017.90", sl: "Protected @ 3019.00", tp: "3034.00 (TP2)" },
+            { type: "PENDING", role: "LIMIT 3 CANCEL", vol: "0.20 Lot", entry: "3016.60", sl: "Runaway Guard", tp: "Purged on TP1" },
+            { type: "PENDING", role: "LIMIT 4 CANCEL", vol: "0.20 Lot", entry: "3015.30", sl: "Runaway Guard", tp: "Purged on TP1" }
         ]
     },
-    limit_ladder: {
-        text: `GOLD SELL LIMIT ORDER\nSell Limit: 3038.50 - 3042.00\nStop Loss: 3050.00\nTake Profit: 3015.00\nWait for London Open liquidity sweep 🩸`,
-        latency: "0.61ms",
-        badge: "LIMIT LADDER GRID DISPATCH",
-        metrics: "Socket Roundtrip: 1.1ms • FVG Sweep Filter: Passed",
+    trailing_sl_lock: {
+        text: `🚀🚀 TP2 SMASHED +135 PIPS RUNNING!!\nLock profits behind current market price 3034.00!\nTrail Stop Loss to 3028.00 (+75 pips guaranteed profit)! 💎🔥`,
+        latency: "0.38ms",
+        badge: "DYNAMIC TRAILING SL LOCK BEHIND PRICE",
+        metrics: "Socket IPC: 0.9ms • Trail Distance: 60 Pips • Profit Lock: +$2,700 Guaranteed",
         orders: [
-            { type: "SELL LIMIT", role: "LADDER TIER 1", vol: "0.33 Lot", entry: "3038.50", sl: "3050.00 (Stealth)", tp: "3015.00" },
-            { type: "SELL LIMIT", role: "LADDER TIER 2", vol: "0.33 Lot", entry: "3040.25", sl: "3050.00 (Stealth)", tp: "3015.00" },
-            { type: "SELL LIMIT", role: "LADDER TIER 3", vol: "0.34 Lot", entry: "3042.00", sl: "3050.00 (Stealth)", tp: "3015.00" }
+            { type: "SHAVE 50%", role: "TP2 PARTIAL TAKE", vol: "-0.10 Lot", entry: "3034.00", sl: "Trailed to 3028.00", tp: "Secured +$1,350" },
+            { type: "TRAIL SL", role: "ANCHOR MOONBAG", vol: "0.10 Lot", entry: "3020.50", sl: "Locked @ 3028.00", tp: "3048.00 (TP3)" },
+            { type: "TRAIL SL", role: "GRID RUNNER 1", vol: "0.10 Lot", entry: "3019.20", sl: "Locked @ 3028.00", tp: "3048.00 (TP3)" },
+            { type: "TRAIL SL", role: "GRID RUNNER 2", vol: "0.10 Lot", entry: "3017.90", sl: "Locked @ 3028.00", tp: "3048.00 (TP3)" },
+            { type: "AUTO-SL", role: "TRAIL STEP ACTIVE", vol: "Pips Step: 10", entry: "Current: 3034.0", sl: "Trailing Behind", tp: "Targeting TP3" },
+            { type: "STEALTH", role: "BROKER VISIBILITY", vol: "0 Pips Exposed", entry: "Virtual Server", sl: "Invisible Stops", tp: "No Stop-Hunting" }
+        ]
+    },
+    limit_ladder_5: {
+        text: `GOLD SELL LIMIT LADDER (LONDON OPEN)\nSell Zone: 3040.00 - 3048.00 (5 Grid Limit Orders)\nStop Loss: 3056.00 (Stealth Mode)\nTP1: 3032.00 | TP2: 3022.00 | TP3: 3008.00\nWait for London Asian High liquidity sweep 🩸`,
+        latency: "0.72ms",
+        badge: "INSTITUTIONAL 5-TIER SELL LIMIT LADDER",
+        metrics: "Socket IPC: 1.2ms • FVG Sweep Filter: Confirmed • 5 Limits Armed",
+        orders: [
+            { type: "SELL LIMIT", role: "LADDER TIER 1", vol: "0.20 Lot", entry: "3040.00", sl: "3056.00 (Stealth)", tp: "3032.00 (TP1)" },
+            { type: "SELL LIMIT", role: "LADDER TIER 2", vol: "0.20 Lot", entry: "3042.00", sl: "3056.00 (Stealth)", tp: "3032.00 (TP1)" },
+            { type: "SELL LIMIT", role: "LADDER TIER 3", vol: "0.20 Lot", entry: "3044.00", sl: "3056.00 (Stealth)", tp: "3022.00 (TP2)" },
+            { type: "SELL LIMIT", role: "LADDER TIER 4", vol: "0.20 Lot", entry: "3046.00", sl: "3056.00 (Stealth)", tp: "3022.00 (TP2)" },
+            { type: "SELL LIMIT", role: "LADDER TIER 5", vol: "0.20 Lot", entry: "3048.00", sl: "3056.00 (Stealth)", tp: "3008.00 (TP3)" },
+            { type: "PROTECT", role: "RUNAWAY LIMIT GUARD", vol: "Enabled", entry: "Max 5 Fills", sl: "Stealth Disarmed", tp: "Auto-Prune Active" }
         ]
     }
 };
@@ -605,14 +629,13 @@ const SIM_PRESETS = {
 function initSimulator() {
     const inputArea = document.getElementById("sim-input-text");
     if (!inputArea) return;
-    loadSimPreset("multi_tp");
+    loadSimPreset("dual_engine_3tp");
 }
 
 function loadSimPreset(presetKey) {
     const preset = SIM_PRESETS[presetKey];
     if (!preset) return;
 
-    // Update preset buttons active state
     document.querySelectorAll(".sim-preset-btn").forEach(btn => {
         btn.classList.toggle("active", btn.getAttribute("onclick")?.includes(`'${presetKey}'`));
     });
@@ -623,6 +646,16 @@ function loadSimPreset(presetKey) {
     renderSimOrders(preset);
 }
 
+function triggerLifecycleEvent(eventType) {
+    if (eventType === "tp1") {
+        loadSimPreset("tp1_hit_be");
+    } else if (eventType === "be") {
+        loadSimPreset("tp1_hit_be");
+    } else if (eventType === "trail") {
+        loadSimPreset("trailing_sl_lock");
+    }
+}
+
 function runSimulator() {
     const inputArea = document.getElementById("sim-input-text");
     const text = inputArea ? inputArea.value.trim() : "";
@@ -630,31 +663,34 @@ function runSimulator() {
 
     const runBtn = document.getElementById("sim-run-btn");
     if (runBtn) {
-        runBtn.innerHTML = "<span>⚡ Parsing &amp; Dispatching...</span>";
+        runBtn.innerHTML = "<span>⚡ Parsing &amp; Dispatching to MT5...</span>";
         runBtn.style.opacity = "0.7";
     }
 
     setTimeout(() => {
         let isSell = /sell|short/i.test(text);
-        let isTpHit = /tp\d*\s*hit|smashed|secured|close/i.test(text);
+        let isTrail = /trail|lock\s*sl|lock\s*profit|tp2/i.test(text);
+        let isTpHit = /tp\d*\s*hit|smashed|secured|breakeven|break-even|\bbe\b/i.test(text);
         let isLimit = /limit/i.test(text);
 
-        let mockPreset;
-        if (isTpHit) {
-            mockPreset = SIM_PRESETS.slang_tp;
+        let selectedPreset;
+        if (isTrail) {
+            selectedPreset = SIM_PRESETS.trailing_sl_lock;
+        } else if (isTpHit) {
+            selectedPreset = SIM_PRESETS.tp1_hit_be;
         } else if (isLimit) {
-            mockPreset = SIM_PRESETS.limit_ladder;
+            selectedPreset = SIM_PRESETS.limit_ladder_5;
         } else {
-            mockPreset = JSON.parse(JSON.stringify(SIM_PRESETS.multi_tp));
+            selectedPreset = JSON.parse(JSON.stringify(SIM_PRESETS.dual_engine_3tp));
             if (isSell) {
-                mockPreset.badge = "DUAL-ENGINE: SELL ANCHOR + LIMITS";
-                mockPreset.orders.forEach(o => {
+                selectedPreset.badge = "DUAL-ENGINE: SELL ANCHOR + 5 SELL LIMITS (3 TPS)";
+                selectedPreset.orders.forEach(o => {
                     o.type = o.type.replace("BUY", "SELL");
                 });
             }
         }
 
-        renderSimOrders(mockPreset);
+        renderSimOrders(selectedPreset);
 
         if (runBtn) {
             runBtn.innerHTML = "<span>⚡ Simulate Instant Dispatch</span>";
@@ -678,14 +714,24 @@ function renderSimOrders(preset) {
     container.innerHTML = preset.orders.map(order => {
         const isBuy = order.type.includes("BUY");
         const isSell = order.type.includes("SELL");
-        const typeClass = isBuy ? "buy-tag" : (isSell ? "sell-tag" : "gold-text");
-        const roleClass = order.role.includes("ANCHOR") ? "role-anchor" : "role-pending";
+        const isShave = order.type.includes("SHAVE");
+        const isModify = order.type.includes("SL") || order.type.includes("TRAIL");
+        
+        let typeClass = "gold-text";
+        if (isBuy) typeClass = "buy-tag";
+        else if (isSell) typeClass = "sell-tag";
+        else if (isShave) typeClass = "cyan-text";
+        else if (isModify) typeClass = "purple-text";
+
+        let roleClass = "role-pending";
+        if (order.role.includes("ANCHOR")) roleClass = "role-anchor";
+        else if (order.role.includes("LADDER") || order.role.includes("GRID")) roleClass = "role-grid";
 
         return `
             <div class="sim-row">
                 <span class="${typeClass}"><strong>${order.type}</strong></span>
                 <span class="${roleClass}">${order.role}</span>
-                <span>${order.vol}</span>
+                <span style="color: #E2E8F0;">${order.vol}</span>
                 <span style="color: #FFF; font-weight: 600;">${order.entry}</span>
                 <span class="stealth-sl">${order.sl}</span>
                 <span style="color: #00E676; font-weight: 600;">${order.tp}</span>
