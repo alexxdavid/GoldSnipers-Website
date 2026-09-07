@@ -621,7 +621,7 @@ const SIM_PRESETS = {
             { type: "SELL LIMIT", role: "LADDER TIER 3", vol: "0.20 Lot", entry: "3044.00", sl: "3056.00 (Stealth)", tp: "3022.00 (TP2)" },
             { type: "SELL LIMIT", role: "LADDER TIER 4", vol: "0.20 Lot", entry: "3046.00", sl: "3056.00 (Stealth)", tp: "3022.00 (TP2)" },
             { type: "SELL LIMIT", role: "LADDER TIER 5", vol: "0.20 Lot", entry: "3048.00", sl: "3056.00 (Stealth)", tp: "3008.00 (TP3)" },
-            { type: "PROTECT", role: "RUNAWAY LIMIT GUARD", vol: "Enabled", entry: "Max 5 Fills", sl: "Stealth Disarmed", tp: "Auto-Prune Active" }
+            { type: "PROTECT", role: "RUNAWAY LIMIT CANCEL", vol: "Armed", entry: "Adv/Prf Threshold", sl: "Auto-Purge Pending", tp: "CoreTrade Guard" }
         ]
     }
 };
