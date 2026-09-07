@@ -158,23 +158,31 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <h1>Trade <span class="gold-text">Gold</span> Like Institutions.</h1>
-                    <p>Automate your Gold (XAUUSD) trading with the ultimate MT5 Expert Advisor, Native Go Desktop Bridge, and Remote Web Dashboard. Copy signals in under 15ms with Macro Sentinel news intelligence, smart FVG/OB filters, and Stealth TP/SL protection.</p>
+                    <div class="hero-prestige-badge">
+                        <span class="badge-icon">👑</span>
+                        <span class="badge-text">THE ROLLS-ROYCE OF XAUUSD AUTOMATION</span>
+                    </div>
+                    <h1>The <span class="gold-gradient-text">Rolls-Royce</span> of Gold Copiers.</h1>
+                    <p>Engineered for traders who refuse retail compromises. Sub-15ms Native Go execution, autonomous Anchor &amp; Pending grid engines, Stealth broker shielding, and real-time Macro Sentinel geopolitical intelligence.</p>
                     <div class="hero-actions">
                         <a href="#pricing" class="btn btn-primary">Start Trading Now</a>
-                        <a href="#features" class="btn btn-secondary">Explore Features</a>
+                        <a href="#simulator" class="btn btn-secondary">Try Signal Simulator</a>
                     </div>
                     <div class="hero-stats">
                         <div class="stat-item">
                             <h3>&lt;15ms</h3>
-                            <p>Socket Speed</p>
+                            <p>Local Socket IPC</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="gold-text">Dual-Engine</h3>
+                            <p>Anchor &amp; Grid Scopes</p>
                         </div>
                         <div class="stat-item">
                             <h3>100%</h3>
-                            <p>Stealth Guard</p>
+                            <p>Stealth Broker Shield</p>
                         </div>
                         <div class="stat-item">
-                            <h3 class="cyan-text">24/7</h3>
+                            <h3 class="cyan-text">0-Config</h3>
                             <p>Mobile Cloud Sync</p>
                         </div>
                     </div>
@@ -266,6 +274,69 @@
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> EQUITY PROTECTION <span class="profit">TRIGGERED</span> | MASTER CLEARANCE</div>
                 <div class="ticker-item">⚡ <span class="symbol">NAS100</span> BUY TRAILING FRACTAL <span class="profit">ACTIVE</span> | SECURING +220 Pips</div>
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> LADDER ENGAGED | 5 TIER PENDING LEVELS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Signal Simulator Section -->
+    <section id="simulator" class="simulator-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle gold-text">⚡ REAL-TIME DISPATCH DEMO</span>
+                <h2>Experience <span class="gold-gradient-text">Sub-15ms Execution</span></h2>
+                <p>Paste any Telegram Gold signal below or pick a preset. Watch the Native Go parser decompose slang, calculate multi-tiered limits, and dispatch structured orders instantly.</p>
+            </div>
+
+            <div class="simulator-card glass-panel">
+                <div class="simulator-header">
+                    <div class="sim-presets">
+                        <span class="sim-label">Quick Presets:</span>
+                        <button type="button" class="sim-preset-btn active" onclick="loadSimPreset('multi_tp')">Multi-TP Zone Signal</button>
+                        <button type="button" class="sim-preset-btn" onclick="loadSimPreset('slang_tp')">Slang &amp; Fast TP Hit</button>
+                        <button type="button" class="sim-preset-btn" onclick="loadSimPreset('limit_ladder')">Pending Limit Grid</button>
+                    </div>
+                    <div class="sim-status">
+                        <span class="sim-dot"></span>
+                        <span>PARSER READY (<span id="sim-latency">0.8ms</span>)</span>
+                    </div>
+                </div>
+
+                <div class="simulator-grid">
+                    <div class="sim-input-col">
+                        <div class="sim-pane-title">
+                            <span>📡 RAW TELEGRAM INTAKE</span>
+                            <span class="sim-hint">Simulated VIP Channel</span>
+                        </div>
+                        <textarea id="sim-input-text" class="sim-textarea" rows="7" placeholder="Type or paste any Telegram signal here..."></textarea>
+                        <button type="button" id="sim-run-btn" class="btn btn-primary sim-action-btn" onclick="runSimulator()">
+                            <span>⚡ Simulate Instant Dispatch</span>
+                        </button>
+                    </div>
+
+                    <div class="sim-output-col">
+                        <div class="sim-pane-title">
+                            <span>🎯 METATRADER 5 DUAL-ENGINE DISPATCH</span>
+                            <span class="badge gold-badge" id="sim-engine-badge">ANCHOR + PENDINGS</span>
+                        </div>
+                        <div class="sim-dispatch-console" id="sim-console">
+                            <div class="sim-row header-row">
+                                <span>TYPE</span>
+                                <span>ROLE</span>
+                                <span>VOLUME</span>
+                                <span>ENTRY</span>
+                                <span>SL GUARD</span>
+                                <span>TARGET</span>
+                            </div>
+                            <div id="sim-rows-container">
+                                <!-- Dynamically populated by script.js -->
+                            </div>
+                        </div>
+                        <div class="sim-footer-meta">
+                            <span>Engine: <strong>Native Go + MT5 Local TCP IPC</strong></span>
+                            <span id="sim-metrics">Socket Roundtrip: <strong>1.4ms</strong> • Slip Guard: <strong>Active</strong></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -379,22 +450,22 @@
                     </div>
                 </div>
 
-                <!-- Bento Card 2: Market Intelligence & Liquidity Ladder -->
+                <!-- Bento Card 2: Autonomous Dual-Engine Architecture -->
                 <div class="bento-card">
                     <div>
                         <div class="bento-card-header">
-                            <div class="bento-icon gold">📊</div>
-                            <span class="bento-badge gold">MT5 Tick Engine</span>
+                            <div class="bento-icon gold">⚙️</div>
+                            <span class="bento-badge gold">Dual-Engine Tech</span>
                         </div>
                         <div class="bento-card-body">
-                            <h3>Market Intelligence &amp; Liquidity Ladder</h3>
-                            <p>Real-time liquidity level defense tracking directly inside MetaTrader 5. Calculates empirical defend vs breakout probabilities across Asian H/L, Previous Day H/L, Day Open, and 4H/1H Fair Value Gaps from live price touches.</p>
+                            <h3>Autonomous Dual-Engine Architecture</h3>
+                            <p>Separate market anchors from pending limit ladders. Configure independent lot sizes, take profits, break-even offsets, and multi-tier partial shaves for instant market fills vs deep retracement limit orders.</p>
                         </div>
                     </div>
                     <div class="bento-tags">
-                        <span class="bento-tag">🎯 Empirical Defend %</span>
-                        <span class="bento-tag">🕯️ 4H/1H FVG Imbalance</span>
-                        <span class="bento-tag">🌏 Asian High/Low Pools</span>
+                        <span class="bento-tag">⚓ Anchor Market Order</span>
+                        <span class="bento-tag">📊 Dynamic Limit Grid</span>
+                        <span class="bento-tag">🔒 Independent SL Lock</span>
                     </div>
                 </div>
 
@@ -696,68 +767,64 @@
     <section class="comparison-section section-padding" style="padding-top: 0;">
         <div class="container">
             <div class="section-header text-center">
-                <h2>Gold Snipers <span class="cyan-text">vs Manual Trading</span></h2>
-                <p>See why traders automate their signal copying with Gold Snipers.</p>
+                <span class="section-subtitle gold-text">⚔️ UNCOMPROMISING BENCHMARK</span>
+                <h2>Standard Generic Copiers <span class="gold-gradient-text">vs. The Rolls-Royce</span></h2>
+                <p>Why professional prop and private portfolio traders discard retail cloud bots for GoldSnipers.</p>
             </div>
             <div class="comparison-table-wrapper glass-panel">
                 <table class="comparison-table">
                     <thead>
                         <tr>
-                            <th>Feature</th>
-                            <th>Manual Copying</th>
-                            <th class="highlight-col">Gold Snipers</th>
+                            <th>Institutional Capability</th>
+                            <th>Generic Retail Copiers<br><span style="font-size: 0.75rem; font-weight: 400; color: var(--text-muted);">(TelegramFxCopier, Cloud Webhooks, etc.)</span></th>
+                            <th class="highlight-col">Gold Snipers<br><span style="font-size: 0.75rem; font-weight: 600; color: var(--accent-gold);">Rolls-Royce Dual-Engine</span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Execution Speed</td>
-                            <td>10–60 seconds</td>
-                            <td class="highlight-col">&lt; 15ms</td>
+                            <td><strong>Execution Architecture</strong></td>
+                            <td>Sluggish cloud webhooks / relays (1,000ms – 3,500ms delay)</td>
+                            <td class="highlight-col"><strong>Native Go + MT5 Local TCP Socket IPC (&lt; 15ms)</strong></td>
                         </tr>
                         <tr>
-                            <td>Remote Monitoring</td>
-                            <td>None (stuck at desk)</td>
-                            <td class="highlight-col">Mobile Web Dashboard via Cloudflare Tunnels</td>
+                            <td><strong>Execution Scopes</strong></td>
+                            <td>Flat, single lot-size blindly copied across all orders</td>
+                            <td class="highlight-col"><strong>Independent Dual-Engine: Anchor Market Order + Dynamic Limit Grid</strong></td>
                         </tr>
                         <tr>
-                            <td>Macro Intelligence</td>
-                            <td>Manual news reading & delay</td>
-                            <td class="highlight-col">Macro Sentinel real-time bias & DXY radar</td>
+                            <td><strong>TP Hit Profit Management</strong></td>
+                            <td>Crude full close or basic single break-even toggle</td>
+                            <td class="highlight-col"><strong>Autonomous Shave Partials + Trailing SL Lock Behind Price per target</strong></td>
                         </tr>
                         <tr>
-                            <td>Missed Signals</td>
-                            <td>Common overnight or busy periods</td>
-                            <td class="highlight-col">24/7 automated monitoring</td>
+                            <td><strong>Broker Visibility &amp; Slippage</strong></td>
+                            <td>Hard SL/TP exposed on broker book (frequent stop-hunting)</td>
+                            <td class="highlight-col"><strong>100% Stealth Virtual Stops (invisible on terminal, disaster shield only)</strong></td>
                         </tr>
                         <tr>
-                            <td>Duplicate Trades</td>
-                            <td>Risk of double entries</td>
-                            <td class="highlight-col">Smart anti-duplicate filter</td>
+                            <td><strong>Slang &amp; Parsing Robustness</strong></td>
+                            <td>Fragile strict regex; breaks on emojis, voice notes, and slang</td>
+                            <td class="highlight-col"><strong>Institutional Multi-Lexicon NLP Parser with instant zone laddering</strong></td>
                         </tr>
                         <tr>
-                            <td>Risk Management</td>
-                            <td>Manual SL/TP entry</td>
-                            <td class="highlight-col">Stealth TP/SL, grid, BE, 3-mode trailing, equity floor</td>
+                            <td><strong>Geopolitical News Shield</strong></td>
+                            <td>None or primitive calendar blackout stopping all trading</td>
+                            <td class="highlight-col"><strong>Macro Sentinel AI RSS Squawk with live pip displacement &amp; DXY radar</strong></td>
                         </tr>
                         <tr>
-                            <td>Prop Firm Safety</td>
-                            <td>Hard to enforce rules</td>
-                            <td class="highlight-col">Built-in equity protection & risk controls</td>
+                            <td><strong>Prop Firm Drawdown Armor</strong></td>
+                            <td>Manual calculation; prone to daily trailing loss breaches</td>
+                            <td class="highlight-col"><strong>Built-in Equity Floor, Per-Channel Daily Loss Cap &amp; Spread Guards</strong></td>
                         </tr>
                         <tr>
-                            <td>Liquidity Defense</td>
-                            <td>Subjective chart drawing & guesswork</td>
-                            <td class="highlight-col">MT5 Empirical Defense Rate tracking (Asian H/L, FVG 50% CE)</td>
+                            <td><strong>Remote Control &amp; Mobile UI</strong></td>
+                            <td>None or requires paid third-party web portals</td>
+                            <td class="highlight-col"><strong>Zero-Config Mobile Web Dashboard (Cloudflare Tunnel) + Telegram Bot UI</strong></td>
                         </tr>
                         <tr>
-                            <td>Community Roadmap</td>
-                            <td>Static developer updates</td>
-                            <td class="highlight-col">Live 1-click feature suggestion & upvoting portal</td>
-                        </tr>
-                        <tr>
-                            <td>Technical Support</td>
-                            <td>Slow email back-and-forth for logs</td>
-                            <td class="highlight-col">1-Click in-app ticketing with auto-bundled diagnostics</td>
+                            <td><strong>Support &amp; Diagnostics</strong></td>
+                            <td>Slow email back-and-forth requesting log files</td>
+                            <td class="highlight-col"><strong>1-Click Support Portal with auto-bundled MT5 diagnostic telemetry</strong></td>
                         </tr>
                     </tbody>
                 </table>

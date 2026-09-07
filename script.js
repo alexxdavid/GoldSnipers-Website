@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initShowcaseTabs();
     initScrollspy();
     initCookieConsent();
+    initSimulator();
 });
 
 // --- Sticky Header ---
@@ -561,4 +562,134 @@ function loadTawk() {
         s1.setAttribute("crossorigin", "*");
         s0.parentNode.insertBefore(s1, s0);
     })();
+}
+
+// ==========================================================================
+// INTERACTIVE SIGNAL PARSER SIMULATOR
+// ==========================================================================
+const SIM_PRESETS = {
+    multi_tp: {
+        text: `GOLD BUY NOW 3020.50 - 3018.00\nSL: 3010.00\nTP1: 3025.00\nTP2: 3032.00\nTP3: 3045.00\nRisk: 1% | Manage lot sizes accordingly 🚀`,
+        latency: "0.74ms",
+        badge: "DUAL-ENGINE: ANCHOR + 2 LIMITS",
+        metrics: "Socket Roundtrip: 1.2ms • Slip Guard: Active • Stealth SL: Armed",
+        orders: [
+            { type: "BUY", role: "ANCHOR MARKET", vol: "0.50 Lot", entry: "3020.50", sl: "3010.00 (Stealth)", tp: "3025.00 (TP1)" },
+            { type: "BUY LIMIT", role: "PENDING GRID 1", vol: "0.25 Lot", entry: "3019.25", sl: "3010.00 (Stealth)", tp: "3032.00 (TP2)" },
+            { type: "BUY LIMIT", role: "PENDING GRID 2", vol: "0.25 Lot", entry: "3018.00", sl: "3010.00 (Stealth)", tp: "3045.00 (TP3)" }
+        ]
+    },
+    slang_tp: {
+        text: `🔥🔥 XAUUSD TP1 SMASHED +45 PIPS!!\nClose 50% partials now and lock SL to entry 3020.50!! Let runners fly 🚀💎`,
+        latency: "0.42ms",
+        badge: "AUTONOMOUS SHAVE & SL LOCK",
+        metrics: "Socket Roundtrip: 0.9ms • Action: Partial Close + Lock Behind Price",
+        orders: [
+            { type: "MODIFY", role: "ANCHOR CLOSE 50%", vol: "-0.25 Lot", entry: "3025.00", sl: "Locked @ 3020.50", tp: "Secured +$1,125" },
+            { type: "MODIFY", role: "GRID SL TRAIL", vol: "0.50 Lot", entry: "3019.25", sl: "Trailed to BE +10", tp: "Open for TP2/TP3" }
+        ]
+    },
+    limit_ladder: {
+        text: `GOLD SELL LIMIT ORDER\nSell Limit: 3038.50 - 3042.00\nStop Loss: 3050.00\nTake Profit: 3015.00\nWait for London Open liquidity sweep 🩸`,
+        latency: "0.61ms",
+        badge: "LIMIT LADDER GRID DISPATCH",
+        metrics: "Socket Roundtrip: 1.1ms • FVG Sweep Filter: Passed",
+        orders: [
+            { type: "SELL LIMIT", role: "LADDER TIER 1", vol: "0.33 Lot", entry: "3038.50", sl: "3050.00 (Stealth)", tp: "3015.00" },
+            { type: "SELL LIMIT", role: "LADDER TIER 2", vol: "0.33 Lot", entry: "3040.25", sl: "3050.00 (Stealth)", tp: "3015.00" },
+            { type: "SELL LIMIT", role: "LADDER TIER 3", vol: "0.34 Lot", entry: "3042.00", sl: "3050.00 (Stealth)", tp: "3015.00" }
+        ]
+    }
+};
+
+function initSimulator() {
+    const inputArea = document.getElementById("sim-input-text");
+    if (!inputArea) return;
+    loadSimPreset("multi_tp");
+}
+
+function loadSimPreset(presetKey) {
+    const preset = SIM_PRESETS[presetKey];
+    if (!preset) return;
+
+    // Update preset buttons active state
+    document.querySelectorAll(".sim-preset-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("onclick")?.includes(`'${presetKey}'`));
+    });
+
+    const inputArea = document.getElementById("sim-input-text");
+    if (inputArea) inputArea.value = preset.text;
+
+    renderSimOrders(preset);
+}
+
+function runSimulator() {
+    const inputArea = document.getElementById("sim-input-text");
+    const text = inputArea ? inputArea.value.trim() : "";
+    if (!text) return;
+
+    const runBtn = document.getElementById("sim-run-btn");
+    if (runBtn) {
+        runBtn.innerHTML = "<span>⚡ Parsing &amp; Dispatching...</span>";
+        runBtn.style.opacity = "0.7";
+    }
+
+    setTimeout(() => {
+        let isSell = /sell|short/i.test(text);
+        let isTpHit = /tp\d*\s*hit|smashed|secured|close/i.test(text);
+        let isLimit = /limit/i.test(text);
+
+        let mockPreset;
+        if (isTpHit) {
+            mockPreset = SIM_PRESETS.slang_tp;
+        } else if (isLimit) {
+            mockPreset = SIM_PRESETS.limit_ladder;
+        } else {
+            mockPreset = JSON.parse(JSON.stringify(SIM_PRESETS.multi_tp));
+            if (isSell) {
+                mockPreset.badge = "DUAL-ENGINE: SELL ANCHOR + LIMITS";
+                mockPreset.orders.forEach(o => {
+                    o.type = o.type.replace("BUY", "SELL");
+                });
+            }
+        }
+
+        renderSimOrders(mockPreset);
+
+        if (runBtn) {
+            runBtn.innerHTML = "<span>⚡ Simulate Instant Dispatch</span>";
+            runBtn.style.opacity = "1";
+        }
+    }, 280);
+}
+
+function renderSimOrders(preset) {
+    const latencyEl = document.getElementById("sim-latency");
+    const badgeEl = document.getElementById("sim-engine-badge");
+    const metricsEl = document.getElementById("sim-metrics");
+    const container = document.getElementById("sim-rows-container");
+
+    if (latencyEl) latencyEl.textContent = preset.latency;
+    if (badgeEl) badgeEl.textContent = preset.badge;
+    if (metricsEl) metricsEl.innerHTML = preset.metrics;
+
+    if (!container) return;
+
+    container.innerHTML = preset.orders.map(order => {
+        const isBuy = order.type.includes("BUY");
+        const isSell = order.type.includes("SELL");
+        const typeClass = isBuy ? "buy-tag" : (isSell ? "sell-tag" : "gold-text");
+        const roleClass = order.role.includes("ANCHOR") ? "role-anchor" : "role-pending";
+
+        return `
+            <div class="sim-row">
+                <span class="${typeClass}"><strong>${order.type}</strong></span>
+                <span class="${roleClass}">${order.role}</span>
+                <span>${order.vol}</span>
+                <span style="color: #FFF; font-weight: 600;">${order.entry}</span>
+                <span class="stealth-sl">${order.sl}</span>
+                <span style="color: #00E676; font-weight: 600;">${order.tp}</span>
+            </div>
+        `;
+    }).join("");
 }
