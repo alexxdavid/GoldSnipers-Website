@@ -29,7 +29,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=380.03">
+    <link rel="stylesheet" href="style.css?v=380.04">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -166,7 +166,7 @@
                     <p>Engineered for traders who refuse retail compromises. Sub-15ms Native Go execution, autonomous Anchor &amp; Pending grid engines, Stealth broker shielding, and real-time Macro Sentinel geopolitical intelligence.</p>
                     <div class="hero-actions">
                         <a href="#pricing" class="btn btn-primary">Start Trading Now</a>
-                        <a href="#simulator" class="btn btn-secondary">Try Signal Simulator</a>
+                        <a href="#features" class="btn btn-secondary">Explore Features</a>
                     </div>
                     <div class="hero-stats">
                         <div class="stat-item">
@@ -274,133 +274,6 @@
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> EQUITY PROTECTION <span class="profit">TRIGGERED</span> | MASTER CLEARANCE</div>
                 <div class="ticker-item">⚡ <span class="symbol">NAS100</span> BUY TRAILING FRACTAL <span class="profit">ACTIVE</span> | SECURING +220 Pips</div>
                 <div class="ticker-item">⚡ <span class="symbol">XAUUSD</span> LADDER ENGAGED | 5 TIER PENDING LEVELS</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Signal Simulator Section -->
-    <section id="simulator" class="simulator-section section-padding">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-subtitle gold-text">⚡ REAL-TIME DISPATCH DEMO</span>
-                <h2>Experience <span class="gold-gradient-text">Sub-15ms Execution</span></h2>
-                <p>Paste any Telegram Gold signal below or pick a preset. Watch the Native Go parser decompose slang, calculate multi-tiered limits, and dispatch structured orders instantly.</p>
-            </div>
-
-            <!-- Interactive Signal Simulator Card -->
-            <div class="simulator-card glass-panel">
-                <!-- Top Control Bar with Presets & Live Engine State -->
-                <div class="simulator-header">
-                    <div class="sim-presets">
-                        <span class="sim-label">Signal Presets:</span>
-                        <button type="button" id="btn-preset-1" class="sim-preset-btn active" onclick="loadSimPreset('dual_engine_3tp')">
-                            1. Anchor + 5 Limit Grid (3 TPs)
-                        </button>
-                        <button type="button" id="btn-preset-2" class="sim-preset-btn" onclick="loadSimPreset('tp1_hit_be')">
-                            2. TP1 Hit &amp; Break-Even
-                        </button>
-                        <button type="button" id="btn-preset-3" class="sim-preset-btn" onclick="loadSimPreset('trailing_sl_lock')">
-                            3. TP2 Hit &amp; Trailing SL Lock
-                        </button>
-                        <button type="button" id="btn-preset-4" class="sim-preset-btn" onclick="loadSimPreset('limit_ladder_5')">
-                            4. London Asian-High Sweep (5 Pendings)
-                        </button>
-                    </div>
-                    <div class="sim-status">
-                        <span class="sim-dot"></span>
-                        <span>BRIDGE SOCKET: <strong style="color: #00E676;">ONLINE (&lt;1ms)</strong></span>
-                    </div>
-                </div>
-
-                <!-- Main Workstation: Telegram Source -> Native Go Parse -> MT5 Terminal Results -->
-                <div class="simulator-grid">
-                    <!-- Left: Telegram Signal Input -->
-                    <div class="sim-input-col">
-                        <div class="sim-pane-header">
-                            <div class="sim-pane-title-group">
-                                <span class="sim-step-num">1</span>
-                                <span class="sim-pane-label">TELEGRAM SIGNAL FEED</span>
-                            </div>
-                            <span class="sim-subtag">Auto-Detecting Lexicon</span>
-                        </div>
-
-                        <textarea id="sim-input-text" class="sim-textarea" rows="8" placeholder="Type or paste any Telegram signal here..."></textarea>
-                        
-                        <div class="sim-action-stack">
-                            <button type="button" id="sim-run-btn" class="btn btn-primary sim-action-btn" onclick="runSimulator()">
-                                <span>⚡ Parse &amp; Dispatch to MT5</span>
-                            </button>
-                            
-                            <!-- Interactive Lifecycle Action Triggers -->
-                            <div class="sim-quick-lifecycle">
-                                <span class="sim-lifecycle-label">Simulate Live Lifecycle Updates:</span>
-                                <div class="sim-lifecycle-btns">
-                                    <button type="button" class="sim-life-btn" onclick="triggerLifecycleEvent('tp1')">
-                                        🎯 TP1 Hit + Shave 50%
-                                    </button>
-                                    <button type="button" class="sim-life-btn" onclick="triggerLifecycleEvent('be')">
-                                        🛡️ Move SL to Break-Even
-                                    </button>
-                                    <button type="button" class="sim-life-btn" onclick="triggerLifecycleEvent('trail')">
-                                        🔒 Trailing SL Lock Behind Price
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: MT5 Live Order Book & Execution Lifecycle -->
-                    <div class="sim-output-col">
-                        <div class="sim-pane-header">
-                            <div class="sim-pane-title-group">
-                                <span class="sim-step-num" style="background: var(--accent-gold); color: #000;">2</span>
-                                <span class="sim-pane-label">MT5 TERMINAL EXECUTION</span>
-                            </div>
-                            <span class="sim-badge-gold" id="sim-engine-badge">ANCHOR + 5 PENDINGS (3 TPS)</span>
-                        </div>
-
-                        <!-- Live Feed Summary Strip -->
-                        <div class="sim-summary-strip" id="sim-summary-strip">
-                            <div class="sim-summary-item">
-                                <span class="strip-label">PARSED ACTION</span>
-                                <span class="strip-val gold-text" id="strip-action">BUY XAUUSD</span>
-                            </div>
-                            <div class="sim-summary-item">
-                                <span class="strip-label">ENTRY ZONE</span>
-                                <span class="strip-val" id="strip-zone">3020.50 – 3014.00</span>
-                            </div>
-                            <div class="sim-summary-item">
-                                <span class="strip-label">TOTAL VOLUME</span>
-                                <span class="strip-val" id="strip-volume">1.40 Lots (6 Orders)</span>
-                            </div>
-                            <div class="sim-summary-item">
-                                <span class="strip-label">STEALTH SHIELD</span>
-                                <span class="strip-val" style="color: #4ADE80;" id="strip-shield">Active (Broker-Blind)</span>
-                            </div>
-                        </div>
-
-                        <!-- MT5 Terminal Order Table -->
-                        <div class="sim-dispatch-console" id="sim-console">
-                            <div class="sim-row header-row">
-                                <span>ORDER TYPE</span>
-                                <span>ENGINE ROLE</span>
-                                <span>VOLUME</span>
-                                <span>OPEN PRICE</span>
-                                <span>SL GUARD</span>
-                                <span>TAKE PROFIT</span>
-                            </div>
-                            <div id="sim-rows-container">
-                                <!-- Dynamically populated by script.js -->
-                            </div>
-                        </div>
-
-                        <!-- Live Terminal Execution Meta -->
-                        <div class="sim-footer-meta">
-                            <span>Backend: <strong>Native Go Bridge (IPC Port 28731)</strong></span>
-                            <span id="sim-metrics">Socket Roundtrip: <strong>0.8ms</strong> • Slippage Guard: <strong>Passed</strong></span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1204,7 +1077,7 @@
         </div>
     </div>
 
-    <script src="script.js?v=380.03"></script>
+    <script src="script.js?v=380.04"></script>
     <div id="cookie-consent" class="cookie-banner" role="dialog" aria-label="Cookie consent">
         <div class="container">
             <p>We use essential cookies for site functionality and Tawk.to for live chat. By accepting, you consent to chat session cookies. Read our <a href="privacy.html">Privacy Policy</a> for details.</p>
