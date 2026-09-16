@@ -1057,6 +1057,23 @@ canvas#heroChart {
     transform: scale(1.06);
 }
 
+.pricing-card.featured-broker {
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    box-shadow: 0 0 45px rgba(16, 185, 129, 0.2);
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.pricing-card.featured-broker:hover {
+    box-shadow: 0 0 65px rgba(16, 185, 129, 0.35);
+    transform: scale(1.06);
+}
+
+.pricing-card.featured-broker li::before {
+    color: #34D399;
+    text-shadow: 0 0 5px rgba(52, 211, 153, 0.6);
+}
+
 .badge {
     position: absolute;
     top: -15px;
@@ -1438,10 +1455,12 @@ footer {
         max-width: 500px;
         margin: 0 auto;
     }
-    .pricing-card.popular {
+    .pricing-card.popular,
+    .pricing-card.featured-broker {
         transform: scale(1);
     }
-    .pricing-card.popular:hover {
+    .pricing-card.popular:hover,
+    .pricing-card.featured-broker:hover {
         transform: scale(1.02);
     }
     .calc-container {
