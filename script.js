@@ -87,16 +87,16 @@ function initPricingToggle() {
 
     const pricingData = {
         monthly: [
-            { price: "$39", period: "/ month", checkout: "https://buy.stripe.com/00w4gz0U119mbXScLba3u0w" },
+            { price: "$0", period: "/ Free", checkout: "https://secure.ic.com/en/Account/Register?camp=95928" },
             { price: "$49", period: "/ month", checkout: "https://buy.stripe.com/fZu14ncCJ8BO8LG9yZa3u0y" }
         ],
         annual: [
-            { price: "$399", period: "one-time", checkout: "https://buy.stripe.com/bJe4gz46ddW80fa5iJa3u0x" },
+            { price: "$0", period: "/ Free", checkout: "https://secure.ic.com/en/Account/Register?camp=95928" },
             { price: "$499", period: "one-time", checkout: "https://buy.stripe.com/8x24gzcCJaJWbXS9yZa3u0z" }
         ]
     };
 
-    const proBtn = document.getElementById("btn-pro");
+    const ibBtn = document.getElementById("btn-ib") || document.getElementById("btn-pro");
     const lifetimeBtn = document.getElementById("btn-lifetime");
 
     function updatePricing(billingMode) {
@@ -112,7 +112,7 @@ function initPricingToggle() {
         });
 
         const modalExpertBtn = document.getElementById("btn-modal-expert");
-        if (proBtn) proBtn.href = pricingData[billingMode][0].checkout;
+        if (ibBtn) ibBtn.href = pricingData[billingMode][0].checkout;
         if (lifetimeBtn) lifetimeBtn.href = pricingData[billingMode][1].checkout;
         if (modalExpertBtn) modalExpertBtn.href = pricingData[billingMode][1].checkout;
     }
