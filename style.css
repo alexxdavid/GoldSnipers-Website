@@ -1072,6 +1072,15 @@ canvas#heroChart {
     box-shadow: 0 5px 15px rgba(229, 169, 59, 0.4);
 }
 
+.badge.badge-partner {
+    background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+    color: #FFFFFF;
+    border: 1px solid rgba(52, 211, 153, 0.4);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.35);
+    padding: 8px 18px;
+    letter-spacing: 0.5px;
+}
+
 .badge.badge-interactive {
     cursor: pointer;
     border: none;
@@ -1250,6 +1259,44 @@ canvas#heroChart {
 .pricing-card.popular li::before {
     color: var(--accent-gold);
     text-shadow: 0 0 5px rgba(229, 169, 59, 0.5);
+}
+
+.pricing-subtitle {
+    color: #94A3B8;
+    font-size: 0.82rem;
+    margin: -10px 0 24px 0;
+    line-height: 1.4;
+    min-height: 38px;
+}
+
+.pricing-footnote {
+    font-size: 0.72rem;
+    color: #64748B;
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.35;
+    min-height: 32px;
+}
+
+.pricing-tag {
+    margin-left: auto;
+    white-space: nowrap;
+    font-size: 0.76rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    padding-left: 8px;
+}
+
+.pricing-tag.gold {
+    color: var(--accent-gold);
+}
+
+.pricing-tag.cyan {
+    color: var(--accent-cyan);
+}
+
+.pricing-tag.green {
+    color: #34D399;
 }
 
 /* --- FAQ Section --- */
