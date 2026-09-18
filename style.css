@@ -1033,59 +1033,86 @@ canvas#heroChart {
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 28px;
     align-items: stretch;
-}
-
-.pricing-grid.two-cards {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 860px;
+    max-width: 1200px;
     margin: 0 auto;
-    gap: 36px;
 }
 
-@media (max-width: 860px) {
-    .pricing-grid.two-cards {
+@media (max-width: 1080px) {
+    .pricing-grid {
         grid-template-columns: 1fr;
-        max-width: 440px;
+        max-width: 460px;
+        gap: 36px;
     }
 }
 
 .pricing-card {
-    padding: 50px 40px;
+    padding: 44px 26px;
     display: flex;
     flex-direction: column;
     position: relative;
     transition: var(--transition-smooth);
+    border-radius: 20px;
+}
+
+.pricing-card:hover {
+    transform: translateY(-6px);
 }
 
 .pricing-card.popular {
     border: 1px solid rgba(229, 169, 59, 0.4);
-    box-shadow: 0 0 40px rgba(229, 169, 59, 0.15);
-    transform: scale(1.05);
-    z-index: 2;
+    box-shadow: 0 0 35px rgba(229, 169, 59, 0.15);
 }
 
 .pricing-card.popular:hover {
-    box-shadow: 0 0 60px rgba(229, 169, 59, 0.25);
-    transform: scale(1.06);
+    box-shadow: 0 0 55px rgba(229, 169, 59, 0.28);
+    transform: translateY(-6px);
 }
 
 .pricing-card.featured-broker {
     border: 1px solid rgba(16, 185, 129, 0.45);
-    box-shadow: 0 0 45px rgba(16, 185, 129, 0.2);
-    transform: scale(1.05);
-    z-index: 2;
+    box-shadow: 0 0 35px rgba(16, 185, 129, 0.15);
 }
 
 .pricing-card.featured-broker:hover {
-    box-shadow: 0 0 65px rgba(16, 185, 129, 0.35);
-    transform: scale(1.06);
+    box-shadow: 0 0 60px rgba(16, 185, 129, 0.3);
+    transform: translateY(-6px);
 }
 
 .pricing-card.featured-broker li::before {
     color: #34D399;
     text-shadow: 0 0 5px rgba(52, 211, 153, 0.6);
+}
+
+.pricing-card.featured-monthly {
+    border: 1px solid rgba(229, 169, 59, 0.4);
+    box-shadow: 0 0 35px rgba(229, 169, 59, 0.15);
+}
+
+.pricing-card.featured-monthly:hover {
+    box-shadow: 0 0 55px rgba(229, 169, 59, 0.28);
+    transform: translateY(-6px);
+}
+
+.pricing-card.featured-monthly li::before {
+    color: var(--accent-gold);
+    text-shadow: 0 0 5px rgba(229, 169, 59, 0.6);
+}
+
+.pricing-card.featured-lifetime {
+    border: 1px solid rgba(0, 210, 211, 0.5);
+    box-shadow: 0 0 40px rgba(0, 210, 211, 0.2);
+}
+
+.pricing-card.featured-lifetime:hover {
+    box-shadow: 0 0 60px rgba(0, 210, 211, 0.35);
+    transform: translateY(-6px);
+}
+
+.pricing-card.featured-lifetime li::before {
+    color: var(--accent-cyan);
+    text-shadow: 0 0 5px rgba(0, 210, 211, 0.6);
 }
 
 .badge {
@@ -1470,12 +1497,16 @@ footer {
         margin: 0 auto;
     }
     .pricing-card.popular,
-    .pricing-card.featured-broker {
-        transform: scale(1);
+    .pricing-card.featured-broker,
+    .pricing-card.featured-monthly,
+    .pricing-card.featured-lifetime {
+        transform: translateY(0);
     }
     .pricing-card.popular:hover,
-    .pricing-card.featured-broker:hover {
-        transform: scale(1.02);
+    .pricing-card.featured-broker:hover,
+    .pricing-card.featured-monthly:hover,
+    .pricing-card.featured-lifetime:hover {
+        transform: translateY(-4px);
     }
     .calc-container {
         grid-template-columns: 1fr;

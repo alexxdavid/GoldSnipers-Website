@@ -65,6 +65,15 @@
                         "priceValidUntil": "2027-06-15",
                         "availability": "https://schema.org/InStock",
                         "url": "https://goldsnipersbot.com/#pricing"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Expert Lifetime",
+                        "price": "499",
+                        "priceCurrency": "USD",
+                        "priceValidUntil": "2027-06-15",
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://goldsnipersbot.com/#pricing"
                     }
                 ]
             },
@@ -817,21 +826,13 @@
                 <p>Get zero upfront cost access via our broker partner, or purchase a standalone license via Stripe.</p>
             </div>
 
-            <div class="pricing-toggle-container">
-                <span class="toggle-label active" id="billing-monthly">Monthly</span>
-                <div class="toggle-switch">
-                    <div class="toggle-knob"></div>
-                </div>
-                <span class="toggle-label" id="billing-annual">Lifetime</span>
-            </div>
-
-            <div class="pricing-grid two-cards">
-                <!-- Plan 1: Deposit & Trade (Most Popular) -->
+            <div class="pricing-grid">
+                <!-- Plan 1: Deposit & Trade (Broker Partner) -->
                 <div class="pricing-card glass-panel featured-broker">
-                    <span class="badge badge-partner">🔥 Most Popular · Zero Upfront Cost</span>
+                    <span class="badge badge-partner">🔥 Zero Upfront Cost</span>
                     <h3>Deposit &amp; Trade</h3>
                     <div class="price-container">
-                        <span class="price price-value">$0</span>
+                        <span class="price">$0</span>
                         <span class="billing-period">/ Upfront</span>
                     </div>
                     <p class="pricing-subtitle">Zero upfront software cost when you deposit and trade through our official broker partner link.</p>
@@ -856,15 +857,16 @@
                     <a id="btn-ib" href="https://secure.ic.com/en/Account/Register?camp=95928" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Deposit &amp; Trade Now</a>
                     <p class="pricing-footnote">Register with partner code <strong style="color: #CBD5E1;">95928</strong>. Valid exclusively for active, funded broker accounts.</p>
                 </div>
-                <!-- Plan 2: Expert (Standalone & Prop Firms) -->
-                <div class="pricing-card glass-panel">
+
+                <!-- Plan 2: Expert Monthly -->
+                <div class="pricing-card glass-panel featured-monthly">
                     <button type="button" class="badge badge-interactive" onclick="openWhyExpertModal()" title="Click to see why Expert is ideal for prop firms" style="background: rgba(229, 169, 59, 0.15); border: 1px solid rgba(229, 169, 59, 0.4); color: var(--accent-gold); box-shadow: 0 4px 15px rgba(229, 169, 59, 0.2);">
                         <span>👑 Standalone &amp; Prop Firms</span>
                         <span class="badge-info-icon" style="background: rgba(229, 169, 59, 0.25); color: var(--accent-gold);">Why? ⓘ</span>
                     </button>
-                    <h3>Expert</h3>
+                    <h3>Expert Monthly</h3>
                     <div class="price-container">
-                        <span class="price price-value">$49</span>
+                        <span class="price">$49</span>
                         <span class="billing-period">/ month</span>
                     </div>
                     <p class="pricing-subtitle">Direct standalone license for Prop Firms (FTMO, FundedNext) &amp; multi-broker setups.</p>
@@ -886,8 +888,39 @@
                         <li>✦ Interactive Signal Tester &amp; Simulation Console</li>
                         <li>VIP Priority Support &amp; Community Roadmap Voting</li>
                     </ul>
-                    <a id="btn-lifetime" href="https://buy.stripe.com/fZu14ncCJ8BO8LG9yZa3u0y" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Get Standalone License</a>
+                    <a id="btn-monthly" href="https://buy.stripe.com/fZu14ncCJ8BO8LG9yZa3u0y" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Get Monthly License</a>
                     <p class="pricing-footnote">Instant automated license delivery. Unrestricted across all brokers &amp; prop firms.</p>
+                </div>
+
+                <!-- Plan 3: Expert Lifetime -->
+                <div class="pricing-card glass-panel featured-lifetime">
+                    <span class="badge" style="background: linear-gradient(135deg, #00A3A4 0%, #00D2D3 100%); color: #050508; font-weight: 800; border: 1px solid rgba(0, 210, 211, 0.6); box-shadow: 0 5px 20px rgba(0, 210, 211, 0.4);">💎 Best Value · Lifetime Pass</span>
+                    <h3>Expert Lifetime</h3>
+                    <div class="price-container">
+                        <span class="price">$499</span>
+                        <span class="billing-period">one-time</span>
+                    </div>
+                    <p class="pricing-subtitle">Perpetual license with lifetime access &amp; all future updates included. Pay once, own it forever.</p>
+                    <ul>
+                        <li>6 MT5 Instances · Any MT5 Broker / Prop Firm <span class="pricing-tag cyan">(2x Capacity)</span></li>
+                        <li>12 Telegram Channels · Dedicated Gold (XAUUSD) <span class="pricing-tag cyan">(2x Capacity)</span></li>
+                        <li>Maximum 10-Tier Grid Ladder Engine</li>
+                        <li>Full Institutional TP Targets <span class="pricing-tag cyan">(TP1–TP10)</span></li>
+                        <li>Harvest &amp; Dynamic Break-Even Engines</li>
+                        <li>SMC Fair Value Gap (FVG) &amp; Order Block Filters</li>
+                        <li>✦ Multi-Model AI Copilot <span class="pricing-tag cyan">(Spot Invalidation)</span></li>
+                        <li>✦ Market Intelligence &amp; Empirical Liquidity Defense</li>
+                        <li>✦ Macro Sentinel Live RSS Squawk &amp; DXY Radar</li>
+                        <li>✦ Stealth TP/SL Mode &amp; Prop Firm Drawdown Shield</li>
+                        <li>✦ Telegram Remote Commands &amp; Admin Bot</li>
+                        <li>✦ Remote Web Dashboard <span class="pricing-tag cyan">(Cloudflare Tunnels)</span></li>
+                        <li>✦ Local SQLite Analytics &amp; Deal Lifecycle DB</li>
+                        <li>✦ Sub-15ms Local Socket IPC &amp; Anti-Duplicate Guard</li>
+                        <li>✦ Interactive Signal Tester &amp; Simulation Console</li>
+                        <li>Lifetime Updates &amp; Priority Direct Developer Support</li>
+                    </ul>
+                    <a id="btn-lifetime" href="https://buy.stripe.com/8x24gzcCJaJWbXS9yZa3u0z" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Lifetime Access</a>
+                    <p class="pricing-footnote">One-time payment. Lifetime access, future major updates &amp; priority roadmap included.</p>
                 </div>
             </div>
         </div>
