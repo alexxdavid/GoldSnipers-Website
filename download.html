@@ -3,102 +3,506 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downloading Gold Snipers...</title>
+    <title>Download Gold Snipers | MT5 Expert Advisor & Bridge Installer</title>
+    <meta name="description" content="Download the official Gold Snipers suite. MetaTrader 5 Expert Advisor, high-speed Native Go Desktop Bridge, and Inno Setup installer for Windows.">
+    <link rel="canonical" href="https://goldsnipersbot.com/download.html">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Download Gold Snipers | MT5 Expert Advisor & Bridge Installer">
+    <meta property="og:description" content="Download the official Gold Snipers suite. Sub-15ms execution, MetaTrader 5 Expert Advisor, and Native Go Desktop Bridge for Windows.">
+    <meta property="og:image" content="https://goldsnipersbot.com/Bridge-Dashboard.png">
+    <meta property="og:url" content="https://goldsnipersbot.com/download.html">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css?v=380.04">
     <style>
-        body {
-            background: #0a0a12;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            min-height: 100vh;
+        .download-hero {
+            padding: 140px 0 60px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        .download-hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .download-hero p.subtitle {
+            font-size: 19px;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 36px;
+            line-height: 1.6;
+        }
+        .download-box {
+            background: var(--glass-bg);
+            border: 1px solid rgba(0, 210, 211, 0.25);
+            border-radius: 24px;
+            padding: 44px 36px;
+            max-width: 680px;
+            margin: 0 auto 60px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 210, 211, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .download-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-gold));
+        }
+        .version-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 210, 211, 0.1);
+            border: 1px solid rgba(0, 210, 211, 0.3);
+            color: var(--accent-cyan);
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .version-badge .pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00ff66;
+            box-shadow: 0 0 8px #00ff66;
+            animation: pulseGlow 1.5s infinite alternate;
+        }
+        .btn-download-main {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            max-width: 440px;
+            padding: 18px 28px;
+            background: linear-gradient(135deg, #00D2D3 0%, #0088CC 100%);
+            color: #050508;
+            font-family: var(--font-primary);
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(0, 210, 211, 0.35);
+            margin: 12px auto 16px;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-download-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 32px rgba(0, 210, 211, 0.5);
+            background: linear-gradient(135deg, #26e6e6 0%, #009ceb 100%);
+            color: #000;
+        }
+        .download-meta {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0;
+            gap: 16px;
+            flex-wrap: wrap;
         }
-        .container {
-            max-width: 480px;
-            width: 90%;
-            text-align: center;
-            background: #14141f;
-            border: 1px solid #1e1e30;
-            border-radius: 16px;
-            padding: 40px 32px;
+        .download-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
-        .spinner {
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border-left-color: #00d2d3;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
+        .auto-status {
+            font-size: 14px;
+            color: #8E9BB0;
+            margin-top: 18px;
+            min-height: 24px;
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        h1 {
-            color: #00d2d3;
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-        p {
-            color: #a0a0b0;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-        .link {
-            color: #00d2d3;
+        .auto-status a {
+            color: var(--accent-cyan);
             text-decoration: underline;
-            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* 3-Step Setup Grid */
+        .steps-section {
+            padding: 20px 0 70px;
+            position: relative;
+            z-index: 1;
+        }
+        .steps-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .step-card {
+            background: var(--glass-bg);
+            border: var(--glass-border);
+            border-radius: 18px;
+            padding: 32px 26px;
+            position: relative;
+            transition: var(--transition-fast);
+        }
+        .step-card:hover {
+            border-color: rgba(0, 210, 211, 0.3);
+            transform: translateY(-3px);
+        }
+        .step-number {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(229, 169, 59, 0.15);
+            border: 1px solid rgba(229, 169, 59, 0.4);
+            color: var(--accent-gold);
+            font-family: var(--font-mono);
+            font-size: 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .step-card h3 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+        .step-card p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* Requirements Grid */
+        .req-box {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 32px 30px;
+            margin-top: 40px;
+        }
+        .req-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .req-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .req-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .req-item .req-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        .req-item .req-val {
+            font-size: 15px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .download-hero h1 { font-size: 34px; }
+            .download-hero p.subtitle { font-size: 16px; }
+            .download-box { padding: 32px 20px; }
+            .btn-download-main { font-size: 16px; padding: 16px 20px; }
         }
     </style>
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="bg-glow"></div>
+    <div class="bg-glow-gold"></div>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="logo-header.png" alt="Gold Snipers Logo" width="32" height="32">
+                    Gold<span>Snipers</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="download.html" style="color: var(--accent-cyan); font-weight: 600;">Download</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="download.html" class="btn btn-secondary btn-sm nav-btn-download">Download</a>
+                    <a href="index.html#pricing" class="btn btn-primary btn-sm">Get Started</a>
+                </div>
+                <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Download Hero -->
+    <main>
+        <section class="download-hero">
+            <div class="container">
+                <div class="hero-prestige-badge" style="margin: 0 auto 20px; display: inline-flex;">
+                    <span class="badge-icon">⚡</span>
+                    <span class="badge-text">OFFICIAL DIRECT DISTRIBUTION</span>
+                </div>
+                <h1>Download <span class="gold-gradient-text">Gold Snipers</span> Suite</h1>
+                <p class="subtitle">Complete MetaTrader 5 Expert Advisor, ultra-fast Native Go Desktop Bridge, and Remote Web Dashboard packaged in a single verified installer.</p>
+
+                <!-- Download Card -->
+                <div class="download-box">
+                    <div class="version-badge" id="version-badge">
+                        <span class="pulse-dot"></span>
+                        <span id="version-text">Checking latest build...</span>
+                    </div>
+
+                    <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 22px;">
+                        Windows 10 / 11 / Server 2019+ (64-bit) &bull; Built for MetaTrader 5
+                    </p>
+
+                    <a id="download-button" href="#" class="btn-download-main" style="display: none;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <span>Download for Windows (.exe)</span>
+                    </a>
+
+                    <div id="loading-spinner" style="padding: 20px 0;">
+                        <div style="width: 42px; height: 42px; border: 3px solid rgba(0, 210, 211, 0.2); border-left-color: var(--accent-cyan); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px;"></div>
+                        <p style="font-size: 14px; color: var(--text-muted);">Fetching the latest verified release from GitHub...</p>
+                    </div>
+
+                    <div class="download-meta" id="download-meta" style="display: none;">
+                        <span>📦 <strong id="meta-filename">GoldSnipersInstaller.exe</strong></span>
+                        <span>⚖️ <span id="meta-filesize">~20 MB</span></span>
+                        <span>🛡️ Signed Inno Setup</span>
+                    </div>
+
+                    <div class="auto-status" id="status-msg">
+                        Initializing installer link...
+                    </div>
+                </div>
+
+                <!-- 3-Step Setup Guide -->
+                <div class="steps-section">
+                    <h2>3-Minute Quick Setup</h2>
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-number">01</div>
+                            <h3>Run Installer</h3>
+                            <p>Launch the downloaded <code>.exe</code> file. The installer detects your MT5 installation directory and deploys the EA, indicators, and bridge helper.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">02</div>
+                            <h3>Activate License</h3>
+                            <p>Open <strong>Gold Snipers Bridge</strong> from your Desktop shortcut. Enter the license key you received upon checkout or broker registration.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">03</div>
+                            <h3>Attach to MT5</h3>
+                            <p>In MT5, ensure <em>Allow Algo Trading</em> &amp; <em>Allow DLL imports</em> are checked. Attach <strong>Gold_Snipers</strong> to any XAUUSD chart and enjoy automated execution.</p>
+                        </div>
+                    </div>
+
+                    <!-- System Requirements -->
+                    <div class="req-box">
+                        <h3>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                            System &amp; Terminal Requirements
+                        </h3>
+                        <div class="req-grid">
+                            <div class="req-item">
+                                <span class="req-label">Operating System</span>
+                                <span class="req-val">Windows 10 / 11 (64-bit) or Windows Server 2019 / 2022 / 2025</span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-label">Trading Terminal</span>
+                                <span class="req-val">MetaTrader 5 (MT5 build 4000+ recommended)</span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-label">Hardware</span>
+                                <span class="req-val">1.5 GHz+ Dual Core CPU &bull; 2 GB RAM &bull; 100 MB Storage</span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-label">Uptime Recommendation</span>
+                                <span class="req-val">Low-latency Windows VPS recommended for 24/7 continuous operation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2><img src="logo-header.png" alt="Gold Snipers Logo" width="32" height="32"> Gold<span>Snipers</span></h2>
+                    <p>Professional algorithmic trading solutions for MetaTrader 5 and Telegram integrations. Built by traders, for traders.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="download.html">Download</a></li>
+                        <li><a href="infographics.html">Infographics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="https://t.me/goldsniperssupport" target="_blank">Telegram Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <strong>Risk Warning:</strong> Trading financial instruments, including Gold (XAUUSD) and contracts for difference (CFDs) on margin, carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you.
+                <br><br>
+                &copy; 2026 Gold Snipers. All rights reserved. Built for MT5.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dynamic Download Logic -->
     <script>
         const MANIFEST_URL = "https://gist.githubusercontent.com/alexxdavid/5ee90639e27ef4b2aba1fe25272d9543/raw/update_manifest.json";
 
-        async function startDownload() {
+        function formatBytes(bytes, decimals = 1) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const dm = decimals < 0 ? 0 : decimals;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+        }
+
+        async function initDownload() {
+            const versionText = document.getElementById('version-text');
+            const downloadBtn = document.getElementById('download-button');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            const downloadMeta = document.getElementById('download-meta');
+            const statusMsg = document.getElementById('status-msg');
+            const metaFilename = document.getElementById('meta-filename');
+            const metaFilesize = document.getElementById('meta-filesize');
+
             try {
-                const response = await fetch(MANIFEST_URL, { cache: "no-store" });
-                const manifest = await response.json();
-                
+                const res = await fetch(MANIFEST_URL, { cache: "no-store" });
+                if (!res.ok) throw new Error("Manifest HTTP error: " + res.status);
+                const manifest = await res.json();
+
                 let downloadUrl = manifest.installer_url;
+                const version = manifest.version || "380.11";
+                const build = manifest.build || "";
+
+                versionText.textContent = `Version ${version} (Build ${build})`;
+
                 if (!downloadUrl) {
-                    document.getElementById('status-msg').textContent = "Error: Download link not found. Please contact support.";
+                    statusMsg.innerHTML = '<span style="color: #ff6b6b;">Download link unavailable. Please contact support.</span>';
+                    loadingSpinner.style.display = 'none';
                     return;
                 }
-                
-                // If it is a GitHub API asset URL, fetch the actual browser_download_url
+
+                // If asset API URL, resolve to browser_download_url
                 if (downloadUrl.includes("api.github.com/repos/")) {
                     try {
-                        const assetResponse = await fetch(downloadUrl);
-                        if (assetResponse.ok) {
-                            const assetMeta = await assetResponse.json();
+                        const assetRes = await fetch(downloadUrl);
+                        if (assetRes.ok) {
+                            const assetMeta = await assetRes.json();
                             if (assetMeta.browser_download_url) {
                                 downloadUrl = assetMeta.browser_download_url;
                             }
+                            if (assetMeta.name) {
+                                metaFilename.textContent = assetMeta.name;
+                            }
+                            if (assetMeta.size) {
+                                metaFilesize.textContent = formatBytes(assetMeta.size);
+                            }
                         }
-                    } catch (apiErr) {
-                        console.error("Failed to resolve browser download URL from API:", apiErr);
+                    } catch (e) {
+                        console.warn("Could not resolve asset metadata:", e);
                     }
                 }
-                
-                // Update text and trigger direct download
-                document.getElementById('status-msg').innerHTML = 
-                    'Your download has started! If it did not begin, <a class="link" href="' + downloadUrl + '">click here to download manually</a>.';
-                window.location.href = downloadUrl;
+
+                downloadBtn.href = downloadUrl;
+                downloadBtn.style.display = 'inline-flex';
+                downloadMeta.style.display = 'flex';
+                loadingSpinner.style.display = 'none';
+
+                statusMsg.innerHTML = 'Your download should begin automatically. If not, <a href="' + downloadUrl + '">click here to download directly</a>.';
+
+                // Trigger download automatically
+                setTimeout(() => {
+                    window.location.href = downloadUrl;
+                }, 1200);
+
             } catch (err) {
-                console.error(err);
-                document.getElementById('status-msg').textContent = "Error fetching download link. Please contact support.";
+                console.error("Download error:", err);
+                loadingSpinner.style.display = 'none';
+                versionText.textContent = "Version 380.11 (Latest)";
+                statusMsg.innerHTML = '<span style="color: #ff6b6b;">Could not fetch installer automatically. Please visit <a href="https://t.me/goldsniperssupport">Telegram Support</a>.</span>';
             }
         }
-        window.onload = startDownload;
+
+        window.addEventListener('DOMContentLoaded', initDownload);
     </script>
-</head>
-<body>
-    <div class="container">
-        <div class="spinner"></div>
-        <h1>Downloading Gold Snipers EA</h1>
-        <p id="status-msg">Fetching the latest installer build, please wait...</p>
-    </div>
 </body>
 </html>

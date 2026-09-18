@@ -300,6 +300,20 @@ nav {
     color: var(--text-main);
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-btn-download {
+    padding: 10px 18px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -1469,7 +1483,8 @@ footer {
 }
 
 @media (max-width: 768px) {
-    header .btn-primary {
+    header .btn-primary,
+    header .nav-actions {
         display: none;
     }
     .hero-grid {
