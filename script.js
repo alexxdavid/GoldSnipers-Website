@@ -111,10 +111,8 @@ function initPricingToggle() {
             }
         });
 
-        const modalExpertBtn = document.getElementById("btn-modal-expert");
         if (ibBtn) ibBtn.href = pricingData[billingMode][0].checkout;
         if (lifetimeBtn) lifetimeBtn.href = pricingData[billingMode][1].checkout;
-        if (modalExpertBtn) modalExpertBtn.href = pricingData[billingMode][1].checkout;
     }
 
     function setBilling(isAnnual) {
@@ -456,21 +454,6 @@ function closeLightbox(e) {
     document.body.style.overflow = '';
 }
 
-// --- Why Expert Modal ---
-function openWhyExpertModal() {
-    const modal = document.getElementById('why-expert-modal');
-    if (!modal) return;
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeWhyExpertModal(e) {
-    if (e && e.target !== e.currentTarget) return;
-    const modal = document.getElementById('why-expert-modal');
-    if (!modal) return;
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-}
 document.addEventListener('DOMContentLoaded', () => {
     const displayImage = document.getElementById('showcase-display');
     if (displayImage) {
