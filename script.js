@@ -87,11 +87,11 @@ function initPricingToggle() {
 
     const pricingData = {
         monthly: [
-            { price: "$0", period: "/ Free", checkout: "https://secure.ic.com/en/Account/Register?camp=95928" },
+            { price: "$0", period: "/ Upfront", checkout: "https://secure.ic.com/en/Account/Register?camp=95928" },
             { price: "$49", period: "/ month", checkout: "https://buy.stripe.com/fZu14ncCJ8BO8LG9yZa3u0y" }
         ],
         annual: [
-            { price: "$0", period: "/ Free", checkout: "https://secure.ic.com/en/Account/Register?camp=95928" },
+            { price: "$0", period: "/ Upfront", checkout: "https://secure.ic.com/en/Account/Register?camp=95928" },
             { price: "$499", period: "one-time", checkout: "https://buy.stripe.com/8x24gzcCJaJWbXS9yZa3u0z" }
         ]
     };
