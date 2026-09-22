@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | The Rolls-Royce of MT5 Gold Automation | Gold Snipers</title>
+    <meta name="description" content="Discover how Gold Snipers engineered the definitive MT5 Gold (XAUUSD) execution suite — sub-15ms local socket IPC, autonomous dual-engine grid architecture, in-memory execution, and AI macro intelligence. Built by traders, for traders.">
+    <link rel="canonical" href="https://goldsnipersbot.com/about.html">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
+    <meta property="og:title" content="About Us | The Rolls-Royce of MT5 Gold Automation | Gold Snipers">
+    <meta property="og:description" content="Why Gold Snipers exists: fixing the retail copier market with sub-15ms execution, in-memory execution engines, autonomous dual-engine grids, and AI macro intelligence.">
+    <meta property="og:image" content="https://goldsnipersbot.com/Bridge-Dashboard.png">
+    <meta property="og:url" content="https://goldsnipersbot.com/about.html">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=380.04">
+    <style>
+        .about-hero { padding: 140px 0 50px; position: relative; z-index: 1; }
+        .about-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 210, 211, 0.1);
+            border: 1px solid rgba(0, 210, 211, 0.3);
+            border-radius: 9999px;
+            padding: 6px 16px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            letter-spacing: 0.8px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .about-hero h1 { font-size: 52px; font-weight: 800; margin-bottom: 20px; line-height: 1.15; letter-spacing: -0.5px; }
+        .about-hero p.lead { font-size: 20px; color: var(--text-muted); max-width: 820px; line-height: 1.7; margin-bottom: 30px; }
+        .about-hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        .about-stat h3 { font-size: 32px; font-weight: 800; color: var(--accent-cyan); margin-bottom: 6px; font-family: var(--font-primary); }
+        .about-stat h3.gold { color: var(--accent-gold); }
+        .about-stat p { font-size: 13px; color: var(--text-muted); text-transform: uppercase; font-family: var(--font-mono); letter-spacing: 0.5px; margin: 0; }
+        
+        .about-section { padding: 70px 0; position: relative; z-index: 1; }
+        .about-section-header { margin-bottom: 40px; }
+        .about-section-header.text-center { text-align: center; }
+        .about-section-header h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.5px; }
+        .about-section-header p { font-size: 17px; color: var(--text-muted); line-height: 1.7; max-width: 780px; margin: 0 auto; }
+        .about-divider { width: 80px; height: 3px; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-gold)); margin: 40px 0; border-radius: 2px; }
+        .about-divider.center { margin: 30px auto; }
+        
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .about-card {
+            background: rgba(14, 18, 28, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 32px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .about-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 210, 211, 0.35);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+        .about-card-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(239, 68, 68, 0.15);
+            color: #F87171;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+        .about-card-badge.gold {
+            background: rgba(229, 169, 59, 0.15);
+            color: var(--accent-gold);
+            border-color: rgba(229, 169, 59, 0.35);
+        }
+        .about-card-badge.cyan {
+            background: rgba(0, 210, 211, 0.15);
+            color: var(--accent-cyan);
+            border-color: rgba(0, 210, 211, 0.35);
+        }
+        .about-card-badge.green {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ADE80;
+            border-color: rgba(34, 197, 94, 0.35);
+        }
+        .about-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #FFFFFF; }
+        .about-card p { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+        
+        .about-quote {
+            border-left: 4px solid var(--accent-gold);
+            padding: 32px 40px;
+            margin: 50px 0;
+            background: rgba(20, 26, 40, 0.6);
+            border-radius: 0 16px 16px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        .about-quote p { font-size: 22px; font-style: italic; color: #FFFFFF; line-height: 1.6; }
+        .about-quote cite { font-size: 14px; color: var(--accent-gold); display: block; margin-top: 14px; font-style: normal; font-weight: 600; font-family: var(--font-mono); }
+        
+        .pillar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .pillar-card {
+            background: rgba(14, 18, 28, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 36px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 210, 211, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+        .pillar-num {
+            font-family: var(--font-mono);
+            font-size: 36px;
+            font-weight: 800;
+            color: rgba(0, 210, 211, 0.25);
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+        .pillar-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; color: #FFFFFF; }
+        .pillar-card p { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+        
+        .broker-callout {
+            background: linear-gradient(135deg, rgba(6, 78, 59, 0.25) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border: 1px solid rgba(52, 211, 153, 0.4);
+            border-radius: 20px;
+            padding: 44px;
+            margin: 40px 0;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .broker-callout h3 { font-size: 28px; font-weight: 800; margin-bottom: 16px; color: #FFFFFF; }
+        .broker-callout p { font-size: 16px; color: #CBD5E1; line-height: 1.7; margin-bottom: 18px; }
+        .broker-callout-checks { display: flex; flex-direction: column; gap: 12px; }
+        .broker-callout-check { display: flex; align-items: center; gap: 10px; font-size: 14.5px; color: #E2E8F0; }
+        .broker-callout-check span.icon { color: #34D399; font-weight: 800; }
+        
+        .about-cta {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 210, 211, 0.12) 0%, rgba(11, 15, 25, 0.95) 70%);
+            border: 1px solid rgba(0, 210, 211, 0.35);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 210, 211, 0.1);
+            margin: 60px 0 20px;
+        }
+        .about-cta h2 { font-size: 40px; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.5px; }
+        .about-cta p { font-size: 18px; color: var(--text-muted); max-width: 650px; margin: 0 auto 32px; line-height: 1.7; }
+        .about-cta-actions { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        
+        @media (max-width: 992px) {
+            .about-hero-stats { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .pillar-grid { grid-template-columns: 1fr; }
+            .broker-callout { grid-template-columns: 1fr; gap: 24px; padding: 32px; }
+        }
+        @media (max-width: 768px) {
+            .about-hero h1 { font-size: 34px; }
+            .about-hero p.lead { font-size: 17px; }
+            .about-section-header h2 { font-size: 28px; }
+            .about-quote { padding: 24px 20px; }
+            .about-quote p { font-size: 18px; }
+            .about-cta { padding: 40px 20px; }
+            .about-cta h2 { font-size: 30px; }
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Gold Snipers",
+        "description": "The mission, architecture, and technology behind Gold Snipers — the definitive MetaTrader 5 algorithmic execution suite for Gold (XAUUSD) traders.",
+        "url": "https://goldsnipersbot.com/about.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gold Snipers",
+            "url": "https://goldsnipersbot.com",
+            "logo": "https://goldsnipersbot.com/logo-header.png"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    <div class="bg-glow-gold"></div>
+
+    <header>
+        <!-- Top Announcement Bar (IB Highlight) -->
+        <div class="top-announcement-bar">
+            <div class="container announcement-inner">
+                <div class="announcement-badge">
+                    <span class="pulse-dot-sm"></span>
+                    <span>100% SPONSORED ACCESS</span>
+                </div>
+                <p class="announcement-text">Trade the full Expert Suite with <strong>$0 upfront software fee</strong> through official broker partner IC Markets.</p>
+                <a href="index.html#pricing" class="announcement-cta">Claim Free Access &rarr;</a>
+            </div>
+        </div>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="logo-header.png" alt="Gold Snipers Logo" width="32" height="32">
+                    Gold<span>Snipers</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="download.html">Download</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="download.html" class="btn btn-secondary btn-sm nav-btn-download">Download</a>
+                    <a href="index.html#pricing" class="btn btn-primary btn-sm">Start Free ($0)</a>
+                </div>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero container">
+        <div class="about-hero-badge">
+            <span>⚙️ Engineering Manifesto · Built by Traders, For Traders</span>
+        </div>
+        <h1>We Built Gold Snipers<br>Because <span class="cyan-text">Nobody Else Would</span></h1>
+        <p class="lead">The retail trading tools industry had a crisis: sluggish cloud bots, predatory recurring retainers, paywalled risk controls, and zero architectural transparency. We built Gold Snipers as the institutional-grade execution suite we needed for our own live trading.</p>
+        
+        <div class="about-hero-stats">
+            <div class="about-stat">
+                <h3>&lt;15ms</h3>
+                <p>Local Socket IPC</p>
+            </div>
+            <div class="about-stat">
+                <h3 class="gold">VPS-Optimized</h3>
+                <p>0% Idle CPU Overhead</p>
+            </div>
+            <div class="about-stat">
+                <h3>Dual-Engine</h3>
+                <p>Anchor &amp; Grid Scopes</p>
+            </div>
+            <div class="about-stat">
+                <h3 class="gold">In-Memory</h3>
+                <p>Virtual Target Engine</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem We Saw -->
+    <section class="about-section container">
+        <div class="about-section-header">
+            <div class="about-divider"></div>
+            <h2>The Flaws in the Retail Copier Market</h2>
+            <p>Every serious trader eventually hits the same wall. You want to automate signals from Telegram to MetaTrader 5 with surgical accuracy, but legacy copiers are fundamentally crippled by retail compromises:</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <span class="about-card-badge">Cost Extortion</span>
+                <h3>Outrageous Subscriptions</h3>
+                <p>Monthly retainers climbing from $89 to $299/month. You are forced to pay hundreds of dollars before placing a single trade, draining trading capital before you even see an execution.</p>
+            </div>
+            <div class="about-card">
+                <span class="about-card-badge">Cloud Delay</span>
+                <h3>Sluggish Cloud Latency</h3>
+                <p>Most copiers queue trades on remote cloud servers, introducing 500ms–2000ms latency. On Gold (XAUUSD), a half-second delay during news spikes turns an entry into a 15-pip slippage disaster.</p>
+            </div>
+            <div class="about-card">
+                <span class="about-card-badge">Execution Drag</span>
+                <h3>Terminal Stop Slippage</h3>
+                <p>Static pending stops placed on MT5 charts frequently suffer from slippage during illiquid spread widening, triggering premature exits before market reversals.</p>
+            </div>
+            <div class="about-card">
+                <span class="about-card-badge">Uncapped Risk</span>
+                <h3>Lack of Drawdown Controls</h3>
+                <p>Standard copiers execute blindly without daily equity floor limits, trailing drawdown caps, or volatility filters — leaving account balances unprotected during sudden trend days.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Turning Point Quote -->
+    <section class="about-section container" style="padding-top: 0; padding-bottom: 20px;">
+        <div class="about-quote">
+            <p>"We spent months stress-testing every commercial Telegram-to-MT5 copier available. Every single one had the same fatal flaw: they were built by marketers outsourcing code, not traders battling live spread spikes and news volatility. We decided to stop settling and build the Rolls-Royce of gold trading automation."</p>
+            <cite>— The Gold Snipers Engineering Team</cite>
+        </div>
+    </section>
+
+    <!-- Our 4 Core Architectural Pillars -->
+    <section class="about-section container">
+        <div class="about-section-header text-center">
+            <div class="about-divider center"></div>
+            <h2>Our Four Non-Negotiable Pillars</h2>
+            <p>We tore down the legacy copier model and rebuilt execution from the ground up around four foundational engineering principles.</p>
+        </div>
+
+        <div class="pillar-grid">
+            <div class="pillar-card">
+                <div class="pillar-num">01</div>
+                <h3>Local-First Execution (Zero Cloud Lag)</h3>
+                <p>We completely rejected cloud-hosted middleman servers. Gold Snipers runs locally on your PC or private VPS, communicating directly with MetaTrader 5 over a zero-cloud-lag, sub-15ms loopback TCP socket IPC. Your broker account credentials, private keys, and trades never leave your machine.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-num">02</div>
+                <h3>Autonomous Dual-Engine Architecture</h3>
+                <p>Gold trading demands more than a single market order. Our engine decomposes signals into an immediate Anchor Market Order and a multi-tier Pending Limit Ladder. Each engine has independent lot sizing, TP ladders, and break-even rules tailored for XAUUSD's volatile swings.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-num">03</div>
+                <h3>In-Memory Target Engine (Virtual Execution)</h3>
+                <p>Your target and exit thresholds are monitored directly in the EA's memory with microsecond precision. When price reaches your defined level, the EA triggers an instantaneous market fill — eliminating stale pending order drag and terminal slippage.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-num">04</div>
+                <h3>Zero Feature Gating & Complete Equality</h3>
+                <p>Every Gold Snipers trader receives the exact same institutional engine. No locked trailing modes, no artificial tier discrimination, no paid add-ons. Whether you access the suite via our $0 upfront broker sponsorship or buy a Lifetime Pass, you get the entire arsenal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Under The Hood: The Modern Tech Stack (Bento Grid) -->
+    <section class="about-section container">
+        <div class="about-section-header text-center">
+            <div class="about-divider center"></div>
+            <h2>Under the Hood: Institutional Engineering</h2>
+            <p>Explore the deep technology, algorithms, and modules powering sub-millisecond execution on live charts.</p>
+        </div>
+
+        <div class="bento-grid">
+            <!-- Bento 1: Macro Sentinel & AI Market Intelligence -->
+            <div class="bento-card bento-span-2">
+                <div>
+                    <div class="bento-card-header">
+                        <div class="bento-icon">⚡</div>
+                        <span class="bento-badge">Real-Time Intelligence</span>
+                    </div>
+                    <div class="bento-card-body">
+                        <h3>Macro Sentinel &amp; AI Market Intelligence</h3>
+                        <p>Institutional surveillance engine streaming breaking news from the Federal Reserve, ForexLive, MarketWatch, and financial wires. Features real-time Gold directional bias scoring (Bullish/Bearish/Volatility), live post-alert pip reaction tracking, 4-pillar thematic heatmaps, and DXY dollar index inverse correlation radar.</p>
+                        <div class="bento-hud">
+                            <div class="bento-hud-row">
+                                <span style="color: #94A3B8;">🔴 Macro Bias:</span>
+                                <span style="color: #00D2D3; font-weight: 700;">BULLISH ACCELERATION (+93 Pips)</span>
+                            </div>
+                            <div class="bento-hud-row">
+                                <span style="color: #94A3B8;">📊 DXY Correlation:</span>
+                                <span style="color: #F87171; font-weight: 700;">-0.89 Inverse Decoupling</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bento-tags">
+                    <span class="bento-tag">⚡ Live RSS Squawk</span>
+                    <span class="bento-tag">📈 Pip Displacement</span>
+                    <span class="bento-tag">🌐 DXY Radar</span>
+                    <span class="bento-tag">🤖 Multi-Model AI</span>
+                </div>
+            </div>
+
+            <!-- Bento 2: High-Performance Desktop Bridge -->
+            <div class="bento-card">
+                <div>
+                    <div class="bento-card-header">
+                        <div class="bento-icon gold">🚀</div>
+                        <span class="bento-badge gold">VPS-Optimized</span>
+                    </div>
+                    <div class="bento-card-body">
+                        <h3>High-Performance Desktop Bridge</h3>
+                        <p>Ultra-lightweight native desktop architecture engineered for 24/7 VPS operation. Runs at near 0% idle CPU with zero background interpreters and pure embedded SQLite analytics.</p>
+                    </div>
+                </div>
+                <div class="bento-tags">
+                    <span class="bento-tag">⚡ Native Binary</span>
+                    <span class="bento-tag">🖥️ VPS-Optimized</span>
+                    <span class="bento-tag">💾 Embedded SQLite</span>
+                </div>
+            </div>
+
+            <!-- Bento 3: MQL5 Institutional Expert Advisor -->
+            <div class="bento-card">
+                <div>
+                    <div class="bento-card-header">
+                        <div class="bento-icon purple">⚙️</div>
+                        <span class="bento-badge purple">Sub-Tick Speed</span>
+                    </div>
+                    <div class="bento-card-body">
+                        <h3>Custom MQL5 Chart EA</h3>
+                        <p>Microsecond-benchmarked execution inside MT5. Features 3 dynamic trailing stop modes (Candle, Fractal, Fixed Pip), multi-tier partial shaves (TP1–TP10), in-memory order tracking, and dynamic spread ceilings.</p>
+                    </div>
+                </div>
+                <div class="bento-tags">
+                    <span class="bento-tag">🎯 3 Trailing Modes</span>
+                    <span class="bento-tag">✂️ 10-Tier Partials</span>
+                    <span class="bento-tag">🛡️ Anti-Freeze Guard</span>
+                </div>
+            </div>
+
+            <!-- Bento 4: Interactive Signal Tester & Sandbox -->
+            <div class="bento-card">
+                <div>
+                    <div class="bento-card-header">
+                        <div class="bento-icon green">🧪</div>
+                        <span class="bento-badge green">Zero-Risk Sandbox</span>
+                    </div>
+                    <div class="bento-card-body">
+                        <h3>Interactive Signal Tester</h3>
+                        <p>Universal regex auto-calibration engine that parses arbitrary Telegram signal formats. Includes an in-app interactive sandbox to inject live test trades directly into MT5 charts before risking capital.</p>
+                    </div>
+                </div>
+                <div class="bento-tags">
+                    <span class="bento-tag">🔍 Universal Regex</span>
+                    <span class="bento-tag">📊 Live MT5 Injection</span>
+                    <span class="bento-tag">🧪 Syntax Sandbox</span>
+                </div>
+            </div>
+
+            <!-- Bento 5: Remote Web Dashboard & Mobile Control (Under Desktop Bridge) -->
+            <div class="bento-card">
+                <div>
+                    <div class="bento-card-header">
+                        <div class="bento-icon">📱</div>
+                        <span class="bento-badge">Mobile Freedom</span>
+                    </div>
+                    <div class="bento-card-body">
+                        <h3>Remote Web Dashboard</h3>
+                        <p>Encrypted mobile dashboard via zero-config Cloudflare Quick Tunnels. Monitor open positions, live floating PnL, trigger emergency stop-outs, or adjust channel lot parameters directly from your smartphone browser.</p>
+                    </div>
+                </div>
+                <div class="bento-tags">
+                    <span class="bento-tag">🔒 Encrypted Tunnel</span>
+                    <span class="bento-tag">📲 Smartphone Ready</span>
+                    <span class="bento-tag">🚨 Panic Emergency Close</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capital Preservation Section -->
+    <section class="about-section container">
+        <div class="about-section-header">
+            <div class="about-divider"></div>
+            <h2>Institutional Capital Preservation &amp; Drawdown Defense</h2>
+            <p>Protecting trading capital requires uncompromising risk discipline. Gold Snipers was built from the ground up with institutional guardrails to keep drawdowns strictly contained:</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <span class="about-card-badge cyan">Drawdown Defense</span>
+                <h3>Daily Loss Hard Shield</h3>
+                <p>Set a strict maximum daily loss threshold (e.g. 4.5% on a 5% limit). If hit, the EA instantly closes all open trades and locks execution until the next trading day begins.</p>
+            </div>
+            <div class="about-card">
+                <span class="about-card-badge gold">Dynamic Sizing</span>
+                <h3>Equity-Based Lot Scaling</h3>
+                <p>Never overleverage. Lot sizes can be scaled dynamically based on a fixed percentage of your real-time equity, automatically reducing risk during drawdowns and compounding safely in profit.</p>
+            </div>
+            <div class="about-card">
+                <span class="about-card-badge green">Spread Filter</span>
+                <h3>Anti-Slippage News Ceilings</h3>
+                <p>Gold spreads can explode from 1.5 to 15 pips during high-impact news releases. Gold Snipers measures live spread in real time, pausing execution if spreads exceed your safe ceiling.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Broker Sponsorship Revolution -->
+    <section class="about-section container">
+        <div class="about-section-header text-center">
+            <div class="about-divider center"></div>
+            <h2>The Pricing Revolution: Why $0 Upfront?</h2>
+            <p>Democratizing algorithmic trading by aligning our success directly with yours.</p>
+        </div>
+
+        <div class="broker-callout">
+            <div>
+                <h3>No Upfront Software Fees. Keep 100% of Your Trading Capital.</h3>
+                <p>Why should traders pay $1,000+ upfront before they even know if a tool works for them? Through our official partnership with <strong>IC Markets</strong> — one of the world's leading regulated multi-asset brokers — you get the entire Gold Snipers Expert Suite with <strong>$0 upfront software fee</strong>.</p>
+                <p>Your deposit stays 100% yours to trade in your segregated broker account. We earn an ongoing volume rebate directly from the broker as you trade. That means our incentives are perfectly aligned: we only succeed if our software helps you trade sustainably over the long term.</p>
+            </div>
+            <div class="broker-callout-checks">
+                <div class="broker-callout-check">
+                    <span class="icon">✓</span>
+                    <span><strong>$0 Upfront Cost:</strong> Zero software licensing charges</span>
+                </div>
+                <div class="broker-callout-check">
+                    <span class="icon">✓</span>
+                    <span><strong>100% Capital Retention:</strong> All funds stay in your IC Markets account</span>
+                </div>
+                <div class="broker-callout-check">
+                    <span class="icon">✓</span>
+                    <span><strong>Regulated Global Broker:</strong> Deep liquidity and reliable MT5 execution</span>
+                </div>
+                <div class="broker-callout-check">
+                    <span class="icon">✓</span>
+                    <span><strong>Full Suite Included:</strong> Same features as Lifetime Pass</span>
+                </div>
+                <div class="broker-callout-check">
+                    <span class="icon">✓</span>
+                    <span><strong>Multi-Broker Options:</strong> Flat monthly/lifetime plans for private &amp; funded accounts</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Standard: Over 380 Builds of Continuous Refinement -->
+    <section class="about-section container">
+        <div class="about-section-header">
+            <div class="about-divider"></div>
+            <h2>Our Standard: Over 380 Builds of Relentless Refinement</h2>
+            <p>Every tool we ship is held to one standard: <span style="color: var(--accent-cyan); font-weight: 700;">would we use this ourselves, on a live account, with real money?</span> If the answer is no, it doesn't ship.</p>
+            <p>We trade Gold daily. Every feature, bug fix, and latency optimization is tested live during high-impact news events (NFP, CPI, FOMC rate decisions) before public release. With over 380 documented releases in our public changelog, Gold Snipers is an evolving, living system built for the long haul.</p>
+        </div>
+    </section>
+
+    <!-- Closing Call To Action (CTA) -->
+    <section class="container" style="position: relative; z-index: 1;">
+        <div class="about-cta">
+            <h2>Ready to Experience <span class="cyan-text">Institutional Execution?</span></h2>
+            <p>Stop settling for bloated cloud copiers and manual trade delays. Join hundreds of serious traders automating Gold (XAUUSD) with sub-15ms speed, in-memory execution, and AI macro intelligence.</p>
+            <div class="about-cta-actions">
+                <a href="index.html#pricing" class="btn btn-primary">Start Free ($0 Upfront)</a>
+                <a href="download.html" class="btn btn-secondary">Download Desktop Suite</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <h2><img src="logo-header.png" alt="Gold Snipers Logo" width="32" height="32"> Gold<span>Snipers</span></h2>
+                    </a>
+                    <p>Professional algorithmic trading solutions for MetaTrader 5 and Telegram integrations. Built by traders, for traders.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="download.html">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="partners.html">Partner Program</a></li>
+                        <li><a href="https://t.me/goldsniperssupport" target="_blank">Telegram Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <strong>Risk Warning:</strong> Trading financial instruments, including Gold (XAUUSD) and contracts for difference (CFDs) on margin, carries a high level of risk and may not be suitable for all investors. Gold Snipers is an algorithmic trade copier and execution suite; it does not provide financial advice or guarantee trading profits. Trading results depend entirely on individual risk parameters, market volatility, broker execution latency, and third-party signal quality — all of which are outside our control. Past performance of any automated strategy or EA is not indicative of future results. Never trade with capital you cannot afford to lose.
+                <br><br>
+                &copy; 2026 Gold Snipers. All rights reserved. Built for MT5.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=380.04"></script>
+    <div id="cookie-consent" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+        <div class="container">
+            <p>We use essential cookies for site functionality and Tawk.to for live chat. By accepting, you consent to chat session cookies. Read our <a href="privacy.html">Privacy Policy</a> for details.</p>
+            <div class="cookie-banner-actions">
+                <button type="button" class="cookie-btn cookie-btn-decline">Decline</button>
+                <button type="button" class="cookie-btn cookie-btn-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
