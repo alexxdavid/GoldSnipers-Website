@@ -1193,12 +1193,39 @@ canvas#heroChart {
 
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 28px;
     align-items: stretch;
-    max-width: 1200px;
+    max-width: 960px;
     margin: 0 auto;
 }
+
+.pricing-grid .plan-platform {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin: 0 0 16px;
+    line-height: 1.4;
+}
+
+.pricing-grid .plan-platform-cloud {
+    background: rgba(52, 211, 153, 0.12);
+    border: 1px solid rgba(52, 211, 153, 0.4);
+    color: #34D399;
+}
+
+.pricing-grid .plan-platform-desktop {
+    background: rgba(0, 210, 211, 0.12);
+    border: 1px solid rgba(0, 210, 211, 0.4);
+    color: var(--accent-cyan);
+}
+
 
 @media (max-width: 1080px) {
     .pricing-grid {
