@@ -2537,10 +2537,10 @@ a.hero-prestige-badge:hover .badge-arrow {
 }
 
 /* ==========================================================================
-   CLOUD EDITION (COMING SOON) STYLES
+   CLOUD EDITION STYLES
    ========================================================================== */
 
-.nav-soon-pill {
+.nav-live-pill {
     font-size: 9px;
     font-family: var(--font-mono);
     font-weight: 800;
