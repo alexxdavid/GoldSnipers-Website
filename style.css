@@ -2828,6 +2828,86 @@ a.hero-cloud-pill:hover .badge-arrow {
     flex-shrink: 0;
 }
 
+.cloud-spotlight {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    margin-bottom: 40px;
+    padding: 26px 30px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(0, 210, 211, 0.10) 0%, rgba(13, 20, 33, 0.92) 62%);
+    border: 1px solid rgba(0, 210, 211, 0.35);
+    position: relative;
+    z-index: 2;
+}
+
+.cloud-spotlight-icon {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    line-height: 1;
+    border-radius: 16px;
+    background: rgba(0, 210, 211, 0.12);
+    border: 1px solid rgba(0, 210, 211, 0.3);
+}
+
+.cloud-spotlight-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.cloud-spotlight-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--accent-cyan);
+    margin-bottom: 8px;
+}
+
+.cloud-spotlight-body h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #F8FAFC;
+    margin-bottom: 8px;
+}
+
+.cloud-spotlight-body p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0 0 14px;
+    max-width: 920px;
+}
+
+.cloud-spotlight-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cloud-spotlight-tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: #7DE3E4;
+    background: rgba(0, 210, 211, 0.10);
+    border: 1px solid rgba(0, 210, 211, 0.25);
+    border-radius: 999px;
+    padding: 5px 12px;
+}
+
+@media (max-width: 640px) {
+    .cloud-spotlight {
+        flex-direction: column;
+        padding: 22px 20px;
+    }
+}
+
 @media (max-width: 1024px) {
     .cloud-features-grid {
         grid-template-columns: repeat(2, 1fr);
