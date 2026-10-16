@@ -3755,3 +3755,68 @@ a.hero-cloud-pill:hover .badge-arrow {
         grid-template-columns: 1fr;
     }
 }
+
+/* --- Interactive Showcase Viewer & Mobile Frame Morph --- */
+.showcase-container {
+    padding: 30px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+.showcase-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.showcase-tab {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+.showcase-tab:hover, .showcase-tab.active {
+    background: rgba(0, 210, 211, 0.12);
+    border-color: var(--accent-cyan);
+    color: #F8FAFC;
+    box-shadow: 0 0 20px rgba(0, 210, 211, 0.25);
+}
+.showcase-viewer {
+    width: 100%;
+    max-width: 1120px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 210, 211, 0.25);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 210, 211, 0.08);
+    background: #080C16;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: max-width 0.4s ease, border-radius 0.4s ease, border-color 0.4s ease;
+}
+.showcase-viewer.is-mobile-frame {
+    max-width: 320px;
+    border-radius: 38px;
+    border: 3px solid rgba(0, 210, 211, 0.5);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 45px rgba(0, 210, 211, 0.3);
+    padding: 10px 8px 14px 8px;
+    background: #030712;
+}
+.showcase-viewer.is-mobile-frame .showcase-image {
+    border-radius: 26px;
+    max-height: 700px;
+}
+.showcase-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: opacity 0.25s ease;
+}
