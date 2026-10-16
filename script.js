@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initShowcaseTabs();
     initScrollspy();
     initCookieConsent();
+    initSlippageCalculator();
 });
 
 // --- Sticky Header ---
@@ -375,7 +376,12 @@ function initShowcaseTabs() {
     const tabs = document.querySelectorAll(".showcase-tab");
     const displayImage = document.getElementById("showcase-display");
     const imageMap = {
-        "dashboard-img": { name: "dashboard", w: 2278, h: 1441, alt: "Desktop Bridge Live Dashboard" },
+        "trades-img": { directSrc: "guide-step4-live-trades.png", alt: "Gold Snipers Cloud Live Trades Dashboard" },
+        "rules-img": { directSrc: "guide-step3-trade-rules.png", alt: "Signal Rules & Grid Ladder Setup" },
+        "mobile-tab-img": { directSrc: "mobile_view.png", alt: "Standalone Mobile PWA View" },
+        "analytics-tab-img": { directSrc: "cloud_analytics.png", alt: "Cloud Analytics & Trade Journal" },
+        "tester-tab-img": { directSrc: "signal_test.png", alt: "Interactive Signal Tester & Simulator" },
+        "dashboard-img": { directSrc: "dashboard.png", alt: "Gold Snipers Cloud Live Dashboard" },
         "intel-img": { name: "market_intelligence", w: 2278, h: 1441, alt: "Market Intelligence & Empirical Liquidity Ladder" },
         "journal-img": { name: "ai_journal", w: 2278, h: 1441, alt: "Multi-Model AI Journal & Sentiment Synthesis" },
         "risk-img": { name: "risk_reward", w: 2278, h: 1441, alt: "Risk & Reward Shaving Engine" },
@@ -407,6 +413,13 @@ function initShowcaseTabs() {
             if (meta) {
                 displayImage.style.opacity = "0.3";
                 setTimeout(() => {
+                    if (meta.directSrc) {
+                        if (source) source.srcset = meta.directSrc;
+                        displayImage.src = meta.directSrc;
+                        displayImage.alt = meta.alt;
+                        displayImage.style.opacity = "1";
+                        return;
+                    }
                     const webpSrc = `${meta.name}.webp?v=379.21`;
                     const pngSrc = `${meta.name}.png?v=379.21`;
                     const img = new Image();
@@ -544,4 +557,36 @@ function loadTawk() {
         s1.setAttribute("crossorigin", "*");
         s0.parentNode.insertBefore(s1, s0);
     })();
+}
+
+// --- Slippage & Delayed Entry Calculator (The Cost of Slow) ---
+function initSlippageCalculator() {
+    const signalsSlider = document.getElementById("calc-signals");
+    const pipsSlider = document.getElementById("calc-pips");
+    const pipValSlider = document.getElementById("calc-pipval");
+    const signalsVal = document.getElementById("calc-signals-val");
+    const pipsVal = document.getElementById("calc-pips-val");
+    const pipValVal = document.getElementById("calc-pipval-val");
+    const resultCost = document.getElementById("calc-result-cost");
+
+    if (!signalsSlider || !pipsSlider || !pipValSlider || !resultCost) return;
+
+    function update() {
+        const signals = parseInt(signalsSlider.value, 10);
+        const pips = parseFloat(pipsSlider.value);
+        const pipVal = parseFloat(pipValSlider.value);
+
+        if (signalsVal) signalsVal.textContent = signals;
+        if (pipsVal) pipsVal.textContent = pips.toFixed(1);
+        if (pipValVal) pipValVal.textContent = "$" + pipVal.toFixed(0);
+
+        // 4.33 weeks per month on average
+        const monthlyLoss = Math.round(signals * pips * pipVal * 4.33);
+        resultCost.textContent = "$" + monthlyLoss.toLocaleString();
+    }
+
+    signalsSlider.addEventListener("input", update);
+    pipsSlider.addEventListener("input", update);
+    pipValSlider.addEventListener("input", update);
+    update();
 }
