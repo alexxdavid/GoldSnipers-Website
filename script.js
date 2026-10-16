@@ -376,12 +376,12 @@ function initShowcaseTabs() {
     const tabs = document.querySelectorAll(".showcase-tab");
     const displayImage = document.getElementById("showcase-display");
     const imageMap = {
-                "trades-img": { directSrc: "guide-step4-live-trades.png?v=383.20", alt: "Gold Snipers Cloud Live Trades Dashboard" },
+                "trades-img": { directSrc: "guide-step4-live-trades.png?v=383.30", alt: "Gold Snipers Cloud Live Trades Dashboard" },
         "rules-img": { directSrc: "guide-step3-trade-rules.png?v=383.20", alt: "Signal Rules & Grid Ladder Setup" },
         "mobile-tab-img": { directSrc: "mobile_view.png?v=383.20", alt: "Standalone Mobile PWA View" },
         "analytics-tab-img": { directSrc: "cloud_analytics.png?v=383.20", alt: "Cloud Performance Analytics & Deal Lifecycle" },
         "tester-tab-img": { directSrc: "signal_test.png?v=383.20", alt: "Interactive Signal Tester & Simulator" },
-        "dashboard-img": { directSrc: "dashboard.png?v=383.20", alt: "Gold Snipers Cloud Live Dashboard" },
+        "dashboard-img": { directSrc: "dashboard.png?v=383.30", alt: "Gold Snipers Cloud Live Dashboard" },
         "intel-img": { name: "market_intelligence", w: 2278, h: 1441, alt: "Market Intelligence & Empirical Liquidity Ladder" },
         "journal-img": { name: "ai_journal", w: 2278, h: 1441, alt: "Multi-Model AI Journal & Sentiment Synthesis" },
         "risk-img": { name: "risk_reward", w: 2278, h: 1441, alt: "Risk & Reward Shaving Engine" },
