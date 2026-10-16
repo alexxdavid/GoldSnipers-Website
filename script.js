@@ -378,7 +378,7 @@ function initShowcaseTabs() {
     const imageMap = {
         "trades-img": { directSrc: "guide-step4-live-trades.png", alt: "Gold Snipers Cloud Live Trades Dashboard" },
         "rules-img": { directSrc: "guide-step3-trade-rules.png", alt: "Signal Rules & Grid Ladder Setup" },
-        "mobile-tab-img": { directSrc: "mobile_view.png", alt: "Standalone Mobile PWA View" },
+        "mobile-tab-img": { directSrc: "mobile_view.png?v=383.10", alt: "Standalone Mobile PWA View" },
         "analytics-tab-img": { directSrc: "cloud_analytics.png", alt: "Cloud Analytics & Trade Journal" },
         "tester-tab-img": { directSrc: "signal_test.png", alt: "Interactive Signal Tester & Simulator" },
         "dashboard-img": { directSrc: "dashboard.png", alt: "Gold Snipers Cloud Live Dashboard" },
