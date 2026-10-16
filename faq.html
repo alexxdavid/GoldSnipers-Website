@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=382.02">
+    <link rel="stylesheet" href="style.css?v=382.01">
     <style>
         .faq-page-hero {
             padding: 160px 0 50px;
@@ -238,15 +238,15 @@
                 "name": "Which trading instruments are compatible with Gold Snipers?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Gold Snipers is not limited to Gold. It supports Gold (XAUUSD), other metals, forex pairs, indices and more — any instrument your MT5 broker offers. The EA dynamically detects each symbol's digits and scales pip and level calculations automatically, so trade management works correctly across every market."
+                    "text": "Gold Snipers is designed specifically for Gold (XAUUSD) trading. The EA dynamically detects the symbol's digits and scales pip calculations automatically for optimal Gold performance."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What does 'Lifetime Access' actually mean?",
+                "name": "How does the $49/month Cloud subscription work and is MetaAPI required?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Lifetime Access means you pay once and retain full use of the version you purchased — forever. Your license will never expire and you will never be asked to pay again. As long as Gold Snipers is actively developed, you will receive all future updates at no additional cost. In the event that development ceases, your last received version will remain fully functional and yours to keep. You are never locked out of a version you have already paid for."
+                    "text": "The $49/month Gold Snipers Cloud plan allows you to connect any MT5 broker or prop firm account for 24/7 automated trade execution without needing your PC or VPS powered on. A separate MetaAPI connection is required per connected MT5 account and is billed directly by MetaAPI (starts from ~$10/month per account directly with MetaAPI)."
                 }
             }
         ]
@@ -279,7 +279,6 @@
                 </a>
                 <ul class="nav-links">
                     <li><a href="index.html#cloud-edition">Cloud <span class="nav-live-pill">LIVE</span></a></li>
-                    <li><a href="https://cloud.goldsnipersbot.com" target="_blank" rel="noopener noreferrer">Cloud Dashboard</a></li>
                     <li><a href="index.html#features">Features</a></li>
                     <li><a href="index.html#pricing">Pricing</a></li>
                     <li><a href="download.html">Download</a></li>
@@ -362,13 +361,14 @@
                             </div>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="lifetime access what does lifetime mean perpetual one-time payment updates expiration">
+                        <div class="faq-item glass-panel" data-keywords="cloud plan 49 monthly metaapi broker requirement server cost">
                             <button class="faq-question" type="button">
-                                <span>What does "Lifetime Access" actually mean?</span>
+                                <span>How does the $49/month Cloud subscription work and is MetaAPI required?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                Lifetime Access means you pay once and retain full use of the version you purchased — forever. Your license will never expire and you will never be asked to pay again. As long as Gold Snipers is actively developed, you will receive all future updates at no additional cost. In the event that development ceases, your last received version will remain fully functional and yours to keep. You are never locked out of a version you have already paid for.
+                                The $49/month Gold Snipers Cloud subscription gives you full access to server-side automated trade execution across any MT5 broker, demo, or prop firm account 24/7 without needing your own PC or VPS running. You can cancel anytime directly through your Stripe billing portal.<br><br>
+                                <strong>MetaAPI Requirement:</strong> Gold Snipers Cloud connects directly to your MT5 broker via MetaAPI cloud terminals. Each connected MT5 account requires an active MetaAPI connection token. This connectivity fee is billed directly by MetaAPI (starts from ~$10/month per account paid directly to MetaAPI) and is not included in the software subscription.
                             </div>
                         </div>
                     </div>
@@ -439,13 +439,13 @@
                             </div>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="instruments multi-symbol gold xauusd metals silver forex pairs indices digits pips dynamic scaling">
+                        <div class="faq-item glass-panel" data-keywords="instruments gold xauusd forex pairs digits pips dynamic scaling">
                             <button class="faq-question" type="button">
                                 <span>Which trading instruments are compatible with Gold Snipers?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                Gold Snipers is not limited to Gold. It supports Gold (XAUUSD), other metals, forex pairs, indices and more — any instrument your MT5 broker offers. The EA dynamically detects each symbol's digits and scales pip and level calculations automatically, so trade management works correctly across every market.
+                                Gold Snipers is designed specifically for Gold (XAUUSD) trading. The EA dynamically detects the symbol's digits and scales pip calculations automatically for optimal Gold performance.
                             </div>
                         </div>
                     </div>
@@ -505,8 +505,11 @@
                     <h3>Still have a question?</h3>
                     <p>Our direct developer support team and active user community are ready to assist you with installation, strategy configuration, or broker queries.</p>
                     <div class="faq-support-actions">
-                        <a href="https://cloud.goldsnipersbot.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                            Create a Support Ticket
+                        <a href="https://t.me/goldsniperssupport" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                            </svg>
+                            Telegram Support
                         </a>
                         <a href="index.html#pricing" class="btn btn-secondary">
                             View License Plans
@@ -542,7 +545,7 @@
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="partners.html">Partner Program</a></li>
-                        <li><a href="https://cloud.goldsnipersbot.com" target="_blank" rel="noopener noreferrer">Cloud Dashboard</a></li>
+                        <li><a href="https://t.me/goldsniperssupport" target="_blank">Telegram Support</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -555,7 +558,7 @@
                 </div>
             </div>
             <div class="footer-disclaimer">
-                <strong>Risk Warning:</strong> Trading financial instruments, including gold, metals, forex, indices and contracts for difference (CFDs) on margin, carries a high level of risk and may not be suitable for all investors. Gold Snipers is an algorithmic trade copier and execution suite; it does not provide financial advice or guarantee trading profits. Trading results depend entirely on individual risk parameters, market volatility, broker execution latency, and third-party signal quality — all of which are outside our control. Past performance of any automated strategy or EA is not indicative of future results. Never trade with capital you cannot afford to lose.
+                <strong>Risk Warning:</strong> Trading financial instruments, including Gold (XAUUSD) and contracts for difference (CFDs) on margin, carries a high level of risk and may not be suitable for all investors. Gold Snipers is an algorithmic trade copier and execution suite; it does not provide financial advice or guarantee trading profits. Trading results depend entirely on individual risk parameters, market volatility, broker execution latency, and third-party signal quality — all of which are outside our control. Past performance of any automated strategy or EA is not indicative of future results. Never trade with capital you cannot afford to lose.
                 <br><br>
                 &copy; 2026 Gold Snipers. All rights reserved. Built for MT5.
             </div>

@@ -88,16 +88,16 @@ function initPricingToggle() {
     const pricingData = {
         monthly: [
             { price: "$0", period: "/ Upfront", checkout: "https://my.tradequo.com/register?referral=01a10b39-26e1-70a1-b888-33f48508b85b" },
-            { price: "$49", period: "/ month", checkout: "https://buy.stripe.com/fZu14ncCJ8BO8LG9yZa3u0y" }
+            { price: "$49", period: "/ month", checkout: "https://buy.stripe.com/bJe4gz32905i5zu9yZa3u0E" }
         ],
         annual: [
             { price: "$0", period: "/ Upfront", checkout: "https://my.tradequo.com/register?referral=01a10b39-26e1-70a1-b888-33f48508b85b" },
-            { price: "$499", period: "one-time", checkout: "https://buy.stripe.com/8x24gzcCJaJWbXS9yZa3u0z" }
+            { price: "$49", period: "/ month", checkout: "https://buy.stripe.com/bJe4gz32905i5zu9yZa3u0E" }
         ]
     };
 
     const ibBtn = document.getElementById("btn-ib") || document.getElementById("btn-pro");
-    const lifetimeBtn = document.getElementById("btn-lifetime");
+    const lifetimeBtn = document.getElementById("btn-cloud") || document.getElementById("btn-lifetime");
 
     function updatePricing(billingMode) {
         prices.forEach((el, index) => {
@@ -381,7 +381,7 @@ function initShowcaseTabs() {
         "risk-img": { name: "risk_reward", w: 2278, h: 1441, alt: "Risk & Reward Shaving Engine" },
         "parsing-img": { name: "parsing", w: 2291, h: 1445, alt: "Custom Filter Keywords & Lexicon Engine" },
         "test-img": { name: "signal_test", w: 2295, h: 1450, alt: "Signal Tester & Live Simulation Console" },
-        "analytics-img": { name: "analytics", w: 2299, h: 1442, alt: "Local SQLite Analytics & Performance DB" }
+        "analytics-img": { name: "analytics", w: 2299, h: 1442, alt: "High-Performance Analytics & Performance DB" }
     };
 
     if (!displayImage) return;
