@@ -103,9 +103,15 @@ img {
 /* --- Utility Classes --- */
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1480px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 32px;
+}
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1620px;
+        padding: 0 48px;
+    }
 }
 
 .section-padding {
@@ -2933,7 +2939,7 @@ a.hero-cloud-pill:hover .badge-arrow {
     box-shadow: 0 0 25px rgba(0, 210, 211, 0.15);
 }
 .hero-text-center {
-    max-width: 900px;
+    max-width: 1180px;
     margin: 0 auto;
     text-align: center;
 }
@@ -2949,8 +2955,8 @@ a.hero-cloud-pill:hover .badge-arrow {
     font-size: clamp(1.05rem, 2vw, 1.25rem);
     color: var(--text-muted);
     line-height: 1.65;
-    max-width: 760px;
-    margin: 0 auto 34px;
+    max-width: 940px;
+    margin: 0 auto 36px;
 }
 .hero-stats-row {
     display: flex;
@@ -2994,7 +3000,8 @@ a.hero-cloud-pill:hover .badge-arrow {
 .hero-mockup-wrapper {
     margin-top: 55px;
     position: relative;
-    max-width: 1140px;
+    width: 100%;
+    max-width: 1420px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -3069,7 +3076,7 @@ a.hero-cloud-pill:hover .badge-arrow {
     position: absolute;
     right: -24px;
     bottom: -35px;
-    width: 280px;
+    width: 320px;
     background: #030712;
     border-radius: 36px;
     border: 3px solid rgba(0, 210, 211, 0.5);
@@ -3151,9 +3158,9 @@ a.hero-cloud-pill:hover .badge-arrow {
 }
 .calculator-container {
     display: grid;
-    grid-template-columns: 1.25fr 1fr;
-    gap: 36px;
-    padding: 42px;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 48px;
+    padding: 48px 56px;
     border-radius: 24px;
     margin-top: 30px;
     background: rgba(13, 17, 26, 0.7);
@@ -3268,12 +3275,12 @@ a.hero-cloud-pill:hover .badge-arrow {
 .comparison-grid-modern {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 28px;
-    margin-top: 36px;
+    gap: 36px;
+    margin-top: 40px;
 }
 .comp-col {
-    padding: 36px 30px;
-    border-radius: 24px;
+    padding: 44px 38px;
+    border-radius: 26px;
 }
 .comp-col-header {
     display: flex;
@@ -3344,12 +3351,12 @@ a.hero-cloud-pill:hover .badge-arrow {
 .how-grid-modern {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 26px;
-    margin-top: 36px;
+    gap: 32px;
+    margin-top: 40px;
 }
 .how-card-modern {
-    padding: 34px 28px;
-    border-radius: 20px;
+    padding: 48px 40px;
+    border-radius: 28px;
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.3s ease;
@@ -3394,12 +3401,12 @@ a.hero-cloud-pill:hover .badge-arrow {
 .bento-grid-modern {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 36px;
+    gap: 30px;
+    margin-top: 40px;
 }
 .bento-card-v2 {
-    padding: 30px;
-    border-radius: 20px;
+    padding: 36px 32px;
+    border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.3s ease;
 }
@@ -3500,12 +3507,13 @@ a.hero-cloud-pill:hover .badge-arrow {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
-    max-width: 980px;
-    margin: 36px auto 0 auto;
+    max-width: 1240px;
+    margin: 40px auto 0 auto;
+    gap: 40px;
 }
 .pricing-card-v2 {
-    padding: 40px 32px;
-    border-radius: 24px;
+    padding: 48px 40px;
+    border-radius: 28px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -3613,8 +3621,8 @@ a.hero-cloud-pill:hover .badge-arrow {
     line-height: 1.4;
 }
 .metaapi-notice-box {
-    max-width: 980px;
-    margin: 28px auto 0 auto;
+    max-width: 1240px;
+    margin: 32px auto 0 auto;
     padding: 20px 26px;
     border-radius: 16px;
     border: 1px solid rgba(0, 210, 211, 0.3);
@@ -3638,8 +3646,8 @@ a.hero-cloud-pill:hover .badge-arrow {
 
 /* FAQ Modern Accordion */
 .faq-accordion-modern {
-    max-width: 860px;
-    margin: 36px auto 0 auto;
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -3697,9 +3705,9 @@ a.hero-cloud-pill:hover .badge-arrow {
 
 /* Bottom CTA Banner */
 .bottom-cta-box {
-    max-width: 960px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 56px 36px;
+    padding: 64px 48px;
     border-radius: 28px;
     border: 1px solid rgba(0, 210, 211, 0.35);
     background: linear-gradient(145deg, rgba(13, 22, 38, 0.7), rgba(5, 8, 16, 0.8));
@@ -3790,7 +3798,7 @@ a.hero-cloud-pill:hover .badge-arrow {
 }
 .showcase-viewer {
     width: 100%;
-    max-width: 1120px;
+    max-width: 1420px;
     border-radius: 18px;
     overflow: hidden;
     border: 1px solid rgba(0, 210, 211, 0.25);
@@ -3819,4 +3827,19 @@ a.hero-cloud-pill:hover .badge-arrow {
     display: block;
     object-fit: contain;
     transition: opacity 0.25s ease;
+}
+
+/* Widescreen Enhancements (Trade2Sync expansive width) */
+@media (min-width: 1600px) {
+    .hero-mockup-wrapper {
+        max-width: 1540px;
+    }
+    .showcase-viewer {
+        max-width: 1540px;
+    }
+    header .container,
+    .top-announcement-bar .container,
+    footer .container {
+        max-width: 1640px;
+    }
 }
