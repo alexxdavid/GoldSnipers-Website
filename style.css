@@ -1531,11 +1531,8 @@ nav {
     color: var(--text-dim);
     text-align: center;
     margin-top: 14px;
-    line-height: 1.45;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height: 1.5;
+    min-height: 40px;
 }
 
 .metaapi-notice-box {
