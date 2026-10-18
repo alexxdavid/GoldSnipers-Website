@@ -3,82 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gold Snipers — Purchase Complete</title>
+    <title>Purchase Complete | Gold Snipers Cloud</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=400.0">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0a0a12; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-        .container { max-width: 520px; width: 90%; text-align: center; }
-        .card { background: #14141f; border: 1px solid #1e1e30; border-radius: 16px; padding: 40px 32px; }
-        .icon { font-size: 48px; margin-bottom: 16px; }
-        h1 { color: #00d2d3; font-size: 24px; margin-bottom: 12px; }
-        p { color: #a0a0b0; font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
-        .key-box { background: #1a1a2e; border: 1px solid #2a2a40; border-radius: 8px; padding: 14px; font-family: 'Courier New', monospace; font-size: 18px; color: #00d2d3; letter-spacing: 2px; margin: 20px 0; user-select: all; cursor: pointer; }
-        .btn { display: inline-block; margin-top: 16px; padding: 12px 32px; background: #00d2d3; color: #000; font-weight: 600; border-radius: 8px; text-decoration: none; font-size: 14px; transition: background 0.2s; }
-        .btn:hover { background: #00f0f0; }
-        .note { color: #666; font-size: 12px; margin-top: 20px; }
+        .success-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 20px;
+        }
+        .success-card {
+            max-width: 540px;
+            width: 100%;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-xl);
+            padding: 44px 36px;
+            text-align: center;
+            box-shadow: var(--shadow-elevated);
+        }
+        .success-badge {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent-green-soft);
+            border: 1px solid rgba(52, 211, 153, 0.35);
+            color: var(--accent-green);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .key-box {
+            background: var(--bg-base);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            font-family: var(--font-mono);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            letter-spacing: 0.08em;
+            margin: 22px 0 12px;
+            user-select: all;
+            cursor: pointer;
+            word-break: break-all;
+        }
+        .copy-hint {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-bottom: 28px;
+        }
+        .success-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .success-note {
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            margin-top: 24px;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="icon">&#x2705;</div>
-            <h1>Purchase Complete!</h1>
-            <p>Thank you for purchasing Gold Snipers. Your license key has been generated and is shown below.</p>
-            <div class="key-box" id="license-key">Loading...</div>
-            <p style="font-size: 13px;">Copy this key to log in to Gold Snipers Cloud or activate your account.</p>
-            <a href="https://cloud.goldsnipersbot.com" class="btn" target="_blank" style="background: #00D2D3; color: #000; margin-right: 10px; font-weight: 800;">Launch Cloud Web App</a><a href="download.html" class="btn" target="_blank" style="background: rgba(255,255,255,0.1); color: #fff;">Mobile PWA Guide</a>
-            <a href="https://goldsnipersbot.com" class="btn">Back to Home</a>
-            <p class="note">A confirmation email with your license key has also been sent to your email address.</p>
+    <div class="bg-glow"></div>
+    <div class="bg-glow-gold"></div>
+
+    <div class="success-wrapper">
+        <div class="success-card">
+            <div class="success-badge">✓</div>
+            <h1 style="font-size: 1.75rem; margin-bottom: 10px;">Purchase Complete</h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Thank you for subscribing to Gold Snipers Cloud. Your license key is shown below:</p>
+
+            <div class="key-box" id="license-key" title="Click to copy">Loading...</div>
+            <div class="copy-hint" id="copy-status">Click the key box above to copy your license key.</div>
+
+            <div class="success-actions">
+                <a href="https://cloud.goldsnipersbot.com" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer">
+                    <span>Launch Cloud Web App</span>
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+                <a href="download.html" class="btn btn-secondary btn-block">Mobile PWA Setup Guide</a>
+                <a href="index.html" style="font-size: 0.88rem; color: var(--text-muted); margin-top: 6px;">&larr; Back to Home</a>
+            </div>
+
+            <p class="success-note">A confirmation email with your license key has also been sent to your checkout email address.</p>
         </div>
     </div>
+
     <script>
         const params = new URLSearchParams(window.location.search);
         const sessionId = params.get('session_id');
         const keyEl = document.getElementById('license-key');
+        const copyStatus = document.getElementById('copy-status');
+
+        keyEl.addEventListener('click', () => {
+            const text = keyEl.textContent.trim();
+            if (text && !text.includes(' ') && navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    copyStatus.textContent = '✓ Copied to clipboard!';
+                    copyStatus.style.color = 'var(--accent-green)';
+                });
+            }
+        });
 
         async function fetchLicense() {
             if (!sessionId) {
                 keyEl.textContent = 'No session ID found. Check your email for your license key.';
-                keyEl.style.fontSize = '14px';
+                keyEl.style.fontSize = '0.9rem';
                 keyEl.style.letterSpacing = '0';
-                keyEl.style.color = '#ff6b6b';
+                keyEl.style.color = 'var(--accent-red)';
                 return;
             }
-            
+
             keyEl.textContent = 'Retrieving license key...';
-            keyEl.style.fontSize = '16px';
+            keyEl.style.fontSize = '0.95rem';
             keyEl.style.letterSpacing = '0';
-            
+
             try {
                 const response = await fetch('https://hxlqbctnkqqtueuyqyyv.supabase.co/functions/v1/retrieve-license', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ session_id: sessionId })
                 });
-                
+
                 const data = await response.json();
                 if (response.ok && data.license_key) {
                     keyEl.textContent = data.license_key;
-                    keyEl.style.fontSize = '18px';
-                    keyEl.style.letterSpacing = '2px';
-                    keyEl.style.color = '#00d2d3';
+                    keyEl.style.fontSize = '1.1rem';
+                    keyEl.style.letterSpacing = '0.08em';
+                    keyEl.style.color = 'var(--accent-gold)';
                 } else {
-                    keyEl.textContent = 'License generation in progress. Please refresh page in 10s...';
-                    keyEl.style.fontSize = '14px';
+                    keyEl.textContent = 'License generation in progress. Please refresh in 10 seconds...';
+                    keyEl.style.fontSize = '0.9rem';
                     keyEl.style.letterSpacing = '0';
-                    keyEl.style.color = '#a0a0b0';
+                    keyEl.style.color = 'var(--text-muted)';
                 }
             } catch (err) {
                 console.error(err);
                 keyEl.textContent = 'Failed to load key. Check your email for your license key.';
-                keyEl.style.fontSize = '14px';
+                keyEl.style.fontSize = '0.9rem';
                 keyEl.style.letterSpacing = '0';
-                keyEl.style.color = '#ff6b6b';
+                keyEl.style.color = 'var(--accent-red)';
             }
         }
-        
+
         fetchLicense();
     </script>
 </body>

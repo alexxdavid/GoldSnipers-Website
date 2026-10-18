@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frequently Asked Questions | Gold Snipers</title>
-    <meta name="description" content="Find answers to all frequently asked questions about Gold Snipers MT5 Expert Advisor, Cloud Copier, TradeQuo zero-upfront sponsorship, and capital protection safeguards.">
+    <title>Frequently Asked Questions | Gold Snipers Cloud</title>
+    <meta name="description" content="Find answers to all frequently asked questions about Gold Snipers Cloud Copier, MetaTrader 5 automation, TradeQuo zero-upfront sponsorship, and capital protection safeguards.">
     <link rel="canonical" href="https://goldsnipersbot.com/faq.html">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
@@ -12,67 +12,46 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Frequently Asked Questions | Gold Snipers">
-    <meta property="og:description" content="Common questions and answers regarding Gold Snipers EA, Telegram copier bridge, broker sponsorship, and capital risk management.">
-    <meta property="og:image" content="https://goldsnipersbot.com/Bridge-Dashboard.png">
+    <meta property="og:title" content="Frequently Asked Questions | Gold Snipers Cloud">
+    <meta property="og:description" content="Common questions and answers regarding Gold Snipers Cloud, Telegram copier bridge, broker sponsorship, and capital risk management.">
+    <meta property="og:image" content="https://goldsnipersbot.com/dashboard.png">
     <meta property="og:url" content="https://goldsnipersbot.com/faq.html">
     <meta property="og:type" content="website">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=382.01">
+    <link rel="stylesheet" href="style.css?v=400.0">
     <style>
-        .faq-page-hero {
-            padding: 160px 0 50px;
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-        .faq-page-hero h1 {
-            font-size: 52px;
-            font-weight: 800;
-            margin-bottom: 18px;
-            line-height: 1.15;
-            letter-spacing: -1px;
-        }
-        .faq-page-hero p.subtitle {
-            font-size: 19px;
-            color: var(--text-muted);
-            max-width: 720px;
-            margin: 0 auto 36px;
-            line-height: 1.6;
-        }
         .faq-filter-controls {
-            max-width: 740px;
-            margin: 0 auto 40px;
+            max-width: 720px;
+            margin: 32px auto 0;
         }
         .faq-search-box {
             position: relative;
-            margin-bottom: 24px;
+            margin-bottom: 18px;
         }
         .faq-search-box input {
             width: 100%;
-            padding: 16px 20px 16px 48px;
-            background: rgba(16, 20, 30, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 12px;
+            padding: 14px 18px 14px 46px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-md);
             color: var(--text-main);
-            font-size: 16px;
+            font-size: 0.95rem;
             font-family: inherit;
             outline: none;
             transition: var(--transition-fast);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
         .faq-search-box input:focus {
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 25px rgba(0, 210, 211, 0.25);
+            border-color: var(--accent-gold);
+            background: var(--bg-elevated);
         }
         .faq-search-icon {
             position: absolute;
-            left: 18px;
+            left: 16px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-muted);
@@ -80,78 +59,77 @@
         }
         .faq-category-pills {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             justify-content: center;
             flex-wrap: wrap;
         }
         .faq-pill {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
             color: var(--text-muted);
-            padding: 8px 18px;
-            border-radius: 9999px;
-            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 0.86rem;
             font-weight: 600;
+            font-family: inherit;
             cursor: pointer;
             transition: var(--transition-fast);
         }
-        .faq-pill:hover,
-        .faq-pill.active {
-            background: rgba(0, 210, 211, 0.15);
-            border-color: var(--accent-cyan);
+        .faq-pill:hover {
             color: var(--text-main);
-            box-shadow: 0 0 15px rgba(0, 210, 211, 0.2);
+            border-color: var(--border-default);
+        }
+        .faq-pill.active {
+            background: var(--accent-gold-soft);
+            border-color: var(--border-gold);
+            color: var(--accent-gold);
         }
         .faq-group-title {
-            font-size: 24px;
+            font-size: 1.25rem;
             font-weight: 700;
-            margin: 40px 0 20px;
+            margin: 36px 0 16px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: space-between;
+            gap: 12px;
             color: var(--text-main);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid var(--border-subtle);
             padding-bottom: 12px;
         }
         .faq-group-title span.badge-tag {
-            font-size: 12px;
+            font-size: 0.72rem;
             font-family: var(--font-mono);
             padding: 3px 10px;
-            background: rgba(229, 169, 59, 0.15);
-            color: var(--accent-gold);
-            border: 1px solid rgba(229, 169, 59, 0.4);
-            border-radius: 9999px;
-            letter-spacing: 0.5px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            border: 1px solid var(--border-default);
+            border-radius: 999px;
         }
         .faq-support-box {
-            background: linear-gradient(135deg, rgba(16, 24, 38, 0.8) 0%, rgba(20, 30, 48, 0.8) 100%);
-            border: 1px solid rgba(0, 210, 211, 0.3);
-            border-radius: 16px;
-            padding: 40px;
+            max-width: 880px;
+            margin: 56px auto 0;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-xl);
+            padding: 40px 32px;
             text-align: center;
-            margin-top: 60px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         }
         .faq-support-box h3 {
-            font-size: 26px;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .faq-support-box p {
             color: var(--text-muted);
-            max-width: 550px;
+            max-width: 540px;
             margin: 0 auto 24px;
-            font-size: 16px;
+            font-size: 0.96rem;
         }
         .faq-support-actions {
             display: flex;
             justify-content: center;
-            gap: 16px;
+            gap: 12px;
             flex-wrap: wrap;
-        }
-        @media (max-width: 768px) {
-            .faq-page-hero h1 { font-size: 36px; }
-            .faq-support-box { padding: 30px 20px; }
         }
     </style>
 
@@ -166,7 +144,7 @@
                 "name": "How does the Deposit & Trade (Zero Upfront Cost) model work?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "When you register an MT5 account with our official partner broker (TradeQuo) and fund your account, you get full access to the complete Gold Snipers Expert suite with zero upfront software license fees. Your capital stays 100% yours to trade. Software development and operational costs are sponsored through broker volume rebates as you trade. The license remains active for as long as your account stays funded and actively traded."
+                    "text": "When you register an MT5 account with our official partner broker (TradeQuo) and fund your account, you get full access to the complete Gold Snipers Cloud suite with zero upfront software license fees. Your capital stays 100% yours to trade."
                 }
             },
             {
@@ -174,55 +152,7 @@
                 "name": "Can I use Gold Snipers on funded trading accounts?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. Gold Snipers is fully compatible with any MT5 broker or funded account program that permits Expert Advisors. It features customizable lot limits, dynamic equity scaling, spread blowout filters, and automated daily drawdown hard-stops to assist traders in adhering to strict risk rules."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How does the Telegram Copier Bridge work?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Gold Snipers Cloud runs 24/7 on institutional low-latency cloud infrastructure, listening to your configured Telegram channels via native MTProto sessions. The moment a signal is posted, it parses it in under 15ms and delivers orders directly to your MT5 broker via MetaAPI."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How does Market Intelligence & Empirical Level Defense work?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Unlike static indicators, the Gold Snipers EA tracks live price touches at Asian Session High/Low, Previous Day High/Low, and 4H/1H Fair Value Gaps. It records real-time rejection versus breakout events in a local database to calculate true empirical defend-rate percentages shown in the bridge Liquidity Ladder."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I request features and vote on the development roadmap?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! Gold Snipers includes a built-in Community Feature Requests & Roadmap board in the cloud dashboard. You can submit new feature proposals, upvote community ideas with 1 click, and watch live status updates as items progress from Planned to In Development and Completed."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I monitor and control Gold Snipers from my smartphone?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! Gold Snipers includes an integrated Remote Web Dashboard powered by Cloudflare Quick Tunnels. You can monitor open positions, floating PnL, trigger emergency stops, or update settings from any browser or mobile device with zero port forwarding or dynamic DNS."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What is Macro Sentinel and how does it help my trading?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Macro Sentinel is an institutional surveillance tool that streams Breaking News, Trump Truths, Fed leaks, and squawks in real time. It calculates live Gold bias (Bullish/Bearish/Volatility), tracks post-alert pip reactions, displays a 4-pillar thematic heatmap, and monitors the DXY dollar index inverse correlation."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Which AI models are supported?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The built-in AI Copilot supports OpenAI (GPT-4o/o1), Anthropic Claude, DeepSeek, OpenCode, and local models via Ollama. It evaluates market structure, support/resistance invalidation zones, and institutional risk directly using live broker spot prices."
+                    "text": "Yes. Gold Snipers is compatible with any MT5 broker or funded account program. It features customizable lot limits, dynamic equity scaling, spread filters, and automated daily drawdown hard-stops."
                 }
             },
             {
@@ -230,23 +160,7 @@
                 "name": "Do I need a VPS to run Gold Snipers?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "NO VPS IS REQUIRED. Gold Snipers Cloud is 100% cloud-hosted. Execution happens autonomously 24/7 in high-speed cloud datacenters with zero software installation, zero VPS bills, and full control from any smartphone or web browser."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Which trading instruments are compatible with Gold Snipers?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Gold Snipers is designed specifically for Gold (XAUUSD) trading. The EA dynamically detects the symbol's digits and scales pip calculations automatically for optimal Gold performance."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How does the $49/month Cloud subscription work and is MetaAPI required?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The $49/month Gold Snipers Cloud plan allows you to connect any MT5 broker or prop firm account for 24/7 automated trade execution without needing your PC or VPS powered on. A separate MetaAPI connection is required per connected MT5 account and is billed directly by MetaAPI (starts from ~$10/month per account directly with MetaAPI)."
+                    "text": "No VPS is required. Gold Snipers Cloud is 100% cloud-hosted. Execution happens autonomously 24/7 in high-speed cloud datacenters with zero software installation and full control from any smartphone or web browser."
                 }
             }
         ]
@@ -254,121 +168,108 @@
     </script>
 </head>
 <body>
-    <!-- Animated Background Elements -->
     <div class="bg-glow"></div>
     <div class="bg-glow-gold"></div>
 
     <!-- Header / Navigation -->
     <header>
-        <!-- Top Announcement Bar (Cloud Edition & Broker Highlight) -->
-        <div class="top-announcement-bar">
-            <div class="container announcement-inner">
-                <div class="announcement-badge cloud-announcement-badge" style="background: rgba(0, 210, 211, 0.18); border-color: rgba(0, 210, 211, 0.5); color: var(--accent-cyan);">
-                    <span class="pulse-dot-cyan"></span>
-                    <span>LIVE NOW</span>
-                </div>
-                <p class="announcement-text"><strong>Gold Snipers Cloud:</strong> 100% Cloud-Only · Zero Downloads · <strong>No VPS Required</strong>. Trade autonomously 24/7 from your phone or browser.</p>
-                <a href="index.html#cloud-edition" class="announcement-cta" style="color: var(--accent-cyan);">Explore Cloud &rarr;</a>
-            </div>
-        </div>
         <div class="container">
             <nav>
                 <a href="index.html" class="logo">
-                    <img src="logo-header.png" alt="Gold Snipers Logo" width="32" height="32">
-                    Gold<span>Snipers</span>
+                    <img src="logo-header.png" alt="Gold Snipers Logo" width="30" height="30">
+                    Gold<span>Snipers</span> <span class="logo-sub-tag">Cloud</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="index.html#cloud-edition">Cloud <span class="nav-live-pill">LIVE</span></a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="index.html#showcase">Platform</a></li>
                     <li><a href="index.html#features">Features</a></li>
                     <li><a href="index.html#pricing">Pricing</a></li>
-                    <li><a href="https://cloud.goldsnipersbot.com" target="_blank">Cloud App</a></li>
-                    <li><a href="faq.html" style="color: var(--accent-cyan); font-weight: 700;">FAQ</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="partners.html">Partners</a></li>
                 </ul>
                 <div class="nav-actions">
-                    <a href="https://cloud.goldsnipersbot.com" class="btn btn-secondary btn-sm nav-btn-cloud" target="_blank"><span class="live-pulse"></span> Cloud Web App</a>
+                    <a href="https://cloud.goldsnipersbot.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
+                        <span class="status-dot"></span>
+                        <span>Cloud Web App</span>
+                    </a>
                     <a href="index.html#pricing" class="btn btn-primary btn-sm">Start Free ($0)</a>
                 </div>
-                <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                <button class="menu-toggle" type="button" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
 
-    <!-- Main FAQ Content -->
     <main>
-        <section class="faq-page-hero">
+        <section class="page-hero">
             <div class="container">
-                <div class="hero-prestige-badge" style="margin: 0 auto 20px; display: inline-flex;">
-                    <span class="badge-icon">👑</span>
-                    <span class="badge-text">KNOWLEDGE BASE &amp; FAQ</span>
-                </div>
-                <h1>Frequently Asked <span class="cyan-text">Questions</span></h1>
-                <p class="subtitle">Got questions about the Gold Snipers Expert Advisor, Telegram Copier Bridge, broker sponsorship, or capital risk safeguards? We have comprehensive answers.</p>
+                <div class="section-eyebrow">Knowledge Base</div>
+                <h1>Frequently Asked <span class="gold-text">Questions</span></h1>
+                <p class="subtitle">Answers to common questions about Gold Snipers Cloud, Telegram signal copying, partner broker sponsorship, and risk management.</p>
 
                 <!-- Search & Filters -->
                 <div class="faq-filter-controls">
                     <div class="faq-search-box">
-                        <svg class="faq-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="faq-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="11" cy="11" r="8"></circle>
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
-                        <input type="text" id="faqSearchInput" placeholder="Search questions (e.g., TradeQuo, Drawdown, VPS, AI)..." oninput="filterFaq()">
+                        <input type="text" id="faqSearchInput" placeholder="Search questions (e.g., TradeQuo, Drawdown, VPS, MetaAPI)..." oninput="filterFaq()">
                     </div>
                     <div class="faq-category-pills">
                         <button type="button" class="faq-pill active" onclick="setCategory('all', this)">All Questions</button>
-                        <button type="button" class="faq-pill" onclick="setCategory('broker', this)">Broker Sponsorship</button>
+                        <button type="button" class="faq-pill" onclick="setCategory('broker', this)">Plans &amp; Broker</button>
                         <button type="button" class="faq-pill" onclick="setCategory('risk', this)">Risk &amp; Protection</button>
-                        <button type="button" class="faq-pill" onclick="setCategory('copier', this)">Bridge &amp; Copier</button>
-                        <button type="button" class="faq-pill" onclick="setCategory('ai', this)">AI &amp; Intelligence</button>
+                        <button type="button" class="faq-pill" onclick="setCategory('copier', this)">Cloud &amp; Copier</button>
+                        <button type="button" class="faq-pill" onclick="setCategory('ai', this)">Intelligence &amp; Tools</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="faq-content-section" style="padding-bottom: 80px;">
+        <section style="padding-bottom: 80px;">
             <div class="container">
                 <div class="faq-container" id="faqList">
 
                     <!-- Category: Broker Sponsorship -->
                     <div class="faq-group-block" data-category="broker">
                         <div class="faq-group-title">
-                            <span>🏛️ Broker Sponsorship &amp; Free Tier</span>
+                            <span>Plans &amp; Broker Sponsorship</span>
                             <span class="badge-tag">Zero Upfront</span>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="deposit trade broker zero upfront cost free license tradequo rebate capital">
+                        <div class="faq-item" data-keywords="deposit trade broker zero upfront cost free license tradequo rebate capital">
                             <button class="faq-question" type="button">
-                                <span>How does the Deposit &amp; Trade (Zero Upfront Cost) model work?</span>
+                                <span>How does the Deposit &amp; Trade ($0 Upfront Cost) model work?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                When you register an MT5 account with our official partner broker (TradeQuo) and fund your account, you get full access to the complete Gold Snipers Expert suite with zero upfront software license fees. Your capital stays 100% yours to trade. Software development and operational costs are sponsored through broker volume rebates as you trade. The license remains active for as long as your account stays funded and actively traded.
+                                When you register an MT5 account with our official partner broker (TradeQuo) and fund your account with at least $100, you get full access to Gold Snipers Cloud with zero upfront software license fees. Your capital stays 100% yours to trade. Software costs are sponsored through broker volume rebates as you trade.
                             </div>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="broker refund deposit withdraw trading losses chargeback tradequo custody">
+                        <div class="faq-item" data-keywords="broker refund deposit withdraw trading losses chargeback tradequo custody">
                             <button class="faq-question" type="button">
-                                <span>How do refunds work for broker-sponsored ($0 upfront) accounts?</span>
+                                <span>How do withdrawals or refunds work for broker-sponsored accounts?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                Because broker-sponsored accounts carry a <strong>$0 upfront software license fee</strong>, there is no payment collected by Gold Snipers to refund. Your trading deposit is held directly by our regulated partner broker (TradeQuo) in your own segregated account — Gold Snipers never has custody of your funds. You can withdraw your trading capital directly from your broker at any time via their client portal. Gold Snipers is an algorithmic execution software and does not refund trading losses.
+                                Broker-sponsored accounts carry a <strong>$0 upfront software license fee</strong>, so no software fee is collected by Gold Snipers. Your trading deposit is held directly by our regulated partner broker (TradeQuo) in your own segregated account — Gold Snipers never has custody of your funds. You can withdraw your trading capital directly from your broker at any time via their client portal.
                             </div>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="cloud plan 49 monthly metaapi broker requirement server cost">
+                        <div class="faq-item" data-keywords="cloud plan 49 monthly metaapi broker requirement server cost">
                             <button class="faq-question" type="button">
                                 <span>How does the $49/month Cloud subscription work and is MetaAPI required?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                The $49/month Gold Snipers Cloud subscription gives you full access to server-side automated trade execution across any MT5 broker, demo, or prop firm account 24/7 without needing your own PC or VPS running. You can cancel anytime directly through your Stripe billing portal.<br><br>
-                                <strong>MetaAPI Requirement:</strong> Gold Snipers Cloud connects directly to your MT5 broker via MetaAPI cloud terminals. Each connected MT5 account requires an active MetaAPI connection token. This connectivity fee is billed directly by MetaAPI (starts from ~$10/month per account paid directly to MetaAPI) and is not included in the software subscription.
+                                The $49/month Gold Snipers Cloud plan gives you 24/7 automated trade execution across any MT5 broker, demo, or prop firm account without needing a PC or VPS. You can cancel anytime via your Stripe billing portal.<br><br>
+                                <strong>MetaAPI Requirement:</strong> Gold Snipers Cloud connects directly to your MT5 broker via MetaAPI cloud terminals. Each connected MT5 account requires an active MetaAPI connection token, billed directly by MetaAPI (starting around ~$10/month per account).
                             </div>
                         </div>
                     </div>
@@ -376,38 +277,37 @@
                     <!-- Category: Risk & Capital Protection -->
                     <div class="faq-group-block" data-category="risk">
                         <div class="faq-group-title">
-                            <span>🛡️ Risk Management &amp; Capital Protection</span>
+                            <span>Risk Management &amp; Capital Protection</span>
                             <span class="badge-tag">Risk Rules</span>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="guarantee profit returns performance losses risk win rate disclaimer">
+                        <div class="faq-item" data-keywords="guarantee profit returns performance losses risk win rate disclaimer">
                             <button class="faq-question" type="button">
                                 <span>Does Gold Snipers guarantee trading profits?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                <strong>No.</strong> Gold Snipers is a high-speed execution engine and signal-processing tool, not a financial advisor, money manager, or guaranteed return scheme. Market outcomes depend entirely on external Telegram signal quality, market liquidity, broker slippage, and your individual risk parameters (lot sizes, stop loss rules, and daily drawdown limits) — all of which are outside of our control. Past performance or community profits do not guarantee future returns. Never trade with capital you cannot afford to lose.
+                                <strong>No.</strong> Gold Snipers is an automated execution and signal-processing tool, not a financial advisor or guaranteed return service. Market outcomes depend on third-party Telegram signal quality, market volatility, broker execution, and your configured risk settings. Never trade with capital you cannot afford to lose.
                             </div>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="funded accounts prop trading challenge drawdown daily loss rules spread safeguard lot limits">
+                        <div class="faq-item" data-keywords="funded accounts prop trading challenge drawdown daily loss rules spread safeguard lot limits">
                             <button class="faq-question" type="button">
-                                <span>Can I use Gold Snipers on funded trading accounts?</span>
+                                <span>Can I use Gold Snipers on prop firm and funded trading accounts?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                Yes. Gold Snipers is fully compatible with any MT5 broker or funded account program that permits Expert Advisors. It features customizable lot limits, dynamic equity scaling, spread blowout filters, and automated daily drawdown hard-stops to help traders adhere to strict risk management rules.
+                                Yes. Gold Snipers is compatible with MT5 prop firm and funded account programs. It includes customizable lot sizing, dynamic equity scaling, spread filters, and automated daily drawdown safeguards to help you stay within strict risk limits.
                             </div>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="vps virtual private server windows uptime latency telegram connection pc 24/7 cloud only no vps browser mobile">
+                        <div class="faq-item" data-keywords="vps virtual private server windows uptime latency telegram connection pc 24/7 cloud only no vps browser mobile">
                             <button class="faq-question" type="button">
-                                <span>Do I need a VPS to run Gold Snipers?</span>
+                                <span>Do I need a VPS to run Gold Snipers Cloud?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                <p><strong>Zero VPS Required:</strong> Gold Snipers Cloud runs 24/7 in institutional cloud datacenters with zero VPS fees, zero downloads, and uninterrupted uptime even when your personal devices are powered off.</p>
-                                <p style="margin-top: 10px; color: var(--accent-cyan);"><strong>☁️ Now Live — Gold Snipers Cloud: NO VPS REQUIRED!</strong> Our 100% Cloud-Only edition runs autonomously in high-speed cloud datacenters with zero software installation, zero VPS bills, and instant control from any browser or smartphone.</p>
+                                <strong>No VPS is required.</strong> Gold Snipers Cloud runs 24/7 in cloud datacenters with zero VPS fees, zero downloads, and uninterrupted uptime even when your phone and computer are switched off.
                             </div>
                         </div>
                     </div>
@@ -415,37 +315,37 @@
                     <!-- Category: Bridge & Copier -->
                     <div class="faq-group-block" data-category="copier">
                         <div class="faq-group-title">
-                            <span>⚡ Bridge &amp; Copier Execution</span>
-                            <span class="badge-tag">&lt;15ms Latency</span>
+                            <span>Cloud &amp; Copier Execution</span>
+                            <span class="badge-tag">Sub-15ms</span>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="telegram copier bridge how does it work tcp socket ipc latency sub-15ms parser signal execution">
+                        <div class="faq-item" data-keywords="telegram copier bridge how does it work tcp socket ipc latency sub-15ms parser signal execution">
                             <button class="faq-question" type="button">
-                                <span>How does the Telegram Copier Bridge work?</span>
+                                <span>How does the Telegram Copier work?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                Gold Snipers Cloud runs 24/7 on institutional low-latency cloud infrastructure, listening to your configured Telegram channels via native MTProto sessions. The moment a signal is posted, it parses it in under 15ms and delivers orders directly to your MT5 broker via MetaAPI.
+                                Gold Snipers Cloud listens to your selected Telegram channels via native MTProto sessions 24/7. The moment a signal is posted, it parses entry zones, stop loss, and take-profit targets in under 15ms and dispatches orders directly to your MT5 broker via MetaAPI.
                             </div>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="smartphone mobile remote control cloudflare tunnels dashboard monitor web floating pnl">
+                        <div class="faq-item" data-keywords="smartphone mobile remote control pwa dashboard monitor web floating pnl">
                             <button class="faq-question" type="button">
                                 <span>Can I monitor and control Gold Snipers from my smartphone?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                Yes! Gold Snipers includes an integrated Remote Web Dashboard powered by Cloudflare Quick Tunnels. You can monitor open positions, floating PnL, trigger emergency stops, or update settings from any browser or mobile device with zero port forwarding or dynamic DNS.
+                                Yes. You can access the Cloud Web App from any mobile browser or install the standalone Mobile PWA onto your iOS or Android home screen to monitor open positions, floating PnL, and channel rules on the go.
                             </div>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="instruments gold xauusd forex pairs digits pips dynamic scaling">
+                        <div class="faq-item" data-keywords="instruments gold xauusd forex pairs digits pips dynamic scaling">
                             <button class="faq-question" type="button">
-                                <span>Which trading instruments are compatible with Gold Snipers?</span>
+                                <span>Which trading instruments are supported?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                Gold Snipers is designed specifically for Gold (XAUUSD) trading. The EA dynamically detects the symbol's digits and scales pip calculations automatically for optimal Gold performance.
+                                While optimized for Gold (XAUUSD) volatility and pip scaling, Gold Snipers Cloud also supports major forex pairs, indices (such as US30 and NAS100), and crypto CFDs available on your MT5 broker.
                             </div>
                         </div>
                     </div>
@@ -453,70 +353,56 @@
                     <!-- Category: AI & Intelligence -->
                     <div class="faq-group-block" data-category="ai">
                         <div class="faq-group-title">
-                            <span>🧠 Market Intelligence &amp; AI Sentinel</span>
-                            <span class="badge-tag">Macro Radar</span>
+                            <span>Market Intelligence &amp; Tools</span>
+                            <span class="badge-tag">Analytics</span>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="market intelligence empirical level defense liquidity ladder asian session fvg fair value gap order blocks">
+                        <div class="faq-item" data-keywords="market intelligence empirical level defense liquidity ladder asian session fvg fair value gap order blocks">
                             <button class="faq-question" type="button">
-                                <span>How does Market Intelligence &amp; Empirical Level Defense work?</span>
+                                <span>How does Fair Value Gap (FVG) &amp; SMC filtering work?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                Unlike static indicators, the Gold Snipers EA tracks live price touches at Asian Session High/Low, Previous Day High/Low, and 4H/1H Fair Value Gaps. It records real-time rejection versus breakout events in a local database to calculate true empirical defend-rate percentages shown in the bridge Liquidity Ladder.
+                                The cloud engine tracks live price structure including Fair Value Gaps (FVG), Order Blocks, and session highs/lows. When enabled, it helps filter out signals that are chasing overextended moves.
                             </div>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="macro sentinel live rss squawk news trump fed dxy dollar correlation bias pips">
+                        <div class="faq-item" data-keywords="signal tester simulation sandbox regex parser">
                             <button class="faq-question" type="button">
-                                <span>What is Macro Sentinel and how does it help my trading?</span>
+                                <span>How does the interactive Signal Tester work?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                Macro Sentinel is an institutional surveillance tool that streams Breaking News, Trump Truths, Fed leaks, and squawks in real time. It calculates live Gold bias (Bullish/Bearish/Volatility), tracks post-alert pip reactions, displays a 4-pillar thematic heatmap, and monitors the DXY dollar index inverse correlation.
+                                Inside the dashboard, you can paste any raw message from your Telegram signal provider into the Signal Tester. It immediately shows how the parser extracts the symbol, direction, entry ladder, stop loss, and take-profit targets so you can verify your setup safely.
                             </div>
                         </div>
 
-                        <div class="faq-item glass-panel" data-keywords="ai models supported gpt-4o claude deepseek opencode ollama copilot invalidation zones">
+                        <div class="faq-item" data-keywords="features request vote roadmap community upvote ideas development">
                             <button class="faq-question" type="button">
-                                <span>Which AI models are supported?</span>
+                                <span>Can I request features and vote on the roadmap?</span>
                                 <span class="faq-icon" aria-hidden="true">+</span>
                             </button>
                             <div class="faq-answer">
-                                The built-in AI Copilot supports OpenAI (GPT-4o/o1), Anthropic Claude, DeepSeek, OpenCode, and local models via Ollama. It evaluates market structure, support/resistance invalidation zones, and institutional risk directly using live broker spot prices.
-                            </div>
-                        </div>
-
-                        <div class="faq-item glass-panel" data-keywords="features request vote roadmap community upvote ideas development">
-                            <button class="faq-question" type="button">
-                                <span>Can I request features and vote on the development roadmap?</span>
-                                <span class="faq-icon" aria-hidden="true">+</span>
-                            </button>
-                            <div class="faq-answer">
-                                Yes! Gold Snipers includes a built-in Community Feature Requests &amp; Roadmap board in the cloud dashboard. You can submit new feature proposals, upvote community ideas with 1 click, and watch live status updates as items progress from Planned to In Development and Completed.
+                                Yes. Gold Snipers includes a Community Feature Requests &amp; Roadmap board inside the cloud dashboard where you can submit ideas and upvote upcoming features.
                             </div>
                         </div>
                     </div>
 
                 </div>
 
-                <!-- Still have questions? -->
+                <!-- Support CTA -->
                 <div class="faq-support-box">
                     <h3>Still have a question?</h3>
-                    <p>Our direct developer support team and active user community are ready to assist you with installation, strategy configuration, or broker queries.</p>
+                    <p>Our support team is happy to help you with broker setup, signal channel configuration, or account questions.</p>
                     <div class="faq-support-actions">
                         <a href="https://t.me/goldsniperssupport" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
-                            </svg>
-                            Telegram Support
+                            <span>Contact Telegram Support</span>
                         </a>
                         <a href="index.html#pricing" class="btn btn-secondary">
-                            View License Plans
+                            <span>View Pricing Plans</span>
                         </a>
                     </div>
                 </div>
-
             </div>
         </section>
     </main>
@@ -527,25 +413,28 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="footer-logo">
-                        <h2><img src="logo-header.png" alt="Gold Snipers Logo" width="32" height="32"> Gold<span>Snipers</span></h2>
+                        <h2><img src="logo-header.png" alt="Gold Snipers Logo" width="28" height="28"> Gold<span>Snipers</span></h2>
                     </a>
-                    <p>Professional algorithmic trading solutions for MetaTrader 5 and Telegram integrations. Built by traders, for traders.</p>
+                    <p>100% Cloud-based Telegram trade copier and automated signal execution platform for MetaTrader 5. Designed for clarity, speed, and mobile control.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Product</h4>
+                    <h4>Platform</h4>
                     <ul>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="index.html#pricing">Pricing</a></li>
-                        <li><a href="https://cloud.goldsnipersbot.com" target="_blank">Cloud App</a></li>
+                        <li><a href="https://cloud.goldsnipersbot.com" target="_blank" rel="noopener noreferrer">Cloud Web App</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="index.html#features">Trading Engines</a></li>
+                        <li><a href="index.html#calculator">Slippage Calculator</a></li>
+                        <li><a href="index.html#pricing">Pricing Plans</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Support</h4>
+                    <h4>Resources</h4>
                     <ul>
-                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="faq.html">Knowledge Base &amp; FAQ</a></li>
+                        <li><a href="download.html">Mobile PWA Guide</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="partners.html">Partner Program</a></li>
-                        <li><a href="https://t.me/goldsniperssupport" target="_blank">Telegram Support</a></li>
+                        <li><a href="https://t.me/goldsniperssupport" target="_blank" rel="noopener noreferrer">Telegram Support</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -558,14 +447,14 @@
                 </div>
             </div>
             <div class="footer-disclaimer">
-                <strong>Risk Warning:</strong> Trading financial instruments, including Gold (XAUUSD) and contracts for difference (CFDs) on margin, carries a high level of risk and may not be suitable for all investors. Gold Snipers is an algorithmic trade copier and execution suite; it does not provide financial advice or guarantee trading profits. Trading results depend entirely on individual risk parameters, market volatility, broker execution latency, and third-party signal quality — all of which are outside our control. Past performance of any automated strategy or EA is not indicative of future results. Never trade with capital you cannot afford to lose.
+                <strong>Risk Warning:</strong> Trading financial instruments, including Gold (XAUUSD) and foreign exchange (forex) on margin, carries a high level of risk and may not be suitable for all investors. Never trade with capital you cannot afford to lose.
                 <br><br>
-                &copy; 2026 Gold Snipers. All rights reserved. Built for MT5.
+                &copy; 2026 Gold Snipers. All rights reserved.
             </div>
         </div>
     </footer>
 
-    <script src="script.js?v=380.06"></script>
+    <script src="script.js?v=400.0"></script>
     <script>
         let currentCategory = 'all';
 
