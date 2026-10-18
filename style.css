@@ -288,6 +288,23 @@ h1, h2, h3, h4 {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 8px 24px rgba(226, 180, 90, 0.32);
 }
 
+.btn-blue,
+.btn-cyan {
+    background: linear-gradient(135deg, #7DD3FC 0%, #38BDF8 50%, #0284C7 100%);
+    color: #090D14;
+    font-weight: 700;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 4px 18px rgba(56, 189, 248, 0.28);
+}
+
+.btn-blue:hover,
+.btn-cyan:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+    border-color: rgba(125, 211, 252, 0.6);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 8px 26px rgba(56, 189, 248, 0.42);
+}
+
 .btn-secondary {
     background: rgba(255, 255, 255, 0.04);
     color: var(--text-main);
@@ -1464,6 +1481,12 @@ nav {
     margin-bottom: 18px;
 }
 
+.broker-partner-pill {
+    background: var(--accent-gold-soft);
+    border-color: var(--border-gold);
+    color: var(--accent-gold);
+}
+
 .pricing-explainer {
     font-size: 0.94rem;
     color: var(--text-muted);
@@ -1497,12 +1520,22 @@ nav {
     flex-shrink: 0;
 }
 
+.pricing-card-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+}
+
 .plan-sub-note {
     font-size: 0.8rem;
     color: var(--text-dim);
     text-align: center;
     margin-top: 14px;
     line-height: 1.45;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .metaapi-notice-box {
