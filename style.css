@@ -160,12 +160,20 @@ img {
 }
 
 .section-padding {
-    padding: 104px 0;
+    padding: 54px 0;
+}
+
+/* Tighten rhythm between adjacent sections to eliminate empty voids */
+.section-padding + .section-padding {
+    padding-top: 18px;
 }
 
 @media (max-width: 768px) {
     .section-padding {
-        padding: 72px 0;
+        padding: 38px 0;
+    }
+    .section-padding + .section-padding {
+        padding-top: 14px;
     }
 }
 
@@ -201,7 +209,7 @@ h1, h2, h3, h4 {
 /* --- Section Headers --- */
 .section-header {
     max-width: 780px;
-    margin: 0 auto 60px auto;
+    margin: 0 auto 36px auto;
 }
 
 .section-eyebrow,
@@ -210,31 +218,31 @@ h1, h2, h3, h4 {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 16px;
+    padding: 5px 14px;
     border-radius: 999px;
     background: rgba(226, 180, 90, 0.08);
     border: 1px solid rgba(226, 180, 90, 0.25);
     color: var(--accent-gold);
     font-family: var(--font-mono);
-    font-size: 0.76rem;
+    font-size: 0.74rem;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .section-header h2 {
-    font-size: clamp(2rem, 3.4vw, 2.85rem);
+    font-size: clamp(1.85rem, 3.2vw, 2.65rem);
     font-weight: 800;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     text-wrap: balance;
 }
 
 .section-header p {
-    font-size: 1.08rem;
+    font-size: 1.02rem;
     color: var(--text-muted);
-    line-height: 1.68;
+    line-height: 1.62;
     text-wrap: pretty;
 }
 
