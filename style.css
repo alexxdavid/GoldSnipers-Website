@@ -1481,6 +1481,23 @@ nav {
     margin-bottom: 18px;
 }
 
+.pricing-pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.pricing-pill-row .broker-freedom-pill {
+    margin-bottom: 0;
+}
+
+.web-terminal-pill {
+    background: var(--accent-gold-soft);
+    border-color: var(--border-gold);
+    color: var(--accent-gold);
+}
+
 .broker-partner-pill {
     background: var(--accent-gold-soft);
     border-color: var(--border-gold);
