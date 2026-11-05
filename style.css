@@ -1455,6 +1455,48 @@ nav {
     margin-bottom: 18px;
 }
 
+.pricing-card-v2 .price-container.price-discounted {
+    flex-wrap: wrap;
+    gap: 10px 14px;
+}
+
+.pricing-card-v2 .price-numbers-wrap {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.pricing-card-v2 .price-was {
+    font-family: var(--font-display);
+    font-size: 1.95rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-decoration: line-through;
+    text-decoration-color: #EF4444;
+    text-decoration-thickness: 3px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.pricing-card-v2 .price-promo-badge {
+    display: inline-flex;
+    align-items: center;
+    align-self: center;
+    gap: 5px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #34D399;
+    background: rgba(52, 211, 153, 0.12);
+    border: 1px solid rgba(52, 211, 153, 0.35);
+    box-shadow: 0 0 14px -2px rgba(52, 211, 153, 0.22);
+    white-space: nowrap;
+}
+
 .pricing-card-v2 .price-val {
     font-family: var(--font-display);
     font-size: 3.25rem;
