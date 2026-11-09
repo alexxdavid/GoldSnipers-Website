@@ -1467,31 +1467,15 @@ nav {
 }
 
 .pricing-card-v2 .price-was {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 5px;
     font-family: var(--font-display);
     font-size: 1.95rem;
     font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    color: #AEB8C8;
-}
-
-.pricing-card-v2 .price-was .price-was-label {
-    font-family: var(--font-mono);
-    font-size: 0.66rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-}
-
-.pricing-card-v2 .price-was s {
     color: #C7D2E0;
     text-decoration: line-through;
     text-decoration-color: rgba(239, 68, 68, 0.7);
     text-decoration-thickness: 2px;
+    line-height: 1;
+    letter-spacing: -0.02em;
 }
 
 .pricing-card-v2 .price-promo-badge {
