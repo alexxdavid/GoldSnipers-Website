@@ -1594,9 +1594,162 @@ nav {
     min-height: 40px;
 }
 
+/* --- Multi-Broker Partner Grid ($0 Upfront) --- */
+.pricing-broker-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1160px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.pricing-broker-card {
+    padding: 38px 28px 28px;
+    transition: var(--transition-smooth);
+}
+
+.pricing-broker-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 24px 52px -12px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(226, 180, 90, 0.22);
+}
+
+.pricing-broker-card .plan-badge-top {
+    left: 26px;
+    font-size: 0.72rem;
+    padding: 4px 12px;
+}
+
+.pricing-broker-card .plan-header h3 {
+    font-size: 1.48rem;
+}
+
+.pricing-broker-card .plan-tagline {
+    font-size: 0.86rem;
+    margin-bottom: 18px;
+}
+
+.pricing-broker-card .price-val {
+    font-size: 2.75rem;
+}
+
+.pricing-broker-card .price-cycle {
+    font-size: 0.88rem;
+}
+
+.pricing-broker-card .pricing-explainer {
+    font-size: 0.89rem;
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+}
+
+.pricing-broker-card .pricing-feature-list {
+    margin-bottom: 26px;
+    gap: 10px;
+}
+
+.pricing-broker-card .pricing-feature-list li {
+    font-size: 0.88rem;
+    gap: 10px;
+}
+
+.pricing-broker-card .plan-sub-note {
+    min-height: 36px;
+    font-size: 0.76rem;
+    margin-top: 12px;
+}
+
+.plan-badge-top.broker-alt {
+    background: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
+    color: #090D14;
+}
+
+.plan-badge-top.broker-cyan {
+    background: linear-gradient(135deg, #7DD3FC 0%, #38BDF8 100%);
+    color: #090D14;
+}
+
+/* Shared "Included in Every Partner Cloud Plan" Panel */
+.partner-included-panel {
+    max-width: 1160px;
+    margin: 28px auto 0;
+    padding: 32px 36px;
+    border-radius: var(--radius-xl);
+    background: var(--card-surface);
+    border: 1px solid var(--border-gold);
+    box-shadow: var(--shadow-card);
+}
+
+.partner-included-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 22px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-subtle);
+    flex-wrap: wrap;
+}
+
+.partner-included-header h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.partner-included-header p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.partner-included-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 26px;
+}
+
+.partner-included-grid li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.45;
+}
+
+.partner-claim-bar {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.partner-claim-bar p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.55;
+    flex: 1;
+    min-width: 260px;
+}
+
+.partner-claim-bar strong {
+    color: var(--text-main);
+}
+
 .gateway-notice-box {
-    max-width: 1120px;
-    margin: 32px auto 0;
+    max-width: 1160px;
+    margin: 28px auto 0;
     padding: 22px 28px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-default);
@@ -1620,7 +1773,7 @@ nav {
 
 /* --- 1-on-1 Setup Add-on Card --- */
 .setup-addon-card {
-    max-width: 1120px;
+    max-width: 1160px;
     margin: 28px auto 0 auto;
     padding: 30px 36px;
     border-radius: var(--radius-xl);
@@ -1748,8 +1901,15 @@ nav {
 }
 
 @media (max-width: 960px) {
-    .pricing-grid-cloud {
+    .pricing-grid-cloud,
+    .pricing-broker-grid {
         grid-template-columns: 1fr;
+    }
+    .partner-included-grid {
+        grid-template-columns: 1fr;
+    }
+    .partner-included-panel {
+        padding: 26px 22px;
     }
     .pricing-card-v2 {
         padding: 36px 26px;
