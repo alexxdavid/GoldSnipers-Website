@@ -305,6 +305,21 @@ h1, h2, h3, h4 {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 8px 26px rgba(56, 189, 248, 0.42);
 }
 
+.btn-emerald {
+    background: linear-gradient(135deg, #6EE7B7 0%, #34D399 50%, #059669 100%);
+    color: #061310;
+    font-weight: 700;
+    border: 1px solid rgba(52, 211, 153, 0.45);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42), 0 4px 18px rgba(52, 211, 153, 0.26);
+}
+
+.btn-emerald:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+    border-color: rgba(110, 231, 183, 0.65);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58), 0 8px 26px rgba(52, 211, 153, 0.40);
+}
+
 .btn-secondary {
     background: rgba(255, 255, 255, 0.04);
     color: var(--text-main);
@@ -1613,6 +1628,59 @@ nav {
     transform: translateY(-4px);
     border-color: var(--accent-gold);
     box-shadow: 0 24px 52px -12px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(226, 180, 90, 0.22);
+}
+
+/* Per-Broker Distinct Card Themes */
+.pricing-card-v2.featured-emerald {
+    border-color: rgba(52, 211, 153, 0.38);
+    background: linear-gradient(180deg, rgba(52, 211, 153, 0.10) 0%, rgba(16, 22, 34, 0.92) 45%);
+    box-shadow: var(--shadow-elevated);
+}
+
+.pricing-broker-card.featured-emerald:hover {
+    border-color: #34D399;
+    box-shadow: 0 24px 52px -12px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(52, 211, 153, 0.28);
+}
+
+.pricing-broker-card.featured-cloud:hover {
+    border-color: #38BDF8;
+    box-shadow: 0 24px 52px -12px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(56, 189, 248, 0.28);
+}
+
+.plan-badge-top.broker-emerald {
+    background: linear-gradient(135deg, #6EE7B7 0%, #34D399 55%, #10B981 100%);
+    color: #061310;
+}
+
+.broker-emerald-pill {
+    background: var(--accent-green-soft);
+    border-color: rgba(52, 211, 153, 0.38);
+    color: var(--accent-green);
+}
+
+.broker-cyan-pill {
+    background: var(--accent-cyan-soft);
+    border-color: var(--border-teal);
+    color: var(--accent-cyan);
+}
+
+.broker-trial-pill {
+    background: rgba(167, 139, 250, 0.12);
+    border-color: rgba(167, 139, 250, 0.36);
+    color: #C4B5FD;
+}
+
+.partner-claim-compact {
+    padding: 20px 28px;
+}
+
+.pricing-broker-card .pricing-pill-row {
+    gap: 6px;
+}
+
+.pricing-broker-card .broker-freedom-pill {
+    font-size: 0.74rem;
+    padding: 4px 11px;
 }
 
 .pricing-broker-card .plan-badge-top {
