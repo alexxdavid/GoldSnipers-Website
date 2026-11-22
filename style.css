@@ -1615,7 +1615,7 @@ nav {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     max-width: 1160px;
-    margin: 0 auto;
+    margin: 14px auto 0;
     align-items: stretch;
 }
 
@@ -1628,6 +1628,48 @@ nav {
     transform: translateY(-4px);
     border-color: var(--accent-gold);
     box-shadow: 0 24px 52px -12px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(226, 180, 90, 0.22);
+}
+
+/* Center Recommended Partner Standout Card (Uniglobe Markets) */
+.pricing-card-v2.pricing-broker-card.recommended-broker {
+    transform: translateY(-10px);
+    z-index: 2;
+    border: 1.5px solid rgba(56, 189, 248, 0.78);
+    background:
+        radial-gradient(120% 65% at 50% 0%, rgba(56, 189, 248, 0.24) 0%, rgba(56, 189, 248, 0.07) 42%, rgba(16, 22, 34, 0.96) 78%);
+    box-shadow:
+        0 28px 64px -14px rgba(0, 0, 0, 0.82),
+        0 0 40px -6px rgba(56, 189, 248, 0.36),
+        inset 0 1px 0 rgba(186, 230, 253, 0.35);
+}
+
+.pricing-broker-card.recommended-broker:hover {
+    transform: translateY(-14px);
+    border-color: #7DD3FC;
+    box-shadow:
+        0 34px 72px -14px rgba(0, 0, 0, 0.86),
+        0 0 52px -4px rgba(56, 189, 248, 0.48),
+        inset 0 1px 0 rgba(186, 230, 253, 0.45);
+}
+
+.pricing-broker-card .plan-badge-top.broker-recommended {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -16px;
+    padding: 6px 18px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    background: linear-gradient(135deg, #E0F2FE 0%, #38BDF8 48%, #0284C7 100%);
+    color: #04131E;
+    box-shadow:
+        0 8px 24px -2px rgba(56, 189, 248, 0.55),
+        0 0 0 2px rgba(9, 13, 20, 0.9);
+}
+
+.pricing-broker-card.recommended-broker .btn-blue {
+    box-shadow: 0 10px 28px -4px rgba(56, 189, 248, 0.48);
 }
 
 /* Per-Broker Distinct Card Themes */
@@ -1668,6 +1710,14 @@ nav {
     background: rgba(167, 139, 250, 0.12);
     border-color: rgba(167, 139, 250, 0.36);
     color: #C4B5FD;
+}
+
+.broker-us-pill {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.18) 0%, rgba(255, 255, 255, 0.09) 100%);
+    border-color: rgba(186, 230, 253, 0.55);
+    color: #F0F9FF;
+    font-weight: 700;
+    box-shadow: 0 0 14px -4px rgba(56, 189, 248, 0.45);
 }
 
 .partner-claim-compact {
@@ -1972,6 +2022,13 @@ nav {
     .pricing-grid-cloud,
     .pricing-broker-grid {
         grid-template-columns: 1fr;
+    }
+    .pricing-card-v2.pricing-broker-card.recommended-broker {
+        transform: none;
+        order: -1;
+    }
+    .pricing-broker-card.recommended-broker:hover {
+        transform: translateY(-4px);
     }
     .partner-included-grid {
         grid-template-columns: 1fr;
