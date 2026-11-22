@@ -1713,11 +1713,20 @@ nav {
 }
 
 .broker-us-pill {
+    align-items: center;
+    gap: 7px;
     background: linear-gradient(135deg, rgba(56, 189, 248, 0.18) 0%, rgba(255, 255, 255, 0.09) 100%);
     border-color: rgba(186, 230, 253, 0.55);
     color: #F0F9FF;
     font-weight: 700;
     box-shadow: 0 0 14px -4px rgba(56, 189, 248, 0.45);
+}
+
+.us-flag-icon {
+    flex-shrink: 0;
+    display: inline-block;
+    border-radius: 2px;
+    box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.25);
 }
 
 .partner-claim-compact {
